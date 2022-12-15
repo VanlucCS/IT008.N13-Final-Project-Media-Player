@@ -10,7 +10,7 @@
 [UI](https://user-images.githubusercontent.com/61135648/111136432-b7428a00-85b8-11eb-8e45-863bc9f7d5e8.png)
 
 ## Packages requirement
-> GunaUI2
+> Guna.UI2.WinForms 2.0.3.5
 > 
 ## Công cụ
 
