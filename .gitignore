@@ -1,9 +1,9 @@
 # User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+.rsuser
+.suo
+.user
+.userosscache
+.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -355,3 +355,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+MediaPlayerApp/.vs/MediaPlayerApp/v16/.suo
+MediaPlayerApp/MediaPlayerApp/obj/Debug/MediaPlayerApp.csproj.GenerateResource.cache
+*.exe
+*.cache
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
