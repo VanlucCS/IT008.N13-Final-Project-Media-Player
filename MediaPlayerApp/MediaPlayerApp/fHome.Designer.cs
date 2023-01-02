@@ -52,10 +52,10 @@ namespace MediaPlayerApp
             this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.Controls.Add(this.guna2TrackBar1);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 484);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 567);
             this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1000, 166);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1000, 83);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
             // guna2TrackBar1
