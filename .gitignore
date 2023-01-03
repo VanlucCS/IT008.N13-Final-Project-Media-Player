@@ -1,9 +1,9 @@
 # User-specific files
-.rsuser
-.suo
-.user
-.userosscache
-.sln.docstates
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -298,21 +298,10 @@ _Pvt_Extensions
 
 # Paket dependency manager
 .paket/paket.exe
-paket-files/
 
-# FAKE - F# Make
-.fake/
 
 # CodeRush personal settings
 .cr/personal
-
-# Python Tools for Visual Studio (PTVS)
-__pycache__/
-*.pyc
-
-# Cake - Uncomment if you are using it
-# tools/**
-# !tools/packages.config
 
 # Tabs Studio
 *.tss
@@ -326,42 +315,6 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
-# OpenCover UI analysis results
-OpenCover/
-
-# Azure Stream Analytics local run output
-ASALocalRun/
-
-# MSBuild Binary and Structured Log
-*.binlog
-
-# NVidia Nsight GPU debugger configuration file
-*.nvuser
-
-# MFractors (Xamarin productivity tool) working folder
-.mfractor/
-
-# Local History for Visual Studio
-.localhistory/
-
-# BeatPulse healthcheck temp database
-healthchecksdb
-
-# Backup folder for Package Reference Convert tool in Visual Studio 2019
-MigrationBackup/
-
-# Ionide (cross platform F# VS Code tools) working folder
-.ionide/
-
-# Fody - auto-generated XML schema
-FodyWeavers.xsd
 MediaPlayerApp/.vs/MediaPlayerApp/v16/.suo
 MediaPlayerApp/MediaPlayerApp/obj/Debug/MediaPlayerApp.csproj.GenerateResource.cache
-*.exe
-*.cache
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-MediaPlayerApp/.vs/MediaPlayerApp/v16/.suo
+
