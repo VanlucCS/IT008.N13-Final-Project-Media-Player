@@ -51,15 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fHome.cs">
+    <Compile Include="UI\fHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fHome.Designer.cs">
+    <Compile Include="UI\fHome.Designer.cs">
       <DependentUpon>fHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="fHome.resx">
+    <EmbeddedResource Include="UI\fHome.resx">
       <DependentUpon>fHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -70,6 +70,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -84,6 +85,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_500px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video_96px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video_96px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time_machine_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lounge_music_playlist_96px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

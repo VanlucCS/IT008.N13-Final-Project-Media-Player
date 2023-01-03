@@ -1,0 +1,462 @@
+﻿
+namespace MediaPlayerApp
+{
+    partial class fHome
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.pnControlMedia = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbTimeCurrentPlay = new System.Windows.Forms.Label();
+            this.tbProcess = new Guna.UI2.WinForms.Guna2TrackBar();
+            this.pnHeader = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btMaxsize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btMinisize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btExit = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.pnLeft = new Guna.UI2.WinForms.Guna2Panel();
+            this.togMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pnChildren = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btPlayqueue = new Guna.UI2.WinForms.Guna2Button();
+            this.btPlayList = new Guna.UI2.WinForms.Guna2Button();
+            this.btHisListen = new Guna.UI2.WinForms.Guna2Button();
+            this.btFravorSong = new Guna.UI2.WinForms.Guna2Button();
+            this.btVideoLibrary = new Guna.UI2.WinForms.Guna2Button();
+            this.btMusicLibrary = new Guna.UI2.WinForms.Guna2Button();
+            this.btHome = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.pnControlMedia.SuspendLayout();
+            this.pnHeader.SuspendLayout();
+            this.pnLeft.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.BorderRadius = 15;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.4D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // pnControlMedia
+            // 
+            this.pnControlMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnControlMedia.Controls.Add(this.lbTimeCurrentPlay);
+            this.pnControlMedia.Controls.Add(this.tbProcess);
+            this.pnControlMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnControlMedia.Location = new System.Drawing.Point(0, 549);
+            this.pnControlMedia.Margin = new System.Windows.Forms.Padding(4);
+            this.pnControlMedia.Name = "pnControlMedia";
+            this.pnControlMedia.Size = new System.Drawing.Size(1000, 101);
+            this.pnControlMedia.TabIndex = 0;
+            // 
+            // lbTimeCurrentPlay
+            // 
+            this.lbTimeCurrentPlay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbTimeCurrentPlay.AutoSize = true;
+            this.lbTimeCurrentPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeCurrentPlay.Location = new System.Drawing.Point(13, 7);
+            this.lbTimeCurrentPlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTimeCurrentPlay.Name = "lbTimeCurrentPlay";
+            this.lbTimeCurrentPlay.Size = new System.Drawing.Size(72, 21);
+            this.lbTimeCurrentPlay.TabIndex = 1;
+            this.lbTimeCurrentPlay.Text = "00:00:00";
+            // 
+            // tbProcess
+            // 
+            this.tbProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbProcess.Location = new System.Drawing.Point(108, 4);
+            this.tbProcess.Margin = new System.Windows.Forms.Padding(4);
+            this.tbProcess.Name = "tbProcess";
+            this.tbProcess.Size = new System.Drawing.Size(781, 28);
+            this.tbProcess.TabIndex = 0;
+            this.tbProcess.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
+            this.tbProcess.Value = 0;
+            // 
+            // pnHeader
+            // 
+            this.pnHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnHeader.Controls.Add(this.btMaxsize);
+            this.pnHeader.Controls.Add(this.btMinisize);
+            this.pnHeader.Controls.Add(this.btExit);
+            this.pnHeader.Location = new System.Drawing.Point(212, 0);
+            this.pnHeader.Name = "pnHeader";
+            this.pnHeader.Size = new System.Drawing.Size(788, 40);
+            this.pnHeader.TabIndex = 1;
+            // 
+            // btMaxsize
+            // 
+            this.btMaxsize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btMaxsize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.btMaxsize.FillColor = System.Drawing.SystemColors.Control;
+            this.btMaxsize.IconColor = System.Drawing.Color.Black;
+            this.btMaxsize.Location = new System.Drawing.Point(630, 5);
+            this.btMaxsize.Name = "btMaxsize";
+            this.btMaxsize.Size = new System.Drawing.Size(45, 29);
+            this.btMaxsize.TabIndex = 2;
+            // 
+            // btMinisize
+            // 
+            this.btMinisize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btMinisize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.btMinisize.FillColor = System.Drawing.SystemColors.Control;
+            this.btMinisize.IconColor = System.Drawing.Color.Black;
+            this.btMinisize.Location = new System.Drawing.Point(681, 5);
+            this.btMinisize.Name = "btMinisize";
+            this.btMinisize.Size = new System.Drawing.Size(45, 29);
+            this.btMinisize.TabIndex = 1;
+            // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.CustomIconSize = 15F;
+            this.btExit.FillColor = System.Drawing.SystemColors.Control;
+            this.btExit.IconColor = System.Drawing.Color.Black;
+            this.btExit.Location = new System.Drawing.Point(732, 5);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(45, 29);
+            this.btExit.TabIndex = 0;
+            // 
+            // pnLeft
+            // 
+            this.pnLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnLeft.Controls.Add(this.guna2Separator1);
+            this.pnLeft.Controls.Add(this.btPlayqueue);
+            this.pnLeft.Controls.Add(this.btPlayList);
+            this.pnLeft.Controls.Add(this.btHisListen);
+            this.pnLeft.Controls.Add(this.btFravorSong);
+            this.pnLeft.Controls.Add(this.btVideoLibrary);
+            this.pnLeft.Controls.Add(this.btMusicLibrary);
+            this.pnLeft.Controls.Add(this.label1);
+            this.pnLeft.Controls.Add(this.label2);
+            this.pnLeft.Controls.Add(this.togMode);
+            this.pnLeft.Controls.Add(this.btHome);
+            this.pnLeft.Location = new System.Drawing.Point(0, 0);
+            this.pnLeft.Name = "pnLeft";
+            this.pnLeft.Size = new System.Drawing.Size(212, 553);
+            this.pnLeft.TabIndex = 2;
+            // 
+            // togMode
+            // 
+            this.togMode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.togMode.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.togMode.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.togMode.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.togMode.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.togMode.Location = new System.Drawing.Point(122, 525);
+            this.togMode.Name = "togMode";
+            this.togMode.Size = new System.Drawing.Size(35, 20);
+            this.togMode.TabIndex = 3;
+            this.togMode.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.togMode.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.togMode.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.togMode.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.togMode.CheckedChanged += new System.EventHandler(this.togMode_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(41, 529);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Dark Mode";
+            // 
+            // pnChildren
+            // 
+            this.pnChildren.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnChildren.Location = new System.Drawing.Point(212, 40);
+            this.pnChildren.Name = "pnChildren";
+            this.pnChildren.Size = new System.Drawing.Size(788, 510);
+            this.pnChildren.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(53, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Media Player";
+            // 
+            // btPlayqueue
+            // 
+            this.btPlayqueue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btPlayqueue.Animated = true;
+            this.btPlayqueue.BorderRadius = 5;
+            this.btPlayqueue.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btPlayqueue.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btPlayqueue.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btPlayqueue.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btPlayqueue.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btPlayqueue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btPlayqueue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btPlayqueue.FillColor = System.Drawing.SystemColors.Control;
+            this.btPlayqueue.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btPlayqueue.ForeColor = System.Drawing.Color.Black;
+            this.btPlayqueue.Image = global::MediaPlayerApp.Properties.Resources.lounge_music_playlist_96px;
+            this.btPlayqueue.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btPlayqueue.ImageSize = new System.Drawing.Size(25, 25);
+            this.btPlayqueue.Location = new System.Drawing.Point(9, 348);
+            this.btPlayqueue.Name = "btPlayqueue";
+            this.btPlayqueue.Size = new System.Drawing.Size(197, 45);
+            this.btPlayqueue.TabIndex = 11;
+            this.btPlayqueue.Text = "Play Queue";
+            this.btPlayqueue.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // btPlayList
+            // 
+            this.btPlayList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btPlayList.Animated = true;
+            this.btPlayList.BorderRadius = 5;
+            this.btPlayList.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btPlayList.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btPlayList.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btPlayList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btPlayList.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btPlayList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btPlayList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btPlayList.FillColor = System.Drawing.SystemColors.Control;
+            this.btPlayList.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btPlayList.ForeColor = System.Drawing.Color.Black;
+            this.btPlayList.Image = global::MediaPlayerApp.Properties.Resources.lounge_music_playlist_96px;
+            this.btPlayList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btPlayList.ImageSize = new System.Drawing.Size(25, 25);
+            this.btPlayList.Location = new System.Drawing.Point(9, 299);
+            this.btPlayList.Name = "btPlayList";
+            this.btPlayList.Size = new System.Drawing.Size(197, 45);
+            this.btPlayList.TabIndex = 10;
+            this.btPlayList.Text = "Playlist";
+            this.btPlayList.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // btHisListen
+            // 
+            this.btHisListen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btHisListen.Animated = true;
+            this.btHisListen.BorderRadius = 5;
+            this.btHisListen.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btHisListen.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btHisListen.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btHisListen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btHisListen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btHisListen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btHisListen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btHisListen.FillColor = System.Drawing.SystemColors.Control;
+            this.btHisListen.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btHisListen.ForeColor = System.Drawing.Color.Black;
+            this.btHisListen.Image = global::MediaPlayerApp.Properties.Resources.time_machine_96px;
+            this.btHisListen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btHisListen.ImageSize = new System.Drawing.Size(25, 25);
+            this.btHisListen.Location = new System.Drawing.Point(9, 250);
+            this.btHisListen.Name = "btHisListen";
+            this.btHisListen.Size = new System.Drawing.Size(197, 45);
+            this.btHisListen.TabIndex = 9;
+            this.btHisListen.Text = "History Listen";
+            this.btHisListen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // btFravorSong
+            // 
+            this.btFravorSong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btFravorSong.Animated = true;
+            this.btFravorSong.BorderRadius = 5;
+            this.btFravorSong.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btFravorSong.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btFravorSong.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btFravorSong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btFravorSong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btFravorSong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btFravorSong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btFravorSong.FillColor = System.Drawing.SystemColors.Control;
+            this.btFravorSong.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btFravorSong.ForeColor = System.Drawing.Color.Black;
+            this.btFravorSong.Image = global::MediaPlayerApp.Properties.Resources.heart_96px;
+            this.btFravorSong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btFravorSong.ImageSize = new System.Drawing.Size(25, 25);
+            this.btFravorSong.Location = new System.Drawing.Point(9, 201);
+            this.btFravorSong.Name = "btFravorSong";
+            this.btFravorSong.Size = new System.Drawing.Size(197, 45);
+            this.btFravorSong.TabIndex = 8;
+            this.btFravorSong.Text = "Favorite song";
+            this.btFravorSong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // btVideoLibrary
+            // 
+            this.btVideoLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btVideoLibrary.Animated = true;
+            this.btVideoLibrary.BorderRadius = 5;
+            this.btVideoLibrary.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btVideoLibrary.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btVideoLibrary.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btVideoLibrary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btVideoLibrary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btVideoLibrary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btVideoLibrary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btVideoLibrary.FillColor = System.Drawing.SystemColors.Control;
+            this.btVideoLibrary.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btVideoLibrary.ForeColor = System.Drawing.Color.Black;
+            this.btVideoLibrary.Image = global::MediaPlayerApp.Properties.Resources.video_96px1;
+            this.btVideoLibrary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btVideoLibrary.ImageSize = new System.Drawing.Size(25, 25);
+            this.btVideoLibrary.Location = new System.Drawing.Point(9, 152);
+            this.btVideoLibrary.Name = "btVideoLibrary";
+            this.btVideoLibrary.Size = new System.Drawing.Size(197, 45);
+            this.btVideoLibrary.TabIndex = 7;
+            this.btVideoLibrary.Text = "Music library";
+            this.btVideoLibrary.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // btMusicLibrary
+            // 
+            this.btMusicLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btMusicLibrary.Animated = true;
+            this.btMusicLibrary.BorderRadius = 5;
+            this.btMusicLibrary.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btMusicLibrary.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btMusicLibrary.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btMusicLibrary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btMusicLibrary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btMusicLibrary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btMusicLibrary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btMusicLibrary.FillColor = System.Drawing.SystemColors.Control;
+            this.btMusicLibrary.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btMusicLibrary.ForeColor = System.Drawing.Color.Black;
+            this.btMusicLibrary.Image = global::MediaPlayerApp.Properties.Resources.music_512px;
+            this.btMusicLibrary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btMusicLibrary.ImageSize = new System.Drawing.Size(25, 25);
+            this.btMusicLibrary.Location = new System.Drawing.Point(9, 103);
+            this.btMusicLibrary.Name = "btMusicLibrary";
+            this.btMusicLibrary.Size = new System.Drawing.Size(197, 45);
+            this.btMusicLibrary.TabIndex = 6;
+            this.btMusicLibrary.Text = "Music library";
+            this.btMusicLibrary.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // btHome
+            // 
+            this.btHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btHome.Animated = true;
+            this.btHome.BorderRadius = 5;
+            this.btHome.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btHome.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btHome.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btHome.FillColor = System.Drawing.SystemColors.Control;
+            this.btHome.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btHome.ForeColor = System.Drawing.Color.Black;
+            this.btHome.Image = global::MediaPlayerApp.Properties.Resources.home_500px;
+            this.btHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btHome.ImageSize = new System.Drawing.Size(25, 25);
+            this.btHome.Location = new System.Drawing.Point(9, 54);
+            this.btHome.Name = "btHome";
+            this.btHome.Size = new System.Drawing.Size(197, 45);
+            this.btHome.TabIndex = 3;
+            this.btHome.Text = "Home";
+            this.btHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btHome.Click += new System.EventHandler(this.btHome_Click);
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Location = new System.Drawing.Point(6, 399);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
+            this.guna2Separator1.TabIndex = 0;
+            // 
+            // fHome
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.pnHeader);
+            this.Controls.Add(this.pnControlMedia);
+            this.Controls.Add(this.pnLeft);
+            this.Controls.Add(this.pnChildren);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "fHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Media Player";
+            this.pnControlMedia.ResumeLayout(false);
+            this.pnControlMedia.PerformLayout();
+            this.pnHeader.ResumeLayout(false);
+            this.pnLeft.ResumeLayout(false);
+            this.pnLeft.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnControlMedia;
+        private System.Windows.Forms.Label lbTimeCurrentPlay;
+        private Guna.UI2.WinForms.Guna2TrackBar tbProcess;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnHeader;
+        private Guna.UI2.WinForms.Guna2ControlBox btMaxsize;
+        private Guna.UI2.WinForms.Guna2ControlBox btMinisize;
+        private Guna.UI2.WinForms.Guna2ControlBox btExit;
+        private Guna.UI2.WinForms.Guna2Panel pnLeft;
+        private Guna.UI2.WinForms.Guna2Button btHome;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch togMode;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Panel pnChildren;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button btMusicLibrary;
+        private Guna.UI2.WinForms.Guna2Button btHisListen;
+        private Guna.UI2.WinForms.Guna2Button btFravorSong;
+        private Guna.UI2.WinForms.Guna2Button btVideoLibrary;
+        private Guna.UI2.WinForms.Guna2Button btPlayqueue;
+        private Guna.UI2.WinForms.Guna2Button btPlayList;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+    }
+}
+
