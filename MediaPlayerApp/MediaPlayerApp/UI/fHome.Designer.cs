@@ -43,6 +43,12 @@ namespace MediaPlayerApp
             this.label2 = new System.Windows.Forms.Label();
             this.pnChildren = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btPlayqueue = new Guna.UI2.WinForms.Guna2Button();
             this.btPlayList = new Guna.UI2.WinForms.Guna2Button();
             this.btHisListen = new Guna.UI2.WinForms.Guna2Button();
@@ -50,10 +56,14 @@ namespace MediaPlayerApp
             this.btVideoLibrary = new Guna.UI2.WinForms.Guna2Button();
             this.btMusicLibrary = new Guna.UI2.WinForms.Guna2Button();
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.pnControlMedia.SuspendLayout();
             this.pnHeader.SuspendLayout();
             this.pnLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -66,6 +76,11 @@ namespace MediaPlayerApp
             // pnControlMedia
             // 
             this.pnControlMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnControlMedia.Controls.Add(this.pictureBox5);
+            this.pnControlMedia.Controls.Add(this.pictureBox4);
+            this.pnControlMedia.Controls.Add(this.pictureBox2);
+            this.pnControlMedia.Controls.Add(this.pictureBox1);
+            this.pnControlMedia.Controls.Add(this.pictureBox3);
             this.pnControlMedia.Controls.Add(this.lbTimeCurrentPlay);
             this.pnControlMedia.Controls.Add(this.tbProcess);
             this.pnControlMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -93,7 +108,7 @@ namespace MediaPlayerApp
             this.tbProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbProcess.Location = new System.Drawing.Point(108, 4);
+            this.tbProcess.Location = new System.Drawing.Point(106, 3);
             this.tbProcess.Margin = new System.Windows.Forms.Padding(4);
             this.tbProcess.Name = "tbProcess";
             this.tbProcess.Size = new System.Drawing.Size(781, 28);
@@ -219,6 +234,68 @@ namespace MediaPlayerApp
             this.label1.Size = new System.Drawing.Size(104, 21);
             this.label1.TabIndex = 5;
             this.label1.Text = "Media Player";
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Location = new System.Drawing.Point(6, 399);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
+            this.guna2Separator1.TabIndex = 0;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox5.Image = global::MediaPlayerApp.Properties.Resources.play_button;
+            this.pictureBox5.Location = new System.Drawing.Point(467, 44);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 13;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox4.Image = global::MediaPlayerApp.Properties.Resources.shuffle;
+            this.pictureBox4.Location = new System.Drawing.Point(347, 53);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::MediaPlayerApp.Properties.Resources.left;
+            this.pictureBox2.Location = new System.Drawing.Point(407, 53);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::MediaPlayerApp.Properties.Resources.right;
+            this.pictureBox1.Location = new System.Drawing.Point(545, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.Image = global::MediaPlayerApp.Properties.Resources.repeat9;
+            this.pictureBox3.Location = new System.Drawing.Point(605, 53);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
             // 
             // btPlayqueue
             // 
@@ -403,13 +480,6 @@ namespace MediaPlayerApp
             this.btHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btHome.Click += new System.EventHandler(this.btHome_Click);
             // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.Location = new System.Drawing.Point(6, 399);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
-            this.guna2Separator1.TabIndex = 0;
-            // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -430,6 +500,11 @@ namespace MediaPlayerApp
             this.pnHeader.ResumeLayout(false);
             this.pnLeft.ResumeLayout(false);
             this.pnLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,6 +532,11 @@ namespace MediaPlayerApp
         private Guna.UI2.WinForms.Guna2Button btPlayqueue;
         private Guna.UI2.WinForms.Guna2Button btPlayList;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

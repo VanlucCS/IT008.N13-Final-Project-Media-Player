@@ -27,11 +27,6 @@ namespace MediaPlayerApp
 
         }
 
-        private void pictureBox5_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
         {
 
@@ -85,6 +80,11 @@ namespace MediaPlayerApp
                 //btHome.ForeColor = Color.Black;
 
             }
+
+        }
+
+        private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
+        {
 
         }
     }
