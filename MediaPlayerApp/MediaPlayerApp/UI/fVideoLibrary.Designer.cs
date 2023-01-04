@@ -72,7 +72,7 @@
             this.pnHeader.Controls.Add(this.btExit);
             this.pnHeader.Location = new System.Drawing.Point(203, 0);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(788, 40);
+            this.pnHeader.Size = new System.Drawing.Size(806, 87);
             this.pnHeader.TabIndex = 5;
             // 
             // btMaxsize
@@ -81,7 +81,7 @@
             this.btMaxsize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.btMaxsize.FillColor = System.Drawing.SystemColors.Control;
             this.btMaxsize.IconColor = System.Drawing.Color.Black;
-            this.btMaxsize.Location = new System.Drawing.Point(630, 5);
+            this.btMaxsize.Location = new System.Drawing.Point(648, 5);
             this.btMaxsize.Name = "btMaxsize";
             this.btMaxsize.Size = new System.Drawing.Size(45, 29);
             this.btMaxsize.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.btMinisize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btMinisize.FillColor = System.Drawing.SystemColors.Control;
             this.btMinisize.IconColor = System.Drawing.Color.Black;
-            this.btMinisize.Location = new System.Drawing.Point(681, 5);
+            this.btMinisize.Location = new System.Drawing.Point(699, 5);
             this.btMinisize.Name = "btMinisize";
             this.btMinisize.Size = new System.Drawing.Size(45, 29);
             this.btMinisize.TabIndex = 1;
@@ -103,7 +103,7 @@
             this.btExit.CustomIconSize = 15F;
             this.btExit.FillColor = System.Drawing.SystemColors.Control;
             this.btExit.IconColor = System.Drawing.Color.Black;
-            this.btExit.Location = new System.Drawing.Point(732, 5);
+            this.btExit.Location = new System.Drawing.Point(750, 5);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(45, 29);
             this.btExit.TabIndex = 0;
@@ -119,10 +119,10 @@
             this.pnControlMedia.Controls.Add(this.lbTimeCurrentPlay);
             this.pnControlMedia.Controls.Add(this.tbProcess);
             this.pnControlMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnControlMedia.Location = new System.Drawing.Point(0, 502);
+            this.pnControlMedia.Location = new System.Drawing.Point(0, 549);
             this.pnControlMedia.Margin = new System.Windows.Forms.Padding(4);
             this.pnControlMedia.Name = "pnControlMedia";
-            this.pnControlMedia.Size = new System.Drawing.Size(982, 101);
+            this.pnControlMedia.Size = new System.Drawing.Size(1000, 101);
             this.pnControlMedia.TabIndex = 4;
             // 
             // btPlay
@@ -143,7 +143,7 @@
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Image = global::MediaPlayerApp.Properties.Resources.shuffle;
-            this.pictureBox4.Location = new System.Drawing.Point(338, 53);
+            this.pictureBox4.Location = new System.Drawing.Point(347, 53);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(32, 32);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -154,7 +154,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::MediaPlayerApp.Properties.Resources.left;
-            this.pictureBox2.Location = new System.Drawing.Point(398, 53);
+            this.pictureBox2.Location = new System.Drawing.Point(407, 53);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -165,7 +165,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::MediaPlayerApp.Properties.Resources.right;
-            this.pictureBox1.Location = new System.Drawing.Point(536, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(545, 53);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -176,7 +176,7 @@
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = global::MediaPlayerApp.Properties.Resources.repeat9;
-            this.pictureBox3.Location = new System.Drawing.Point(596, 53);
+            this.pictureBox3.Location = new System.Drawing.Point(605, 53);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(32, 32);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,7 +204,7 @@
             this.tbProcess.Location = new System.Drawing.Point(106, 3);
             this.tbProcess.Margin = new System.Windows.Forms.Padding(4);
             this.tbProcess.Name = "tbProcess";
-            this.tbProcess.Size = new System.Drawing.Size(763, 28);
+            this.tbProcess.Size = new System.Drawing.Size(781, 28);
             this.tbProcess.TabIndex = 0;
             this.tbProcess.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.tbProcess.Value = 0;
@@ -226,7 +226,7 @@
             this.pnLeft.Controls.Add(this.btHome);
             this.pnLeft.Location = new System.Drawing.Point(-9, 0);
             this.pnLeft.Name = "pnLeft";
-            this.pnLeft.Size = new System.Drawing.Size(212, 553);
+            this.pnLeft.Size = new System.Drawing.Size(212, 600);
             this.pnLeft.TabIndex = 6;
             // 
             // guna2Separator1
@@ -411,7 +411,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 529);
+            this.label2.Location = new System.Drawing.Point(41, 576);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 4;
@@ -425,7 +425,7 @@
             this.togMode.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.togMode.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.togMode.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.togMode.Location = new System.Drawing.Point(122, 525);
+            this.togMode.Location = new System.Drawing.Point(122, 572);
             this.togMode.Name = "togMode";
             this.togMode.Size = new System.Drawing.Size(35, 20);
             this.togMode.TabIndex = 3;
@@ -467,14 +467,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnChildren.Location = new System.Drawing.Point(203, 40);
             this.pnChildren.Name = "pnChildren";
-            this.pnChildren.Size = new System.Drawing.Size(788, 510);
+            this.pnChildren.Size = new System.Drawing.Size(806, 557);
             this.pnChildren.TabIndex = 7;
             // 
             // fVideoLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 603);
+            this.ClientSize = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.pnHeader);
             this.Controls.Add(this.pnControlMedia);
             this.Controls.Add(this.pnLeft);
