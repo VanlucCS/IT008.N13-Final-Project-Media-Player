@@ -73,6 +73,16 @@ namespace MediaPlayerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap high_volume {
+            get {
+                object obj = ResourceManager.GetObject("high_volume", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home_500px {
             get {
                 object obj = ResourceManager.GetObject("home_500px", resourceCulture);
@@ -103,6 +113,16 @@ namespace MediaPlayerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap medium_volume {
+            get {
+                object obj = ResourceManager.GetObject("medium_volume", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap music_480px {
             get {
                 object obj = ResourceManager.GetObject("music_480px", resourceCulture);
@@ -116,6 +136,16 @@ namespace MediaPlayerApp.Properties {
         internal static System.Drawing.Bitmap music_512px {
             get {
                 object obj = ResourceManager.GetObject("music_512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_sound__1_ {
+            get {
+                object obj = ResourceManager.GetObject("no_sound__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -44,6 +44,8 @@ namespace MediaPlayerApp
             this.label2 = new System.Windows.Forms.Label();
             this.togMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.pnChildren = new Guna.UI2.WinForms.Guna2Panel();
+            this.tbVolume = new Guna.UI2.WinForms.Guna2TrackBar();
+            this.btVolume = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btPlay = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -56,6 +58,7 @@ namespace MediaPlayerApp
             this.btFravorSong = new Guna.UI2.WinForms.Guna2Button();
             this.btMusicLibrary = new Guna.UI2.WinForms.Guna2Button();
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
+            this.btFavorite = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnControlMedia.SuspendLayout();
             this.pnHeader.SuspendLayout();
             this.pnLeft.SuspendLayout();
@@ -75,6 +78,9 @@ namespace MediaPlayerApp
             // pnControlMedia
             // 
             this.pnControlMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnControlMedia.Controls.Add(this.btFavorite);
+            this.pnControlMedia.Controls.Add(this.btVolume);
+            this.pnControlMedia.Controls.Add(this.tbVolume);
             this.pnControlMedia.Controls.Add(this.btPlay);
             this.pnControlMedia.Controls.Add(this.pictureBox4);
             this.pnControlMedia.Controls.Add(this.pictureBox2);
@@ -95,7 +101,7 @@ namespace MediaPlayerApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbTimeCurrentPlay.AutoSize = true;
             this.lbTimeCurrentPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimeCurrentPlay.Location = new System.Drawing.Point(13, 7);
+            this.lbTimeCurrentPlay.Location = new System.Drawing.Point(40, 7);
             this.lbTimeCurrentPlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTimeCurrentPlay.Name = "lbTimeCurrentPlay";
             this.lbTimeCurrentPlay.Size = new System.Drawing.Size(72, 21);
@@ -107,7 +113,7 @@ namespace MediaPlayerApp
             this.tbProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbProcess.Location = new System.Drawing.Point(106, 3);
+            this.tbProcess.Location = new System.Drawing.Point(133, 3);
             this.tbProcess.Margin = new System.Windows.Forms.Padding(4);
             this.tbProcess.Name = "tbProcess";
             this.tbProcess.Size = new System.Drawing.Size(781, 28);
@@ -237,6 +243,31 @@ namespace MediaPlayerApp
             this.pnChildren.Name = "pnChildren";
             this.pnChildren.Size = new System.Drawing.Size(788, 510);
             this.pnChildren.TabIndex = 3;
+            // 
+            // tbVolume
+            // 
+            this.tbVolume.LargeChange = 2;
+            this.tbVolume.Location = new System.Drawing.Point(902, 60);
+            this.tbVolume.Name = "tbVolume";
+            this.tbVolume.Size = new System.Drawing.Size(87, 25);
+            this.tbVolume.Style = Guna.UI2.WinForms.Enums.TrackBarStyle.Metro;
+            this.tbVolume.TabIndex = 0;
+            this.tbVolume.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbVolume.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbVolume_Scroll);
+            // 
+            // btVolume
+            // 
+            this.btVolume.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btVolume.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btVolume.Image = global::MediaPlayerApp.Properties.Resources.medium_volume;
+            this.btVolume.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btVolume.ImageRotate = 0F;
+            this.btVolume.ImageSize = new System.Drawing.Size(32, 32);
+            this.btVolume.Location = new System.Drawing.Point(857, 55);
+            this.btVolume.Name = "btVolume";
+            this.btVolume.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btVolume.Size = new System.Drawing.Size(39, 35);
+            this.btVolume.TabIndex = 16;
             // 
             // btPlay
             // 
@@ -486,6 +517,20 @@ namespace MediaPlayerApp
             this.btHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btHome.Click += new System.EventHandler(this.btHome_Click);
             // 
+            // btFavorite
+            // 
+            this.btFavorite.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btFavorite.HoverState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btFavorite.Image = global::MediaPlayerApp.Properties.Resources.heart_96px;
+            this.btFavorite.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btFavorite.ImageRotate = 0F;
+            this.btFavorite.ImageSize = new System.Drawing.Size(32, 32);
+            this.btFavorite.Location = new System.Drawing.Point(812, 55);
+            this.btFavorite.Name = "btFavorite";
+            this.btFavorite.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btFavorite.Size = new System.Drawing.Size(39, 35);
+            this.btFavorite.TabIndex = 17;
+            // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -542,6 +587,9 @@ namespace MediaPlayerApp
         private System.Windows.Forms.PictureBox pictureBox4;
         private Guna.UI2.WinForms.Guna2ImageButton btPlay;
         public Guna.UI2.WinForms.Guna2Panel pnChildren;
+        private Guna.UI2.WinForms.Guna2TrackBar tbVolume;
+        private Guna.UI2.WinForms.Guna2ImageButton btVolume;
+        private Guna.UI2.WinForms.Guna2ImageButton btFavorite;
     }
 }
 

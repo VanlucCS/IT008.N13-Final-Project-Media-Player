@@ -175,5 +175,41 @@ namespace MediaPlayerApp
             btPlayList.Checked = !btPlayList.Checked;
             this.openChildForm(new fPlaylist(this));
         }
+
+        private void tbVolume_Scroll(object sender, ScrollEventArgs e)
+        {
+            //media.settings.volume = tbVolumn.Value;
+            //if (!bt)
+            //{
+            //    pictureBox5.Image = _20521587_TH03_Music_Online.Properties.Resources.medium_volume;
+            //    soundOn = true;
+            //}
+            if (true)
+            {
+                if (tbVolume.Value > 50)
+                {
+                    btVolume.Image = MediaPlayerApp.Properties.Resources.high_volume;
+                }
+                else
+                    btVolume.Image = MediaPlayerApp.Properties.Resources.medium_volume;
+                if (tbVolume.Value == 0)
+                    btVolume.Image = MediaPlayerApp.Properties.Resources.no_sound__1_;
+            }
+        }
+
+        private void btVolume_Click(object sender, EventArgs e)
+        {
+            btVolume.Checked = !btVolume.Checked;
+            if (btVolume.Checked)
+            {
+                //media.settings.volume = 0;
+                tbVolume.Value = 0;
+            }
+            else
+            {
+                //media.settings.volume = 50;
+                tbVolume.Value = 50;
+            }
+        }
     }
 }
