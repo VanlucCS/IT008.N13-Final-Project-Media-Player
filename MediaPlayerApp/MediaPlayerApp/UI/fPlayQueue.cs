@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace MediaPlayerApp.UI
 {
-    public partial class fVideoLibrary : Form
+    public partial class fPlayQueue : Form
     {
-        public fHome parent; 
-        public fVideoLibrary(fHome parent = null)
+        public fHome parent;
+        public fPlayQueue(fHome parent = null)
         {
             this.parent = parent;
             InitializeComponent();

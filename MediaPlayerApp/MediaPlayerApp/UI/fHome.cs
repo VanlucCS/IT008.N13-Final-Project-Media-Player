@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaPlayerApp.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,26 @@ namespace MediaPlayerApp
 {
     public partial class fHome : Form
     {
+        public Form activeForm = null;
+
         public fHome()
         {
             InitializeComponent();
         }
-
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            // pn_Childform.Controls.Remove(activeForm);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnChildren.Controls.Add(childForm);
+            pnChildren.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void pictureBox7_Click(object sender, EventArgs e)
         {
 
@@ -32,14 +48,9 @@ namespace MediaPlayerApp
 
         }
 
-        private void btHome_Click(object sender, EventArgs e)
-        {
-            btHome.Checked = !btHome.Checked;
-        }
-        private void resetButtonStage()
-        {
+        
+        
 
-        }
         private void togMode_CheckedChanged(object sender, EventArgs e)
         {
             if(togMode.Checked)
@@ -92,7 +103,6 @@ namespace MediaPlayerApp
         {
             
         }
-
         private void btPlay_Click(object sender, EventArgs e)
         {
             btPlay.Checked = !btPlay.Checked;
@@ -106,6 +116,64 @@ namespace MediaPlayerApp
                 btPlay.Image = MediaPlayerApp.Properties.Resources.pause;
 
             }
+        }
+        private void resetButtonStage()
+        {
+            btHome.Checked = false;
+            btVideoLibrary.Checked = false;
+            btMusicLibrary.Checked = false;
+            btFravorSong.Checked = false;
+            btHisListen.Checked = false;
+            btPlayqueue.Checked = false;
+            btPlayList.Checked = false;
+        }
+        private void btHome_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btHome.Checked = !btHome.Checked;
+            this.openChildForm(new fHomeScreen(this));
+
+        }
+        private void btVideoLibrary_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btVideoLibrary.Checked = !btVideoLibrary.Checked;
+            this.openChildForm(new fVideoLibrary(this));
+        }
+
+        private void btMusicLibrary_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btMusicLibrary.Checked = !btMusicLibrary.Checked;
+            this.openChildForm(new fMusicLibrary(this));
+        }
+
+        private void btFravorSong_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btFravorSong.Checked = !btFravorSong.Checked;
+            this.openChildForm(new fFavorite(this));
+        }
+
+        private void btHisListen_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btHisListen.Checked = !btHisListen.Checked;
+            this.openChildForm(new fHistory(this));
+        }
+
+        private void btPlayqueue_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btPlayqueue.Checked = !btPlayqueue.Checked;
+            this.openChildForm(new fPlayQueue(this));
+        }
+
+        private void btPlayList_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btPlayList.Checked = !btPlayList.Checked;
+            this.openChildForm(new fPlaylist(this));
         }
     }
 }

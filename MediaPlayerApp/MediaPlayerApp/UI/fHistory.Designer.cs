@@ -1,6 +1,7 @@
-﻿namespace MediaPlayerApp.UI
+﻿
+namespace MediaPlayerApp.UI
 {
-    partial class fVideoLibrary
+    partial class fHistory
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +31,14 @@
         {
             this.SuspendLayout();
             // 
-            // fVideoLibrary
+            // fHistory
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 510);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "fVideoLibrary";
-            this.Text = "fVideoLibrary";
+            this.Name = "fHistory";
+            this.Text = "fHistoryListen";
             this.ResumeLayout(false);
 
         }
