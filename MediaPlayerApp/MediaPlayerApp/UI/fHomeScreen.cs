@@ -18,5 +18,7 @@ namespace MediaPlayerApp.UI
             this.parent = parent;
             InitializeComponent();
         }
+
+   
     }
 }
