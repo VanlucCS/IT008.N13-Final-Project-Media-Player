@@ -87,5 +87,25 @@ namespace MediaPlayerApp
         {
 
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btPlay_Click(object sender, EventArgs e)
+        {
+            btPlay.Checked = !btPlay.Checked;
+            if (btPlay.Checked == true)
+            {
+                btPlay.Image = MediaPlayerApp.Properties.Resources.play_button;
+
+            }
+            else
+            {
+                btPlay.Image = MediaPlayerApp.Properties.Resources.pause;
+
+            }
+        }
     }
 }
