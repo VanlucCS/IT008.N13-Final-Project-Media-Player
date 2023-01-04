@@ -304,7 +304,7 @@ namespace MediaPlayerApp
             this.btPlayqueue.Image = global::MediaPlayerApp.Properties.Resources.lounge_music_playlist_96px;
             this.btPlayqueue.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btPlayqueue.ImageSize = new System.Drawing.Size(25, 25);
-            this.btPlayqueue.Location = new System.Drawing.Point(9, 348);
+            this.btPlayqueue.Location = new System.Drawing.Point(7, 299);
             this.btPlayqueue.Name = "btPlayqueue";
             this.btPlayqueue.Size = new System.Drawing.Size(197, 45);
             this.btPlayqueue.TabIndex = 11;
@@ -330,7 +330,7 @@ namespace MediaPlayerApp
             this.btPlayList.Image = global::MediaPlayerApp.Properties.Resources.lounge_music_playlist_96px;
             this.btPlayList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btPlayList.ImageSize = new System.Drawing.Size(25, 25);
-            this.btPlayList.Location = new System.Drawing.Point(9, 299);
+            this.btPlayList.Location = new System.Drawing.Point(7, 348);
             this.btPlayList.Name = "btPlayList";
             this.btPlayList.Size = new System.Drawing.Size(197, 45);
             this.btPlayList.TabIndex = 10;
@@ -356,7 +356,7 @@ namespace MediaPlayerApp
             this.btHisListen.Image = global::MediaPlayerApp.Properties.Resources.time_machine_96px;
             this.btHisListen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btHisListen.ImageSize = new System.Drawing.Size(25, 25);
-            this.btHisListen.Location = new System.Drawing.Point(9, 250);
+            this.btHisListen.Location = new System.Drawing.Point(7, 250);
             this.btHisListen.Name = "btHisListen";
             this.btHisListen.Size = new System.Drawing.Size(197, 45);
             this.btHisListen.TabIndex = 9;
@@ -382,7 +382,7 @@ namespace MediaPlayerApp
             this.btFravorSong.Image = global::MediaPlayerApp.Properties.Resources.heart_96px;
             this.btFravorSong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btFravorSong.ImageSize = new System.Drawing.Size(25, 25);
-            this.btFravorSong.Location = new System.Drawing.Point(9, 201);
+            this.btFravorSong.Location = new System.Drawing.Point(7, 201);
             this.btFravorSong.Name = "btFravorSong";
             this.btFravorSong.Size = new System.Drawing.Size(197, 45);
             this.btFravorSong.TabIndex = 8;
@@ -408,11 +408,11 @@ namespace MediaPlayerApp
             this.btVideoLibrary.Image = global::MediaPlayerApp.Properties.Resources.video_96px1;
             this.btVideoLibrary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btVideoLibrary.ImageSize = new System.Drawing.Size(25, 25);
-            this.btVideoLibrary.Location = new System.Drawing.Point(9, 152);
+            this.btVideoLibrary.Location = new System.Drawing.Point(7, 152);
             this.btVideoLibrary.Name = "btVideoLibrary";
             this.btVideoLibrary.Size = new System.Drawing.Size(197, 45);
             this.btVideoLibrary.TabIndex = 7;
-            this.btVideoLibrary.Text = "Music library";
+            this.btVideoLibrary.Text = "Video library";
             this.btVideoLibrary.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btMusicLibrary
@@ -434,7 +434,7 @@ namespace MediaPlayerApp
             this.btMusicLibrary.Image = global::MediaPlayerApp.Properties.Resources.music_512px;
             this.btMusicLibrary.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btMusicLibrary.ImageSize = new System.Drawing.Size(25, 25);
-            this.btMusicLibrary.Location = new System.Drawing.Point(9, 103);
+            this.btMusicLibrary.Location = new System.Drawing.Point(7, 103);
             this.btMusicLibrary.Name = "btMusicLibrary";
             this.btMusicLibrary.Size = new System.Drawing.Size(197, 45);
             this.btMusicLibrary.TabIndex = 6;
@@ -460,7 +460,7 @@ namespace MediaPlayerApp
             this.btHome.Image = global::MediaPlayerApp.Properties.Resources.home_500px;
             this.btHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btHome.ImageSize = new System.Drawing.Size(25, 25);
-            this.btHome.Location = new System.Drawing.Point(9, 54);
+            this.btHome.Location = new System.Drawing.Point(7, 54);
             this.btHome.Name = "btHome";
             this.btHome.Size = new System.Drawing.Size(197, 45);
             this.btHome.TabIndex = 3;
