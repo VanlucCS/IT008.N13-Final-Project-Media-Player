@@ -18,5 +18,25 @@ namespace MediaPlayerApp.UI
             this.parent = parent;
             InitializeComponent();
         }
+
+        private void lblSort_MouseEnter(object sender, EventArgs e)
+        {
+            lblSort.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void lblSort_Leave(object sender, EventArgs e)
+        {
+            lblSort.BorderStyle = BorderStyle.None;
+        }
+
+        private void btnAddFolder_MouseEnter(object sender, EventArgs e)
+        {
+            btnAddFolder.BackColor = SystemColors.ControlLight;
+        }
+
+        private void btnAddFolder_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddFolder.BackColor = SystemColors.Control;
+        }
     }
 }
