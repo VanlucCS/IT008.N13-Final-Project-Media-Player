@@ -38,11 +38,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::MediaPlayerApp.Properties.Resources.add_folder;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::MediaPlayerApp.Properties.Resources.add_folder1;
             this.pictureBox1.Location = new System.Drawing.Point(620, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -66,7 +67,7 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(58, 16);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(105, 38);
+            this.lblTitle.Size = new System.Drawing.Size(88, 31);
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Video";
             // 
