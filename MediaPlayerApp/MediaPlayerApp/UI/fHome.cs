@@ -1,4 +1,5 @@
 ﻿using MediaPlayerApp.UI;
+using MediaPlayerApp.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +15,23 @@ namespace MediaPlayerApp
     public partial class fHome : Form
     {
         public Form activeForm = null;
-
         public fHome()
         {
             InitializeComponent();
+            // example song 
+            this.Media.URL = "./BH01.mp3";
+            this.Media.Ctlcontrols.stop();
+
         }
-        public void openChildForm(Form childForm)
+        public void LoadSongInfo(string path)
+        {
+            MusicSong MusicSong = new MusicSong(path);
+
+        }
+        public void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
-            // pn_Childform.Controls.Remove(activeForm);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -33,27 +41,11 @@ namespace MediaPlayerApp
             childForm.BringToFront();
             childForm.Show();
         }
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         
-        
-
+        #region Dark mode option
         private void togMode_CheckedChanged(object sender, EventArgs e)
         {
-            if(togMode.Checked)
+            if (togMode.Checked)
             {
                 // panel
                 pnChildren.BackColor = Color.Black;
@@ -62,19 +54,16 @@ namespace MediaPlayerApp
                 pnControlMedia.BackColor = Color.FromArgb(17, 25, 29);
                 pnControlMedia.ForeColor = Color.White;
 
-                btExit.FillColor = Color.Black; 
+                btExit.FillColor = Color.Black;
                 btExit.IconColor = Color.White;
                 btMinisize.FillColor = Color.Black;
                 btMinisize.IconColor = Color.White;
                 btMaxsize.FillColor = Color.Black;
                 btMaxsize.IconColor = Color.White;
-
-                 //btHome.FillColor = Color.FromArgb(43, 43, 43);
-                 //btHome.ForeColor  = Color.White;
             }
             else
             {
-                pnChildren.BackColor = SystemColors.Control; 
+                pnChildren.BackColor = SystemColors.Control;
                 pnHeader.BackColor = SystemColors.Control;
                 pnLeft.BackColor = SystemColors.Control;
                 pnControlMedia.BackColor = Color.FromArgb(192, 255, 192);
@@ -87,35 +76,73 @@ namespace MediaPlayerApp
                 btMaxsize.FillColor = SystemColors.Control;
                 btMaxsize.IconColor = Color.Black;
 
-                //btHome.FillColor = SystemColors.Control;
-                //btHome.ForeColor = Color.Black;
-
             }
-
-        }
-
-        private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
+        } 
+        #endregion
+        #region form navigation
+        private void btHome_Click(object sender, EventArgs e)
         {
+            resetButtonStage();
+            btHome.Checked = !btHome.Checked;
+            this.OpenChildForm(new fHomeScreen(this));
 
         }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void btVideoLibrary_Click(object sender, EventArgs e)
         {
-            
+            resetButtonStage();
+            btVideoLibrary.Checked = !btVideoLibrary.Checked;
+            this.OpenChildForm(new fVideoLibrary(this));
         }
+
+        private void btMusicLibrary_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btMusicLibrary.Checked = !btMusicLibrary.Checked;
+            this.OpenChildForm(new fMusicLibrary(this));
+        }
+
+        private void btFravorSong_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btFravorSong.Checked = !btFravorSong.Checked;
+            this.OpenChildForm(new fFavorite(this));
+        }
+
+        private void btHisListen_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btHisListen.Checked = !btHisListen.Checked;
+            this.OpenChildForm(new fHistory(this));
+        }
+
+        private void btPlayqueue_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btPlayqueue.Checked = !btPlayqueue.Checked;
+            this.OpenChildForm(new fPlayQueue(this));
+        }
+
+        private void btPlayList_Click(object sender, EventArgs e)
+        {
+            resetButtonStage();
+            btPlayList.Checked = !btPlayList.Checked;
+            this.OpenChildForm(new fPlaylist(this));
+        } 
+        #endregion
+
         private void btPlay_Click(object sender, EventArgs e)
         {
-            btPlay.Checked = !btPlay.Checked;
             if (btPlay.Checked == true)
             {
                 btPlay.Image = MediaPlayerApp.Properties.Resources.play_button;
-
+                this.Media.Ctlcontrols.stop();
             }
             else
             {
                 btPlay.Image = MediaPlayerApp.Properties.Resources.pause;
-
+                this.Media.Ctlcontrols.play();
             }
+            btPlay.Checked = !btPlay.Checked;
         }
         private void resetButtonStage()
         {
@@ -127,65 +154,9 @@ namespace MediaPlayerApp
             btPlayqueue.Checked = false;
             btPlayList.Checked = false;
         }
-        private void btHome_Click(object sender, EventArgs e)
-        {
-            resetButtonStage();
-            btHome.Checked = !btHome.Checked;
-            this.openChildForm(new fHomeScreen(this));
-
-        }
-        private void btVideoLibrary_Click(object sender, EventArgs e)
-        {
-            resetButtonStage();
-            btVideoLibrary.Checked = !btVideoLibrary.Checked;
-            this.openChildForm(new fVideoLibrary(this));
-        }
-
-        private void btMusicLibrary_Click(object sender, EventArgs e)
-        {
-            resetButtonStage();
-            btMusicLibrary.Checked = !btMusicLibrary.Checked;
-            this.openChildForm(new fMusicLibrary(this));
-        }
-
-        private void btFravorSong_Click(object sender, EventArgs e)
-        {
-            resetButtonStage();
-            btFravorSong.Checked = !btFravorSong.Checked;
-            this.openChildForm(new fFavorite(this));
-        }
-
-        private void btHisListen_Click(object sender, EventArgs e)
-        {
-            resetButtonStage();
-            btHisListen.Checked = !btHisListen.Checked;
-            this.openChildForm(new fHistory(this));
-        }
-
-        private void btPlayqueue_Click(object sender, EventArgs e)
-        {
-            resetButtonStage();
-            btPlayqueue.Checked = !btPlayqueue.Checked;
-            this.openChildForm(new fPlayQueue(this));
-        }
-
-        private void btPlayList_Click(object sender, EventArgs e)
-        {
-            resetButtonStage();
-            btPlayList.Checked = !btPlayList.Checked;
-            this.openChildForm(new fPlaylist(this));
-        }
-
         private void tbVolume_Scroll(object sender, ScrollEventArgs e)
         {
-            //media.settings.volume = tbVolumn.Value;
-            //if (!bt)
-            //{
-            //    pictureBox5.Image = _20521587_TH03_Music_Online.Properties.Resources.medium_volume;
-            //    soundOn = true;
-            //}
-            if (true)
-            {
+            Media.settings.volume = tbVolume.Value;
                 if (tbVolume.Value > 50)
                 {
                     btVolume.Image = MediaPlayerApp.Properties.Resources.high_volume;
@@ -194,21 +165,32 @@ namespace MediaPlayerApp
                     btVolume.Image = MediaPlayerApp.Properties.Resources.medium_volume;
                 if (tbVolume.Value == 0)
                     btVolume.Image = MediaPlayerApp.Properties.Resources.no_sound__1_;
-            }
         }
-
-        private void btVolume_Click(object sender, EventArgs e)
+        private void btVolume_Click_1(object sender, EventArgs e)
         {
-            btVolume.Checked = !btVolume.Checked;
             if (btVolume.Checked)
             {
-                //media.settings.volume = 0;
+                this.Media.settings.volume = 0;
+                btVolume.Image = MediaPlayerApp.Properties.Resources.no_sound__1_;
                 tbVolume.Value = 0;
             }
             else
             {
-                //media.settings.volume = 50;
+                this.Media.settings.volume = 50;
+                btVolume.Image = MediaPlayerApp.Properties.Resources.medium_volume;
                 tbVolume.Value = 50;
+            }
+            btVolume.Checked = !btVolume.Checked;
+        }
+
+        private void tbProcess_Scroll(object sender, ScrollEventArgs e)
+        {
+            try
+            {
+                this.Media.Ctlcontrols.currentPosition = (double)tbProcess.Value * this.Media.currentMedia.duration / 101.0;
+            }
+            catch (Exception)
+            {
             }
         }
     }

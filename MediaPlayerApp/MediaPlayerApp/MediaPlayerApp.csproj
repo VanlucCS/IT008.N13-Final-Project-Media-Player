@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\MusicSong.cs" />
     <Compile Include="UI\fFavorite.cs">
       <SubType>Form</SubType>
     </Compile>

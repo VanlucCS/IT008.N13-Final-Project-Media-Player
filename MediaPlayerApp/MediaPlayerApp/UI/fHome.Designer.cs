@@ -33,6 +33,8 @@ namespace MediaPlayerApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHome));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.pnControlMedia = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.Media = new AxWMPLib.AxWindowsMediaPlayer();
             this.btFavorite = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btVolume = new Guna.UI2.WinForms.Guna2ImageButton();
             this.tbVolume = new Guna.UI2.WinForms.Guna2TrackBar();
@@ -60,17 +62,15 @@ namespace MediaPlayerApp
             this.togMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
             this.pnChildren = new Guna.UI2.WinForms.Guna2Panel();
-            this.media = new AxWMPLib.AxWindowsMediaPlayer();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnControlMedia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Media)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnHeader.SuspendLayout();
             this.pnLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.media)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -84,7 +84,7 @@ namespace MediaPlayerApp
             // 
             this.pnControlMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pnControlMedia.Controls.Add(this.pictureBox5);
-            this.pnControlMedia.Controls.Add(this.media);
+            this.pnControlMedia.Controls.Add(this.Media);
             this.pnControlMedia.Controls.Add(this.btFavorite);
             this.pnControlMedia.Controls.Add(this.btVolume);
             this.pnControlMedia.Controls.Add(this.tbVolume);
@@ -102,6 +102,23 @@ namespace MediaPlayerApp
             this.pnControlMedia.Size = new System.Drawing.Size(1000, 101);
             this.pnControlMedia.TabIndex = 0;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(46, 28);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox5.TabIndex = 18;
+            this.pictureBox5.TabStop = false;
+            // 
+            // Media
+            // 
+            this.Media.Enabled = true;
+            this.Media.Location = new System.Drawing.Point(143, 34);
+            this.Media.Name = "Media";
+            this.Media.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Media.OcxState")));
+            this.Media.Size = new System.Drawing.Size(197, 60);
+            this.Media.TabIndex = 0;
+            // 
             // btFavorite
             // 
             this.btFavorite.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -118,7 +135,8 @@ namespace MediaPlayerApp
             // 
             // btVolume
             // 
-            this.btVolume.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btVolume.Checked = true;
+            this.btVolume.CheckedState.ImageSize = new System.Drawing.Size(32, 32);
             this.btVolume.HoverState.ImageSize = new System.Drawing.Size(32, 32);
             this.btVolume.Image = global::MediaPlayerApp.Properties.Resources.medium_volume;
             this.btVolume.ImageOffset = new System.Drawing.Point(0, 0);
@@ -129,6 +147,7 @@ namespace MediaPlayerApp
             this.btVolume.PressedState.ImageSize = new System.Drawing.Size(32, 32);
             this.btVolume.Size = new System.Drawing.Size(39, 35);
             this.btVolume.TabIndex = 16;
+            this.btVolume.Click += new System.EventHandler(this.btVolume_Click_1);
             // 
             // tbVolume
             // 
@@ -225,6 +244,7 @@ namespace MediaPlayerApp
             this.tbProcess.TabIndex = 0;
             this.tbProcess.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.tbProcess.Value = 0;
+            this.tbProcess.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbProcess_Scroll);
             // 
             // pnHeader
             // 
@@ -538,23 +558,6 @@ namespace MediaPlayerApp
             this.pnChildren.Size = new System.Drawing.Size(788, 510);
             this.pnChildren.TabIndex = 3;
             // 
-            // media
-            // 
-            this.media.Enabled = true;
-            this.media.Location = new System.Drawing.Point(147, 28);
-            this.media.Name = "media";
-            this.media.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("media.OcxState")));
-            this.media.Size = new System.Drawing.Size(197, 60);
-            this.media.TabIndex = 0;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Location = new System.Drawing.Point(44, 34);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox5.TabIndex = 18;
-            this.pictureBox5.TabStop = false;
-            // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -572,6 +575,8 @@ namespace MediaPlayerApp
             this.Text = "Media Player";
             this.pnControlMedia.ResumeLayout(false);
             this.pnControlMedia.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Media)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -579,8 +584,6 @@ namespace MediaPlayerApp
             this.pnHeader.ResumeLayout(false);
             this.pnLeft.ResumeLayout(false);
             this.pnLeft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.media)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -617,7 +620,7 @@ namespace MediaPlayerApp
         private Guna.UI2.WinForms.Guna2ImageButton btVolume;
         private Guna.UI2.WinForms.Guna2ImageButton btFavorite;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private AxWMPLib.AxWindowsMediaPlayer media;
+        private AxWMPLib.AxWindowsMediaPlayer Media;
     }
 }
 
