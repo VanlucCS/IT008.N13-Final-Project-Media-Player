@@ -21,12 +21,13 @@ namespace MediaPlayerApp
             // example song 
             this.Media.URL = "./BH01.mp3";
             this.Media.Ctlcontrols.stop();
-
+            LoadSongInfo(this.Media.URL);
         }
         public void LoadSongInfo(string path)
         {
-            MusicSong MusicSong = new MusicSong(path);
-
+            MusicSong song = new MusicSong(path);
+            pbSongpic.Image = song.PictureSong;
+            lbSongName.Text = song.NameSong +"\n"+ song.Singer;
         }
         public void OpenChildForm(Form childForm)
         {

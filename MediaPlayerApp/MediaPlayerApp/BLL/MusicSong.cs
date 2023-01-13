@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +20,7 @@ namespace MediaPlayerApp.BLL
         }
 
         private string _nameSong;
-        public string Name_Song
+        public string NameSong
         {
             get { return _nameSong; }
             set { _nameSong = value; }
@@ -59,12 +62,12 @@ namespace MediaPlayerApp.BLL
             set { _nameGenre = value; }
         }
 
-        //public MusicSong() { }
+        public MusicSong() { }
 
         public MusicSong(string Name, string Singer, string LinkSong, Image Picture, string DateAdd, string length, string nameGenre)
         {
             this.Length = length;
-            this.Picture_Song = Picture;
+            this.PictureSong = Picture;
             this.NameSong = Name;
             this.Singer = Singer;
             this.LinkMusic = LinkSong;
@@ -78,13 +81,13 @@ namespace MediaPlayerApp.BLL
             if (info.Extension == ".mp3")
             {
                 var fileTag = TagLib.File.Create(info.FullName);
-                this.Name_Song = fileTag.Tag.Title;
+                this.NameSong = fileTag.Tag.Title;
                 this.Singer = fileTag.Tag.FirstPerformer;
                 this.NameGenre = fileTag.Tag.FirstGenre;
                 this.DateAdd = info.CreationTime.ToString();
                 this.Length = fileTag.Properties.Duration.ToString(@"hh\:mm\:ss");
                 this.LinkMusic = info.FullName;
-                if (this.Name_Genre == null) this.Name_Genre = "Unknown";
+                if (this.NameGenre == null) this.NameGenre = "Unknown";
                 if (this.Singer == null) this.Singer = "Unknown";
                 Image temp = null;
                 if (fileTag.Tag.Pictures.Length >= 1)
@@ -94,11 +97,10 @@ namespace MediaPlayerApp.BLL
                 }
                 else
                 {
-                    temp = new Bitmap(Properties.Resources.songImg);
+                    //temp = new Bitmap(Properties.Resources.songImg);
                 }
                 this.PictureSong = temp;
             }
         }
     }
-}
 }

@@ -33,7 +33,7 @@ namespace MediaPlayerApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHome));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.pnControlMedia = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbSongpic = new System.Windows.Forms.PictureBox();
             this.Media = new AxWMPLib.AxWindowsMediaPlayer();
             this.btFavorite = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btVolume = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -62,8 +62,9 @@ namespace MediaPlayerApp
             this.togMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
             this.pnChildren = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbSongName = new System.Windows.Forms.Label();
             this.pnControlMedia.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSongpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Media)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -83,7 +84,8 @@ namespace MediaPlayerApp
             // pnControlMedia
             // 
             this.pnControlMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pnControlMedia.Controls.Add(this.pictureBox5);
+            this.pnControlMedia.Controls.Add(this.lbSongName);
+            this.pnControlMedia.Controls.Add(this.pbSongpic);
             this.pnControlMedia.Controls.Add(this.Media);
             this.pnControlMedia.Controls.Add(this.btFavorite);
             this.pnControlMedia.Controls.Add(this.btVolume);
@@ -102,21 +104,21 @@ namespace MediaPlayerApp
             this.pnControlMedia.Size = new System.Drawing.Size(1000, 101);
             this.pnControlMedia.TabIndex = 0;
             // 
-            // pictureBox5
+            // pbSongpic
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(46, 28);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(58, 62);
-            this.pictureBox5.TabIndex = 18;
-            this.pictureBox5.TabStop = false;
+            this.pbSongpic.Location = new System.Drawing.Point(12, 22);
+            this.pbSongpic.Name = "pbSongpic";
+            this.pbSongpic.Size = new System.Drawing.Size(82, 76);
+            this.pbSongpic.TabIndex = 18;
+            this.pbSongpic.TabStop = false;
             // 
             // Media
             // 
             this.Media.Enabled = true;
-            this.Media.Location = new System.Drawing.Point(143, 34);
+            this.Media.Location = new System.Drawing.Point(323, 29);
             this.Media.Name = "Media";
             this.Media.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Media.OcxState")));
-            this.Media.Size = new System.Drawing.Size(197, 60);
+            this.Media.Size = new System.Drawing.Size(56, 46);
             this.Media.TabIndex = 0;
             // 
             // btFavorite
@@ -225,7 +227,7 @@ namespace MediaPlayerApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbTimeCurrentPlay.AutoSize = true;
             this.lbTimeCurrentPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimeCurrentPlay.Location = new System.Drawing.Point(40, 7);
+            this.lbTimeCurrentPlay.Location = new System.Drawing.Point(40, 3);
             this.lbTimeCurrentPlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTimeCurrentPlay.Name = "lbTimeCurrentPlay";
             this.lbTimeCurrentPlay.Size = new System.Drawing.Size(72, 21);
@@ -237,7 +239,7 @@ namespace MediaPlayerApp
             this.tbProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbProcess.Location = new System.Drawing.Point(133, 3);
+            this.tbProcess.Location = new System.Drawing.Point(133, -1);
             this.tbProcess.Margin = new System.Windows.Forms.Padding(4);
             this.tbProcess.Name = "tbProcess";
             this.tbProcess.Size = new System.Drawing.Size(781, 28);
@@ -558,6 +560,16 @@ namespace MediaPlayerApp
             this.pnChildren.Size = new System.Drawing.Size(788, 510);
             this.pnChildren.TabIndex = 3;
             // 
+            // lbSongName
+            // 
+            this.lbSongName.AutoSize = true;
+            this.lbSongName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSongName.Location = new System.Drawing.Point(100, 31);
+            this.lbSongName.Name = "lbSongName";
+            this.lbSongName.Size = new System.Drawing.Size(64, 25);
+            this.lbSongName.TabIndex = 19;
+            this.lbSongName.Text = "label3";
+            // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -575,7 +587,7 @@ namespace MediaPlayerApp
             this.Text = "Media Player";
             this.pnControlMedia.ResumeLayout(false);
             this.pnControlMedia.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSongpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Media)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -619,8 +631,9 @@ namespace MediaPlayerApp
         private Guna.UI2.WinForms.Guna2TrackBar tbVolume;
         private Guna.UI2.WinForms.Guna2ImageButton btVolume;
         private Guna.UI2.WinForms.Guna2ImageButton btFavorite;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pbSongpic;
         private AxWMPLib.AxWindowsMediaPlayer Media;
+        private System.Windows.Forms.Label lbSongName;
     }
 }
 
