@@ -31,17 +31,19 @@ namespace MediaPlayerApp.UI
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lbGenre = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddFolder = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSort = new System.Windows.Forms.Label();
             this.lblSongs = new System.Windows.Forms.Label();
             this.lblAlbums = new System.Windows.Forms.Label();
             this.lblArtists = new System.Windows.Forms.Label();
-            this.pbUnderline = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbUnderline = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUnderline)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -60,17 +62,6 @@ namespace MediaPlayerApp.UI
             this.lbGenre.TabIndex = 11;
             this.lbGenre.Text = "Genre: All genres    ▼";
             this.lbGenre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::MediaPlayerApp.Properties.Resources.add_folder1;
-            this.pictureBox1.Location = new System.Drawing.Point(620, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
             // 
             // btnAddFolder
             // 
@@ -137,6 +128,36 @@ namespace MediaPlayerApp.UI
             this.lblArtists.Text = "Artists";
             this.lblArtists.Click += new System.EventHandler(this.lblArtists_Click);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.OrangeRed;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(65, 67);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(165, 31);
+            this.guna2Button1.TabIndex = 19;
+            this.guna2Button1.Text = "Shuffle and play";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.OrangeRed;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Image = global::MediaPlayerApp.Properties.Resources.white_shuffle1;
+            this.pictureBox2.Location = new System.Drawing.Point(76, 70);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            // 
             // pbUnderline
             // 
             this.pbUnderline.BorderRadius = 3;
@@ -148,29 +169,24 @@ namespace MediaPlayerApp.UI
             this.pbUnderline.TabIndex = 17;
             this.pbUnderline.TabStop = false;
             // 
-            // guna2Button1
+            // pictureBox1
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Coral;
-            this.guna2Button1.BorderRadius = 3;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.OrangeRed;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(65, 67);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(174, 31);
-            this.guna2Button1.TabIndex = 19;
-            this.guna2Button1.Text = "Shuffle and play";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::MediaPlayerApp.Properties.Resources.add_folder1;
+            this.pictureBox1.Location = new System.Drawing.Point(620, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // fMusicLibrary
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(788, 510);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.pbUnderline);
             this.Controls.Add(this.lblArtists);
@@ -185,8 +201,9 @@ namespace MediaPlayerApp.UI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fMusicLibrary";
             this.Text = "fMusicLibrary";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUnderline)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +222,6 @@ namespace MediaPlayerApp.UI
         private System.Windows.Forms.Label lblArtists;
         private Guna.UI2.WinForms.Guna2PictureBox pbUnderline;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
