@@ -49,3 +49,4 @@ D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\D
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fMusicLibrary.resources
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fPlaylist.resources
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fPlayQueue.resources
+C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\taglib-sharp.dll
