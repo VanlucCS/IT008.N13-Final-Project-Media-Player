@@ -55,18 +55,19 @@ namespace MediaPlayerApp.UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 67);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 25);
+            this.label1.Size = new System.Drawing.Size(110, 21);
             this.label1.TabIndex = 20;
             this.label1.Text = "Recent media";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(59, 115);
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 81);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(725, 394);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(760, 417);
             this.flowLayoutPanel1.TabIndex = 18;
             // 
             // btnOption
@@ -83,10 +84,10 @@ namespace MediaPlayerApp.UI
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(58, 16);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(12, 12);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(108, 38);
+            this.lblTitle.Size = new System.Drawing.Size(72, 30);
             this.lblTitle.TabIndex = 16;
             this.lblTitle.Text = "Home";
             // 
