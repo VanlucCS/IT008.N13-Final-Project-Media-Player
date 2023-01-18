@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaPlayerApp.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +18,13 @@ namespace MediaPlayerApp.UI
         {
             this.parent = parent;
             InitializeComponent();
+            testThumbnail();
         }
 
-   
+        public void testThumbnail()
+        {
+            Thumbnail thumbnail = new Thumbnail();
+            flowLayoutPanel1.Controls.Add(thumbnail);
+        }
     }
 }
