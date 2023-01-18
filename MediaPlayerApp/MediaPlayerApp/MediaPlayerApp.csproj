@@ -55,6 +55,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\MusicSong.cs" />
+    <Compile Include="Components\Thumbnail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Thumbnail.Designer.cs">
+      <DependentUpon>Thumbnail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ThumbnailMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ThumbnailMenu.Designer.cs">
+      <DependentUpon>ThumbnailMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\fFavorite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,12 @@
     <Compile Include="UI\fVideoLibrary.Designer.cs">
       <DependentUpon>fVideoLibrary.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\Thumbnail.resx">
+      <DependentUpon>Thumbnail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ThumbnailMenu.resx">
+      <DependentUpon>ThumbnailMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\fFavorite.resx">
       <DependentUpon>fFavorite.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\add_folder.png" />
+    <None Include="Resources\white_shuffle.png" />
     <None Include="Resources\open_folder.png" />
     <None Include="Resources\add_folder1.png" />
   </ItemGroup>
