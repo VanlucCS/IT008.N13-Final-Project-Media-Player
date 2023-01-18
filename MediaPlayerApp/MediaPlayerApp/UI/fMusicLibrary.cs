@@ -20,5 +20,20 @@ namespace MediaPlayerApp.UI
 
             InitializeComponent();
         }
+
+        private void lblSongs_Click(object sender, EventArgs e)
+        {
+            pbUnderline.Left = lblSongs.Left + (lblSongs.Width - pbUnderline.Width) / 2;
+        }
+
+        private void lblAlbums_Click(object sender, EventArgs e)
+        {
+            pbUnderline.Left = lblAlbums.Left + (lblAlbums.Width - pbUnderline.Width) / 2;
+        }
+
+        private void lblArtists_Click(object sender, EventArgs e)
+        {
+            pbUnderline.Left = lblArtists.Left + (lblArtists.Width - pbUnderline.Width) / 2;
+        }
     }
 }

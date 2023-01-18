@@ -33,6 +33,7 @@ namespace MediaPlayerApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHome));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.pnControlMedia = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbSongName = new System.Windows.Forms.Label();
             this.pbSongpic = new System.Windows.Forms.PictureBox();
             this.Media = new AxWMPLib.AxWindowsMediaPlayer();
             this.btFavorite = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -62,7 +63,6 @@ namespace MediaPlayerApp
             this.togMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
             this.pnChildren = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbSongName = new System.Windows.Forms.Label();
             this.pnControlMedia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSongpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Media)).BeginInit();
@@ -104,6 +104,16 @@ namespace MediaPlayerApp
             this.pnControlMedia.Size = new System.Drawing.Size(1000, 101);
             this.pnControlMedia.TabIndex = 0;
             // 
+            // lbSongName
+            // 
+            this.lbSongName.AutoSize = true;
+            this.lbSongName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSongName.Location = new System.Drawing.Point(100, 31);
+            this.lbSongName.Name = "lbSongName";
+            this.lbSongName.Size = new System.Drawing.Size(79, 32);
+            this.lbSongName.TabIndex = 19;
+            this.lbSongName.Text = "label3";
+            // 
             // pbSongpic
             // 
             this.pbSongpic.Location = new System.Drawing.Point(12, 22);
@@ -123,6 +133,7 @@ namespace MediaPlayerApp
             // 
             // btFavorite
             // 
+            this.btFavorite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btFavorite.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btFavorite.HoverState.ImageSize = new System.Drawing.Size(32, 32);
             this.btFavorite.Image = global::MediaPlayerApp.Properties.Resources.heart_96px;
@@ -137,6 +148,7 @@ namespace MediaPlayerApp
             // 
             // btVolume
             // 
+            this.btVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btVolume.Checked = true;
             this.btVolume.CheckedState.ImageSize = new System.Drawing.Size(32, 32);
             this.btVolume.HoverState.ImageSize = new System.Drawing.Size(32, 32);
@@ -153,6 +165,7 @@ namespace MediaPlayerApp
             // 
             // tbVolume
             // 
+            this.tbVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tbVolume.LargeChange = 2;
             this.tbVolume.Location = new System.Drawing.Point(902, 60);
             this.tbVolume.Name = "tbVolume";
@@ -164,6 +177,7 @@ namespace MediaPlayerApp
             // 
             // btPlay
             // 
+            this.btPlay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btPlay.CheckedState.ImageSize = new System.Drawing.Size(50, 50);
             this.btPlay.HoverState.ImageSize = new System.Drawing.Size(50, 50);
             this.btPlay.Image = global::MediaPlayerApp.Properties.Resources.play_button;
@@ -230,7 +244,7 @@ namespace MediaPlayerApp
             this.lbTimeCurrentPlay.Location = new System.Drawing.Point(40, 3);
             this.lbTimeCurrentPlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTimeCurrentPlay.Name = "lbTimeCurrentPlay";
-            this.lbTimeCurrentPlay.Size = new System.Drawing.Size(72, 21);
+            this.lbTimeCurrentPlay.Size = new System.Drawing.Size(88, 28);
             this.lbTimeCurrentPlay.TabIndex = 1;
             this.lbTimeCurrentPlay.Text = "00:00:00";
             // 
@@ -250,8 +264,7 @@ namespace MediaPlayerApp
             // 
             // pnHeader
             // 
-            this.pnHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnHeader.Controls.Add(this.btMaxsize);
             this.pnHeader.Controls.Add(this.btMinisize);
@@ -492,7 +505,7 @@ namespace MediaPlayerApp
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(53, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 21);
+            this.label1.Size = new System.Drawing.Size(129, 28);
             this.label1.TabIndex = 5;
             this.label1.Text = "Media Player";
             // 
@@ -504,7 +517,7 @@ namespace MediaPlayerApp
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(41, 529);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 16);
+            this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Dark Mode";
             // 
@@ -560,19 +573,9 @@ namespace MediaPlayerApp
             this.pnChildren.Size = new System.Drawing.Size(788, 510);
             this.pnChildren.TabIndex = 3;
             // 
-            // lbSongName
-            // 
-            this.lbSongName.AutoSize = true;
-            this.lbSongName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSongName.Location = new System.Drawing.Point(100, 31);
-            this.lbSongName.Name = "lbSongName";
-            this.lbSongName.Size = new System.Drawing.Size(64, 25);
-            this.lbSongName.TabIndex = 19;
-            this.lbSongName.Text = "label3";
-            // 
             // fHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.pnHeader);
