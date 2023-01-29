@@ -568,6 +568,9 @@ namespace MediaPlayerApp
             // 
             // pnChildren
             // 
+            this.pnChildren.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnChildren.Location = new System.Drawing.Point(212, 40);
             this.pnChildren.Name = "pnChildren";
             this.pnChildren.Size = new System.Drawing.Size(788, 510);

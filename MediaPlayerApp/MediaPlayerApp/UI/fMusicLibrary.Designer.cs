@@ -99,6 +99,7 @@ namespace MediaPlayerApp.UI
             // 
             // lblSort
             // 
+            this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSort.Location = new System.Drawing.Point(349, 64);
             this.lblSort.Name = "lblSort";
@@ -109,6 +110,9 @@ namespace MediaPlayerApp.UI
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(59, 115);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(725, 394);
@@ -116,6 +120,7 @@ namespace MediaPlayerApp.UI
             // 
             // lbGenre
             // 
+            this.lbGenre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGenre.Location = new System.Drawing.Point(562, 64);
             this.lbGenre.Name = "lbGenre";
@@ -126,6 +131,7 @@ namespace MediaPlayerApp.UI
             // 
             // btnAddFolder
             // 
+            this.btnAddFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddFolder.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFolder.Location = new System.Drawing.Point(609, 15);
@@ -171,6 +177,7 @@ namespace MediaPlayerApp.UI
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = global::MediaPlayerApp.Properties.Resources.add_folder1;
             this.pictureBox1.Location = new System.Drawing.Point(620, 23);

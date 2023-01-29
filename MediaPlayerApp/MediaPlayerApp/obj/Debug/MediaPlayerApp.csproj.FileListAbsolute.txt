@@ -82,3 +82,5 @@ C:\Workspace\CSharp_UIT\TrucQuan\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPl
 C:\Workspace\CSharp_UIT\TrucQuan\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.pdb
 C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.Components.Thumbnail.resources
 C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.Components.ThumbnailMenu.resources
+D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.Components.Thumbnail.resources
+D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.Components.ThumbnailMenu.resources

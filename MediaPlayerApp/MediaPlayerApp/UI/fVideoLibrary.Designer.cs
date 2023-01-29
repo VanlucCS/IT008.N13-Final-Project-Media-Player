@@ -38,6 +38,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = global::MediaPlayerApp.Properties.Resources.add_folder1;
             this.pictureBox1.Location = new System.Drawing.Point(620, 23);
@@ -49,6 +50,7 @@
             // 
             // btnAddFolder
             // 
+            this.btnAddFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddFolder.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFolder.Location = new System.Drawing.Point(609, 15);
@@ -67,12 +69,13 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(58, 16);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(88, 31);
+            this.lblTitle.Size = new System.Drawing.Size(105, 38);
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Video";
             // 
             // lblSort
             // 
+            this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSort.Location = new System.Drawing.Point(520, 64);
             this.lblSort.Name = "lblSort";
