@@ -44,11 +44,11 @@ namespace MediaPlayerApp.UI
             this.btnNewPlaylist.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNewPlaylist.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnNewPlaylist.FillColor = System.Drawing.Color.OrangeRed;
-            this.btnNewPlaylist.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNewPlaylist.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewPlaylist.ForeColor = System.Drawing.Color.White;
-            this.btnNewPlaylist.Location = new System.Drawing.Point(65, 67);
+            this.btnNewPlaylist.Location = new System.Drawing.Point(12, 50);
             this.btnNewPlaylist.Name = "btnNewPlaylist";
-            this.btnNewPlaylist.Size = new System.Drawing.Size(140, 31);
+            this.btnNewPlaylist.Size = new System.Drawing.Size(162, 30);
             this.btnNewPlaylist.TabIndex = 42;
             this.btnNewPlaylist.Text = "+    New playlist";
             // 
@@ -57,26 +57,26 @@ namespace MediaPlayerApp.UI
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(65, 115);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 95);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(725, 394);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(770, 410);
             this.flowLayoutPanel1.TabIndex = 36;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(58, 16);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Location = new System.Drawing.Point(12, 12);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(147, 38);
+            this.lblTitle.Size = new System.Drawing.Size(123, 37);
             this.lblTitle.TabIndex = 32;
             this.lblTitle.Text = "Playlists";
             // 
             // lblSort
             // 
             this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSort.Location = new System.Drawing.Point(520, 64);
+            this.lblSort.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lblSort.Location = new System.Drawing.Point(520, 50);
             this.lblSort.Name = "lblSort";
             this.lblSort.Size = new System.Drawing.Size(218, 34);
             this.lblSort.TabIndex = 43;

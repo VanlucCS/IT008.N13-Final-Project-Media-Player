@@ -63,9 +63,9 @@ namespace MediaPlayerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_folder1 {
+        internal static System.Drawing.Bitmap add_folder {
             get {
-                object obj = ResourceManager.GetObject("add_folder1", resourceCulture);
+                object obj = ResourceManager.GetObject("add_folder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +276,16 @@ namespace MediaPlayerApp.Properties {
         internal static System.Drawing.Bitmap white_shuffle {
             get {
                 object obj = ResourceManager.GetObject("white_shuffle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap white_trash {
+            get {
+                object obj = ResourceManager.GetObject("white_trash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

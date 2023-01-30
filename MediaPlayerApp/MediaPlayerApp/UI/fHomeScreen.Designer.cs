@@ -29,29 +29,13 @@ namespace MediaPlayerApp.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOpen = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHomeScreen));
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnOption = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnOption = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOpenFile = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
-            // 
-            // btnOpen
-            // 
-            this.btnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpen.BackColor = System.Drawing.SystemColors.Control;
-            this.btnOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.Location = new System.Drawing.Point(561, 15);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(138, 40);
-            this.btnOpen.TabIndex = 21;
-            this.btnOpen.Text = "Open file(s)";
-            this.btnOpen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOpen.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -69,22 +53,10 @@ namespace MediaPlayerApp.UI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(59, 115);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 95);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(725, 394);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(770, 410);
             this.flowLayoutPanel1.TabIndex = 18;
-            // 
-            // btnOption
-            // 
-            this.btnOption.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOption.BackColor = System.Drawing.SystemColors.Control;
-            this.btnOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOption.Location = new System.Drawing.Point(698, 15);
-            this.btnOption.Name = "btnOption";
-            this.btnOption.Size = new System.Drawing.Size(43, 40);
-            this.btnOption.TabIndex = 17;
-            this.btnOption.Text = "▼";
-            this.btnOption.UseVisualStyleBackColor = false;
             // 
             // lblTitle
             // 
@@ -96,59 +68,67 @@ namespace MediaPlayerApp.UI
             this.lblTitle.TabIndex = 16;
             this.lblTitle.Text = "Home";
             // 
-            // pictureBox2
+            // btnOption
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Image = global::MediaPlayerApp.Properties.Resources.open_folder;
-            this.pictureBox2.Location = new System.Drawing.Point(573, 23);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
+            this.btnOption.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOption.BorderRadius = 5;
+            this.btnOption.BorderThickness = 1;
+            this.btnOption.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOption.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOption.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOption.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOption.FillColor = System.Drawing.SystemColors.Control;
+            this.btnOption.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOption.ForeColor = System.Drawing.Color.Black;
+            this.btnOption.Location = new System.Drawing.Point(713, 22);
+            this.btnOption.Name = "btnOption";
+            this.btnOption.PressedColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnOption.Size = new System.Drawing.Size(43, 35);
+            this.btnOption.TabIndex = 51;
+            this.btnOption.Text = "▼";
             // 
-            // pictureBox1
+            // btnOpenFile
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(592, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.btnOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenFile.BorderRadius = 5;
+            this.btnOpenFile.BorderThickness = 1;
+            this.btnOpenFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOpenFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOpenFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOpenFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOpenFile.FillColor = System.Drawing.SystemColors.Control;
+            this.btnOpenFile.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenFile.ForeColor = System.Drawing.Color.Black;
+            this.btnOpenFile.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenFile.Image")));
+            this.btnOpenFile.Location = new System.Drawing.Point(585, 22);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.PressedColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnOpenFile.Size = new System.Drawing.Size(127, 35);
+            this.btnOpenFile.TabIndex = 50;
+            this.btnOpenFile.Text = "Open file(s)";
             // 
             // fHomeScreen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(788, 510);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnOpen);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnOption);
+            this.Controls.Add(this.btnOpenFile);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fHomeScreen";
             this.Text = "fHomeScreen";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnOption;
         private System.Windows.Forms.Label lblTitle;
+        private Guna.UI2.WinForms.Guna2Button btnOption;
+        private Guna.UI2.WinForms.Guna2Button btnOpenFile;
     }
 }
