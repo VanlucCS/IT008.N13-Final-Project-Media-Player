@@ -31,8 +31,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddFolder = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblSort = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSort = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +73,16 @@
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Video";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(59, 115);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(725, 394);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
             // lblSort
             // 
             this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -85,13 +95,6 @@
             this.lblSort.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSort.Leave += new System.EventHandler(this.lblSort_Leave);
             this.lblSort.MouseEnter += new System.EventHandler(this.lblSort_MouseEnter);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(59, 115);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(725, 394);
-            this.flowLayoutPanel1.TabIndex = 7;
             // 
             // fVideoLibrary
             // 
@@ -118,7 +121,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAddFolder;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblSort;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label lblSort;
     }
 }
