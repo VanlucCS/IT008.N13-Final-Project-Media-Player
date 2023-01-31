@@ -37,16 +37,16 @@ namespace MediaPlayerApp.UI
             this.lbGenre = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnShuffleAndPlay = new Guna.UI2.WinForms.Guna2Button();
-            this.pbUnderline = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbxUnderline = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddFolder = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUnderline)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxUnderline)).BeginInit();
             this.SuspendLayout();
             // 
             // lblArtists
             // 
             this.lblArtists.AutoSize = true;
             this.lblArtists.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblArtists.Location = new System.Drawing.Point(410, 15);
+            this.lblArtists.Location = new System.Drawing.Point(333, 15);
             this.lblArtists.Name = "lblArtists";
             this.lblArtists.Size = new System.Drawing.Size(70, 28);
             this.lblArtists.TabIndex = 28;
@@ -57,7 +57,7 @@ namespace MediaPlayerApp.UI
             // 
             this.lblAlbums.AutoSize = true;
             this.lblAlbums.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAlbums.Location = new System.Drawing.Point(300, 15);
+            this.lblAlbums.Location = new System.Drawing.Point(223, 15);
             this.lblAlbums.Name = "lblAlbums";
             this.lblAlbums.Size = new System.Drawing.Size(81, 28);
             this.lblAlbums.TabIndex = 27;
@@ -68,7 +68,7 @@ namespace MediaPlayerApp.UI
             // 
             this.lblSongs.AutoSize = true;
             this.lblSongs.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lblSongs.Location = new System.Drawing.Point(197, 15);
+            this.lblSongs.Location = new System.Drawing.Point(120, 15);
             this.lblSongs.Name = "lblSongs";
             this.lblSongs.Size = new System.Drawing.Size(68, 28);
             this.lblSongs.TabIndex = 26;
@@ -135,16 +135,16 @@ namespace MediaPlayerApp.UI
             this.btnShuffleAndPlay.TabIndex = 30;
             this.btnShuffleAndPlay.Text = "Shuffle and play";
             // 
-            // pbUnderline
+            // pbxUnderline
             // 
-            this.pbUnderline.BorderRadius = 3;
-            this.pbUnderline.FillColor = System.Drawing.Color.OrangeRed;
-            this.pbUnderline.ImageRotate = 0F;
-            this.pbUnderline.Location = new System.Drawing.Point(214, 38);
-            this.pbUnderline.Name = "pbUnderline";
-            this.pbUnderline.Size = new System.Drawing.Size(20, 5);
-            this.pbUnderline.TabIndex = 29;
-            this.pbUnderline.TabStop = false;
+            this.pbxUnderline.BorderRadius = 3;
+            this.pbxUnderline.FillColor = System.Drawing.Color.OrangeRed;
+            this.pbxUnderline.ImageRotate = 0F;
+            this.pbxUnderline.Location = new System.Drawing.Point(137, 38);
+            this.pbxUnderline.Name = "pbxUnderline";
+            this.pbxUnderline.Size = new System.Drawing.Size(20, 5);
+            this.pbxUnderline.TabIndex = 29;
+            this.pbxUnderline.TabStop = false;
             // 
             // btnAddFolder
             // 
@@ -174,7 +174,7 @@ namespace MediaPlayerApp.UI
             this.ClientSize = new System.Drawing.Size(788, 510);
             this.Controls.Add(this.btnAddFolder);
             this.Controls.Add(this.btnShuffleAndPlay);
-            this.Controls.Add(this.pbUnderline);
+            this.Controls.Add(this.pbxUnderline);
             this.Controls.Add(this.lblArtists);
             this.Controls.Add(this.lblAlbums);
             this.Controls.Add(this.lblSongs);
@@ -185,7 +185,7 @@ namespace MediaPlayerApp.UI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fMusicLibrary";
             this.Text = "fMusicLibrary";
-            ((System.ComponentModel.ISupportInitialize)(this.pbUnderline)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxUnderline)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +194,7 @@ namespace MediaPlayerApp.UI
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button btnShuffleAndPlay;
-        private Guna.UI2.WinForms.Guna2PictureBox pbUnderline;
+        private Guna.UI2.WinForms.Guna2PictureBox pbxUnderline;
         private System.Windows.Forms.Label lblArtists;
         private System.Windows.Forms.Label lblAlbums;
         private System.Windows.Forms.Label lblSongs;

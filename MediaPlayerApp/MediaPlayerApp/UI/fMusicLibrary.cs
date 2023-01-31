@@ -23,17 +23,17 @@ namespace MediaPlayerApp.UI
 
         private void lblSongs_Click(object sender, EventArgs e)
         {
-            pbUnderline.Left = lblSongs.Left + (lblSongs.Width - pbUnderline.Width) / 2;
+            pbxUnderline.Left = lblSongs.Left + (lblSongs.Width - pbxUnderline.Width) / 2;
         }
 
         private void lblAlbums_Click(object sender, EventArgs e)
         {
-            pbUnderline.Left = lblAlbums.Left + (lblAlbums.Width - pbUnderline.Width) / 2;
+            pbxUnderline.Left = lblAlbums.Left + (lblAlbums.Width - pbxUnderline.Width) / 2;
         }
 
         private void lblArtists_Click(object sender, EventArgs e)
         {
-            pbUnderline.Left = lblArtists.Left + (lblArtists.Width - pbUnderline.Width) / 2;
+            pbxUnderline.Left = lblArtists.Left + (lblArtists.Width - pbxUnderline.Width) / 2;
         }
     }
 }

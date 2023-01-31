@@ -28,5 +28,20 @@ namespace MediaPlayerApp.UI
         {
             lblSort.BorderStyle = BorderStyle.None;
         }
+
+        private void lblAllVideos_Click(object sender, EventArgs e)
+        {
+            pbxUnderline.Left = lblAllVideos.Left + (lblAllVideos.Width - pbxUnderline.Width) / 2;
+        }
+
+        private void lblVideoFolders_Click(object sender, EventArgs e)
+        {
+            pbxUnderline.Left = lblVideoFolders.Left + (lblVideoFolders.Width - pbxUnderline.Width) / 2;
+        }
+
+        private void btnPlayAll_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
