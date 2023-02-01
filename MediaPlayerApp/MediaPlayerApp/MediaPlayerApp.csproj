@@ -55,6 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\MusicSong.cs" />
+    <Compile Include="BLL\PlaylistInfo.cs" />
+    <Compile Include="Components\Playlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Playlist.Designer.cs">
+      <DependentUpon>Playlist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Thumbnail.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +135,9 @@
     <Compile Include="UI\fVideoLibrary.Designer.cs">
       <DependentUpon>fVideoLibrary.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\Playlist.resx">
+      <DependentUpon>Playlist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Thumbnail.resx">
       <DependentUpon>Thumbnail.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +268,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\add_folder.png" />
+    <None Include="Resources\white_play.png" />
     <None Include="Resources\open_folder.jpg" />
     <None Include="Resources\white_trash.png" />
     <None Include="Resources\white_shuffle.png" />
