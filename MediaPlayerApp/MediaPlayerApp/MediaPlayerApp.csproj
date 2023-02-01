@@ -79,6 +79,12 @@
     <Compile Include="Components\ThumbnailMenu.Designer.cs">
       <DependentUpon>ThumbnailMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\ThumbnailMusic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ThumbnailMusic.Designer.cs">
+      <DependentUpon>ThumbnailMusic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\ThumbnailMenu.resx">
       <DependentUpon>ThumbnailMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ThumbnailMusic.resx">
+      <DependentUpon>ThumbnailMusic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fFavorite.resx">
       <DependentUpon>fFavorite.cs</DependentUpon>
@@ -270,6 +279,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\add_folder.png" />
+    <Content Include="Resources\black_shuffle.png" />
+    <Content Include="Resources\black_trash.png" />
+    <Content Include="Resources\export202301312045374440.png" />
+    <Content Include="Resources\white_heart.png" />
+    <Content Include="Resources\white_open_folder.png" />
+    <Content Include="Resources\white_play.png" />
     <None Include="Resources\open_folder.jpg" />
     <None Include="Resources\white_trash.png" />
     <None Include="Resources\white_shuffle.png" />
