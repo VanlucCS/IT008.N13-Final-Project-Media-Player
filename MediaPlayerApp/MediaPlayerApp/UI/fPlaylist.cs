@@ -17,6 +17,8 @@ namespace MediaPlayerApp.UI
         {
             this.parent = parent;
             InitializeComponent();
+            Components.Playlist it = new Components.Playlist("");
+            flowLayoutPanel1.Controls.Add(it);
         }
     }
 }
