@@ -24,7 +24,7 @@ namespace MediaPlayerApp.UI
 
         public void testThumbnail()
         {
-            Thumbnail thumbnail = new Thumbnail("C:\\Workspace\\LapTrinhTrucQuan\\MediaPlayerApp\\MediaPlayerApp\\bin\\Debug\\BH01.mp3");
+            Thumbnail thumbnail = new Thumbnail("./BH01.mp3");
             flowLayoutPanel1.Controls.Add(thumbnail);
         }
     }

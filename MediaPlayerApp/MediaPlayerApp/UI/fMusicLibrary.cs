@@ -39,7 +39,7 @@ namespace MediaPlayerApp.UI
         }
         private void loadMusic()
         {
-            ThumbnailMusic thumbnailMusic = new ThumbnailMusic("C:\\Workspace\\LapTrinhTrucQuan\\MediaPlayerApp\\MediaPlayerApp\\bin\\Debug\\BH01.mp3");
+            ThumbnailMusic thumbnailMusic = new ThumbnailMusic("./BH01.mp3");
             thumbnailMusic.Dock = DockStyle.Top;
             flowLayoutPanel1.Controls.Add(thumbnailMusic);
         }
