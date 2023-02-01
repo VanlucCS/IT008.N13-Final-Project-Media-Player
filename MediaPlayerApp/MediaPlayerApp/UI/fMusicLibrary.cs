@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaPlayerApp.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace MediaPlayerApp.UI
             this.parent = parent;
 
             InitializeComponent();
+            loadMusic();
         }
 
         private void lblSongs_Click(object sender, EventArgs e)
@@ -34,6 +36,12 @@ namespace MediaPlayerApp.UI
         private void lblArtists_Click(object sender, EventArgs e)
         {
             pbxUnderline.Left = lblArtists.Left + (lblArtists.Width - pbxUnderline.Width) / 2;
+        }
+        private void loadMusic()
+        {
+            ThumbnailMusic thumbnailMusic = new ThumbnailMusic("C:\\Workspace\\LapTrinhTrucQuan\\MediaPlayerApp\\MediaPlayerApp\\bin\\Debug\\BH01.mp3");
+            thumbnailMusic.Dock = DockStyle.Top;
+            flowLayoutPanel1.Controls.Add(thumbnailMusic);
         }
     }
 }
