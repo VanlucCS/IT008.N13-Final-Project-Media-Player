@@ -25,7 +25,8 @@ namespace MediaPlayerApp.Components
         public Thumbnail(string path)
         {
             InitializeComponent();
-            musicSong = new MusicSong(path);     
+            musicSong = new MusicSong(path);
+            loadThumbnail();
         }
         private void loadThumbnail()
         {
