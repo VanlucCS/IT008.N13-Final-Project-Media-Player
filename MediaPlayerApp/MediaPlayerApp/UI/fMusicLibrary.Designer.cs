@@ -48,7 +48,7 @@ namespace MediaPlayerApp.UI
             this.lblArtists.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblArtists.Location = new System.Drawing.Point(333, 15);
             this.lblArtists.Name = "lblArtists";
-            this.lblArtists.Size = new System.Drawing.Size(70, 28);
+            this.lblArtists.Size = new System.Drawing.Size(57, 21);
             this.lblArtists.TabIndex = 28;
             this.lblArtists.Text = "Artists";
             this.lblArtists.Click += new System.EventHandler(this.lblArtists_Click);
@@ -59,7 +59,7 @@ namespace MediaPlayerApp.UI
             this.lblAlbums.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblAlbums.Location = new System.Drawing.Point(223, 15);
             this.lblAlbums.Name = "lblAlbums";
-            this.lblAlbums.Size = new System.Drawing.Size(81, 28);
+            this.lblAlbums.Size = new System.Drawing.Size(65, 21);
             this.lblAlbums.TabIndex = 27;
             this.lblAlbums.Text = "Albums";
             this.lblAlbums.Click += new System.EventHandler(this.lblAlbums_Click);
@@ -70,7 +70,7 @@ namespace MediaPlayerApp.UI
             this.lblSongs.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblSongs.Location = new System.Drawing.Point(120, 15);
             this.lblSongs.Name = "lblSongs";
-            this.lblSongs.Size = new System.Drawing.Size(68, 28);
+            this.lblSongs.Size = new System.Drawing.Size(55, 21);
             this.lblSongs.TabIndex = 26;
             this.lblSongs.Text = "Songs";
             this.lblSongs.Click += new System.EventHandler(this.lblSongs_Click);
@@ -113,7 +113,7 @@ namespace MediaPlayerApp.UI
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblTitle.Location = new System.Drawing.Point(12, 12);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(92, 37);
+            this.lblTitle.Size = new System.Drawing.Size(71, 30);
             this.lblTitle.TabIndex = 20;
             this.lblTitle.Text = "Music";
             // 
