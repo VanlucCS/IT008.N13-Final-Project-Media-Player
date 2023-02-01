@@ -12,8 +12,6 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,15 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Accord.3.8.0\lib\net462\Accord.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Video, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Accord.Video.3.8.0\lib\net462\Accord.Video.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Video.FFMPEG, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=x86">
-      <HintPath>..\packages\Accord.Video.FFMPEG.3.8.0\lib\net462\Accord.Video.FFMPEG.dll</HintPath>
-    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
@@ -66,7 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\MusicSong.cs" />
-    <Compile Include="BLL\VideoInfo.cs" />
+    <Compile Include="BLL\PlaylistInfo.cs" />
+    <Compile Include="Components\Playlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Playlist.Designer.cs">
+      <DependentUpon>Playlist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Thumbnail.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -78,12 +73,6 @@
     </Compile>
     <Compile Include="Components\ThumbnailMenu.Designer.cs">
       <DependentUpon>ThumbnailMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Components\ThumbnailMusic.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\ThumbnailMusic.Designer.cs">
-      <DependentUpon>ThumbnailMusic.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -146,14 +135,14 @@
     <Compile Include="UI\fVideoLibrary.Designer.cs">
       <DependentUpon>fVideoLibrary.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\Playlist.resx">
+      <DependentUpon>Playlist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Thumbnail.resx">
       <DependentUpon>Thumbnail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\ThumbnailMenu.resx">
       <DependentUpon>ThumbnailMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Components\ThumbnailMusic.resx">
-      <DependentUpon>ThumbnailMusic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fFavorite.resx">
       <DependentUpon>fFavorite.cs</DependentUpon>
@@ -279,25 +268,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\add_folder.png" />
-    <Content Include="Resources\black_shuffle.png" />
-    <Content Include="Resources\black_trash.png" />
-    <Content Include="Resources\export202301312045374440.png" />
-    <Content Include="Resources\white_heart.png" />
-    <Content Include="Resources\white_open_folder.png" />
-    <Content Include="Resources\white_play.png" />
+    <None Include="Resources\white_play.png" />
     <None Include="Resources\open_folder.jpg" />
     <None Include="Resources\white_trash.png" />
     <None Include="Resources\white_shuffle.png" />
     <None Include="Resources\add_folder1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.3.8.0\build\Accord.targets'))" />
-    <Error Condition="!Exists('..\packages\Accord.Video.FFMPEG.3.8.0\build\Accord.Video.FFMPEG.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.Video.FFMPEG.3.8.0\build\Accord.Video.FFMPEG.targets'))" />
-  </Target>
-  <Import Project="..\packages\Accord.Video.FFMPEG.3.8.0\build\Accord.Video.FFMPEG.targets" Condition="Exists('..\packages\Accord.Video.FFMPEG.3.8.0\build\Accord.Video.FFMPEG.targets')" />
 </Project>
