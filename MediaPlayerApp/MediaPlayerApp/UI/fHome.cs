@@ -136,7 +136,7 @@ namespace MediaPlayerApp
             if (btPlay.Checked == true)
             {
                 btPlay.Image = MediaPlayerApp.Properties.Resources.play_button;
-                this.Media.Ctlcontrols.stop();
+                this.Media.Ctlcontrols.pause();
             }
             else
             {
