@@ -39,6 +39,7 @@ namespace MediaPlayerApp.UI
         }
         private void loadMusic()
         {
+            Components.
             ThumbnailMusic thumbnailMusic = new ThumbnailMusic("./BH01.mp3");
             thumbnailMusic.Dock = DockStyle.Top;
             flowLayoutPanel1.Controls.Add(thumbnailMusic);
