@@ -82,16 +82,17 @@ namespace MediaPlayerApp.UI
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 95);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(770, 410);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(797, 410);
             this.flowLayoutPanel1.TabIndex = 24;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(12, 12);
+            this.lblTitle.Location = new System.Drawing.Point(12, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(71, 30);
             this.lblTitle.TabIndex = 20;
@@ -106,12 +107,12 @@ namespace MediaPlayerApp.UI
             this.btnShuffleAndPlay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnShuffleAndPlay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnShuffleAndPlay.FillColor = System.Drawing.Color.OrangeRed;
-            this.btnShuffleAndPlay.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShuffleAndPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShuffleAndPlay.ForeColor = System.Drawing.Color.White;
             this.btnShuffleAndPlay.Image = global::MediaPlayerApp.Properties.Resources.white_shuffle;
             this.btnShuffleAndPlay.Location = new System.Drawing.Point(12, 55);
             this.btnShuffleAndPlay.Name = "btnShuffleAndPlay";
-            this.btnShuffleAndPlay.Size = new System.Drawing.Size(154, 30);
+            this.btnShuffleAndPlay.Size = new System.Drawing.Size(127, 30);
             this.btnShuffleAndPlay.TabIndex = 30;
             this.btnShuffleAndPlay.Text = "Shuffle and play";
             // 
@@ -145,12 +146,13 @@ namespace MediaPlayerApp.UI
             this.btnAddFolder.Size = new System.Drawing.Size(143, 30);
             this.btnAddFolder.TabIndex = 52;
             this.btnAddFolder.Text = " Add folder";
+            this.btnAddFolder.Click += new System.EventHandler(this.btnAddFolder_Click);
             // 
             // lblSort
             // 
             this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSort.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lblSort.Location = new System.Drawing.Point(333, 62);
+            this.lblSort.Location = new System.Drawing.Point(378, 62);
             this.lblSort.Name = "lblSort";
             this.lblSort.Size = new System.Drawing.Size(71, 27);
             this.lblSort.TabIndex = 60;
@@ -161,7 +163,7 @@ namespace MediaPlayerApp.UI
             // 
             this.lbGenre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbGenre.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lbGenre.Location = new System.Drawing.Point(558, 63);
+            this.lbGenre.Location = new System.Drawing.Point(580, 63);
             this.lbGenre.Name = "lbGenre";
             this.lbGenre.Size = new System.Drawing.Size(56, 28);
             this.lbGenre.TabIndex = 63;
@@ -182,7 +184,7 @@ namespace MediaPlayerApp.UI
             this.guna2ComboBox2.ItemHeight = 20;
             this.guna2ComboBox2.Items.AddRange(new object[] {
             "All genres"});
-            this.guna2ComboBox2.Location = new System.Drawing.Point(620, 63);
+            this.guna2ComboBox2.Location = new System.Drawing.Point(642, 63);
             this.guna2ComboBox2.Name = "guna2ComboBox2";
             this.guna2ComboBox2.Size = new System.Drawing.Size(107, 26);
             this.guna2ComboBox2.StartIndex = 0;
@@ -203,9 +205,9 @@ namespace MediaPlayerApp.UI
             this.guna2ComboBox1.ItemHeight = 20;
             this.guna2ComboBox1.Items.AddRange(new object[] {
             "Date added"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(397, 63);
+            this.guna2ComboBox1.Location = new System.Drawing.Point(442, 63);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(117, 26);
+            this.guna2ComboBox1.Size = new System.Drawing.Size(120, 26);
             this.guna2ComboBox1.StartIndex = 0;
             this.guna2ComboBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2ComboBox1.TabIndex = 64;
@@ -231,6 +233,7 @@ namespace MediaPlayerApp.UI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fMusicLibrary";
             this.Text = "fMusicLibrary";
+            this.Load += new System.EventHandler(this.fMusicLibrary_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUnderline)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

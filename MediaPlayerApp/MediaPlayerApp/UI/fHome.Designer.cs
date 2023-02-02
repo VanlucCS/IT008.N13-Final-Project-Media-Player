@@ -110,7 +110,7 @@ namespace MediaPlayerApp
             this.lbSongName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSongName.Location = new System.Drawing.Point(100, 31);
             this.lbSongName.Name = "lbSongName";
-            this.lbSongName.Size = new System.Drawing.Size(79, 32);
+            this.lbSongName.Size = new System.Drawing.Size(64, 25);
             this.lbSongName.TabIndex = 19;
             this.lbSongName.Text = "label3";
             // 
@@ -130,6 +130,7 @@ namespace MediaPlayerApp
             this.Media.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Media.OcxState")));
             this.Media.Size = new System.Drawing.Size(56, 46);
             this.Media.TabIndex = 0;
+            this.Media.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.Media_PlayStateChange);
             // 
             // btFavorite
             // 
@@ -189,6 +190,7 @@ namespace MediaPlayerApp
             this.btPlay.PressedState.ImageSize = new System.Drawing.Size(50, 50);
             this.btPlay.Size = new System.Drawing.Size(64, 54);
             this.btPlay.TabIndex = 14;
+            this.btPlay.CheckedChanged += new System.EventHandler(this.btPlay_CheckedChanged);
             this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
             // 
             // pictureBox4
@@ -244,7 +246,7 @@ namespace MediaPlayerApp
             this.lbTimeCurrentPlay.Location = new System.Drawing.Point(40, 3);
             this.lbTimeCurrentPlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTimeCurrentPlay.Name = "lbTimeCurrentPlay";
-            this.lbTimeCurrentPlay.Size = new System.Drawing.Size(88, 28);
+            this.lbTimeCurrentPlay.Size = new System.Drawing.Size(72, 21);
             this.lbTimeCurrentPlay.TabIndex = 1;
             this.lbTimeCurrentPlay.Text = "00:00:00";
             // 
@@ -505,7 +507,7 @@ namespace MediaPlayerApp
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(53, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 28);
+            this.label1.Size = new System.Drawing.Size(104, 21);
             this.label1.TabIndex = 5;
             this.label1.Text = "Media Player";
             // 
@@ -517,7 +519,7 @@ namespace MediaPlayerApp
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(41, 529);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Dark Mode";
             // 
@@ -578,7 +580,7 @@ namespace MediaPlayerApp
             // 
             // fHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.pnHeader);
@@ -638,8 +640,8 @@ namespace MediaPlayerApp
         private Guna.UI2.WinForms.Guna2ImageButton btVolume;
         private Guna.UI2.WinForms.Guna2ImageButton btFavorite;
         private System.Windows.Forms.PictureBox pbSongpic;
-        private AxWMPLib.AxWindowsMediaPlayer Media;
         private System.Windows.Forms.Label lbSongName;
+        public AxWMPLib.AxWindowsMediaPlayer Media;
     }
 }
 

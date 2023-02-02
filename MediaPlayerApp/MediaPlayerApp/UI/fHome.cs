@@ -1,5 +1,6 @@
 ﻿using MediaPlayerApp.UI;
 using MediaPlayerApp.BLL;
+using MediaPlayerApp.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace MediaPlayerApp
     public partial class fHome : Form
     {
         public Form activeForm = null;
+        public ThumbnailMusic thumbnailMusic = new ThumbnailMusic();
         public fHome()
         {
             InitializeComponent();
@@ -133,17 +135,11 @@ namespace MediaPlayerApp
 
         private void btPlay_Click(object sender, EventArgs e)
         {
-            if (btPlay.Checked == true)
-            {
-                btPlay.Image = MediaPlayerApp.Properties.Resources.play_button;
-                this.Media.Ctlcontrols.pause();
-            }
-            else
-            {
-                btPlay.Image = MediaPlayerApp.Properties.Resources.pause;
-                this.Media.Ctlcontrols.play();
-            }
             btPlay.Checked = !btPlay.Checked;
+            if (btPlay.Checked == true)
+                this.Media.Ctlcontrols.play();
+            else
+                this.Media.Ctlcontrols.pause();
         }
         private void resetButtonStage()
         {
@@ -193,6 +189,26 @@ namespace MediaPlayerApp
             catch (Exception)
             {
             }
+        }
+
+        private void Media_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            if(this.Media.playState == WMPLib.WMPPlayState.wmppsStopped || this.Media.playState == WMPLib.WMPPlayState.wmppsPaused)
+            {
+                btPlay.Checked = false;
+            }
+            else if(this.Media.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                btPlay.Checked = true;
+            }
+        }
+
+        private void btPlay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btPlay.Checked == true)
+                btPlay.Image = MediaPlayerApp.Properties.Resources.pause;
+            else
+                btPlay.Image = MediaPlayerApp.Properties.Resources.play_button;
         }
     }
 }
