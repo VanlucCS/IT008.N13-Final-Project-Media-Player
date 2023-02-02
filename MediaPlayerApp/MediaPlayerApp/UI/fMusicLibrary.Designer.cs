@@ -32,13 +32,15 @@ namespace MediaPlayerApp.UI
             this.lblArtists = new System.Windows.Forms.Label();
             this.lblAlbums = new System.Windows.Forms.Label();
             this.lblSongs = new System.Windows.Forms.Label();
-            this.lblSort = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbGenre = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnShuffleAndPlay = new Guna.UI2.WinForms.Guna2Button();
             this.pbxUnderline = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddFolder = new Guna.UI2.WinForms.Guna2Button();
+            this.lblSort = new System.Windows.Forms.Label();
+            this.lbGenre = new System.Windows.Forms.Label();
+            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUnderline)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,17 +77,6 @@ namespace MediaPlayerApp.UI
             this.lblSongs.Text = "Songs";
             this.lblSongs.Click += new System.EventHandler(this.lblSongs_Click);
             // 
-            // lblSort
-            // 
-            this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSort.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lblSort.Location = new System.Drawing.Point(349, 58);
-            this.lblSort.Name = "lblSort";
-            this.lblSort.Size = new System.Drawing.Size(191, 34);
-            this.lblSort.TabIndex = 25;
-            this.lblSort.Text = "Sort by: Date added  ▼";
-            this.lblSort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -95,17 +86,6 @@ namespace MediaPlayerApp.UI
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(770, 410);
             this.flowLayoutPanel1.TabIndex = 24;
-            // 
-            // lbGenre
-            // 
-            this.lbGenre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbGenre.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.lbGenre.Location = new System.Drawing.Point(564, 59);
-            this.lbGenre.Name = "lbGenre";
-            this.lbGenre.Size = new System.Drawing.Size(176, 34);
-            this.lbGenre.TabIndex = 23;
-            this.lbGenre.Text = "Genre: All genres    ▼";
-            this.lbGenre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTitle
             // 
@@ -166,21 +146,87 @@ namespace MediaPlayerApp.UI
             this.btnAddFolder.TabIndex = 52;
             this.btnAddFolder.Text = " Add folder";
             // 
+            // lblSort
+            // 
+            this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSort.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lblSort.Location = new System.Drawing.Point(333, 62);
+            this.lblSort.Name = "lblSort";
+            this.lblSort.Size = new System.Drawing.Size(71, 27);
+            this.lblSort.TabIndex = 60;
+            this.lblSort.Text = "Sort by : ";
+            this.lblSort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbGenre
+            // 
+            this.lbGenre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbGenre.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lbGenre.Location = new System.Drawing.Point(558, 63);
+            this.lbGenre.Name = "lbGenre";
+            this.lbGenre.Size = new System.Drawing.Size(56, 28);
+            this.lbGenre.TabIndex = 63;
+            this.lbGenre.Text = "Genre : ";
+            this.lbGenre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbGenre.Click += new System.EventHandler(this.lbGenre_Click);
+            // 
+            // guna2ComboBox2
+            // 
+            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox2.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox2.ForeColor = System.Drawing.Color.Red;
+            this.guna2ComboBox2.ItemHeight = 20;
+            this.guna2ComboBox2.Items.AddRange(new object[] {
+            "All genres"});
+            this.guna2ComboBox2.Location = new System.Drawing.Point(620, 63);
+            this.guna2ComboBox2.Name = "guna2ComboBox2";
+            this.guna2ComboBox2.Size = new System.Drawing.Size(107, 26);
+            this.guna2ComboBox2.StartIndex = 0;
+            this.guna2ComboBox2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.guna2ComboBox2.TabIndex = 65;
+            this.guna2ComboBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.Red;
+            this.guna2ComboBox1.ItemHeight = 20;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "Date added"});
+            this.guna2ComboBox1.Location = new System.Drawing.Point(397, 63);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(117, 26);
+            this.guna2ComboBox1.StartIndex = 0;
+            this.guna2ComboBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.guna2ComboBox1.TabIndex = 64;
+            // 
             // fMusicLibrary
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(788, 510);
+            this.Controls.Add(this.guna2ComboBox2);
+            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.lbGenre);
+            this.Controls.Add(this.lblSort);
             this.Controls.Add(this.btnAddFolder);
             this.Controls.Add(this.btnShuffleAndPlay);
             this.Controls.Add(this.pbxUnderline);
             this.Controls.Add(this.lblArtists);
             this.Controls.Add(this.lblAlbums);
             this.Controls.Add(this.lblSongs);
-            this.Controls.Add(this.lblSort);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.lbGenre);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fMusicLibrary";
@@ -198,10 +244,12 @@ namespace MediaPlayerApp.UI
         private System.Windows.Forms.Label lblArtists;
         private System.Windows.Forms.Label lblAlbums;
         private System.Windows.Forms.Label lblSongs;
-        private System.Windows.Forms.Label lblSort;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label lbGenre;
         private System.Windows.Forms.Label lblTitle;
         private Guna.UI2.WinForms.Guna2Button btnAddFolder;
+        private System.Windows.Forms.Label lblSort;
+        private System.Windows.Forms.Label lbGenre;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }

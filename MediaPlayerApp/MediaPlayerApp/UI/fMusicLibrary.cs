@@ -44,5 +44,10 @@ namespace MediaPlayerApp.UI
             thumbnailMusic.Dock = DockStyle.Top;
             flowLayoutPanel1.Controls.Add(thumbnailMusic);
         }
+
+        private void lbGenre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

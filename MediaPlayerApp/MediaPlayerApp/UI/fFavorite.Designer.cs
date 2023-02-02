@@ -123,36 +123,37 @@ namespace MediaPlayerApp.UI
             this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FillColor = System.Drawing.SystemColors.Control;
             this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.Red;
             this.guna2ComboBox1.ItemHeight = 20;
             this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Date added  ▼"});
+            "Date added"});
             this.guna2ComboBox1.Location = new System.Drawing.Point(403, 56);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(155, 26);
+            this.guna2ComboBox1.Size = new System.Drawing.Size(117, 26);
             this.guna2ComboBox1.StartIndex = 0;
             this.guna2ComboBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2ComboBox1.TabIndex = 58;
-            this.guna2ComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // guna2ComboBox2
             // 
             this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox2.FillColor = System.Drawing.SystemColors.Control;
             this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox2.ForeColor = System.Drawing.Color.Red;
             this.guna2ComboBox2.ItemHeight = 20;
             this.guna2ComboBox2.Items.AddRange(new object[] {
-            "All genres    ▼"});
+            "All genres"});
             this.guna2ComboBox2.Location = new System.Drawing.Point(626, 56);
             this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(153, 26);
+            this.guna2ComboBox2.Size = new System.Drawing.Size(107, 26);
             this.guna2ComboBox2.StartIndex = 0;
             this.guna2ComboBox2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2ComboBox2.TabIndex = 59;
