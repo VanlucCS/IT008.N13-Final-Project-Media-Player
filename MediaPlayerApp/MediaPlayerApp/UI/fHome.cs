@@ -16,14 +16,26 @@ namespace MediaPlayerApp
     public partial class fHome : Form
     {
         public Form activeForm = null;
-        public ThumbnailMusic thumbnailMusic = new ThumbnailMusic();
+        public Timer t;
+        public ThumbnailMusic currenSong = new ThumbnailMusic();
         public fHome()
         {
             InitializeComponent();
+            
+            
+        }
+        private void fHome_Load(object sender, EventArgs e)
+        {
             // example song 
             this.Media.URL = "./BH01.mp3";
             this.Media.Ctlcontrols.stop();
+            MessageBox.Show(Media.currentMedia.duration.ToString());
+
             LoadSongInfo(this.Media.URL);
+            t = new Timer();
+            t.Interval = 1000;
+            t.Tick += new EventHandler(t_Tick);
+            t.Start();
         }
         public void LoadSongInfo(string path)
         {
@@ -209,6 +221,25 @@ namespace MediaPlayerApp
                 btPlay.Image = MediaPlayerApp.Properties.Resources.pause;
             else
                 btPlay.Image = MediaPlayerApp.Properties.Resources.play_button;
+            //tbProcess.Value = (int)Media.Ctlcontrols.currentPosition;
+
         }
+        void t_Tick(object sender, EventArgs e)
+        {
+            if(Media.currentMedia.duration!= 0)
+            {
+                TimeSpan Time = TimeSpan.FromMinutes(Media.Ctlcontrols.currentPosition);
+                // update time mediaplayer
+                lbTimeCurrentPlay.Text = Time.ToString().Substring(0, 5);
+                
+                //tbProcess.Maximum = (int)Media.currentMedia.duration;
+                tbProcess.Value =  (int)(100.0 * (Media.Ctlcontrols.currentPosition / Media.currentMedia.duration));
+            }    
+        }
+        private void Media_PositionChange(object sender, AxWMPLib._WMPOCXEvents_PositionChangeEvent e)
+        {
+        }
+
+        
     }
 }

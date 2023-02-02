@@ -147,7 +147,7 @@
             this.btnPlay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPlay.ForeColor = System.Drawing.Color.White;
             this.btnPlay.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.btnPlay.Image = global::MediaPlayerApp.Properties.Resources.pause_button__2_;
+            this.btnPlay.Image = global::MediaPlayerApp.Properties.Resources.play_96px;
             this.btnPlay.Location = new System.Drawing.Point(45, 11);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(24, 24);
@@ -186,7 +186,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAlbum;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblGenre;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTime;
-        private Guna.UI2.WinForms.Guna2Button btnPlay;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        public Guna.UI2.WinForms.Guna2Button btnPlay;
     }
 }

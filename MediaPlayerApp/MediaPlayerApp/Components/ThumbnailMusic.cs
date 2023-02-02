@@ -112,10 +112,32 @@ namespace MediaPlayerApp.Components
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
+            //
+            if(this.parent.currenSong == this && this.parent.Media.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                this.parent.Media.Ctlcontrols.pause();
+                btnPlay.Checked = !btnPlay.Checked;
+                return;
+            }
+            if (this.parent.currenSong == this && this.parent.Media.playState == WMPLib.WMPPlayState.wmppsPaused)
+            {
+                this.parent.Media.Ctlcontrols.play();
+                btnPlay.Checked = !btnPlay.Checked;
+                return;
+            }
+            // stop prev song
+            if (this.parent.currenSong != null )
+                this.parent.currenSong.btnPlay.Checked = false;
 
+            // play chosse song
             this.parent.Media.URL = this.Path;
             this.parent.Media.Ctlcontrols.play();
+            // load preview song
+            this.parent.pbSongpic.Image = musicSong.PictureSong;
+            this.parent.lbSongName.Text = musicSong.NameSong + "\n" + musicSong.Singer;
+            this.parent.currenSong = this;
             btnPlay.Checked = !btnPlay.Checked;
+
 
         }
 
