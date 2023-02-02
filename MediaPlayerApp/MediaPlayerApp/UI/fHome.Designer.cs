@@ -123,7 +123,6 @@ namespace MediaPlayerApp
             this.Media.Size = new System.Drawing.Size(56, 46);
             this.Media.TabIndex = 0;
             this.Media.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.Media_PlayStateChange);
-            this.Media.PositionChange += new AxWMPLib._WMPOCXEvents_PositionChangeEventHandler(this.Media_PositionChange);
             // 
             // tbVolume
             // 
