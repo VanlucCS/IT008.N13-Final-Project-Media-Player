@@ -44,13 +44,19 @@ namespace MediaPlayerApp.UI
             string[] listPath = System.IO.File.ReadAllLines(@"./Data/FavoriteSong.txt");
             foreach (string songPath in listPath)
             {
-                FileInfo info = new FileInfo(songPath);
-                if (info.Extension == ".mp3")
+                try
                 {
+                    FileInfo info = new FileInfo(songPath);
+                    if (info.Extension == ".mp3")
+                    {
 
-                    ThumbnailMusic thumbnailMusic = new ThumbnailMusic(songPath, this.parent);
-                    thumbnailMusic.Dock = DockStyle.Top;
-                    pnSong.Controls.Add(thumbnailMusic);
+                        ThumbnailMusic thumbnailMusic = new ThumbnailMusic(songPath, this.parent);
+                        thumbnailMusic.Dock = DockStyle.Top;
+                        pnSong.Controls.Add(thumbnailMusic);
+                    }
+                }
+                catch (Exception)
+                {
                 }
             }     
         }

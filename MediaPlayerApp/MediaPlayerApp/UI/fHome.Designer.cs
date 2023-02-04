@@ -300,17 +300,19 @@ namespace MediaPlayerApp
             // btFavorite
             // 
             this.btFavorite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btFavorite.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btFavorite.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.btFavorite.Image = global::MediaPlayerApp.Properties.Resources.heart_96px;
+            this.btFavorite.BackColor = System.Drawing.Color.Transparent;
+            this.btFavorite.CheckedState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btFavorite.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btFavorite.Image = global::MediaPlayerApp.Properties.Resources.heart2;
             this.btFavorite.ImageOffset = new System.Drawing.Point(0, 0);
             this.btFavorite.ImageRotate = 0F;
-            this.btFavorite.ImageSize = new System.Drawing.Size(32, 32);
+            this.btFavorite.ImageSize = new System.Drawing.Size(35, 35);
             this.btFavorite.Location = new System.Drawing.Point(812, 55);
             this.btFavorite.Name = "btFavorite";
-            this.btFavorite.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btFavorite.PressedState.ImageSize = new System.Drawing.Size(35, 35);
             this.btFavorite.Size = new System.Drawing.Size(39, 35);
             this.btFavorite.TabIndex = 17;
+            this.btFavorite.Click += new System.EventHandler(this.btFavorite_Click);
             // 
             // btVolume
             // 
