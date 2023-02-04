@@ -108,7 +108,7 @@ namespace MediaPlayerApp
             // 
             this.lbSongName.AutoSize = true;
             this.lbSongName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSongName.Location = new System.Drawing.Point(100, 31);
+            this.lbSongName.Location = new System.Drawing.Point(101, 31);
             this.lbSongName.Name = "lbSongName";
             this.lbSongName.Size = new System.Drawing.Size(64, 25);
             this.lbSongName.TabIndex = 19;
@@ -142,7 +142,7 @@ namespace MediaPlayerApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbTimeCurrentPlay.AutoSize = true;
             this.lbTimeCurrentPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimeCurrentPlay.Location = new System.Drawing.Point(54, 1);
+            this.lbTimeCurrentPlay.Location = new System.Drawing.Point(98, 6);
             this.lbTimeCurrentPlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTimeCurrentPlay.Name = "lbTimeCurrentPlay";
             this.lbTimeCurrentPlay.Size = new System.Drawing.Size(65, 20);
@@ -154,7 +154,7 @@ namespace MediaPlayerApp
             this.tbProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbProcess.Location = new System.Drawing.Point(133, -1);
+            this.tbProcess.Location = new System.Drawing.Point(166, 1);
             this.tbProcess.Margin = new System.Windows.Forms.Padding(4);
             this.tbProcess.Name = "tbProcess";
             this.tbProcess.Size = new System.Drawing.Size(781, 28);
@@ -290,9 +290,9 @@ namespace MediaPlayerApp
             // 
             // pbSongpic
             // 
-            this.pbSongpic.Location = new System.Drawing.Point(12, 23);
+            this.pbSongpic.Location = new System.Drawing.Point(0, 0);
             this.pbSongpic.Name = "pbSongpic";
-            this.pbSongpic.Size = new System.Drawing.Size(82, 76);
+            this.pbSongpic.Size = new System.Drawing.Size(100, 100);
             this.pbSongpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSongpic.TabIndex = 18;
             this.pbSongpic.TabStop = false;

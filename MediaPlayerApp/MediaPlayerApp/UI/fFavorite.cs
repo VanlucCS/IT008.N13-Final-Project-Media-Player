@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MediaPlayerApp.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +20,43 @@ namespace MediaPlayerApp.UI
             this.parent = parent;
             InitializeComponent();
         }
+        private void fFavorite_Load(object sender, EventArgs e)
+        {
+            loadFavorSong();
+
+
+
+            // load genre
+            foreach (ThumbnailMusic item in pnSong.Controls)
+            {
+                foreach (string i in cbGenre.Items)
+                {
+                    if( item.Genre.ToLower() == i.ToLower())
+                        continue;
+                }
+                this.cbGenre.Items.Add(item.Genre);
+            }
+
+        }
+        private void loadFavorSong()
+        {
+            // load path song fvor fr data 
+            string[] listPath = System.IO.File.ReadAllLines(@"./Data/FavoriteSong.txt");
+            foreach (string songPath in listPath)
+            {
+                FileInfo info = new FileInfo(songPath);
+                if (info.Extension == ".mp3")
+                {
+
+                    ThumbnailMusic thumbnailMusic = new ThumbnailMusic(songPath, this.parent);
+                    thumbnailMusic.Dock = DockStyle.Top;
+                    pnSong.Controls.Add(thumbnailMusic);
+                }
+            }     
+        }
 
         private void moreButton_Click(object sender, EventArgs e)
         {
-            //thumbnailMenu.MaximumSize = new Size(200, 200);
-            //thumbnailMenu.Width = 190;
-            //thumbnailMenu.BringToFront();
-            //thumbnailMenu.showHide();
             ContextMenuStrip toolStrip = new ContextMenuStrip();
             toolStrip.ItemClicked += menuClick;
             toolStrip.Items.Clear();
@@ -48,5 +80,7 @@ namespace MediaPlayerApp.UI
                 MessageBox.Show("1");
             }
         }
+
+        
     }
 }
