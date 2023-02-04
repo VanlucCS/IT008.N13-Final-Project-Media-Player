@@ -67,10 +67,9 @@ namespace MediaPlayerApp.UI
             toolStrip.ItemClicked += menuClick;
             toolStrip.Items.Clear();
             toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-            toolStrip.Items.Add("Delete all");
-            toolStrip.Items.Add("2");
+            toolStrip.Items.Add("Delete All");
             toolStrip.Items.Add("-");
-            toolStrip.Items.Add("3");
+            toolStrip.Items.Add("Delete Choosing");
             int Y = 400;
             toolStrip.Location = new Point(moreButton.Location.X + 70, moreButton.Location.Y + Y);
             toolStrip.Show(MousePosition);
@@ -81,9 +80,25 @@ namespace MediaPlayerApp.UI
         private void menuClick(object sender, ToolStripItemClickedEventArgs e)
         {
             // click..
-            if (e.ClickedItem.Text == "1")
+            if (e.ClickedItem.Text == "Delete All")
             {
-                MessageBox.Show("1");
+                File.WriteAllLines(@"./Data/FavoriteSong.txt", new string[0]);
+               MessageBox.Show("Xóa thành công");
+                this.parent.btFravorSong_Click(this.parent, null);
+            }
+            if (e.ClickedItem.Text == "Delete Choosing")
+            {
+                foreach (ThumbnailMusic item in pnSong.Controls)
+                {
+                    #region Rm if checked 
+                    //if(item.Ischecked == true)
+                    File.WriteAllLines(@"./Data/FavoriteSong.txt",
+                        File.ReadLines(@"./Data/FavoriteSong.txt").Where(l => l != this.parent.currenSong.Path).ToList());
+                    #endregion
+
+                    MessageBox.Show("Xóa thành công");
+                    this.parent.btFravorSong_Click(this.parent,null);
+                }
             }
         }
 

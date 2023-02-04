@@ -46,10 +46,9 @@ namespace MediaPlayerApp.UI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnSong.AutoScroll = true;
-            this.pnSong.AutoSize = true;
             this.pnSong.Location = new System.Drawing.Point(9, 92);
             this.pnSong.Name = "pnSong";
-            this.pnSong.Size = new System.Drawing.Size(770, 410);
+            this.pnSong.Size = new System.Drawing.Size(801, 410);
             this.pnSong.TabIndex = 53;
             // 
             // lblTitle

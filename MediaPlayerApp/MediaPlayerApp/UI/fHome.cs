@@ -116,7 +116,7 @@ namespace MediaPlayerApp
             this.OpenChildForm(new fMusicLibrary(this));
         }
 
-        private void btFravorSong_Click(object sender, EventArgs e)
+        public void btFravorSong_Click(object sender, EventArgs e)
         {
             resetButtonStage();
             btFravorSong.Checked = !btFravorSong.Checked;
@@ -213,17 +213,22 @@ namespace MediaPlayerApp
             {
                 btPlay.Checked = true;
             }
-
+            #region Check favor song
             string[] listFvorPath = System.IO.File.ReadAllLines(@"./Data/FavoriteSong.txt");
             foreach (string fvorSongPath in listFvorPath)
             {
-                if(this.currenSong.Path == fvorSongPath)
+                if (this.currenSong.Path == fvorSongPath)
                 {
-                    btFavorite_Click(this, null);
-                    break;
+                    btFavorite.Image = MediaPlayerApp.Properties.Resources.lover;
+                    btFavorite.Checked = true;
+                    return;
                 }
+
             }
-        }
+                btFavorite.Image = MediaPlayerApp.Properties.Resources.heart_96px;
+                    btFavorite.Checked = false;
+            #endregion
+        } 
 
         private void btPlay_CheckedChanged(object sender, EventArgs e)
         {
