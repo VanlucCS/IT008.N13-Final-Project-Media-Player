@@ -228,7 +228,10 @@ namespace MediaPlayerApp
                 btFavorite.Image = MediaPlayerApp.Properties.Resources.heart_96px;
                     btFavorite.Checked = false;
             #endregion
-        } 
+            //LoadSongInfo(this.Media.currentMedia.sourceURL);
+
+
+        }
 
         private void btPlay_CheckedChanged(object sender, EventArgs e)
         {
@@ -273,6 +276,11 @@ namespace MediaPlayerApp
                     File.ReadLines(@"./Data/FavoriteSong.txt").Where(l => l != this.currenSong.Path).ToList());
 
             }
+        }
+
+        private void Media_MediaChange(object sender, AxWMPLib._WMPOCXEvents_MediaChangeEvent e)
+        {
+            LoadSongInfo(this.Media.currentMedia.sourceURL);
         }
     }
 }

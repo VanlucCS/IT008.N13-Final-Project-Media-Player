@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace MediaPlayerApp.UI
 {
@@ -102,6 +103,19 @@ namespace MediaPlayerApp.UI
             }
         }
 
-        
+        private void btnShuffleAndPlay_Click(object sender, EventArgs e)
+        {
+            //this.parent.Media.settings.setMode("shuffle", true);
+
+            IWMPPlaylist playlist = this.parent.Media.newPlaylist("Playlist", null);
+            foreach (ThumbnailMusic i in pnSong.Controls)
+            {
+                WMPLib.IWMPMedia m = this.parent.Media.newMedia(i.Path);
+                playlist.appendItem(m);
+            }
+            this.parent.Media.currentPlaylist = playlist;
+            this.parent.Media.Ctlcontrols.play();
+
+        }
     }
 }

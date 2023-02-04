@@ -144,6 +144,7 @@ namespace MediaPlayerApp.UI
             this.btnShuffleAndPlay.Size = new System.Drawing.Size(154, 30);
             this.btnShuffleAndPlay.TabIndex = 55;
             this.btnShuffleAndPlay.Text = "Shuffle and play";
+            this.btnShuffleAndPlay.Click += new System.EventHandler(this.btnShuffleAndPlay_Click);
             // 
             // moreButton
             // 
