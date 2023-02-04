@@ -277,6 +277,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\add_folder.png" />
+    <None Include="Resources\heart2.png" />
+    <None Include="Resources\lover.png" />
     <None Include="Resources\pause-button %282%29.png" />
     <None Include="Resources\white_play.png" />
     <None Include="Resources\open_folder.jpg" />

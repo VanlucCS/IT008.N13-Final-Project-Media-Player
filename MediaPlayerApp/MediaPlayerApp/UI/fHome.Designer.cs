@@ -108,7 +108,7 @@ namespace MediaPlayerApp
             // 
             this.lbSongName.AutoSize = true;
             this.lbSongName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSongName.Location = new System.Drawing.Point(100, 31);
+            this.lbSongName.Location = new System.Drawing.Point(101, 31);
             this.lbSongName.Name = "lbSongName";
             this.lbSongName.Size = new System.Drawing.Size(64, 25);
             this.lbSongName.TabIndex = 19;
@@ -123,6 +123,7 @@ namespace MediaPlayerApp
             this.Media.Size = new System.Drawing.Size(56, 46);
             this.Media.TabIndex = 0;
             this.Media.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.Media_PlayStateChange);
+            this.Media.MediaChange += new AxWMPLib._WMPOCXEvents_MediaChangeEventHandler(this.Media_MediaChange);
             // 
             // tbVolume
             // 
@@ -142,7 +143,7 @@ namespace MediaPlayerApp
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbTimeCurrentPlay.AutoSize = true;
             this.lbTimeCurrentPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimeCurrentPlay.Location = new System.Drawing.Point(54, 1);
+            this.lbTimeCurrentPlay.Location = new System.Drawing.Point(98, 6);
             this.lbTimeCurrentPlay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTimeCurrentPlay.Name = "lbTimeCurrentPlay";
             this.lbTimeCurrentPlay.Size = new System.Drawing.Size(65, 20);
@@ -154,7 +155,7 @@ namespace MediaPlayerApp
             this.tbProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbProcess.Location = new System.Drawing.Point(133, -1);
+            this.tbProcess.Location = new System.Drawing.Point(166, 1);
             this.tbProcess.Margin = new System.Windows.Forms.Padding(4);
             this.tbProcess.Name = "tbProcess";
             this.tbProcess.Size = new System.Drawing.Size(781, 28);
@@ -290,9 +291,9 @@ namespace MediaPlayerApp
             // 
             // pbSongpic
             // 
-            this.pbSongpic.Location = new System.Drawing.Point(12, 23);
+            this.pbSongpic.Location = new System.Drawing.Point(0, 0);
             this.pbSongpic.Name = "pbSongpic";
-            this.pbSongpic.Size = new System.Drawing.Size(82, 76);
+            this.pbSongpic.Size = new System.Drawing.Size(100, 100);
             this.pbSongpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSongpic.TabIndex = 18;
             this.pbSongpic.TabStop = false;
@@ -300,17 +301,19 @@ namespace MediaPlayerApp
             // btFavorite
             // 
             this.btFavorite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btFavorite.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btFavorite.HoverState.ImageSize = new System.Drawing.Size(32, 32);
-            this.btFavorite.Image = global::MediaPlayerApp.Properties.Resources.heart_96px;
+            this.btFavorite.BackColor = System.Drawing.Color.Transparent;
+            this.btFavorite.CheckedState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btFavorite.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btFavorite.Image = global::MediaPlayerApp.Properties.Resources.heart2;
             this.btFavorite.ImageOffset = new System.Drawing.Point(0, 0);
             this.btFavorite.ImageRotate = 0F;
-            this.btFavorite.ImageSize = new System.Drawing.Size(32, 32);
+            this.btFavorite.ImageSize = new System.Drawing.Size(35, 35);
             this.btFavorite.Location = new System.Drawing.Point(812, 55);
             this.btFavorite.Name = "btFavorite";
-            this.btFavorite.PressedState.ImageSize = new System.Drawing.Size(32, 32);
+            this.btFavorite.PressedState.ImageSize = new System.Drawing.Size(35, 35);
             this.btFavorite.Size = new System.Drawing.Size(39, 35);
             this.btFavorite.TabIndex = 17;
+            this.btFavorite.Click += new System.EventHandler(this.btFavorite_Click);
             // 
             // btVolume
             // 
