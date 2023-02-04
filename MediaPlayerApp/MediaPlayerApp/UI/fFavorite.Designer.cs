@@ -105,6 +105,7 @@ namespace MediaPlayerApp.UI
             this.guna2ComboBox1.StartIndex = 0;
             this.guna2ComboBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2ComboBox1.TabIndex = 58;
+            this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // cbGenre
             // 
@@ -126,6 +127,7 @@ namespace MediaPlayerApp.UI
             this.cbGenre.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbGenre.TabIndex = 59;
             this.cbGenre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbGenre.SelectedIndexChanged += new System.EventHandler(this.cbGenre_SelectedIndexChanged);
             // 
             // btnShuffleAndPlay
             // 

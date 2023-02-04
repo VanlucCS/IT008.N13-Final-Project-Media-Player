@@ -15,7 +15,7 @@ namespace MediaPlayerApp.UI
 {
     public partial class fFavorite : Form
     {
-        public fHome parent; 
+        public fHome parent;
         public fFavorite(fHome parent = null)
         {
             this.parent = parent;
@@ -30,17 +30,23 @@ namespace MediaPlayerApp.UI
             // load genre
             foreach (ThumbnailMusic item in pnSong.Controls)
             {
+                bool flag = false;
                 foreach (string i in cbGenre.Items)
                 {
-                    if( item.Genre.ToLower() == i.ToLower())
-                        continue;
+                    if (item.Genre.ToLower() == i.ToLower())
+                    {
+                        flag = true;
+                        break;
+                    }
                 }
-                this.cbGenre.Items.Add(item.Genre);
+                if (!flag)
+                    this.cbGenre.Items.Add(item.Genre);
             }
 
         }
         private void loadFavorSong()
         {
+            pnSong.Controls.Clear();
             // load path song fvor fr data 
             string[] listPath = System.IO.File.ReadAllLines(@"./Data/FavoriteSong.txt");
             foreach (string songPath in listPath)
@@ -59,7 +65,7 @@ namespace MediaPlayerApp.UI
                 catch (Exception)
                 {
                 }
-            }     
+            }
         }
 
         private void moreButton_Click(object sender, EventArgs e)
@@ -84,7 +90,7 @@ namespace MediaPlayerApp.UI
             if (e.ClickedItem.Text == "Delete All")
             {
                 File.WriteAllLines(@"./Data/FavoriteSong.txt", new string[0]);
-               MessageBox.Show("Xóa thành công");
+                MessageBox.Show("Xóa thành công");
                 this.parent.btFravorSong_Click(this.parent, null);
             }
             if (e.ClickedItem.Text == "Delete Choosing")
@@ -98,15 +104,14 @@ namespace MediaPlayerApp.UI
                     #endregion
 
                     MessageBox.Show("Xóa thành công");
-                    this.parent.btFravorSong_Click(this.parent,null);
+                    this.parent.btFravorSong_Click(this.parent, null);
                 }
             }
         }
 
         private void btnShuffleAndPlay_Click(object sender, EventArgs e)
         {
-            //this.parent.Media.settings.setMode("shuffle", true);
-
+            this.parent.Media.settings.setMode("shuffle", true);
             IWMPPlaylist playlist = this.parent.Media.newPlaylist("Playlist", null);
             foreach (ThumbnailMusic i in pnSong.Controls)
             {
@@ -116,6 +121,70 @@ namespace MediaPlayerApp.UI
             this.parent.Media.currentPlaylist = playlist;
             this.parent.Media.Ctlcontrols.play();
 
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortFvorSong();
+        }
+
+        private void cbGenre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SortFvorSong();
+        }
+
+        private void SortFvorSong()
+        {
+            loadFavorSong();
+            #region Sort genre
+            if (cbGenre.Text != "All genres")
+            {
+                ThumbnailMusic[] controlArray2 = new ThumbnailMusic[pnSong.Controls.Count];
+                this.pnSong.Controls.CopyTo(controlArray2, 0);
+                pnSong.Controls.Clear();
+                pnSong.Controls.AddRange(Filter(controlArray2));
+            }
+            #endregion
+
+            #region sort by 
+            if (guna2ComboBox1.SelectedIndex == 1)
+            {
+                ThumbnailMusic[] controlArray = new ThumbnailMusic[pnSong.Controls.Count];
+                this.pnSong.Controls.CopyTo(controlArray, 0);
+                Array.Sort(controlArray,(c1, c2) => String.Compare(c1.SongName, c2.SongName));
+
+                pnSong.Controls.Clear();
+                pnSong.Controls.AddRange(controlArray);
+            }
+            if (guna2ComboBox1.SelectedIndex == 2)
+            {
+                ThumbnailMusic[] controlArray = new ThumbnailMusic[pnSong.Controls.Count];
+                this.pnSong.Controls.CopyTo(controlArray, 0);
+                Array.Sort(controlArray,(c1, c2) => String.Compare(c1.ArtistName, c2.ArtistName));
+                pnSong.Controls.Clear();
+                pnSong.Controls.AddRange(controlArray);
+            }
+            if (guna2ComboBox1.SelectedIndex == 0)
+            {
+                ThumbnailMusic[] controlArray = new ThumbnailMusic[pnSong.Controls.Count];
+                this.pnSong.Controls.CopyTo(controlArray, 0);
+                //Array.Sort(controlArray, (c1, c2) => String.Compare(c1.musicSong.DateAdd, c2.musicSong.DateAdd)); // them thuoc tinh public cua musicsong trong thumbnailmusic
+                pnSong.Controls.Clear();
+                pnSong.Controls.AddRange(controlArray);
+            }
+
+            #endregion
+        }
+        public ThumbnailMusic[] Filter(ThumbnailMusic[] input)
+        {
+            List<ThumbnailMusic> availableCars = new List<ThumbnailMusic>();
+
+            foreach (ThumbnailMusic c in input)
+            {
+                if (c.Genre == cbGenre.Text)
+                    availableCars.Add(c);
+            }
+            return availableCars.ToArray();
         }
     }
 }
