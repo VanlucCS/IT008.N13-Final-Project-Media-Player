@@ -95,7 +95,7 @@ namespace MediaPlayerApp.Components
 
         private void playButton_Click(object sender, EventArgs e)
         {
-            fVideo fvideo = new fVideo();
+            fVideo fvideo = new fVideo( this.parent, this);
             fvideo.ShowDialog();
         }
 

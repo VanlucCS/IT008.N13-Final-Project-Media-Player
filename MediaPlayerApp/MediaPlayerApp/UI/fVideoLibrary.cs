@@ -44,7 +44,9 @@ namespace MediaPlayerApp.UI
 
         private void btnPlayAll_Click(object sender, EventArgs e)
         {
-
+            Thumbnail[] thumbnails = flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray();
+            fVideo fvideo = new fVideo(null, thumbnails);
+            fvideo.ShowDialog();
         }
         private void loadVideo()
         {

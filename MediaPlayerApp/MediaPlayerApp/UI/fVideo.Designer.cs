@@ -31,22 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fVideo));
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btMaxsize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btMinisize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btExit = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btPlay = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // player
@@ -58,6 +58,7 @@
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
             this.player.Size = new System.Drawing.Size(800, 450);
             this.player.TabIndex = 0;
+            this.player.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.player_PlayStateChange);
             // 
             // guna2Panel1
             // 
@@ -68,18 +69,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(800, 35);
             this.guna2Panel1.TabIndex = 1;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.btPlay);
-            this.guna2Panel2.Controls.Add(this.pictureBox4);
-            this.guna2Panel2.Controls.Add(this.pictureBox3);
-            this.guna2Panel2.Controls.Add(this.pictureBox2);
-            this.guna2Panel2.Controls.Add(this.pictureBox1);
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 350);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(800, 100);
-            this.guna2Panel2.TabIndex = 2;
             // 
             // btMaxsize
             // 
@@ -115,6 +104,18 @@
             this.btExit.TabIndex = 3;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.btPlay);
+            this.guna2Panel2.Controls.Add(this.pictureBox4);
+            this.guna2Panel2.Controls.Add(this.pictureBox3);
+            this.guna2Panel2.Controls.Add(this.pictureBox2);
+            this.guna2Panel2.Controls.Add(this.pictureBox1);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 350);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(800, 100);
+            this.guna2Panel2.TabIndex = 2;
+            // 
             // btPlay
             // 
             this.btPlay.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -141,6 +142,17 @@
             this.pictureBox4.TabIndex = 18;
             this.pictureBox4.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.Image = global::MediaPlayerApp.Properties.Resources.repeat9;
+            this.pictureBox3.Location = new System.Drawing.Point(509, 43);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 15;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -163,17 +175,6 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = global::MediaPlayerApp.Properties.Resources.repeat9;
-            this.pictureBox3.Location = new System.Drawing.Point(509, 43);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 15;
-            this.pictureBox3.TabStop = false;
-            // 
             // fVideo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -188,9 +189,9 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
