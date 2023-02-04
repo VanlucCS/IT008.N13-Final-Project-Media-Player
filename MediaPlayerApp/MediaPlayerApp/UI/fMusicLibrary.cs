@@ -79,6 +79,7 @@ namespace MediaPlayerApp.UI
         private void btnAddFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog f = new FolderBrowserDialog();
+            f.RootFolder = Environment.SpecialFolder.MyComputer;
             if (f.ShowDialog() == DialogResult.OK)
             {
                 // check exits

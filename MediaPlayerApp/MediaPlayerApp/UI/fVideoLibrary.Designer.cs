@@ -143,6 +143,7 @@
             this.btnAddFolder.Size = new System.Drawing.Size(143, 30);
             this.btnAddFolder.TabIndex = 51;
             this.btnAddFolder.Text = " Add folder";
+            this.btnAddFolder.Click += new System.EventHandler(this.btnAddFolder_Click);
             // 
             // fVideoLibrary
             // 

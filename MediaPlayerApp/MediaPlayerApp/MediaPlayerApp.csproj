@@ -147,6 +147,12 @@
     <Compile Include="UI\fPlayQueue.Designer.cs">
       <DependentUpon>fPlayQueue.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\fVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fVideo.Designer.cs">
+      <DependentUpon>fVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\fVideoLibrary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fPlayQueue.resx">
       <DependentUpon>fPlayQueue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fVideo.resx">
+      <DependentUpon>fVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fVideoLibrary.resx">
       <DependentUpon>fVideoLibrary.cs</DependentUpon>

@@ -103,3 +103,4 @@ D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\D
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Accord.xml
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Accord.Video.xml
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Accord.Video.FFMPEG.xml
+D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fVideo.resources

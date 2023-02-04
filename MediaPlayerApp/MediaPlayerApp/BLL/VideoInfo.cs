@@ -7,6 +7,7 @@ using System.IO;
 using System.Drawing;
 using Accord.Video.FFMPEG;
 using WMPLib;
+using MediaPlayerApp.Properties;
 
 namespace MediaPlayerApp.BLL
 {
@@ -57,17 +58,16 @@ namespace MediaPlayerApp.BLL
                 this.Length = Duration(path);
                 this.Link_Video = path;
                 this.picture_Video = GetThumbnail(path);
-
+                //this.picture_Video = Resources.lounge_music_playlist_96px;
             }
         }
 
         private Bitmap GetThumbnail(string fpath)
         {
-
             VideoFileReader reader = new VideoFileReader();
             // open video file mp4
             reader.Open(fpath);
-            return reader.ReadVideoFrame();
+            return reader.ReadVideoFrame(); ;
         }
         public string Link_Video
         {
