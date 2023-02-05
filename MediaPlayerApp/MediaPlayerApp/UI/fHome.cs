@@ -18,6 +18,12 @@ namespace MediaPlayerApp
         public Form activeForm = null;
         public Timer t;
         public ThumbnailMusic currenSong = new ThumbnailMusic();
+        private bool _isEndOfStream = false;
+        public bool IsEndOfStream
+        {
+            get { return _isEndOfStream; }
+            set { _isEndOfStream = value;}
+        }
         public fHome()
         {
             InitializeComponent();
@@ -212,6 +218,21 @@ namespace MediaPlayerApp
             {
                 btPlay.Checked = true;
             }
+            if (this.Media.playState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                IsEndOfStream = true;
+            }
+            else IsEndOfStream = false;
+            string path = "";
+            if (!(Media.currentMedia is null))
+            {
+                path = Media.currentMedia.sourceURL;
+                MusicSong musicSong = new MusicSong(path);
+                pbSongpic.Image = musicSong.PictureSong;
+                lbSongName.Text = musicSong.NameSong + "\n" + musicSong.Singer;
+                currenSong = new ThumbnailMusic(path, this, null);
+            }
+            
         }
 
         private void btPlay_CheckedChanged(object sender, EventArgs e)
