@@ -298,6 +298,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\add_folder.png" />
+    <None Include="Resources\grey_next.png" />
+    <None Include="Resources\grey_back.png" />
+    <None Include="Resources\not_shuffle.png" />
+    <None Include="Resources\video_repeat_1.png" />
+    <None Include="Resources\video_repeat.png" />
+    <None Include="Resources\video_play.png" />
+    <None Include="Resources\video_pause.png" />
+    <None Include="Resources\video_not_repeat.png" />
+    <None Include="Resources\video_next.png" />
+    <None Include="Resources\video_forward.png" />
+    <None Include="Resources\video_backward.png" />
+    <None Include="Resources\video_back.png" />
     <None Include="Resources\pause-button %282%29.png" />
     <None Include="Resources\white_play.png" />
     <None Include="Resources\open_folder.jpg" />

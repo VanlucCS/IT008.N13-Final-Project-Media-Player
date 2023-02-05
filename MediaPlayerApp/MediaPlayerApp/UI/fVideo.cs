@@ -3,6 +3,7 @@ using MediaPlayerApp.Components;
 using MediaPlayerApp.Properties;
 using Microsoft.VisualBasic.Devices;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,7 @@ namespace MediaPlayerApp.UI
         private int replay = 0;
         private bool shuffle = false;
         private int X =0, Y = 0;
+        Stack last = new Stack();
         public fVideo(fHome parent = null, Thumbnail thumbnail = null)
         {
             this.parent = parent;
@@ -35,6 +37,10 @@ namespace MediaPlayerApp.UI
             this.player.URL = currenVideo.VideoPath;
             shuffle = false;
             pbxShuffle.Enabled = false;
+            pbxNext.Enabled = false;
+            pbxBack.Enabled = false;
+            pbxNext.Image = Resources.grey_next;
+            pbxBack.Image = Resources.grey_back;
         }
         public fVideo(fHome parent = null, Thumbnail[] videos = null)
         {
@@ -44,6 +50,13 @@ namespace MediaPlayerApp.UI
             this.player.URL = videos[0].VideoPath;
             index = 0;
             playAll = true;
+            pbxBack.Image = Resources.grey_back;
+            if (videos.Length < 2)
+            {
+                pbxBack.Enabled = false;
+                pbxNext.Enabled = false;
+                pbxNext.Image = Resources.grey_next;
+            }    
         }
 
         private void btExit_Click(object sender, EventArgs e)
@@ -109,7 +122,7 @@ namespace MediaPlayerApp.UI
 
         private void player_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
-            if (playAll)
+            if (playAll && videos.Length > 1) 
             {
                 int statuschk = e.newState;
                 if (statuschk == 8)
@@ -118,44 +131,59 @@ namespace MediaPlayerApp.UI
                     {
                         if (shuffle)
                         {
-                            Random rnd = new Random();
-                            index = rnd.Next(index + 1, videos.Length);
-                            if (index < videos.Length)
+                            if (index < videos.Length-1)
                             {
+                                last.Push(index);
+                                Random rnd = new Random();
+                                index = rnd.Next(index + 1, videos.Length);
                                 this.BeginInvoke(new Action(() =>
                                 {
                                     this.player.URL = videos[index].VideoPath;
                                 }));
+                                pbxBack.Image = Resources.video_back;
+                                pbxBack.Enabled = true;
                                 //e.newState = 1;
-                            }
+                            }  
                             else if (replay == 1)
                             {
+                                last.Push(index);
+                                Random rnd = new Random();
                                 index = rnd.Next(videos.Length);
+                                
                                 this.BeginInvoke(new Action(() =>
                                 {
                                     this.player.URL = videos[index].VideoPath;
                                 }));
+                                pbxBack.Image = Resources.video_back;
+                                pbxBack.Enabled = true;
                             }
                         }
                         else if (!shuffle)
                         {
                             if (index < videos.Length - 1)
                             {
+                                last.Push(index);
                                 index++;
                                 this.BeginInvoke(new Action(() =>
                                 {
                                     this.player.URL = videos[index].VideoPath;
                                 }));
+                                pbxBack.Image = Resources.video_back;
+                                pbxBack.Enabled = true;
                                 //e.newState = 1;
                             }
                             else if (replay == 1)
                             {
+                                last.Push(index);
                                 index = 0;
                                 this.BeginInvoke(new Action(() =>
                                 {
                                     this.player.URL = videos[index].VideoPath;
                                 }));
+                                pbxBack.Image = Resources.video_back;
+                                pbxBack.Enabled = true;
                             }
+
                         }
                     }
                     //else
@@ -167,13 +195,26 @@ namespace MediaPlayerApp.UI
                     //}    
                     
                 }
+                if (index != videos.Length - 1 || replay != 0)
+                {
+                    pbxNext.Image = Resources.video_next;
+                }
             }
            
         }
 
         private void pbxShuffle_Click(object sender, EventArgs e)
         {
-            shuffle = !shuffle;
+            if (shuffle)
+            {
+                shuffle = false;
+                pbxShuffle.Image = Resources.not_shuffle;
+            } 
+            else
+            {
+                shuffle = true;
+                pbxShuffle.Image = Resources.white_shuffle;
+            }    
         }
 
         private void pbxForward_Click(object sender, EventArgs e)
@@ -186,15 +227,18 @@ namespace MediaPlayerApp.UI
             if (replay == 0)
             {
                 replay = 1;
+                pbxReplay.Image = Resources.video_repeat;
             }
             else if (replay == -1)
             {
                 replay = 0;
+                pbxReplay.Image = Resources.video_not_repeat;
+                player.settings.setMode("loop", false);
             }
             else if (replay == 1)
             {
                 replay = -1;
-                pbxReplay.Visible = false;
+                pbxReplay.Image = Resources.video_repeat_1;
                 player.settings.setMode("loop", true);
             }
         }
@@ -202,6 +246,76 @@ namespace MediaPlayerApp.UI
         private void pbxBackward_Click(object sender, EventArgs e)
         {
             this.player.Ctlcontrols.currentPosition = Math.Max(this.player.Ctlcontrols.currentPosition - 10,0);
+        }
+
+        private void pbxBack_Click(object sender, EventArgs e)
+        {
+            if (last.Count!=0)
+            {
+                index = (int)last.Pop();
+                this.player.URL = videos[index].VideoPath;
+            }
+            if (last.Count == 0)
+            {
+                pbxBack.Image = Resources.grey_back;
+            }
+            if (index != videos.Length - 1 || replay != 0)
+            {
+                pbxNext.Image = Resources.video_next;
+            }
+        }
+
+        private void pbxNext_Click(object sender, EventArgs e)
+        {
+            if (shuffle)
+            {
+                if (index < videos.Length -1)
+                {
+                    last.Push(index);
+                    Random rnd = new Random();
+                    index = rnd.Next(index + 1, videos.Length);
+                    this.player.URL = videos[index].VideoPath;
+      
+                    pbxBack.Image = Resources.video_back;
+                    
+                    //e.newState = 1;
+                }
+                else if (replay == 1)
+                {
+                    last.Push(index);
+                    Random rnd = new Random();
+                    index = rnd.Next(videos.Length);
+
+                    this.player.URL = videos[index].VideoPath;
+
+                    pbxBack.Image = Resources.video_back;
+                    
+                }
+            }
+            else if (!shuffle)
+            {
+                if (index < videos.Length - 1)
+                {
+                    last.Push(index);
+                    index++;
+                    this.player.URL = videos[index].VideoPath;
+                    pbxBack.Image = Resources.video_back;
+                    
+                    //e.newState = 1;
+                }
+                else if (replay == 1)
+                {
+                    last.Push(index);
+                    index = 0;
+                    this.player.URL = videos[index].VideoPath;
+                    pbxBack.Image = Resources.video_back;
+                    
+                }
+            }
+            if (index ==  videos.Length - 1 && replay == 0)
+            {
+                pbxNext.Image = Resources.grey_next;
+            }    
         }
 
         private void timer5s_Tick(object sender, EventArgs e)

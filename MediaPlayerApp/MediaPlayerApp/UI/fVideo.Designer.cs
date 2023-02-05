@@ -35,6 +35,8 @@
             this.btMinisize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pnlBottom = new Guna.UI2.WinForms.Guna2Panel();
+            this.pbxNext = new System.Windows.Forms.PictureBox();
+            this.pbxBack = new System.Windows.Forms.PictureBox();
             this.lbTimeCurrentPlay = new System.Windows.Forms.Label();
             this.tbProcess = new Guna.UI2.WinForms.Guna2TrackBar();
             this.btPlay = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -47,6 +49,8 @@
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlHead.SuspendLayout();
             this.pnlBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxShuffle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxReplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackward)).BeginInit();
@@ -103,6 +107,8 @@
             // pnlBottom
             // 
             this.pnlBottom.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlBottom.Controls.Add(this.pbxNext);
+            this.pnlBottom.Controls.Add(this.pbxBack);
             this.pnlBottom.Controls.Add(this.lbTimeCurrentPlay);
             this.pnlBottom.Controls.Add(this.tbProcess);
             this.pnlBottom.Controls.Add(this.btPlay);
@@ -115,6 +121,30 @@
             this.pnlBottom.Size = new System.Drawing.Size(800, 100);
             this.pnlBottom.TabIndex = 2;
             this.pnlBottom.Visible = false;
+            // 
+            // pbxNext
+            // 
+            this.pbxNext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxNext.Image = global::MediaPlayerApp.Properties.Resources.video_next;
+            this.pbxNext.Location = new System.Drawing.Point(514, 43);
+            this.pbxNext.Name = "pbxNext";
+            this.pbxNext.Size = new System.Drawing.Size(32, 32);
+            this.pbxNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxNext.TabIndex = 23;
+            this.pbxNext.TabStop = false;
+            this.pbxNext.Click += new System.EventHandler(this.pbxNext_Click);
+            // 
+            // pbxBack
+            // 
+            this.pbxBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxBack.Image = global::MediaPlayerApp.Properties.Resources.grey_back;
+            this.pbxBack.Location = new System.Drawing.Point(250, 43);
+            this.pbxBack.Name = "pbxBack";
+            this.pbxBack.Size = new System.Drawing.Size(32, 32);
+            this.pbxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBack.TabIndex = 22;
+            this.pbxBack.TabStop = false;
+            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
             // lbTimeCurrentPlay
             // 
@@ -150,7 +180,7 @@
             this.btPlay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btPlay.CheckedState.ImageSize = new System.Drawing.Size(50, 50);
             this.btPlay.HoverState.ImageSize = new System.Drawing.Size(50, 50);
-            this.btPlay.Image = global::MediaPlayerApp.Properties.Resources.play_button;
+            this.btPlay.Image = global::MediaPlayerApp.Properties.Resources.video_pause;
             this.btPlay.ImageOffset = new System.Drawing.Point(0, 0);
             this.btPlay.ImageRotate = 0F;
             this.btPlay.ImageSize = new System.Drawing.Size(50, 50);
@@ -164,8 +194,8 @@
             // pbxShuffle
             // 
             this.pbxShuffle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxShuffle.Image = global::MediaPlayerApp.Properties.Resources.shuffle;
-            this.pbxShuffle.Location = new System.Drawing.Point(251, 43);
+            this.pbxShuffle.Image = global::MediaPlayerApp.Properties.Resources.not_shuffle;
+            this.pbxShuffle.Location = new System.Drawing.Point(189, 43);
             this.pbxShuffle.Name = "pbxShuffle";
             this.pbxShuffle.Size = new System.Drawing.Size(32, 32);
             this.pbxShuffle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -176,8 +206,8 @@
             // pbxReplay
             // 
             this.pbxReplay.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxReplay.Image = global::MediaPlayerApp.Properties.Resources.repeat9;
-            this.pbxReplay.Location = new System.Drawing.Point(509, 43);
+            this.pbxReplay.Image = global::MediaPlayerApp.Properties.Resources.video_not_repeat;
+            this.pbxReplay.Location = new System.Drawing.Point(574, 43);
             this.pbxReplay.Name = "pbxReplay";
             this.pbxReplay.Size = new System.Drawing.Size(32, 32);
             this.pbxReplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -188,7 +218,7 @@
             // pbxBackward
             // 
             this.pbxBackward.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxBackward.Image = global::MediaPlayerApp.Properties.Resources.left;
+            this.pbxBackward.Image = global::MediaPlayerApp.Properties.Resources.video_backward;
             this.pbxBackward.Location = new System.Drawing.Point(311, 43);
             this.pbxBackward.Name = "pbxBackward";
             this.pbxBackward.Size = new System.Drawing.Size(32, 32);
@@ -200,7 +230,7 @@
             // pbxForward
             // 
             this.pbxForward.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxForward.Image = global::MediaPlayerApp.Properties.Resources.right;
+            this.pbxForward.Image = global::MediaPlayerApp.Properties.Resources.video_forward;
             this.pbxForward.Location = new System.Drawing.Point(449, 43);
             this.pbxForward.Name = "pbxForward";
             this.pbxForward.Size = new System.Drawing.Size(32, 32);
@@ -246,6 +276,8 @@
             this.pnlHead.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxShuffle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxReplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackward)).EndInit();
@@ -271,5 +303,7 @@
         private System.Windows.Forms.Timer timer5s;
         private Guna.UI2.WinForms.Guna2TrackBar tbProcess;
         private AxWMPLib.AxWindowsMediaPlayer player;
+        private System.Windows.Forms.PictureBox pbxNext;
+        private System.Windows.Forms.PictureBox pbxBack;
     }
 }
