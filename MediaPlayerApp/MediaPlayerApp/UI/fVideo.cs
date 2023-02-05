@@ -34,8 +34,7 @@ namespace MediaPlayerApp.UI
             InitializeComponent();
             this.player.URL = currenVideo.VideoPath;
             shuffle = false;
-            pbxShuffle.Enabled = false; 
-
+            pbxShuffle.Enabled = false;
         }
         public fVideo(fHome parent = null, Thumbnail[] videos = null)
         {
@@ -45,8 +44,6 @@ namespace MediaPlayerApp.UI
             this.player.URL = videos[0].VideoPath;
             index = 0;
             playAll = true;
-            
-            //this.player
         }
 
         private void btExit_Click(object sender, EventArgs e)
@@ -117,61 +114,61 @@ namespace MediaPlayerApp.UI
                 int statuschk = e.newState;
                 if (statuschk == 8)
                 {
-                    if (shuffle)
+                    if (replay != -1)
                     {
-                        Random rnd = new Random();
-                        index = rnd.Next(index + 1, videos.Length);
-                        if (index < videos.Length)
+                        if (shuffle)
                         {
-                            this.BeginInvoke(new Action(() =>
+                            Random rnd = new Random();
+                            index = rnd.Next(index + 1, videos.Length);
+                            if (index < videos.Length)
                             {
-                                this.player.URL = videos[index].VideoPath;
-                            }));
-                            return;
-                            //e.newState = 1;
+                                this.BeginInvoke(new Action(() =>
+                                {
+                                    this.player.URL = videos[index].VideoPath;
+                                }));
+                                //e.newState = 1;
+                            }
+                            else if (replay == 1)
+                            {
+                                index = rnd.Next(videos.Length);
+                                this.BeginInvoke(new Action(() =>
+                                {
+                                    this.player.URL = videos[index].VideoPath;
+                                }));
+                            }
                         }
-                        else if (replay == 1)
+                        else if (!shuffle)
                         {
-                            index = rnd.Next( videos.Length);
-                            this.BeginInvoke(new Action(() =>
+                            if (index < videos.Length - 1)
                             {
-                                this.player.URL = videos[index].VideoPath;
-                            }));
-                            return;
+                                index++;
+                                this.BeginInvoke(new Action(() =>
+                                {
+                                    this.player.URL = videos[index].VideoPath;
+                                }));
+                                //e.newState = 1;
+                            }
+                            else if (replay == 1)
+                            {
+                                index = 0;
+                                this.BeginInvoke(new Action(() =>
+                                {
+                                    this.player.URL = videos[index].VideoPath;
+                                }));
+                            }
                         }
-                    }  
-                    else if (!shuffle )
-                    {
-                        if (index < videos.Length -1)
-                        {
-                            index++;
-                            this.BeginInvoke(new Action(() =>
-                            {
-                                this.player.URL = videos[index].VideoPath;
-                            }));
-                            return;
-                            //e.newState = 1;
-                        }
-                        else if (replay == 1)
-                        {
-                            index = 0;
-                            this.BeginInvoke(new Action(() =>
-                            {
-                                this.player.URL = videos[index].VideoPath;
-                            }));
-                            return;
-                        }    
                     }
+                    //else
+                    //{
+                    //    this.BeginInvoke(new Action(() =>
+                    //    {
+                    //        this.player.URL = videos[index].VideoPath;
+                    //    }));
+                    //}    
+                    
                 }
             }
-            if (replay == -1)
-            {
-                this.BeginInvoke(new Action(() =>
-                {
-                    this.player.URL = this.player.URL;
-                }));
-                return;
-            }    
+           
         }
 
         private void pbxShuffle_Click(object sender, EventArgs e)
@@ -197,6 +194,8 @@ namespace MediaPlayerApp.UI
             else if (replay == 1)
             {
                 replay = -1;
+                pbxReplay.Visible = false;
+                player.settings.setMode("loop", true);
             }
         }
 

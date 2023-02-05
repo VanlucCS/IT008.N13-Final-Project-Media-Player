@@ -241,6 +241,7 @@
             this.Controls.Add(this.player);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fVideo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fVideo";
             this.pnlHead.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
