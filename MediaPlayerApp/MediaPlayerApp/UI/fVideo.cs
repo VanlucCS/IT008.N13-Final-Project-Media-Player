@@ -24,7 +24,7 @@ namespace MediaPlayerApp.UI
         public Thumbnail[] videos;
         private bool playAll = false;
         private int index = 0;
-        private bool replay = false;
+        private int replay = 0;
         private bool shuffle = false;
         private int X =0, Y = 0;
         public fVideo(fHome parent = null, Thumbnail thumbnail = null)
@@ -33,6 +33,8 @@ namespace MediaPlayerApp.UI
             this.currenVideo = thumbnail;
             InitializeComponent();
             this.player.URL = currenVideo.VideoPath;
+            shuffle = false;
+            pbxShuffle.Enabled = false; 
 
         }
         public fVideo(fHome parent = null, Thumbnail[] videos = null)
@@ -95,10 +97,6 @@ namespace MediaPlayerApp.UI
             }
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void player_MouseMoveEvent(object sender, AxWMPLib._WMPOCXEvents_MouseMoveEvent e)
         {
@@ -119,19 +117,92 @@ namespace MediaPlayerApp.UI
                 int statuschk = e.newState;
                 if (statuschk == 8)
                 {
-                    if (index < videos.Length)
+                    if (shuffle)
                     {
-                        index++;
-                        this.BeginInvoke(new Action(() =>
+                        Random rnd = new Random();
+                        index = rnd.Next(index + 1, videos.Length);
+                        if (index < videos.Length)
                         {
-                            this.player.URL = videos[index].VideoPath;
-                        }));
-                        //e.newState = 1;
-
+                            this.BeginInvoke(new Action(() =>
+                            {
+                                this.player.URL = videos[index].VideoPath;
+                            }));
+                            return;
+                            //e.newState = 1;
+                        }
+                        else if (replay == 1)
+                        {
+                            index = rnd.Next( videos.Length);
+                            this.BeginInvoke(new Action(() =>
+                            {
+                                this.player.URL = videos[index].VideoPath;
+                            }));
+                            return;
+                        }
+                    }  
+                    else if (!shuffle )
+                    {
+                        if (index < videos.Length -1)
+                        {
+                            index++;
+                            this.BeginInvoke(new Action(() =>
+                            {
+                                this.player.URL = videos[index].VideoPath;
+                            }));
+                            return;
+                            //e.newState = 1;
+                        }
+                        else if (replay == 1)
+                        {
+                            index = 0;
+                            this.BeginInvoke(new Action(() =>
+                            {
+                                this.player.URL = videos[index].VideoPath;
+                            }));
+                            return;
+                        }    
                     }
-
                 }
             }
+            if (replay == -1)
+            {
+                this.BeginInvoke(new Action(() =>
+                {
+                    this.player.URL = this.player.URL;
+                }));
+                return;
+            }    
+        }
+
+        private void pbxShuffle_Click(object sender, EventArgs e)
+        {
+            shuffle = !shuffle;
+        }
+
+        private void pbxForward_Click(object sender, EventArgs e)
+        {
+            this.player.Ctlcontrols.currentPosition = Math.Min(this.player.Ctlcontrols.currentPosition + 30, player.currentMedia.duration);
+        }
+
+        private void pbxReplay_Click(object sender, EventArgs e)
+        {
+            if (replay == 0)
+            {
+                replay = 1;
+            }
+            else if (replay == -1)
+            {
+                replay = 0;
+            }
+            else if (replay == 1)
+            {
+                replay = -1;
+            }
+        }
+
+        private void pbxBackward_Click(object sender, EventArgs e)
+        {
+            this.player.Ctlcontrols.currentPosition = Math.Max(this.player.Ctlcontrols.currentPosition - 10,0);
         }
 
         private void timer5s_Tick(object sender, EventArgs e)

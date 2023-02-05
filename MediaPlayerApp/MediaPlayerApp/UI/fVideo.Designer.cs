@@ -38,19 +38,19 @@
             this.lbTimeCurrentPlay = new System.Windows.Forms.Label();
             this.tbProcess = new Guna.UI2.WinForms.Guna2TrackBar();
             this.btPlay = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxShuffle = new System.Windows.Forms.PictureBox();
+            this.pbxReplay = new System.Windows.Forms.PictureBox();
+            this.pbxBackward = new System.Windows.Forms.PictureBox();
+            this.pbxForward = new System.Windows.Forms.PictureBox();
             this.timer1s = new System.Windows.Forms.Timer(this.components);
             this.timer5s = new System.Windows.Forms.Timer(this.components);
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlHead.SuspendLayout();
             this.pnlBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxShuffle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxReplay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackward)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxForward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,10 +106,10 @@
             this.pnlBottom.Controls.Add(this.lbTimeCurrentPlay);
             this.pnlBottom.Controls.Add(this.tbProcess);
             this.pnlBottom.Controls.Add(this.btPlay);
-            this.pnlBottom.Controls.Add(this.pictureBox4);
-            this.pnlBottom.Controls.Add(this.pictureBox3);
-            this.pnlBottom.Controls.Add(this.pictureBox2);
-            this.pnlBottom.Controls.Add(this.pictureBox1);
+            this.pnlBottom.Controls.Add(this.pbxShuffle);
+            this.pnlBottom.Controls.Add(this.pbxReplay);
+            this.pnlBottom.Controls.Add(this.pbxBackward);
+            this.pnlBottom.Controls.Add(this.pbxForward);
             this.pnlBottom.Location = new System.Drawing.Point(0, 350);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(800, 100);
@@ -161,50 +161,53 @@
             this.btPlay.TabIndex = 19;
             this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
             // 
-            // pictureBox4
+            // pbxShuffle
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Image = global::MediaPlayerApp.Properties.Resources.shuffle;
-            this.pictureBox4.Location = new System.Drawing.Point(251, 43);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 18;
-            this.pictureBox4.TabStop = false;
+            this.pbxShuffle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxShuffle.Image = global::MediaPlayerApp.Properties.Resources.shuffle;
+            this.pbxShuffle.Location = new System.Drawing.Point(251, 43);
+            this.pbxShuffle.Name = "pbxShuffle";
+            this.pbxShuffle.Size = new System.Drawing.Size(32, 32);
+            this.pbxShuffle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxShuffle.TabIndex = 18;
+            this.pbxShuffle.TabStop = false;
+            this.pbxShuffle.Click += new System.EventHandler(this.pbxShuffle_Click);
             // 
-            // pictureBox3
+            // pbxReplay
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = global::MediaPlayerApp.Properties.Resources.repeat9;
-            this.pictureBox3.Location = new System.Drawing.Point(509, 43);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 15;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pbxReplay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxReplay.Image = global::MediaPlayerApp.Properties.Resources.repeat9;
+            this.pbxReplay.Location = new System.Drawing.Point(509, 43);
+            this.pbxReplay.Name = "pbxReplay";
+            this.pbxReplay.Size = new System.Drawing.Size(32, 32);
+            this.pbxReplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxReplay.TabIndex = 15;
+            this.pbxReplay.TabStop = false;
+            this.pbxReplay.Click += new System.EventHandler(this.pbxReplay_Click);
             // 
-            // pictureBox2
+            // pbxBackward
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::MediaPlayerApp.Properties.Resources.left;
-            this.pictureBox2.Location = new System.Drawing.Point(311, 43);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
+            this.pbxBackward.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxBackward.Image = global::MediaPlayerApp.Properties.Resources.left;
+            this.pbxBackward.Location = new System.Drawing.Point(311, 43);
+            this.pbxBackward.Name = "pbxBackward";
+            this.pbxBackward.Size = new System.Drawing.Size(32, 32);
+            this.pbxBackward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBackward.TabIndex = 17;
+            this.pbxBackward.TabStop = false;
+            this.pbxBackward.Click += new System.EventHandler(this.pbxBackward_Click);
             // 
-            // pictureBox1
+            // pbxForward
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::MediaPlayerApp.Properties.Resources.right;
-            this.pictureBox1.Location = new System.Drawing.Point(449, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.pbxForward.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxForward.Image = global::MediaPlayerApp.Properties.Resources.right;
+            this.pbxForward.Location = new System.Drawing.Point(449, 43);
+            this.pbxForward.Name = "pbxForward";
+            this.pbxForward.Size = new System.Drawing.Size(32, 32);
+            this.pbxForward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxForward.TabIndex = 16;
+            this.pbxForward.TabStop = false;
+            this.pbxForward.Click += new System.EventHandler(this.pbxForward_Click);
             // 
             // timer1s
             // 
@@ -242,10 +245,10 @@
             this.pnlHead.ResumeLayout(false);
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxShuffle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxReplay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackward)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxForward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
@@ -258,10 +261,10 @@
         private Guna.UI2.WinForms.Guna2ControlBox btMinisize;
         private Guna.UI2.WinForms.Guna2ControlBox btExit;
         private Guna.UI2.WinForms.Guna2ImageButton btPlay;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxShuffle;
+        private System.Windows.Forms.PictureBox pbxReplay;
+        private System.Windows.Forms.PictureBox pbxBackward;
+        private System.Windows.Forms.PictureBox pbxForward;
         private System.Windows.Forms.Label lbTimeCurrentPlay;
         private System.Windows.Forms.Timer timer1s;
         private System.Windows.Forms.Timer timer5s;
