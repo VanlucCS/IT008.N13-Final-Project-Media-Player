@@ -67,6 +67,7 @@ namespace MediaPlayerApp.UI
         }
         private void loadMusic()
         {
+            flowLayoutPanel1.Controls.Clear();
             // get list music string[] path infolder added
             string[] listPath;
             try
@@ -74,27 +75,30 @@ namespace MediaPlayerApp.UI
                 string[] folderadded = System.IO.File.ReadAllLines(@"./Data/Music.txt");
                 foreach (string folder in folderadded)
                 {
-                    foreach (string file in Directory.GetFiles(folder))
+                    if (Directory.Exists(folder))
                     {
-                        FileInfo info = new FileInfo(file);
-                        if (info.Extension == ".mp3")
+                        foreach (string file in Directory.GetFiles(folder))
                         {
+                            FileInfo info = new FileInfo(file);
+                            if (info.Extension == ".mp3")
+                            {
 
-                            ThumbnailMusic thumbnailMusic = new ThumbnailMusic(file, this.parent, this);
-                            thumbnailMusic.Dock = DockStyle.Top;
-                            thumbnailMusic.Name = file;
-                            SelectedMusic.Add(thumbnailMusic.Name, false);
-                            flowLayoutPanel1.Controls.Add(thumbnailMusic);
+                                ThumbnailMusic thumbnailMusic = new ThumbnailMusic(file, this.parent, this);
+                                thumbnailMusic.Dock = DockStyle.Top;
+                                thumbnailMusic.Name = file;
+                                SelectedMusic.Add(thumbnailMusic.Name, false);
+                                flowLayoutPanel1.Controls.Add(thumbnailMusic);
+                            }
+                            //MessageBox.Show(file);
+
                         }
-                        //MessageBox.Show(file);
+                    }    
 
-                    }
 
                 }
             }
             catch (Exception)
             {
-                return;
             }
 
 
@@ -210,6 +214,7 @@ namespace MediaPlayerApp.UI
         private void btnAddFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog f = new FolderBrowserDialog();
+            f.RootFolder = Environment.SpecialFolder.MyComputer;
             if (f.ShowDialog() == DialogResult.OK)
             {
                 // check exits
@@ -226,6 +231,7 @@ namespace MediaPlayerApp.UI
                     using (StreamWriter w = File.AppendText(@"./Data/Music.txt"))
                     {
                         w.WriteLine(f.SelectedPath);
+                        loadMusic();
                     }
                 }
                 else
@@ -289,5 +295,6 @@ namespace MediaPlayerApp.UI
                 timer1.Enabled = false;
             }
         }
+
     }
 }

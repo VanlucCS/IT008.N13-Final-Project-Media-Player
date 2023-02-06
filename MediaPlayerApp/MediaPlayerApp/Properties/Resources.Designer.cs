@@ -73,6 +73,26 @@ namespace MediaPlayerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grey_back {
+            get {
+                object obj = ResourceManager.GetObject("grey_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_next {
+            get {
+                object obj = ResourceManager.GetObject("grey_next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap heart_96px {
             get {
                 object obj = ResourceManager.GetObject("heart_96px", resourceCulture);
@@ -196,6 +216,16 @@ namespace MediaPlayerApp.Properties {
         internal static System.Drawing.Bitmap no_sound__1_ {
             get {
                 object obj = ResourceManager.GetObject("no_sound__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap not_shuffle {
+            get {
+                object obj = ResourceManager.GetObject("not_shuffle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -356,6 +386,86 @@ namespace MediaPlayerApp.Properties {
         internal static System.Drawing.Bitmap video_96px2 {
             get {
                 object obj = ResourceManager.GetObject("video_96px2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_back {
+            get {
+                object obj = ResourceManager.GetObject("video_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_backward {
+            get {
+                object obj = ResourceManager.GetObject("video_backward", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_forward {
+            get {
+                object obj = ResourceManager.GetObject("video_forward", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_next {
+            get {
+                object obj = ResourceManager.GetObject("video_next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_not_repeat {
+            get {
+                object obj = ResourceManager.GetObject("video_not_repeat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_pause {
+            get {
+                object obj = ResourceManager.GetObject("video_pause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_repeat {
+            get {
+                object obj = ResourceManager.GetObject("video_repeat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_repeat_1 {
+            get {
+                object obj = ResourceManager.GetObject("video_repeat_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
