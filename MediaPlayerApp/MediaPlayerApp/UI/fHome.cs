@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace MediaPlayerApp
 {
@@ -116,7 +115,7 @@ namespace MediaPlayerApp
             this.OpenChildForm(new fMusicLibrary(this));
         }
 
-        public void btFravorSong_Click(object sender, EventArgs e)
+        private void btFravorSong_Click(object sender, EventArgs e)
         {
             resetButtonStage();
             btFravorSong.Checked = !btFravorSong.Checked;
@@ -213,24 +212,6 @@ namespace MediaPlayerApp
             {
                 btPlay.Checked = true;
             }
-            #region Check favor song
-            string[] listFvorPath = System.IO.File.ReadAllLines(@"./Data/FavoriteSong.txt");
-            foreach (string fvorSongPath in listFvorPath)
-            {
-                if (this.currenSong.Path == fvorSongPath)
-                {
-                    btFavorite.Image = MediaPlayerApp.Properties.Resources.lover;
-                    btFavorite.Checked = true;
-                    return;
-                }
-
-            }
-                btFavorite.Image = MediaPlayerApp.Properties.Resources.heart_96px;
-                    btFavorite.Checked = false;
-            #endregion
-            //LoadSongInfo(this.Media.currentMedia.sourceURL);
-
-
         }
 
         private void btPlay_CheckedChanged(object sender, EventArgs e)
@@ -250,37 +231,6 @@ namespace MediaPlayerApp
                 lbTimeCurrentPlay.Text = Time.ToString().Substring(0, 5);
                 tbProcess.Value =  (int)(100.0 * (Media.Ctlcontrols.currentPosition / Media.currentMedia.duration));
             }    
-        }
-
-        private void btFavorite_Click(object sender, EventArgs e)
-        {
-            if (this.currenSong == null)
-                return;
-
-            btFavorite.Checked = !btFavorite.Checked;
-            if (btFavorite.Checked == true)
-            {
-
-                btFavorite.Image = MediaPlayerApp.Properties.Resources.lover;
-                // add fvor song
-                using (StreamWriter w = File.AppendText(@"./Data/FavoriteSong.txt"))
-                {
-                    w.WriteLine(this.currenSong.Path);
-                }
-            }
-            else
-            {
-                btFavorite.Image = MediaPlayerApp.Properties.Resources.heart_96px;
-                // remove fvor song
-                File.WriteAllLines(@"./Data/FavoriteSong.txt",
-                    File.ReadLines(@"./Data/FavoriteSong.txt").Where(l => l != this.currenSong.Path).ToList());
-
-            }
-        }
-
-        private void Media_MediaChange(object sender, AxWMPLib._WMPOCXEvents_MediaChangeEvent e)
-        {
-            LoadSongInfo(this.Media.currentMedia.sourceURL);
         }
     }
 }
