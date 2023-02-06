@@ -41,7 +41,7 @@
             // 
             this.lblSongName.BackColor = System.Drawing.Color.Transparent;
             this.lblSongName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSongName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(63)))), ((int)(((byte)(10)))));
+            this.lblSongName.ForeColor = System.Drawing.Color.Black;
             this.lblSongName.IsSelectionEnabled = false;
             this.lblSongName.Location = new System.Drawing.Point(75, 14);
             this.lblSongName.MaximumSize = new System.Drawing.Size(146, 18);
@@ -57,7 +57,7 @@
             // 
             this.lblArtist.BackColor = System.Drawing.Color.Transparent;
             this.lblArtist.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArtist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(63)))), ((int)(((byte)(10)))));
+            this.lblArtist.ForeColor = System.Drawing.Color.Black;
             this.lblArtist.IsSelectionEnabled = false;
             this.lblArtist.Location = new System.Drawing.Point(206, 14);
             this.lblArtist.MaximumSize = new System.Drawing.Size(111, 18);
@@ -73,7 +73,7 @@
             // 
             this.lblAlbum.BackColor = System.Drawing.Color.Transparent;
             this.lblAlbum.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlbum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(63)))), ((int)(((byte)(10)))));
+            this.lblAlbum.ForeColor = System.Drawing.Color.Black;
             this.lblAlbum.IsSelectionEnabled = false;
             this.lblAlbum.Location = new System.Drawing.Point(309, 14);
             this.lblAlbum.MaximumSize = new System.Drawing.Size(111, 18);
@@ -89,7 +89,7 @@
             // 
             this.lblGenre.BackColor = System.Drawing.Color.Transparent;
             this.lblGenre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(63)))), ((int)(((byte)(10)))));
+            this.lblGenre.ForeColor = System.Drawing.Color.Black;
             this.lblGenre.IsSelectionEnabled = false;
             this.lblGenre.Location = new System.Drawing.Point(417, 14);
             this.lblGenre.MaximumSize = new System.Drawing.Size(109, 18);
@@ -105,7 +105,7 @@
             // 
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(63)))), ((int)(((byte)(10)))));
+            this.lblTime.ForeColor = System.Drawing.Color.Black;
             this.lblTime.IsSelectionEnabled = false;
             this.lblTime.Location = new System.Drawing.Point(522, 14);
             this.lblTime.Name = "lblTime";
@@ -124,6 +124,8 @@
             this.guna2CheckBox1.CheckedState.BorderThickness = 1;
             this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.SystemColors.Control;
             this.guna2CheckBox1.CheckMarkColor = System.Drawing.Color.Black;
+            this.guna2CheckBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2CheckBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.guna2CheckBox1.Location = new System.Drawing.Point(15, 15);
             this.guna2CheckBox1.Name = "guna2CheckBox1";
             this.guna2CheckBox1.Size = new System.Drawing.Size(15, 16);
@@ -134,6 +136,7 @@
             this.guna2CheckBox1.UncheckedState.BorderThickness = 1;
             this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.SystemColors.Control;
             this.guna2CheckBox1.UseVisualStyleBackColor = false;
+            this.guna2CheckBox1.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
             // 
             // btnPlay
             // 
@@ -188,5 +191,11 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTime;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
         public Guna.UI2.WinForms.Guna2Button btnPlay;
+
+        public Guna.UI2.WinForms.Guna2CheckBox Guna2CheckBox1
+        {
+            get { return guna2CheckBox1; }
+            set { guna2CheckBox1 = value; }
+        }
     }
 }

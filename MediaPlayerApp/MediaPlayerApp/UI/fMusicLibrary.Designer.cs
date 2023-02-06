@@ -29,6 +29,7 @@ namespace MediaPlayerApp.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblArtists = new System.Windows.Forms.Label();
             this.lblAlbums = new System.Windows.Forms.Label();
             this.lblSongs = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@ namespace MediaPlayerApp.UI
             this.lbGenre = new System.Windows.Forms.Label();
             this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUnderline)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,8 +81,8 @@ namespace MediaPlayerApp.UI
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 95);
@@ -106,7 +108,7 @@ namespace MediaPlayerApp.UI
             this.btnShuffleAndPlay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnShuffleAndPlay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnShuffleAndPlay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnShuffleAndPlay.FillColor = System.Drawing.Color.OrangeRed;
+            this.btnShuffleAndPlay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(82)))), ((int)(((byte)(35)))));
             this.btnShuffleAndPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShuffleAndPlay.ForeColor = System.Drawing.Color.White;
             this.btnShuffleAndPlay.Image = global::MediaPlayerApp.Properties.Resources.white_shuffle;
@@ -212,6 +214,10 @@ namespace MediaPlayerApp.UI
             this.guna2ComboBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2ComboBox1.TabIndex = 64;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // fMusicLibrary
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -254,5 +260,6 @@ namespace MediaPlayerApp.UI
         private System.Windows.Forms.Label lbGenre;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

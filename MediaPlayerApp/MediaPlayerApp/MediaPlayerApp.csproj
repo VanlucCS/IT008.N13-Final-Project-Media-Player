@@ -68,6 +68,12 @@
     <Compile Include="BLL\MusicSong.cs" />
     <Compile Include="BLL\PlaylistInfo.cs" />
     <Compile Include="BLL\VideoInfo.cs" />
+    <Compile Include="Components\SelectedSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\SelectedSong.Designer.cs">
+      <DependentUpon>SelectedSong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\ThumbnailMusic.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     <Compile Include="UI\fVideoLibrary.Designer.cs">
       <DependentUpon>fVideoLibrary.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Components\SelectedSong.resx">
+      <DependentUpon>SelectedSong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\ThumbnailMusic.resx">
       <DependentUpon>ThumbnailMusic.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +307,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\add_folder.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\pen.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\more.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\playnext.png" />
+    <Content Include="Resources\black_shuffle.png" />
+    <Content Include="Resources\black_trash.png" />
+    <Content Include="Resources\export202301312045374440.png" />
+    <Content Include="Resources\white_heart.png" />
+    <Content Include="Resources\white_open_folder.png" />
     <None Include="Resources\heart2.png" />
     <None Include="Resources\lover.png" />
     <None Include="Resources\grey_next.png" />
