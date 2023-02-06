@@ -327,6 +327,7 @@
     <None Include="Resources\not_shuffle.png" />
     <None Include="Resources\video_back.png" />
     <None Include="Resources\grey_next.png" />
+    <None Include="Resources\video_play.png" />
     <Content Include="Resources\white_heart.png" />
     <Content Include="Resources\white_open_folder.png" />
     <None Include="Resources\heart2.png" />
