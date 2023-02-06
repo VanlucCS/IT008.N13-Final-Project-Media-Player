@@ -83,6 +83,16 @@ namespace MediaPlayerApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap heart2 {
+            get {
+                object obj = ResourceManager.GetObject("heart2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap high_volume {
             get {
                 object obj = ResourceManager.GetObject("high_volume", resourceCulture);
@@ -116,6 +126,16 @@ namespace MediaPlayerApp.Properties {
         internal static System.Drawing.Bitmap lounge_music_playlist_96px {
             get {
                 object obj = ResourceManager.GetObject("lounge_music_playlist_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lover {
+            get {
+                object obj = ResourceManager.GetObject("lover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
