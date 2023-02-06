@@ -35,14 +35,14 @@ namespace MediaPlayerApp.UI
             this.lblSongs = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnShuffleAndPlay = new Guna.UI2.WinForms.Guna2Button();
-            this.pbxUnderline = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnAddFolder = new Guna.UI2.WinForms.Guna2Button();
             this.lblSort = new System.Windows.Forms.Label();
             this.lbGenre = new System.Windows.Forms.Label();
             this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnAddFolder = new Guna.UI2.WinForms.Guna2Button();
+            this.btnShuffleAndPlay = new Guna.UI2.WinForms.Guna2Button();
+            this.pbxUnderline = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUnderline)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@ namespace MediaPlayerApp.UI
             this.lblArtists.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblArtists.Location = new System.Drawing.Point(333, 15);
             this.lblArtists.Name = "lblArtists";
-            this.lblArtists.Size = new System.Drawing.Size(57, 21);
+            this.lblArtists.Size = new System.Drawing.Size(70, 28);
             this.lblArtists.TabIndex = 28;
             this.lblArtists.Text = "Artists";
             this.lblArtists.Click += new System.EventHandler(this.lblArtists_Click);
@@ -63,7 +63,7 @@ namespace MediaPlayerApp.UI
             this.lblAlbums.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblAlbums.Location = new System.Drawing.Point(223, 15);
             this.lblAlbums.Name = "lblAlbums";
-            this.lblAlbums.Size = new System.Drawing.Size(65, 21);
+            this.lblAlbums.Size = new System.Drawing.Size(81, 28);
             this.lblAlbums.TabIndex = 27;
             this.lblAlbums.Text = "Albums";
             this.lblAlbums.Click += new System.EventHandler(this.lblAlbums_Click);
@@ -74,15 +74,15 @@ namespace MediaPlayerApp.UI
             this.lblSongs.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblSongs.Location = new System.Drawing.Point(120, 15);
             this.lblSongs.Name = "lblSongs";
-            this.lblSongs.Size = new System.Drawing.Size(55, 21);
+            this.lblSongs.Size = new System.Drawing.Size(68, 28);
             this.lblSongs.TabIndex = 26;
             this.lblSongs.Text = "Songs";
             this.lblSongs.Click += new System.EventHandler(this.lblSongs_Click);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 95);
@@ -96,59 +96,9 @@ namespace MediaPlayerApp.UI
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblTitle.Location = new System.Drawing.Point(12, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(71, 30);
+            this.lblTitle.Size = new System.Drawing.Size(92, 37);
             this.lblTitle.TabIndex = 20;
             this.lblTitle.Text = "Music";
-            // 
-            // btnShuffleAndPlay
-            // 
-            this.btnShuffleAndPlay.BackColor = System.Drawing.Color.Transparent;
-            this.btnShuffleAndPlay.BorderRadius = 5;
-            this.btnShuffleAndPlay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnShuffleAndPlay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnShuffleAndPlay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnShuffleAndPlay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnShuffleAndPlay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(82)))), ((int)(((byte)(35)))));
-            this.btnShuffleAndPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShuffleAndPlay.ForeColor = System.Drawing.Color.White;
-            this.btnShuffleAndPlay.Image = global::MediaPlayerApp.Properties.Resources.white_shuffle;
-            this.btnShuffleAndPlay.Location = new System.Drawing.Point(12, 55);
-            this.btnShuffleAndPlay.Name = "btnShuffleAndPlay";
-            this.btnShuffleAndPlay.Size = new System.Drawing.Size(127, 30);
-            this.btnShuffleAndPlay.TabIndex = 30;
-            this.btnShuffleAndPlay.Text = "Shuffle and play";
-            // 
-            // pbxUnderline
-            // 
-            this.pbxUnderline.BorderRadius = 3;
-            this.pbxUnderline.FillColor = System.Drawing.Color.OrangeRed;
-            this.pbxUnderline.ImageRotate = 0F;
-            this.pbxUnderline.Location = new System.Drawing.Point(137, 38);
-            this.pbxUnderline.Name = "pbxUnderline";
-            this.pbxUnderline.Size = new System.Drawing.Size(20, 5);
-            this.pbxUnderline.TabIndex = 29;
-            this.pbxUnderline.TabStop = false;
-            // 
-            // btnAddFolder
-            // 
-            this.btnAddFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddFolder.BorderRadius = 5;
-            this.btnAddFolder.BorderThickness = 1;
-            this.btnAddFolder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddFolder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddFolder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddFolder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddFolder.FillColor = System.Drawing.SystemColors.Control;
-            this.btnAddFolder.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFolder.ForeColor = System.Drawing.Color.Black;
-            this.btnAddFolder.Image = global::MediaPlayerApp.Properties.Resources.add_folder;
-            this.btnAddFolder.Location = new System.Drawing.Point(595, 22);
-            this.btnAddFolder.Name = "btnAddFolder";
-            this.btnAddFolder.PressedColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAddFolder.Size = new System.Drawing.Size(143, 30);
-            this.btnAddFolder.TabIndex = 52;
-            this.btnAddFolder.Text = " Add folder";
-            this.btnAddFolder.Click += new System.EventHandler(this.btnAddFolder_Click);
             // 
             // lblSort
             // 
@@ -217,6 +167,56 @@ namespace MediaPlayerApp.UI
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnAddFolder
+            // 
+            this.btnAddFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddFolder.BorderRadius = 5;
+            this.btnAddFolder.BorderThickness = 1;
+            this.btnAddFolder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFolder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFolder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddFolder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddFolder.FillColor = System.Drawing.SystemColors.Control;
+            this.btnAddFolder.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFolder.ForeColor = System.Drawing.Color.Black;
+            this.btnAddFolder.Image = global::MediaPlayerApp.Properties.Resources.add_folder;
+            this.btnAddFolder.Location = new System.Drawing.Point(595, 22);
+            this.btnAddFolder.Name = "btnAddFolder";
+            this.btnAddFolder.PressedColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAddFolder.Size = new System.Drawing.Size(143, 30);
+            this.btnAddFolder.TabIndex = 52;
+            this.btnAddFolder.Text = " Add folder";
+            this.btnAddFolder.Click += new System.EventHandler(this.btnAddFolder_Click);
+            // 
+            // btnShuffleAndPlay
+            // 
+            this.btnShuffleAndPlay.BackColor = System.Drawing.Color.Transparent;
+            this.btnShuffleAndPlay.BorderRadius = 5;
+            this.btnShuffleAndPlay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnShuffleAndPlay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnShuffleAndPlay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnShuffleAndPlay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnShuffleAndPlay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(82)))), ((int)(((byte)(35)))));
+            this.btnShuffleAndPlay.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShuffleAndPlay.ForeColor = System.Drawing.Color.White;
+            this.btnShuffleAndPlay.Image = global::MediaPlayerApp.Properties.Resources.white_shuffle;
+            this.btnShuffleAndPlay.Location = new System.Drawing.Point(12, 55);
+            this.btnShuffleAndPlay.Name = "btnShuffleAndPlay";
+            this.btnShuffleAndPlay.Size = new System.Drawing.Size(127, 30);
+            this.btnShuffleAndPlay.TabIndex = 30;
+            this.btnShuffleAndPlay.Text = "Shuffle and play";
+            // 
+            // pbxUnderline
+            // 
+            this.pbxUnderline.BorderRadius = 3;
+            this.pbxUnderline.FillColor = System.Drawing.Color.OrangeRed;
+            this.pbxUnderline.ImageRotate = 0F;
+            this.pbxUnderline.Location = new System.Drawing.Point(137, 38);
+            this.pbxUnderline.Name = "pbxUnderline";
+            this.pbxUnderline.Size = new System.Drawing.Size(20, 5);
+            this.pbxUnderline.TabIndex = 29;
+            this.pbxUnderline.TabStop = false;
             // 
             // fMusicLibrary
             // 

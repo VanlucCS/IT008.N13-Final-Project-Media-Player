@@ -30,12 +30,13 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblSort = new System.Windows.Forms.Label();
             this.lblVideoFolders = new System.Windows.Forms.Label();
             this.lblAllVideos = new System.Windows.Forms.Label();
             this.btnPlayAll = new Guna.UI2.WinForms.Guna2Button();
             this.pbxUnderline = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddFolder = new Guna.UI2.WinForms.Guna2Button();
+            this.cbxSort = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblSort = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUnderline)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,23 +55,11 @@
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 95);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(770, 410);
             this.flowLayoutPanel1.TabIndex = 7;
-            // 
-            // lblSort
-            // 
-            this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSort.Location = new System.Drawing.Point(525, 59);
-            this.lblSort.Name = "lblSort";
-            this.lblSort.Size = new System.Drawing.Size(218, 34);
-            this.lblSort.TabIndex = 6;
-            this.lblSort.Text = "Sort by: Date modified     ▼";
-            this.lblSort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblSort.MouseEnter += new System.EventHandler(this.lblSort_MouseEnter);
-            this.lblSort.MouseLeave += new System.EventHandler(this.lblSort_MouseLeave);
             // 
             // lblVideoFolders
             // 
@@ -143,19 +132,53 @@
             this.btnAddFolder.Size = new System.Drawing.Size(143, 30);
             this.btnAddFolder.TabIndex = 51;
             this.btnAddFolder.Text = " Add folder";
+            this.btnAddFolder.Click += new System.EventHandler(this.btnAddFolder_Click);
+            // 
+            // cbxSort
+            // 
+            this.cbxSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbxSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSort.FillColor = System.Drawing.SystemColors.Control;
+            this.cbxSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxSort.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxSort.ForeColor = System.Drawing.Color.Red;
+            this.cbxSort.ItemHeight = 20;
+            this.cbxSort.Items.AddRange(new object[] {
+            "Date modified",
+            "A - Z"});
+            this.cbxSort.Location = new System.Drawing.Point(595, 63);
+            this.cbxSort.Name = "cbxSort";
+            this.cbxSort.Size = new System.Drawing.Size(157, 26);
+            this.cbxSort.StartIndex = 0;
+            this.cbxSort.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbxSort.TabIndex = 67;
+            // 
+            // lblSort
+            // 
+            this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSort.Location = new System.Drawing.Point(516, 59);
+            this.lblSort.Name = "lblSort";
+            this.lblSort.Size = new System.Drawing.Size(81, 34);
+            this.lblSort.TabIndex = 66;
+            this.lblSort.Text = "Sort by:";
+            this.lblSort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // fVideoLibrary
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(788, 510);
+            this.Controls.Add(this.cbxSort);
+            this.Controls.Add(this.lblSort);
             this.Controls.Add(this.btnPlayAll);
             this.Controls.Add(this.pbxUnderline);
             this.Controls.Add(this.lblVideoFolders);
             this.Controls.Add(this.lblAllVideos);
             this.Controls.Add(this.btnAddFolder);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.lblSort);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -170,11 +193,12 @@
         #endregion
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label lblSort;
         private Guna.UI2.WinForms.Guna2Button btnAddFolder;
         private Guna.UI2.WinForms.Guna2PictureBox pbxUnderline;
         private System.Windows.Forms.Label lblVideoFolders;
         private System.Windows.Forms.Label lblAllVideos;
         private Guna.UI2.WinForms.Guna2Button btnPlayAll;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxSort;
+        private System.Windows.Forms.Label lblSort;
     }
 }
