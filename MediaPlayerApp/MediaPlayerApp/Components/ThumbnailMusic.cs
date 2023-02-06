@@ -1,4 +1,5 @@
 ﻿using MediaPlayerApp.BLL;
+using MediaPlayerApp.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,7 +58,8 @@ namespace MediaPlayerApp.Components
         }
 
         MusicSong musicSong;
-        public fHome parent; 
+        public fHome parent;
+        public fMusicLibrary fLibrary;
         public ThumbnailMusic(fHome parent = null)
         {
             this.parent = parent;
@@ -75,7 +77,20 @@ namespace MediaPlayerApp.Components
         public ThumbnailMusic(string path, fHome parent = null)
         {
             this.parent = parent;
-            this.Path = path; 
+            this.Path = path;
+            InitializeComponent();
+            musicSong = new MusicSong(path);
+            this.SongName = musicSong.NameSong;
+            this.ArtistName = musicSong.Singer;
+            this.Time = musicSong.Length;
+            this.Genre = musicSong.NameGenre;
+            load();
+        }
+        public ThumbnailMusic(string path, fHome parent = null, fMusicLibrary fLibrary = null)
+        {
+            this.fLibrary = fLibrary;
+            this.parent = parent;
+            this.Path = path;
             InitializeComponent();
             musicSong = new MusicSong(path);
             this.SongName = musicSong.NameSong;
@@ -113,7 +128,7 @@ namespace MediaPlayerApp.Components
         private void btnPlay_Click(object sender, EventArgs e)
         {
             //
-            if(this.parent.currenSong == this && this.parent.Media.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            if (this.parent.currenSong == this && this.parent.Media.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
                 this.parent.Media.Ctlcontrols.pause();
                 btnPlay.Checked = !btnPlay.Checked;
@@ -126,17 +141,17 @@ namespace MediaPlayerApp.Components
                 return;
             }
             // stop prev song
-            if (this.parent.currenSong != null )
+            if (this.parent.currenSong != null)
                 this.parent.currenSong.btnPlay.Checked = false;
 
-            // play chosse song
+            // play chosen song
             this.parent.Media.URL = this.Path;
             this.parent.Media.Ctlcontrols.play();
             // load preview song
             this.parent.pbSongpic.Image = musicSong.PictureSong;
             this.parent.lbSongName.Text = musicSong.NameSong + "\n" + musicSong.Singer;
             this.parent.currenSong = this;
-            btnPlay.Checked = !btnPlay.Checked;
+            //btnPlay.Checked = !btnPlay.Checked;
 
 
         }
@@ -151,7 +166,18 @@ namespace MediaPlayerApp.Components
             {
                 btnPlay.Image = MediaPlayerApp.Properties.Resources.play_96px;
 
-            }    
+            }
         }
+
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2CheckBox1.Checked)
+            {
+                fLibrary.SelectedMusic[this.Path] = true;
+            }
+            else fLibrary.SelectedMusic[this.Path] = false;
+            fLibrary.selectedChanged();
+        }
+
     }
 }
