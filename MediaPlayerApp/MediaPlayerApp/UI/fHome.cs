@@ -19,6 +19,12 @@ namespace MediaPlayerApp
         public Form activeForm = null;
         public Timer t;
         public ThumbnailMusic currenSong = new ThumbnailMusic();
+        private bool _isStop = false;
+        public bool IsStop
+        {
+            get { return _isStop; }
+            set { _isStop = value; }
+        }
         public fHome()
         {
             InitializeComponent();
@@ -227,6 +233,26 @@ namespace MediaPlayerApp
             }
                 btFavorite.Image = MediaPlayerApp.Properties.Resources.heart_96px;
                     btFavorite.Checked = false;
+            #endregion
+            #region Check for playnext
+
+            if (this.Media.playState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                IsStop = true;
+            }
+            else IsStop = false;
+
+            #endregion
+            #region Auto load preview
+            string path = "";
+            if (!(Media.currentMedia is null))
+            {
+                path = Media.currentMedia.sourceURL;
+                MusicSong musicSong = new MusicSong(path);
+                pbSongpic.Image = musicSong.PictureSong;
+                lbSongName.Text = musicSong.NameSong + "\n" + musicSong.Singer;
+                currenSong = new ThumbnailMusic(path, this, null);
+            }
             #endregion
             //LoadSongInfo(this.Media.currentMedia.sourceURL);
 
