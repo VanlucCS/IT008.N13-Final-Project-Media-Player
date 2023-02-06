@@ -1,2 +1,4 @@
 D:\movie\Dune (2021) [1080p] [BluRay] [5.1] [YTS.MX]
 D:\movie\Interview with the Vampire (1994) [1080p]
+D:\Bai03 (1)\Bai03\Resources
+D:\Bai03 (1)\Bai03\bin\Debug\resource\mv

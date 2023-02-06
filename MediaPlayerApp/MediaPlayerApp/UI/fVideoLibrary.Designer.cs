@@ -36,6 +36,7 @@
             this.btnPlayAll = new Guna.UI2.WinForms.Guna2Button();
             this.pbxUnderline = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddFolder = new Guna.UI2.WinForms.Guna2Button();
+            this.cbxSort = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUnderline)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +64,11 @@
             // 
             this.lblSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSort.Location = new System.Drawing.Point(525, 59);
+            this.lblSort.Location = new System.Drawing.Point(502, 59);
             this.lblSort.Name = "lblSort";
-            this.lblSort.Size = new System.Drawing.Size(218, 34);
+            this.lblSort.Size = new System.Drawing.Size(81, 34);
             this.lblSort.TabIndex = 6;
-            this.lblSort.Text = "Sort by: Date modified     ▼";
+            this.lblSort.Text = "Sort by:";
             this.lblSort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblSort.MouseEnter += new System.EventHandler(this.lblSort_MouseEnter);
             this.lblSort.MouseLeave += new System.EventHandler(this.lblSort_MouseLeave);
@@ -145,11 +146,33 @@
             this.btnAddFolder.Text = " Add folder";
             this.btnAddFolder.Click += new System.EventHandler(this.btnAddFolder_Click);
             // 
+            // cbxSort
+            // 
+            this.cbxSort.BackColor = System.Drawing.Color.Transparent;
+            this.cbxSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSort.FillColor = System.Drawing.SystemColors.Control;
+            this.cbxSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxSort.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxSort.ForeColor = System.Drawing.Color.Red;
+            this.cbxSort.ItemHeight = 20;
+            this.cbxSort.Items.AddRange(new object[] {
+            "Date modified",
+            "A - Z"});
+            this.cbxSort.Location = new System.Drawing.Point(581, 63);
+            this.cbxSort.Name = "cbxSort";
+            this.cbxSort.Size = new System.Drawing.Size(157, 26);
+            this.cbxSort.StartIndex = 0;
+            this.cbxSort.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbxSort.TabIndex = 65;
+            // 
             // fVideoLibrary
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(788, 510);
+            this.Controls.Add(this.cbxSort);
             this.Controls.Add(this.btnPlayAll);
             this.Controls.Add(this.pbxUnderline);
             this.Controls.Add(this.lblVideoFolders);
@@ -177,5 +200,6 @@
         private System.Windows.Forms.Label lblVideoFolders;
         private System.Windows.Forms.Label lblAllVideos;
         private Guna.UI2.WinForms.Guna2Button btnPlayAll;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxSort;
     }
 }

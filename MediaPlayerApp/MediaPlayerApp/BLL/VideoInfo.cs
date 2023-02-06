@@ -64,6 +64,8 @@ namespace MediaPlayerApp.BLL
 
         private Bitmap GetThumbnail(string fpath)
         {
+            //var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
+            //ffMpeg.GetVideoThumbnail(pathToVideoFile, thumbJpegStream, 5);
             VideoFileReader reader = new VideoFileReader();
             // open video file mp4
             reader.Open(fpath);
