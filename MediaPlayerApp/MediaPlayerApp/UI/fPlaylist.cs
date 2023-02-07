@@ -18,10 +18,20 @@ namespace MediaPlayerApp.UI
         {
             this.parent = parent;
             InitializeComponent();
-            Components.Playlist it = new Components.Playlist("");
-            flowLayoutPanel1.Controls.Add(it);
+            //Components.Playlist it = new Components.Playlist("");
+            //flowLayoutPanel1.Controls.Add(it);
         }
+        private void fPlaylist_Load(object sender, EventArgs e)
+        {
+            DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists");
+            FileInfo[] Files = d.GetFiles();
+            foreach (FileInfo file in Files)
+            {
+                Components.Playlist i = new Components.Playlist(file.FullName);
+                pnAllPlaylists.Controls.Add(i);
+            }
 
+        }
         private void moreButton_Click(object sender, EventArgs e)
         {
 
@@ -33,5 +43,7 @@ namespace MediaPlayerApp.UI
             f.Location = new Point(btnNewPlaylist.Location.X +280, btnNewPlaylist.Location.Y + 120);
             f.ShowDialog();
         }
+
+        
     }
 }

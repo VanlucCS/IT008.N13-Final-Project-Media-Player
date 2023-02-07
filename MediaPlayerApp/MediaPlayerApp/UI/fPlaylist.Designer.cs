@@ -31,7 +31,7 @@ namespace MediaPlayerApp.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fPlaylist));
             this.btnNewPlaylist = new Guna.UI2.WinForms.Guna2Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnAllPlaylists = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblSort = new System.Windows.Forms.Label();
@@ -57,15 +57,16 @@ namespace MediaPlayerApp.UI
             this.btnNewPlaylist.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNewPlaylist.Click += new System.EventHandler(this.btnNewPlaylist_Click);
             // 
-            // flowLayoutPanel1
+            // pnAllPlaylists
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnAllPlaylists.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 95);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(770, 410);
-            this.flowLayoutPanel1.TabIndex = 36;
+            this.pnAllPlaylists.AutoScroll = true;
+            this.pnAllPlaylists.Location = new System.Drawing.Point(10, 95);
+            this.pnAllPlaylists.Name = "pnAllPlaylists";
+            this.pnAllPlaylists.Size = new System.Drawing.Size(801, 410);
+            this.pnAllPlaylists.TabIndex = 36;
             // 
             // lblTitle
             // 
@@ -133,11 +134,12 @@ namespace MediaPlayerApp.UI
             this.Controls.Add(this.lblSort);
             this.Controls.Add(this.moreButton);
             this.Controls.Add(this.btnNewPlaylist);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.pnAllPlaylists);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fPlaylist";
             this.Text = "fPlaylist";
+            this.Load += new System.EventHandler(this.fPlaylist_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,7 +147,7 @@ namespace MediaPlayerApp.UI
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button btnNewPlaylist;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel pnAllPlaylists;
         private System.Windows.Forms.Label lblTitle;
         private Guna.UI2.WinForms.Guna2ImageButton moreButton;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
