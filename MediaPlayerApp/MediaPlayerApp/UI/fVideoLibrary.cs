@@ -19,15 +19,25 @@ namespace MediaPlayerApp.UI
         public fHome parent;
         private bool _isAllVideos;
         private bool _isSortByDate;
+        private List<Thumbnail> selected = new List<Thumbnail>();
+        SelectedSong selectedSong;
         public fVideoLibrary(fHome parent = null)
         {
             this.parent = parent;
+            selectedSong = new SelectedSong(this);
             InitializeComponent();
+            selectedSong.Location = new Point(5, 45);
+            selectedSong.Visible = false;
             _isAllVideos = true;
             _isSortByDate = true;
             loadVideo();
         }
-
+        private int _count = 0;
+        public int Count
+        {
+            get { return _count; }
+            set { _count = value; }
+        }
         private void lblAllVideos_Click(object sender, EventArgs e)
         {
             pbxUnderline.Left = lblAllVideos.Left + (lblAllVideos.Width - pbxUnderline.Width) / 2;
@@ -70,7 +80,7 @@ namespace MediaPlayerApp.UI
                                 if (info.Extension == ".mp4" || info.Extension == ".mkv")
                                 {
                                     //List<> employees = new List<Employee>()
-                                    Thumbnail thumbnail = new Thumbnail(file, this.parent);
+                                    Thumbnail thumbnail = new Thumbnail(file, this);
                                     thumbnail.Dock = DockStyle.Top;
                                     thumbnailsList.Add(thumbnail);
 
@@ -121,7 +131,7 @@ namespace MediaPlayerApp.UI
                                 {
                                     isEmpty = false;
                                     //List<> employees = new List<Employee>()
-                                    Thumbnail thumbnail = new Thumbnail(file, this.parent);
+                                    Thumbnail thumbnail = new Thumbnail(file, this);
                                     thumbnail.Dock = DockStyle.Top;
                                     thumbnailsList.Add(thumbnail);
                                     //ThumbnailMusic thumbnailMusi = new ThumbnailMusic(file, this.parent);
@@ -257,59 +267,66 @@ namespace MediaPlayerApp.UI
         }
         public void selectedChanged()
         {
-            //Count = 0;
-            //foreach (var item in SelectedMusic)
-            //{
-            //    string path = item.Key;
-            //    bool isSelected = item.Value;
-            //    if (isSelected)
-            //    {
-            //        Count++;
-            //    }
-            //}
+            // Chưa xong
+            Count = selected.Count;
+            foreach (Thumbnail video in flowLayoutPanel1.Controls.OfType<Thumbnail>())
+            {
+                if (video.cbxChon.Checked == true)
+                    Count++;
+            }    
+            
+            
+            this.Controls.Add(selectedSong);
+            if (Count > 0)
+            {
+                selectedSong.Visible = true;
+                selectedSong.BringToFront();
+                if (Count > 1)
+                {
+                    selectedSong.BtnMore.Visible = false;
+                }
+                else selectedSong.BtnMore.Visible = true;
+                if (Count == flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray().Length)
+                {
+                    selectedSong.Guna2CheckBox1.Checked = true;
+                }
+                else selectedSong.Guna2CheckBox1.Checked = false;
+                if (Count == 0)
+                {
+                    return;
+                }
+                if (Count == 1)
+                {
+                    selectedSong.LblSongNumber.Text = Count.ToString() + " video selected";
+                }
+                else
+                {
+                    selectedSong.LblSongNumber.Text = Count.ToString() + " videos selected";
+                }
 
-            //this.Controls.Add(selectedSong);
-            //if (Count > 0)
-            //{
-            //    selectedSong.Visible = true;
-            //    selectedSong.BringToFront();
-            //    if (Count > 1)
-            //    {
-            //        selectedSong.BtnMore.Visible = false;
-            //    }
-            //    else selectedSong.BtnMore.Visible = true;
-            //    if (Count == SelectedMusic.Count)
-            //    {
-            //        selectedSong.Guna2CheckBox1.Checked = true;
-            //    }
-            //    else selectedSong.Guna2CheckBox1.Checked = false;
-            //    if (Count == 0)
-            //    {
-            //        return;
-            //    }
-            //    selectedSong.LblSongNumber.Text = Count.ToString();
 
-            //    btnShuffleAndPlay.Visible = false;
-            //    lblSort.Visible = false;
-            //    guna2ComboBox1.Visible = false;
-            //    guna2ComboBox2.Visible = false;
-            //    lbGenre.Visible = false;
-            //    if (Count == SelectedMusic.Count)
-            //    {
-            //        isSelectedAll = true;
-            //    }
-            //    else isSelectedAll = false;
 
-            //}
-            //else
-            //{
-            //    btnShuffleAndPlay.Visible = true;
-            //    lblSort.Visible = true;
-            //    guna2ComboBox1.Visible = true;
-            //    guna2ComboBox2.Visible = true;
-            //    lbGenre.Visible = true;
-            //    selectedSong.Visible = false;
-            //}
+                //btnShuffleAndPlay.Visible = false;
+                //lblSort.Visible = false;
+                //guna2ComboBox1.Visible = false;
+                //guna2ComboBox2.Visible = false;
+                //lbGenre.Visible = false;
+                //if (Count == SelectedMusic.Count)
+                //{
+                //    isSelectedAll = true;
+                //}
+                //else isSelectedAll = false;
+
+            }
+            else
+            {
+                //btnShuffleAndPlay.Visible = true;
+                //lblSort.Visible = true;
+                //guna2ComboBox1.Visible = true;
+                //guna2ComboBox2.Visible = true;
+                //lbGenre.Visible = true;
+                //selectedSong.Visible = false;
+            }
         }
         public void moreClick()
         {
@@ -341,7 +358,7 @@ namespace MediaPlayerApp.UI
             loadVideo();
                 
         }
-
+        
         private void flowLayoutPanel1_Resize(object sender, EventArgs e)
         {
             Thumbnail[] thumbnails = flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray();

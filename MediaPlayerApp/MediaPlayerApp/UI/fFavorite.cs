@@ -210,5 +210,9 @@ namespace MediaPlayerApp.UI
         {
 
         }
+        public void selectedChanged()
+        {
+
+        }
     }
 }

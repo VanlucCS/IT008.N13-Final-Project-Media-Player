@@ -25,6 +25,9 @@ namespace MediaPlayerApp.Components
         private string _path;
         private Image _picture;
         private bool _isChecked;
+        fVideoLibrary _fVideoLibrary;
+        fHomeScreen _fHomeScreen;
+        fFavorite _fFavorite;
 
         public bool IsChecked
         {
@@ -79,6 +82,27 @@ namespace MediaPlayerApp.Components
         {
             InitializeComponent();
             videoInfo = new VideoInfo(path);
+            loadThumbnail();
+        }
+        public Thumbnail(string path, fVideoLibrary parent = null)
+        {
+            InitializeComponent();
+            videoInfo = new VideoInfo(path);
+            _fVideoLibrary = parent; 
+            loadThumbnail();
+        }
+        public Thumbnail(string path, fHomeScreen parent = null)
+        {
+            InitializeComponent();
+            videoInfo = new VideoInfo(path);
+            _fHomeScreen = parent;
+            loadThumbnail();
+        }
+        public Thumbnail(string path, fFavorite parent = null)
+        {
+            InitializeComponent();
+            videoInfo = new VideoInfo(path);
+            _fFavorite = parent;
             loadThumbnail();
         }
         private void loadThumbnail()
@@ -154,7 +178,20 @@ namespace MediaPlayerApp.Components
             else
             {
                 IsChecked = false;
+            } 
+            if(_fVideoLibrary!= null)
+            {
+                _fVideoLibrary.selectedChanged();
+            } 
+            else if (_fHomeScreen !=null)
+            {
+                _fHomeScreen.selectedChanged();
+            }   
+            else if (_fFavorite!=null)
+            {
+                _fFavorite.selectedChanged();
             }    
+            
         }
     }
 }
