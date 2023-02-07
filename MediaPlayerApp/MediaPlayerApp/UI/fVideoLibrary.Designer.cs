@@ -154,6 +154,7 @@
             this.cbxSort.StartIndex = 0;
             this.cbxSort.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbxSort.TabIndex = 67;
+            this.cbxSort.SelectedIndexChanged += new System.EventHandler(this.cbxSort_SelectedIndexChanged);
             // 
             // lblSort
             // 
