@@ -311,7 +311,23 @@ namespace MediaPlayerApp.UI
             //    selectedSong.Visible = false;
             //}
         }
+        public void moreClick()
+        {
 
+        }
+        
+        public void playList_Play()
+        {
+
+        }
+        public void playList_PlayNext()
+        {
+
+        }
+        public void clear()
+        {
+
+        }
         private void cbxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cbxSort.SelectedIndex == 0)
@@ -324,6 +340,16 @@ namespace MediaPlayerApp.UI
             }
             loadVideo();
                 
+        }
+
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            Thumbnail[] thumbnails = flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray();
+            Label[] labels = flowLayoutPanel1.Controls.OfType<Label>().ToArray();
+            foreach(Label label in labels)
+            {
+                label.Width = flowLayoutPanel1.Width;
+            }    
         }
     }
 }

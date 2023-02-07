@@ -18,5 +18,30 @@ namespace MediaPlayerApp.UI
             this.parent = parent;
             InitializeComponent();
         }
+        public void moreClick()
+        {
+
+        }
+        public void selectAll()
+        {
+
+        }
+        public void deselectAll()
+        {
+
+        }
+        public void playList_Play()
+        {
+
+        }
+        public void playList_PlayNext()
+        {
+
+        }
+        public void clear()
+        {
+
+        }
     }
+
 }

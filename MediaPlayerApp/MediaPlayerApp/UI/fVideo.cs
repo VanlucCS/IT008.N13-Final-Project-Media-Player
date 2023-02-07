@@ -20,7 +20,6 @@ namespace MediaPlayerApp.UI
 {
     public partial class fVideo : Form
     {
-        public Thumbnail currenVideo = new Thumbnail();
         public fHome parent;
         public Thumbnail[] videos;
         private int index = 0;
@@ -31,10 +30,9 @@ namespace MediaPlayerApp.UI
         public fVideo(fHome parent = null, Thumbnail thumbnail = null)
         {
             this.parent = parent;
-            this.currenVideo = thumbnail;
-            InitializeComponent();
-            this.player.URL = currenVideo.VideoPath;
             videos = new Thumbnail[] { thumbnail };
+            InitializeComponent();
+            this.player.URL = videos[0].VideoPath;
             shuffle = false;
             pbxShuffle.Enabled = false;
             pbxNext.Enabled = false;

@@ -60,6 +60,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(770, 410);
             this.flowLayoutPanel1.TabIndex = 7;
+            this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
             // 
             // lblVideoFolders
             // 
