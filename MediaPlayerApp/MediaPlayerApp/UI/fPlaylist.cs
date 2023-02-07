@@ -20,5 +20,10 @@ namespace MediaPlayerApp.UI
             Components.Playlist it = new Components.Playlist("");
             flowLayoutPanel1.Controls.Add(it);
         }
+
+        private void moreButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
