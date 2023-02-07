@@ -52,10 +52,10 @@ namespace MediaPlayerApp
             this.btFavorite = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btVolume = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btPlay = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbShuffer = new System.Windows.Forms.PictureBox();
+            this.pbPrev = new System.Windows.Forms.PictureBox();
+            this.pbNext = new System.Windows.Forms.PictureBox();
+            this.pbRepeatSong = new System.Windows.Forms.PictureBox();
             this.btVideoLibrary = new Guna.UI2.WinForms.Guna2Button();
             this.btPlayqueue = new Guna.UI2.WinForms.Guna2Button();
             this.btPlayList = new Guna.UI2.WinForms.Guna2Button();
@@ -63,15 +63,17 @@ namespace MediaPlayerApp
             this.btFravorSong = new Guna.UI2.WinForms.Guna2Button();
             this.btMusicLibrary = new Guna.UI2.WinForms.Guna2Button();
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
+            this.cbtloop = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.cbtshuffer = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pnControlMedia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Media)).BeginInit();
             this.pnHeader.SuspendLayout();
             this.pnLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSongpic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShuffer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPrev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRepeatSong)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -84,6 +86,8 @@ namespace MediaPlayerApp
             // pnControlMedia
             // 
             this.pnControlMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnControlMedia.Controls.Add(this.cbtshuffer);
+            this.pnControlMedia.Controls.Add(this.cbtloop);
             this.pnControlMedia.Controls.Add(this.lbSongName);
             this.pnControlMedia.Controls.Add(this.pbSongpic);
             this.pnControlMedia.Controls.Add(this.Media);
@@ -91,10 +95,10 @@ namespace MediaPlayerApp
             this.pnControlMedia.Controls.Add(this.btVolume);
             this.pnControlMedia.Controls.Add(this.tbVolume);
             this.pnControlMedia.Controls.Add(this.btPlay);
-            this.pnControlMedia.Controls.Add(this.pictureBox4);
-            this.pnControlMedia.Controls.Add(this.pictureBox2);
-            this.pnControlMedia.Controls.Add(this.pictureBox1);
-            this.pnControlMedia.Controls.Add(this.pictureBox3);
+            this.pnControlMedia.Controls.Add(this.pbShuffer);
+            this.pnControlMedia.Controls.Add(this.pbPrev);
+            this.pnControlMedia.Controls.Add(this.pbNext);
+            this.pnControlMedia.Controls.Add(this.pbRepeatSong);
             this.pnControlMedia.Controls.Add(this.lbTimeCurrentPlay);
             this.pnControlMedia.Controls.Add(this.tbProcess);
             this.pnControlMedia.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -349,49 +353,50 @@ namespace MediaPlayerApp
             this.btPlay.CheckedChanged += new System.EventHandler(this.btPlay_CheckedChanged);
             this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
             // 
-            // pictureBox4
+            // pbShuffer
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Image = global::MediaPlayerApp.Properties.Resources.shuffle;
-            this.pictureBox4.Location = new System.Drawing.Point(385, 43);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 12;
-            this.pictureBox4.TabStop = false;
+            this.pbShuffer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbShuffer.Image = global::MediaPlayerApp.Properties.Resources.shuffle;
+            this.pbShuffer.Location = new System.Drawing.Point(385, 43);
+            this.pbShuffer.Name = "pbShuffer";
+            this.pbShuffer.Size = new System.Drawing.Size(32, 32);
+            this.pbShuffer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbShuffer.TabIndex = 12;
+            this.pbShuffer.TabStop = false;
             // 
-            // pictureBox2
+            // pbPrev
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::MediaPlayerApp.Properties.Resources.left;
-            this.pictureBox2.Location = new System.Drawing.Point(445, 43);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.pbPrev.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbPrev.Image = global::MediaPlayerApp.Properties.Resources.left;
+            this.pbPrev.Location = new System.Drawing.Point(445, 43);
+            this.pbPrev.Name = "pbPrev";
+            this.pbPrev.Size = new System.Drawing.Size(32, 32);
+            this.pbPrev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPrev.TabIndex = 11;
+            this.pbPrev.TabStop = false;
             // 
-            // pictureBox1
+            // pbNext
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::MediaPlayerApp.Properties.Resources.right;
-            this.pictureBox1.Location = new System.Drawing.Point(583, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.pbNext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbNext.Image = global::MediaPlayerApp.Properties.Resources.right;
+            this.pbNext.Location = new System.Drawing.Point(583, 43);
+            this.pbNext.Name = "pbNext";
+            this.pbNext.Size = new System.Drawing.Size(32, 32);
+            this.pbNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbNext.TabIndex = 10;
+            this.pbNext.TabStop = false;
             // 
-            // pictureBox3
+            // pbRepeatSong
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = global::MediaPlayerApp.Properties.Resources.repeat9;
-            this.pictureBox3.Location = new System.Drawing.Point(643, 43);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
+            this.pbRepeatSong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbRepeatSong.Image = global::MediaPlayerApp.Properties.Resources.repeat9;
+            this.pbRepeatSong.Location = new System.Drawing.Point(643, 43);
+            this.pbRepeatSong.Name = "pbRepeatSong";
+            this.pbRepeatSong.Size = new System.Drawing.Size(32, 32);
+            this.pbRepeatSong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRepeatSong.TabIndex = 9;
+            this.pbRepeatSong.TabStop = false;
+            this.pbRepeatSong.Click += new System.EventHandler(this.pbRepeatSong_Click);
             // 
             // btVideoLibrary
             // 
@@ -582,6 +587,32 @@ namespace MediaPlayerApp
             this.btHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btHome.Click += new System.EventHandler(this.btHome_Click);
             // 
+            // cbtloop
+            // 
+            this.cbtloop.BackColor = System.Drawing.Color.Transparent;
+            this.cbtloop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.cbtloop.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cbtloop.ForeColor = System.Drawing.Color.White;
+            this.cbtloop.Location = new System.Drawing.Point(655, 79);
+            this.cbtloop.Name = "cbtloop";
+            this.cbtloop.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.cbtloop.Size = new System.Drawing.Size(10, 10);
+            this.cbtloop.TabIndex = 20;
+            this.cbtloop.Visible = false;
+            // 
+            // cbtshuffer
+            // 
+            this.cbtshuffer.BackColor = System.Drawing.Color.Transparent;
+            this.cbtshuffer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.cbtshuffer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cbtshuffer.ForeColor = System.Drawing.Color.White;
+            this.cbtshuffer.Location = new System.Drawing.Point(394, 81);
+            this.cbtshuffer.Name = "cbtshuffer";
+            this.cbtshuffer.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.cbtshuffer.Size = new System.Drawing.Size(10, 10);
+            this.cbtshuffer.TabIndex = 21;
+            this.cbtshuffer.Visible = false;
+            // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -605,10 +636,10 @@ namespace MediaPlayerApp
             this.pnLeft.ResumeLayout(false);
             this.pnLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSongpic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbShuffer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPrev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRepeatSong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -635,10 +666,10 @@ namespace MediaPlayerApp
         private Guna.UI2.WinForms.Guna2Button btPlayqueue;
         private Guna.UI2.WinForms.Guna2Button btPlayList;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pbPrev;
+        private System.Windows.Forms.PictureBox pbNext;
+        private System.Windows.Forms.PictureBox pbRepeatSong;
+        private System.Windows.Forms.PictureBox pbShuffer;
         private Guna.UI2.WinForms.Guna2ImageButton btPlay;
         public Guna.UI2.WinForms.Guna2Panel pnChildren;
         private Guna.UI2.WinForms.Guna2TrackBar tbVolume;
@@ -647,6 +678,8 @@ namespace MediaPlayerApp
         public AxWMPLib.AxWindowsMediaPlayer Media;
         public System.Windows.Forms.PictureBox pbSongpic;
         public System.Windows.Forms.Label lbSongName;
+        private Guna.UI2.WinForms.Guna2CircleButton cbtshuffer;
+        private Guna.UI2.WinForms.Guna2CircleButton cbtloop;
     }
 }
 

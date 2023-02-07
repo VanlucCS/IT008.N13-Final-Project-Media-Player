@@ -308,5 +308,25 @@ namespace MediaPlayerApp
         {
             LoadSongInfo(this.Media.currentMedia.sourceURL);
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbRepeatSong_Click(object sender, EventArgs e)
+        {
+            if (cbtloop.Visible == false)
+            {
+
+                Media.settings.setMode("loop", true);
+                cbtloop.Visible = true;
+            }
+            else
+            {
+                Media.settings.setMode("loop", false);
+                cbtloop.Visible = false;
+            }
+        }
     }
 }

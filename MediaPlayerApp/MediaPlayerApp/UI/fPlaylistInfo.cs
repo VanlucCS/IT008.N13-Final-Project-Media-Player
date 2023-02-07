@@ -62,6 +62,9 @@ namespace MediaPlayerApp.UI
 
         private void btnNewPlaylist_Click(object sender, EventArgs e)
         {
+            if(pnSong.Controls.Count != 0)
+            {
+
             IWMPPlaylist playlist = this.parent.Media.newPlaylist("Playlist", null);
             foreach (ThumbnailMusic i in pnSong.Controls)
             {
@@ -70,6 +73,7 @@ namespace MediaPlayerApp.UI
             }
             this.parent.Media.currentPlaylist = playlist;
             this.parent.Media.Ctlcontrols.play();
+            }    
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
