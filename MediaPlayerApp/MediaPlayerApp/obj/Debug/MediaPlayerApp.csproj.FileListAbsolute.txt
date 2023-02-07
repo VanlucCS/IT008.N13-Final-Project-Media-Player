@@ -155,3 +155,5 @@ C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp
 C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.Components.SelectedSong.resources
 C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fVideo.resources
 C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fAddNewPlaylistcs.resources
+C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fPlaylistInfo.resources
+C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fRenamePlaylist.resources

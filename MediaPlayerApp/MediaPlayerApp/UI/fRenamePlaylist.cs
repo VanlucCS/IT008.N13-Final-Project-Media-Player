@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaPlayerApp.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,12 +12,25 @@ using System.Windows.Forms;
 
 namespace MediaPlayerApp.UI
 {
-    public partial class fAddNewPlaylistcs : Form
+    public partial class fRenamePlaylist : Form
     {
         private int dupcal = 0;
-        public fAddNewPlaylistcs()
+        public Playlist playList;
+
+        public fRenamePlaylist(Playlist pl)
         {
+            this.playList = pl;
             InitializeComponent();
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbPlaylistName_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnNewPlaylist_Click(object sender, EventArgs e)
@@ -28,11 +42,11 @@ namespace MediaPlayerApp.UI
             do
             {
                 dup = false;
-                DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists"); 
+                DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists");
                 FileInfo[] Files = d.GetFiles();
                 foreach (FileInfo file in Files)
                 {
-                    if(dupcal == 0)
+                    if (dupcal == 0)
                     {
                         if (file.Name.Substring(0, file.Name.Length - 4) == playListName)
                         {
@@ -42,18 +56,18 @@ namespace MediaPlayerApp.UI
                     }
                     else
                     {
-                        if (file.Name.Substring(0, file.Name.Length - 4) == playListName+dupcal.ToString())
+                        if (file.Name.Substring(0, file.Name.Length - 4) == playListName + dupcal.ToString())
                         {
                             dup = true;
                             dupcal++;
                         }
                     }
                 }
-                if(!dup)
+                if (!dup)
                 {
-                    if(dupcal != 0)
+                    if (dupcal != 0)
                         playListName = playListName + dupcal.ToString();
-                }    
+                }
 
             } while (dup);
 
@@ -61,31 +75,20 @@ namespace MediaPlayerApp.UI
             {
                 MessageBox.Show("Chưa nhập tên playlist mới");
                 return;
-            }    
-            string fileName = @"./Data/Playlists/"+ playListName + ".txt";
+            }
+            string fileName = @"./Data/Playlists/" + playListName + ".txt";
 
             try
             {
-                // Create a new playlist file     
-                using (FileStream fs = File.Create(fileName))
-                {
-                }
+                System.IO.File.Move(playList.PlayListPath, fileName);
             }
-            catch (Exception Ex)
+            catch (Exception)
             {
                 return;
             }
-            MessageBox.Show("Tạo playlist thành công");
+            MessageBox.Show("Thay đổi tên playlist thành công");
+            this.playList.parent.btPlayList_Click(this.playList.parent,null);
             this.Close();
-        }
-
-        private void btExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void tbPlaylistName_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using MediaPlayerApp.BLL;
+using MediaPlayerApp.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace MediaPlayerApp.Components
 {
     public partial class Playlist : UserControl
     {   
+        public fHome parent;
         private string _playListName;
         private string  _playListPath;
         private int _numItems;
@@ -35,15 +37,16 @@ namespace MediaPlayerApp.Components
             set { _playListName = value; lbPlayListName.Text = value; }
         }
 
-        public Playlist(string PLPath)
+        public Playlist(string PLPath, fHome parent = null)
         {
+            this.parent = parent;
             InitializeComponent();
             PlayListPath = PLPath;
         }
         private void Playlist_Load(object sender, EventArgs e)
         {
             FileInfo i = new FileInfo(PlayListPath);
-            PlayListName = i.Name;
+            PlayListName = i.Name.Substring(0,i.Name.Length-4);
 
             int songCounter = 0;
             // Load Preview
@@ -98,6 +101,8 @@ namespace MediaPlayerApp.Components
             toolStrip.Items.Add("Delete Playlist");
             toolStrip.Items.Add("-");
             toolStrip.Items.Add("Move to Playlist");
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("Rename PlayList");
             int Y = 400;
             toolStrip.Location = new Point(btMore.Location.X + 70, btMore.Location.Y + Y);
             toolStrip.Show(MousePosition);
@@ -110,7 +115,21 @@ namespace MediaPlayerApp.Components
             // click..
             if (e.ClickedItem.Text == "Delete Playlist")
             {
-                
+                    try
+                    {
+                        // Check if file exists    
+                        if (File.Exists(this.PlayListPath))
+                        {
+                            // If file found, delete it    
+                            File.Delete(this.PlayListPath);
+                            MessageBox.Show("Xóa thành công");
+                            this.parent.btPlayList_Click(this.parent, null);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
             }
             if (e.ClickedItem.Text == "Move to Playlist")
             {
@@ -128,8 +147,16 @@ namespace MediaPlayerApp.Components
                 toolStrip.GripStyle = ToolStripGripStyle.Hidden;
                 toolStrip.Dock = DockStyle.None;
             }
+            if (e.ClickedItem.Text == "Rename PlayList")
+            {
+                fRenamePlaylist f = new fRenamePlaylist(this);
+                f.ShowDialog();
+            }
         }
 
-        
+        private void btPlay_Click(object sender, EventArgs e)
+        {
+            this.parent.OpenChildForm(new fPlaylistInfo(this,this.parent));
+        }
     }
 }

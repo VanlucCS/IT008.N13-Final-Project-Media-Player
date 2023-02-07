@@ -27,7 +27,7 @@ namespace MediaPlayerApp.UI
             FileInfo[] Files = d.GetFiles();
             foreach (FileInfo file in Files)
             {
-                Components.Playlist i = new Components.Playlist(file.FullName);
+                Components.Playlist i = new Components.Playlist(file.FullName,this.parent);
                 pnAllPlaylists.Controls.Add(i);
             }
 

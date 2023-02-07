@@ -143,7 +143,7 @@ namespace MediaPlayerApp
             this.OpenChildForm(new fPlayQueue(this));
         }
 
-        private void btPlayList_Click(object sender, EventArgs e)
+        public void btPlayList_Click(object sender, EventArgs e)
         {
             resetButtonStage();
             btPlayList.Checked = !btPlayList.Checked;

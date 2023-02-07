@@ -165,6 +165,12 @@
     <Compile Include="UI\fPlayQueue.Designer.cs">
       <DependentUpon>fPlayQueue.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\fRenamePlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fRenamePlaylist.Designer.cs">
+      <DependentUpon>fRenamePlaylist.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\fVideo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fPlayQueue.resx">
       <DependentUpon>fPlayQueue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fRenamePlaylist.resx">
+      <DependentUpon>fRenamePlaylist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fVideo.resx">
       <DependentUpon>fVideo.cs</DependentUpon>
