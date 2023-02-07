@@ -328,5 +328,30 @@ namespace MediaPlayerApp
                 cbtloop.Visible = false;
             }
         }
+
+        private void pbShuffer_Click(object sender, EventArgs e)
+        {
+            if (cbtshuffer.Visible == false)
+            {
+
+                Media.settings.setMode("shuffle", true);
+                cbtshuffer.Visible = true;
+            }
+            else
+            {
+                Media.settings.setMode("shuffle", false);
+                cbtshuffer.Visible = false;
+            }
+        }
+
+        private void pbNext_Click(object sender, EventArgs e)
+        {
+            Media.Ctlcontrols.next();
+        }
+
+        private void pbPrev_Click(object sender, EventArgs e)
+        {
+            Media.Ctlcontrols.previous();
+        }
     }
 }

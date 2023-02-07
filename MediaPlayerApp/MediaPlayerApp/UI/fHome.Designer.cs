@@ -363,6 +363,7 @@ namespace MediaPlayerApp
             this.pbShuffer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbShuffer.TabIndex = 12;
             this.pbShuffer.TabStop = false;
+            this.pbShuffer.Click += new System.EventHandler(this.pbShuffer_Click);
             // 
             // pbPrev
             // 
@@ -374,6 +375,7 @@ namespace MediaPlayerApp
             this.pbPrev.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPrev.TabIndex = 11;
             this.pbPrev.TabStop = false;
+            this.pbPrev.Click += new System.EventHandler(this.pbPrev_Click);
             // 
             // pbNext
             // 
@@ -385,6 +387,7 @@ namespace MediaPlayerApp
             this.pbNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbNext.TabIndex = 10;
             this.pbNext.TabStop = false;
+            this.pbNext.Click += new System.EventHandler(this.pbNext_Click);
             // 
             // pbRepeatSong
             // 
