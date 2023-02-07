@@ -24,7 +24,7 @@ namespace MediaPlayerApp.UI
 
         public void testThumbnail()
         {
-            Thumbnail thumbnail = new Thumbnail("./BH01.mp3");
+            Thumbnail thumbnail = new Thumbnail("./BH01.mp3",this);
             flowLayoutPanel1.Controls.Add(thumbnail);
         }
         public void moreClick()
@@ -48,6 +48,10 @@ namespace MediaPlayerApp.UI
 
         }
         public void clear()
+        {
+
+        }
+        public void selectedChanged()
         {
 
         }
