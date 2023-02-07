@@ -20,7 +20,12 @@ namespace MediaPlayerApp.Components
         private string _genre;
         private string _time;
         private string _path;
-
+        private bool _isChecked;
+        public bool IsChecked
+        {
+            get { return _isChecked; }
+            set { _isChecked = value; }
+        }
         public string Path
         {
             get { return _path; }
@@ -171,6 +176,7 @@ namespace MediaPlayerApp.Components
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
+            IsChecked = guna2CheckBox1.Checked;
             if (guna2CheckBox1.Checked)
             {
                 fLibrary.SelectedMusic[this.Path] = true;

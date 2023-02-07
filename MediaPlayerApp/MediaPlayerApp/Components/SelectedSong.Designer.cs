@@ -32,7 +32,7 @@
             this.lblSongName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnMore = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddTo = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.lblSongNumber = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -112,27 +112,28 @@
             this.btnMore.TextOffset = new System.Drawing.Point(-2, 0);
             this.btnMore.Click += new System.EventHandler(this.btnMore_Click);
             // 
-            // guna2Button3
+            // btnAddTo
             // 
-            this.guna2Button3.BorderRadius = 5;
-            this.guna2Button3.BorderThickness = 1;
-            this.guna2Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.White;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Image = global::MediaPlayerApp.Properties.Resources.plus;
-            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.Location = new System.Drawing.Point(386, 3);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(96, 26);
-            this.guna2Button3.TabIndex = 9;
-            this.guna2Button3.Text = "Add to";
-            this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button3.TextOffset = new System.Drawing.Point(-2, 0);
+            this.btnAddTo.BorderRadius = 5;
+            this.btnAddTo.BorderThickness = 1;
+            this.btnAddTo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddTo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddTo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddTo.FillColor = System.Drawing.Color.White;
+            this.btnAddTo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddTo.ForeColor = System.Drawing.Color.Black;
+            this.btnAddTo.Image = global::MediaPlayerApp.Properties.Resources.plus;
+            this.btnAddTo.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddTo.Location = new System.Drawing.Point(386, 3);
+            this.btnAddTo.Name = "btnAddTo";
+            this.btnAddTo.Size = new System.Drawing.Size(96, 26);
+            this.btnAddTo.TabIndex = 9;
+            this.btnAddTo.Text = "Add to";
+            this.btnAddTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAddTo.TextOffset = new System.Drawing.Point(-2, 0);
+            this.btnAddTo.Click += new System.EventHandler(this.btnAddTo_Click);
             // 
             // guna2Button2
             // 
@@ -199,7 +200,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblSongNumber);
             this.Controls.Add(this.btnMore);
-            this.Controls.Add(this.guna2Button3);
+            this.Controls.Add(this.btnAddTo);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -219,7 +220,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnAddTo;
         private Guna.UI2.WinForms.Guna2Button btnMore;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSongNumber;
         public Guna.UI2.WinForms.Guna2HtmlLabel LblSongNumber

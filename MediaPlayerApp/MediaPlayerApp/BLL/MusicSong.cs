@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -6,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TagLib.IFD.Tags;
 
 namespace MediaPlayerApp.BLL
 {
@@ -61,7 +63,36 @@ namespace MediaPlayerApp.BLL
             get { return _nameGenre; }
             set { _nameGenre = value; }
         }
-
+        private string _track;
+        public string Track
+        {
+            get { return _track; }
+            set { _track = value; } 
+        }
+        private string _albumArtist;
+        public string AlbumArtist
+        {
+            get { return _albumArtist; }
+            set { _albumArtist = value; }
+        }
+        private string _album;
+        public string Album
+        {
+            get { return _album; }
+            set { _album = value; }
+        }
+        private string _year;
+        public string Year
+        {
+            get { return _year; }   
+            set { _year = value; }  
+        }
+        private string _artist;
+        public string Artist
+        {
+            get { return _artist; }
+            set { _artist = value; }
+        }
         public MusicSong() { }
 
         public MusicSong(string Name, string Singer, string LinkSong, Image Picture, string DateAdd, string length, string nameGenre)
@@ -80,7 +111,13 @@ namespace MediaPlayerApp.BLL
             FileInfo info = new FileInfo(path);
             if (info.Extension == ".mp3")
             {
+                
                 var fileTag = TagLib.File.Create(info.FullName);
+                this.Artist = (fileTag.Tag.Performers is null || fileTag.Tag.Performers.Length == 0) ? " " : fileTag.Tag.Performers.ToString();
+                this.AlbumArtist = (fileTag.Tag.AlbumArtists is null || fileTag.Tag.AlbumArtists.Length == 0) ? " " : fileTag.Tag.AlbumArtists.ToString();
+                this.Track = fileTag.Tag.Track.ToString();
+                this.Album = fileTag.Tag.Album is null ? " " : fileTag.Tag.Album.ToString();
+                this.Year = fileTag.Tag.Year.ToString();    
                 this.NameSong = fileTag.Tag.Title;
                 this.Singer = fileTag.Tag.FirstPerformer;
                 this.NameGenre = fileTag.Tag.FirstGenre;

@@ -49,9 +49,21 @@ namespace MediaPlayerApp.Components
             toolStrip.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip.Dock = DockStyle.None;
         }
-        private void moreClick(object sender, EventArgs e)
+        private void moreClick(object sender, ToolStripItemClickedEventArgs e)
         {
-            
+            if (e.ClickedItem.Text == "Edit info")
+            {
+                string path = "";
+                foreach (KeyValuePair<string, bool> item in fLibrary.SelectedMusic)
+                {
+                    if (item.Value == true)
+                    {
+                        path = item.Key;
+                    }
+                }
+                fEditMusic edit = new fEditMusic(path);
+                edit.ShowDialog();
+            }
         }
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -82,6 +94,29 @@ namespace MediaPlayerApp.Components
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             fLibrary.playList_PlayNext();
+        }
+
+        private void btnAddTo_Click(object sender, EventArgs e)
+        {
+            ContextMenuStrip toolStrip = new ContextMenuStrip();
+            toolStrip.ItemClicked += addToClick;
+            toolStrip.Items.Clear();
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.Items.Add("Play queue");
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("New playlist");
+            toolStrip.Items[0].Image = Resources.lounge_music_playlist_96px;
+            toolStrip.Items[2].Image = Resources.plus;
+            int Y = 400;
+            toolStrip.Location = new Point(btnAddTo.Location.X + 70, btnAddTo.Location.Y + Y);
+            toolStrip.Show(MousePosition);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
+        }
+        private void addToClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
