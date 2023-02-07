@@ -32,7 +32,7 @@ namespace MediaPlayerApp.UI
             this.btnNewPlaylist = new Guna.UI2.WinForms.Guna2Button();
             this.pnAllPlaylists = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbSortby = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblSort = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -76,25 +76,27 @@ namespace MediaPlayerApp.UI
             this.lblTitle.TabIndex = 32;
             this.lblTitle.Text = "Playlists";
             // 
-            // guna2ComboBox1
+            // cbSortby
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FillColor = System.Drawing.SystemColors.Control;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.Red;
-            this.guna2ComboBox1.ItemHeight = 20;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Date added"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(660, 60);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(120, 26);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2ComboBox1.TabIndex = 66;
+            this.cbSortby.BackColor = System.Drawing.Color.Transparent;
+            this.cbSortby.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSortby.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSortby.FillColor = System.Drawing.SystemColors.Control;
+            this.cbSortby.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSortby.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSortby.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSortby.ForeColor = System.Drawing.Color.Red;
+            this.cbSortby.ItemHeight = 20;
+            this.cbSortby.Items.AddRange(new object[] {
+            "Date added",
+            "A -> z"});
+            this.cbSortby.Location = new System.Drawing.Point(660, 60);
+            this.cbSortby.Name = "cbSortby";
+            this.cbSortby.Size = new System.Drawing.Size(120, 26);
+            this.cbSortby.StartIndex = 0;
+            this.cbSortby.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbSortby.TabIndex = 66;
+            this.cbSortby.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // lblSort
             // 
@@ -111,7 +113,7 @@ namespace MediaPlayerApp.UI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(788, 510);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.cbSortby);
             this.Controls.Add(this.lblSort);
             this.Controls.Add(this.btnNewPlaylist);
             this.Controls.Add(this.pnAllPlaylists);
@@ -129,7 +131,7 @@ namespace MediaPlayerApp.UI
         private Guna.UI2.WinForms.Guna2Button btnNewPlaylist;
         private System.Windows.Forms.FlowLayoutPanel pnAllPlaylists;
         private System.Windows.Forms.Label lblTitle;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbSortby;
         private System.Windows.Forms.Label lblSort;
     }
 }

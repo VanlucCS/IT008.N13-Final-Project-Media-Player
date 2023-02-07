@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaPlayerApp.Components;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +45,36 @@ namespace MediaPlayerApp.UI
             f.ShowDialog();
         }
 
-        
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pnAllPlaylists.Controls.Clear();
+            DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists");
+            FileInfo[] Files = d.GetFiles();
+            foreach (FileInfo file in Files)
+            {
+                Components.Playlist i = new Components.Playlist(file.FullName, this.parent);
+                pnAllPlaylists.Controls.Add(i);
+            }
+            #region Sort genre
+            if (cbSortby.Text != "Date added")
+            {
+                Playlist[] controlArray = new Playlist[pnAllPlaylists.Controls.Count];
+                this.pnAllPlaylists.Controls.CopyTo(controlArray, 0);
+                Array.Sort(controlArray, (c1, c2) => (int)(new FileInfo(c1.PlayListPath).CreationTime.Ticks) - (int)(new FileInfo(c2.PlayListPath).CreationTime.Ticks));
+
+                pnAllPlaylists.Controls.Clear();
+                pnAllPlaylists.Controls.AddRange(controlArray);
+            }
+            if (cbSortby.Text != "A -> z")
+            {
+                Playlist[] controlArray = new Playlist[pnAllPlaylists.Controls.Count];
+                this.pnAllPlaylists.Controls.CopyTo(controlArray, 0);
+                Array.Sort(controlArray, (c1, c2) => String.Compare(c1.PlayListName, c2.PlayListName));
+
+                pnAllPlaylists.Controls.Clear();
+                pnAllPlaylists.Controls.AddRange(controlArray);
+            }
+            #endregion
+        }
     }
 }
