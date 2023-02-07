@@ -187,7 +187,16 @@ namespace MediaPlayerApp.UI
                 {
                     return;
                 }
-                selectedSong.LblSongNumber.Text = Count.ToString();
+                if (Count == 1)
+                {
+                    selectedSong.LblSongNumber.Text = Count.ToString() + " song selected";
+                }
+                else
+                {
+                    selectedSong.LblSongNumber.Text = Count.ToString() + " songs selected";
+                } 
+                
+                
 
                 btnShuffleAndPlay.Visible = false;
                 lblSort.Visible = false;
@@ -210,6 +219,28 @@ namespace MediaPlayerApp.UI
                 lbGenre.Visible = true;
                 selectedSong.Visible = false;
             }
+        }
+
+        public void clear()
+        {
+            List<string> keys = new List<string>();
+            Count = 0;
+            for (int i = 0; i < SelectedMusic.Count; i++)
+            {
+                KeyValuePair<string, bool> item = SelectedMusic.ElementAt(i);
+                string path = item.Key;
+                SelectedMusic[path] = false;
+
+                Control[] controlsFound = flowLayoutPanel1.Controls.Find(path, true);
+                foreach (ThumbnailMusic song in controlsFound)
+                {
+                    song.Guna2CheckBox1.Checked = false;
+                }
+            }
+        }
+        public void moreClick()
+        {
+
         }
         private void btnAddFolder_Click(object sender, EventArgs e)
         {

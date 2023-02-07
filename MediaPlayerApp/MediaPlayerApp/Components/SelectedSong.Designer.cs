@@ -47,9 +47,10 @@
             this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.SystemColors.Control;
             this.guna2CheckBox1.CheckMarkColor = System.Drawing.Color.Black;
             this.guna2CheckBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2CheckBox1.Location = new System.Drawing.Point(19, 8);
+            this.guna2CheckBox1.Location = new System.Drawing.Point(25, 10);
+            this.guna2CheckBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(15, 16);
+            this.guna2CheckBox1.Size = new System.Drawing.Size(20, 20);
             this.guna2CheckBox1.TabIndex = 4;
             this.guna2CheckBox1.TabStop = false;
             this.guna2CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,12 +67,12 @@
             this.lblSongName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSongName.ForeColor = System.Drawing.Color.Black;
             this.lblSongName.IsSelectionEnabled = false;
-            this.lblSongName.Location = new System.Drawing.Point(56, 8);
-            this.lblSongName.MaximumSize = new System.Drawing.Size(146, 18);
+            this.lblSongName.Location = new System.Drawing.Point(75, 10);
+            this.lblSongName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblSongName.MaximumSize = new System.Drawing.Size(195, 22);
             this.lblSongName.Name = "lblSongName";
-            this.lblSongName.Size = new System.Drawing.Size(87, 18);
+            this.lblSongName.Size = new System.Drawing.Size(3, 2);
             this.lblSongName.TabIndex = 5;
-            this.lblSongName.Text = "song selected";
             this.lblSongName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2HtmlLabel1
@@ -80,13 +81,15 @@
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel1.IsSelectionEnabled = false;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(149, 8);
-            this.guna2HtmlLabel1.MaximumSize = new System.Drawing.Size(146, 18);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(199, 10);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel1.MaximumSize = new System.Drawing.Size(195, 22);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(34, 18);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(42, 22);
             this.guna2HtmlLabel1.TabIndex = 6;
             this.guna2HtmlLabel1.Text = "Clear";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             this.guna2HtmlLabel1.MouseEnter += new System.EventHandler(this.guna2HtmlLabel1_MouseEnter);
             this.guna2HtmlLabel1.MouseLeave += new System.EventHandler(this.guna2HtmlLabel1_MouseLeave);
             // 
@@ -104,9 +107,10 @@
             this.btnMore.ForeColor = System.Drawing.Color.Black;
             this.btnMore.Image = global::MediaPlayerApp.Properties.Resources.more;
             this.btnMore.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMore.Location = new System.Drawing.Point(496, 3);
+            this.btnMore.Location = new System.Drawing.Point(661, 4);
+            this.btnMore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMore.Name = "btnMore";
-            this.btnMore.Size = new System.Drawing.Size(31, 26);
+            this.btnMore.Size = new System.Drawing.Size(41, 32);
             this.btnMore.TabIndex = 10;
             this.btnMore.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnMore.TextOffset = new System.Drawing.Point(-2, 0);
@@ -126,9 +130,10 @@
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.Image = global::MediaPlayerApp.Properties.Resources.plus;
             this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.Location = new System.Drawing.Point(386, 3);
+            this.guna2Button3.Location = new System.Drawing.Point(515, 4);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(96, 26);
+            this.guna2Button3.Size = new System.Drawing.Size(128, 32);
             this.guna2Button3.TabIndex = 9;
             this.guna2Button3.Text = "Add to";
             this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -149,9 +154,10 @@
             this.guna2Button2.Image = global::MediaPlayerApp.Properties.Resources.playnext;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button2.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.guna2Button2.Location = new System.Drawing.Point(284, 3);
+            this.guna2Button2.Location = new System.Drawing.Point(379, 4);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(96, 26);
+            this.guna2Button2.Size = new System.Drawing.Size(128, 32);
             this.guna2Button2.TabIndex = 8;
             this.guna2Button2.Text = "Play next";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -171,9 +177,10 @@
             this.guna2Button1.Image = global::MediaPlayerApp.Properties.Resources.white_play;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button1.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.guna2Button1.Location = new System.Drawing.Point(209, 3);
+            this.guna2Button1.Location = new System.Drawing.Point(279, 4);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(69, 26);
+            this.guna2Button1.Size = new System.Drawing.Size(92, 32);
             this.guna2Button1.TabIndex = 7;
             this.guna2Button1.Text = "Play";
             this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -185,17 +192,18 @@
             this.lblSongNumber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSongNumber.ForeColor = System.Drawing.Color.Black;
             this.lblSongNumber.IsSelectionEnabled = false;
-            this.lblSongNumber.Location = new System.Drawing.Point(40, 8);
-            this.lblSongNumber.MaximumSize = new System.Drawing.Size(146, 18);
+            this.lblSongNumber.Location = new System.Drawing.Point(53, 10);
+            this.lblSongNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblSongNumber.MaximumSize = new System.Drawing.Size(195, 22);
             this.lblSongNumber.Name = "lblSongNumber";
-            this.lblSongNumber.Size = new System.Drawing.Size(10, 18);
+            this.lblSongNumber.Size = new System.Drawing.Size(12, 22);
             this.lblSongNumber.TabIndex = 11;
             this.lblSongNumber.Text = "1";
             this.lblSongNumber.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SelectedSong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblSongNumber);
             this.Controls.Add(this.btnMore);
@@ -205,8 +213,9 @@
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.lblSongName);
             this.Controls.Add(this.guna2CheckBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SelectedSong";
-            this.Size = new System.Drawing.Size(550, 32);
+            this.Size = new System.Drawing.Size(733, 39);
             this.ResumeLayout(false);
             this.PerformLayout();
 

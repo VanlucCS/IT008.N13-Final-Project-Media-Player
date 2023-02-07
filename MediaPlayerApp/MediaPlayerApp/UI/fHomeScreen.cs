@@ -27,5 +27,29 @@ namespace MediaPlayerApp.UI
             Thumbnail thumbnail = new Thumbnail("./BH01.mp3");
             flowLayoutPanel1.Controls.Add(thumbnail);
         }
+        public void moreClick()
+        {
+
+        }
+        public void selectAll()
+        {
+
+        }
+        public void deselectAll()
+        {
+
+        }
+        public void playList_Play()
+        {
+
+        }
+        public void playList_PlayNext()
+        {
+
+        }
+        public void clear()
+        {
+
+        }
     }
 }
