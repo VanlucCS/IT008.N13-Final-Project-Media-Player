@@ -103,6 +103,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UI\fAddNewPlaylistcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fAddNewPlaylistcs.Designer.cs">
+      <DependentUpon>fAddNewPlaylistcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\fFavorite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,11 +153,23 @@
     <Compile Include="UI\fPlaylist.Designer.cs">
       <DependentUpon>fPlaylist.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\fPlaylistInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fPlaylistInfo.Designer.cs">
+      <DependentUpon>fPlaylistInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\fPlayQueue.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\fPlayQueue.Designer.cs">
       <DependentUpon>fPlayQueue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\fRenamePlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fRenamePlaylist.Designer.cs">
+      <DependentUpon>fRenamePlaylist.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\fVideo.cs">
       <SubType>Form</SubType>
@@ -180,6 +198,9 @@
     <EmbeddedResource Include="Components\ThumbnailMenu.resx">
       <DependentUpon>ThumbnailMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\fAddNewPlaylistcs.resx">
+      <DependentUpon>fAddNewPlaylistcs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\fFavorite.resx">
       <DependentUpon>fFavorite.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,8 +227,14 @@
     <EmbeddedResource Include="UI\fPlaylist.resx">
       <DependentUpon>fPlaylist.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\fPlaylistInfo.resx">
+      <DependentUpon>fPlaylistInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\fPlayQueue.resx">
       <DependentUpon>fPlayQueue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fRenamePlaylist.resx">
+      <DependentUpon>fRenamePlaylist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fVideo.resx">
       <DependentUpon>fVideo.cs</DependentUpon>
@@ -328,6 +355,10 @@
     <None Include="Resources\video_back.png" />
     <None Include="Resources\grey_next.png" />
     <None Include="Resources\video_play.png" />
+    <None Include="Resources\more1.png" />
+    <None Include="Resources\transimage.png" />
+    <None Include="Resources\playbutton.png" />
+    <None Include="Resources\more2.png" />
     <Content Include="Resources\white_heart.png" />
     <Content Include="Resources\white_open_folder.png" />
     <None Include="Resources\heart2.png" />

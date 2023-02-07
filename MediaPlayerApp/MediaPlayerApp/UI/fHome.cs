@@ -143,7 +143,7 @@ namespace MediaPlayerApp
             this.OpenChildForm(new fPlayQueue(this));
         }
 
-        private void btPlayList_Click(object sender, EventArgs e)
+        public void btPlayList_Click(object sender, EventArgs e)
         {
             resetButtonStage();
             btPlayList.Checked = !btPlayList.Checked;
@@ -307,6 +307,51 @@ namespace MediaPlayerApp
         private void Media_MediaChange(object sender, AxWMPLib._WMPOCXEvents_MediaChangeEvent e)
         {
             LoadSongInfo(this.Media.currentMedia.sourceURL);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbRepeatSong_Click(object sender, EventArgs e)
+        {
+            if (cbtloop.Visible == false)
+            {
+
+                Media.settings.setMode("loop", true);
+                cbtloop.Visible = true;
+            }
+            else
+            {
+                Media.settings.setMode("loop", false);
+                cbtloop.Visible = false;
+            }
+        }
+
+        private void pbShuffer_Click(object sender, EventArgs e)
+        {
+            if (cbtshuffer.Visible == false)
+            {
+
+                Media.settings.setMode("shuffle", true);
+                cbtshuffer.Visible = true;
+            }
+            else
+            {
+                Media.settings.setMode("shuffle", false);
+                cbtshuffer.Visible = false;
+            }
+        }
+
+        private void pbNext_Click(object sender, EventArgs e)
+        {
+            Media.Ctlcontrols.next();
+        }
+
+        private void pbPrev_Click(object sender, EventArgs e)
+        {
+            Media.Ctlcontrols.previous();
         }
     }
 }
