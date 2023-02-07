@@ -13,7 +13,7 @@ namespace MediaPlayerApp.BLL
     class VideoInfo
     {
         public string Name;
-        public string Date;
+        public DateTime Date;
         public string Size;
         public string Length;
         public string link_Video;
@@ -53,7 +53,7 @@ namespace MediaPlayerApp.BLL
             if (info.Exists)
             {
                 this.Name = info.Name.ToString();
-                this.Date = info.CreationTime.ToString();
+                this.Date = info.CreationTime;
                 this.Length = Duration(path);
                 this.Link_Video = path;
                 this.picture_Video = GetThumbnail(path);
