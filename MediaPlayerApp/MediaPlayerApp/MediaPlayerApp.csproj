@@ -103,6 +103,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UI\fAddNewPlaylistcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fAddNewPlaylistcs.Designer.cs">
+      <DependentUpon>fAddNewPlaylistcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\fFavorite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\ThumbnailMenu.resx">
       <DependentUpon>ThumbnailMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fAddNewPlaylistcs.resx">
+      <DependentUpon>fAddNewPlaylistcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fFavorite.resx">
       <DependentUpon>fFavorite.cs</DependentUpon>

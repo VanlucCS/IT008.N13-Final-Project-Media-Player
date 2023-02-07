@@ -33,9 +33,9 @@ namespace MediaPlayerApp.UI
             this.btnNewPlaylist = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.moreButton = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblSort = new System.Windows.Forms.Label();
+            this.moreButton = new Guna.UI2.WinForms.Guna2ImageButton();
             this.SuspendLayout();
             // 
             // btnNewPlaylist
@@ -55,6 +55,7 @@ namespace MediaPlayerApp.UI
             this.btnNewPlaylist.TabIndex = 42;
             this.btnNewPlaylist.Text = "+   New playlist";
             this.btnNewPlaylist.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnNewPlaylist.Click += new System.EventHandler(this.btnNewPlaylist_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -75,23 +76,6 @@ namespace MediaPlayerApp.UI
             this.lblTitle.Size = new System.Drawing.Size(116, 37);
             this.lblTitle.TabIndex = 32;
             this.lblTitle.Text = "Playlists";
-            // 
-            // moreButton
-            // 
-            this.moreButton.BackColor = System.Drawing.Color.Transparent;
-            this.moreButton.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.moreButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.moreButton.HoverState.ImageSize = new System.Drawing.Size(35, 35);
-            this.moreButton.Image = ((System.Drawing.Image)(resources.GetObject("moreButton.Image")));
-            this.moreButton.ImageOffset = new System.Drawing.Point(0, 0);
-            this.moreButton.ImageRotate = 0F;
-            this.moreButton.ImageSize = new System.Drawing.Size(35, 35);
-            this.moreButton.Location = new System.Drawing.Point(741, 12);
-            this.moreButton.Name = "moreButton";
-            this.moreButton.PressedState.ImageSize = new System.Drawing.Size(35, 35);
-            this.moreButton.Size = new System.Drawing.Size(35, 35);
-            this.moreButton.TabIndex = 55;
-            this.moreButton.Click += new System.EventHandler(this.moreButton_Click);
             // 
             // guna2ComboBox1
             // 
@@ -123,6 +107,23 @@ namespace MediaPlayerApp.UI
             this.lblSort.TabIndex = 65;
             this.lblSort.Text = "Sort by : ";
             this.lblSort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // moreButton
+            // 
+            this.moreButton.BackColor = System.Drawing.Color.Transparent;
+            this.moreButton.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.moreButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.moreButton.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+            this.moreButton.Image = ((System.Drawing.Image)(resources.GetObject("moreButton.Image")));
+            this.moreButton.ImageOffset = new System.Drawing.Point(0, 0);
+            this.moreButton.ImageRotate = 0F;
+            this.moreButton.ImageSize = new System.Drawing.Size(35, 35);
+            this.moreButton.Location = new System.Drawing.Point(741, 12);
+            this.moreButton.Name = "moreButton";
+            this.moreButton.PressedState.ImageSize = new System.Drawing.Size(35, 35);
+            this.moreButton.Size = new System.Drawing.Size(35, 35);
+            this.moreButton.TabIndex = 55;
+            this.moreButton.Click += new System.EventHandler(this.moreButton_Click);
             // 
             // fPlaylist
             // 
