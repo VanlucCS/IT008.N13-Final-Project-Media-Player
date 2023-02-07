@@ -65,12 +65,12 @@ namespace MediaPlayerApp.UI
             if (btPlay.Checked == true)
             {
                 this.player.Ctlcontrols.play();
-                btPlay.Image = Resources.play_96px;
+                btPlay.Image = Resources.video_pause;
             }
             else
             {
                 this.player.Ctlcontrols.pause();
-                btPlay.Image = Resources.pause;
+                btPlay.Image = Resources.video_play;
             }
         }
 
@@ -104,7 +104,10 @@ namespace MediaPlayerApp.UI
 
         private void pbxForward_Click(object sender, EventArgs e)
         {
-            this.player.Ctlcontrols.currentPosition = Math.Min(this.player.Ctlcontrols.currentPosition + 30, player.currentMedia.duration);
+            if (this.player.Ctlcontrols.currentPosition + 30 > player.currentMedia.duration)
+                this.player.Ctlcontrols.currentPosition = player.currentMedia.duration;
+            else
+                this.player.Ctlcontrols.currentPosition += 30;
         }
 
         private void pbxReplay_Click(object sender, EventArgs e)
@@ -134,7 +137,10 @@ namespace MediaPlayerApp.UI
 
         private void pbxBackward_Click(object sender, EventArgs e)
         {
-            this.player.Ctlcontrols.currentPosition = Math.Max(this.player.Ctlcontrols.currentPosition - 10, 0);
+            if (this.player.Ctlcontrols.currentPosition - 10 < 0)
+                this.player.Ctlcontrols.currentPosition = 0;
+            else
+                this.player.Ctlcontrols.currentPosition -= 10;
         }
 
         private void pbxBack_Click(object sender, EventArgs e)
@@ -274,6 +280,10 @@ namespace MediaPlayerApp.UI
                         }
                     }
                 }
+                //if (videos.Length ==1 && replay ==0)
+                //{
+                //    btPlay.Image = Resources.video_play;
+                //}    
                 if (index != videos.Length - 1 || replay != 0)
                 {
                     pbxNext.Image = Resources.video_next;

@@ -354,6 +354,7 @@
     <None Include="Resources\not_shuffle.png" />
     <None Include="Resources\video_back.png" />
     <None Include="Resources\grey_next.png" />
+    <None Include="Resources\video_play.png" />
     <None Include="Resources\more1.png" />
     <None Include="Resources\transimage.png" />
     <None Include="Resources\playbutton.png" />

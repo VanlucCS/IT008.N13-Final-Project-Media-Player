@@ -19,11 +19,18 @@ namespace MediaPlayerApp.Components
         private VideoInfo videoInfo;
         private ThumbnailMenu thumbnailMenu = new ThumbnailMenu();
         private string _name;
-        private string _date;
+        private DateTime _date;
         private string _size;
         private string _length;
         private string _path;
         private Image _picture;
+        private bool _isChecked;
+
+        public bool IsChecked
+        {
+            get { return _isChecked; }
+            set { _isChecked = value; }
+        }
 
         public string VideoPath
         {
@@ -41,7 +48,7 @@ namespace MediaPlayerApp.Components
             get { return _size; }
             set { _size = value; }
         }
-        public string VideoDate
+        public DateTime VideoDate
         {
             get { return _date; }
             set { _date = value; }
@@ -79,6 +86,14 @@ namespace MediaPlayerApp.Components
             pictureSong.BackgroundImage = videoInfo.picture_Video;
             nameSongLabel.Text = videoInfo.Name;
             VideoPath = videoInfo.Link_Video;
+            IsChecked = false;
+            VideoDate = videoInfo.Date;
+            VideoPicture = videoInfo.picture_Video;
+            VideoName = videoInfo.Name;
+            VideoLength = videoInfo.Length;
+            VideoSize = videoInfo.Size;
+            IsChecked = false;
+            lblDate.Text = videoInfo.Date.ToString();
         }
 
         private void thumbnail_MouseEnter(object sender, EventArgs e)
@@ -130,5 +145,16 @@ namespace MediaPlayerApp.Components
             }
         }
 
+        private void cbxChon_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxChon.Checked)
+            {
+                IsChecked = true;
+            }  
+            else
+            {
+                IsChecked = false;
+            }    
+        }
     }
 }
