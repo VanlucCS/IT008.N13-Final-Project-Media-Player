@@ -158,5 +158,10 @@ namespace MediaPlayerApp.Components
         {
             this.parent.OpenChildForm(new fPlaylistInfo(this,this.parent));
         }
+
+        private void Playlist_Click(object sender, EventArgs e)
+        {
+            this.parent.OpenChildForm(new fPlaylistInfo(this, this.parent));
+        }
     }
 }

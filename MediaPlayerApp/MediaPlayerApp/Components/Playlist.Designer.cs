@@ -163,6 +163,7 @@
             this.Name = "Playlist";
             this.Size = new System.Drawing.Size(168, 217);
             this.Load += new System.EventHandler(this.Playlist_Load);
+            this.Click += new System.EventHandler(this.Playlist_Click);
             this.MouseEnter += new System.EventHandler(this.Playlist_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Playlist_MouseLeave);
             this.pnlBackground.ResumeLayout(false);

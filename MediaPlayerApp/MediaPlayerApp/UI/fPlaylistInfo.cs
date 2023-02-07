@@ -119,5 +119,57 @@ namespace MediaPlayerApp.UI
             }
             
         }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            ContextMenuStrip toolStrip = new ContextMenuStrip();
+            toolStrip.ItemClicked += menuAddToClick;
+            toolStrip.Items.Clear();
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.Items.Add("Add to Playlist :");
+            toolStrip.Items.Add("-");
+            DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists");
+            FileInfo[] Files = d.GetFiles();
+            foreach (FileInfo file in Files)
+            {
+                toolStrip.Items.Add(file.Name.Substring(0, file.Name.Length - 4));
+            }
+            int Y = 400;
+            toolStrip.Location = new Point(guna2Button2.Location.X + 70, guna2Button2.Location.Y + Y);
+            toolStrip.Show(MousePosition);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
+        }
+        private void menuAddToClick(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Text == "Add to Playlist :")
+            {
+                return;
+            }
+            // click..
+            string[] listPathSongPL = System.IO.File.ReadAllLines(playList.PlayListPath);
+                string fileName = @"./Data/Playlists/" + e.ClickedItem.Text + ".txt";
+
+            foreach (string songPath in listPathSongPL)
+            {
+                // check song path dup in playlist 
+                string[] listPathSongPL2 = System.IO.File.ReadAllLines(fileName);
+                bool dup = false;
+                foreach (string songPath2 in listPathSongPL2)
+                {
+                    if (songPath == songPath2)
+                        dup = true;
+                }
+                if(!dup)
+                {
+                    using (StreamWriter w = File.AppendText(fileName))
+                    {
+                        w.WriteLine(songPath);
+                    }
+                }
+            }
+                        MessageBox.Show("Thên thành công");
+        }
     }
 }
