@@ -19,7 +19,7 @@ namespace MediaPlayerApp.UI
         public fHome parent;
         private bool _isAllVideos;
         private bool _isSortByDate;
-        private List<Thumbnail> selected = new List<Thumbnail>();
+        
         SelectedSong selectedSong;
         public fVideoLibrary(fHome parent = null)
         {
@@ -267,8 +267,9 @@ namespace MediaPlayerApp.UI
         }
         public void selectedChanged()
         {
+
             // Chưa xong
-            Count = selected.Count;
+            Count = 0;
             foreach (Thumbnail video in flowLayoutPanel1.Controls.OfType<Thumbnail>())
             {
                 if (video.cbxChon.Checked == true)
@@ -291,10 +292,11 @@ namespace MediaPlayerApp.UI
                     selectedSong.Guna2CheckBox1.Checked = true;
                 }
                 else selectedSong.Guna2CheckBox1.Checked = false;
-                if (Count == 0)
-                {
-                    return;
-                }
+                //if (Count == 0)
+                //{
+                //    selectedSong.Visible = false;
+                //    return;
+                //}
                 if (Count == 1)
                 {
                     selectedSong.LblSongNumber.Text = Count.ToString() + " video selected";
@@ -305,27 +307,18 @@ namespace MediaPlayerApp.UI
                 }
 
 
-
-                //btnShuffleAndPlay.Visible = false;
-                //lblSort.Visible = false;
-                //guna2ComboBox1.Visible = false;
-                //guna2ComboBox2.Visible = false;
-                //lbGenre.Visible = false;
-                //if (Count == SelectedMusic.Count)
-                //{
-                //    isSelectedAll = true;
-                //}
-                //else isSelectedAll = false;
+                btnPlayAll.Visible = false;
+                lblSort.Visible = false;
+                cbxSort.Visible = false;
+              
 
             }
             else
             {
-                //btnShuffleAndPlay.Visible = true;
-                //lblSort.Visible = true;
-                //guna2ComboBox1.Visible = true;
-                //guna2ComboBox2.Visible = true;
-                //lbGenre.Visible = true;
-                //selectedSong.Visible = false;
+                btnPlayAll.Visible = true;
+                lblSort.Visible = true;
+                cbxSort.Visible = true;
+                selectedSong.Visible = false;
             }
         }
         public void moreClick()
