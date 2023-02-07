@@ -149,8 +149,8 @@
         private Guna.UI2.WinForms.Guna2ImageButton moreButton;
         private Guna.UI2.WinForms.Guna2ImageButton playButton;
         private Guna.UI2.WinForms.Guna2Panel pictureSong;
-        private Guna.UI2.WinForms.Guna2CheckBox cbxChon;
         private Guna.UI2.WinForms.Guna2HtmlLabel nameSongLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDate;
+        public Guna.UI2.WinForms.Guna2CheckBox cbxChon;
     }
 }
