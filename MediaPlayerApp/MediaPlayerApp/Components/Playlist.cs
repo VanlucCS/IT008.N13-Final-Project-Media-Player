@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace MediaPlayerApp.Components
 {
@@ -205,12 +206,30 @@ namespace MediaPlayerApp.Components
         }
         private void btPlay_Click(object sender, EventArgs e)
         {
-            this.parent.OpenChildForm(new fPlaylistInfo(this,this.parent));
+                string[] listPath = System.IO.File.ReadAllLines(PlayListPath);
+            if (listPath.Length != 0)
+            {
+
+                IWMPPlaylist playlist = this.parent.Media.newPlaylist("Playlist", null);
+                foreach (string path in listPath)
+                {
+                    WMPLib.IWMPMedia m = this.parent.Media.newMedia(path);
+                    playlist.appendItem(m);
+                }
+                this.parent.Media.currentPlaylist = playlist;
+                this.parent.Media.Ctlcontrols.play();
+            }
+            this.parent.AddToRecent(this.PlayListPath);
         }
 
         private void Playlist_Click(object sender, EventArgs e)
         {
             this.parent.OpenChildForm(new fPlaylistInfo(this, this.parent));
         }
+        public void ShowPlayList()
+        {
+            this.parent.OpenChildForm(new fPlaylistInfo(this, this.parent));
+        }
+
     }
 }

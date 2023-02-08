@@ -33,6 +33,7 @@ namespace MediaPlayerApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHome));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.pnControlMedia = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.moreButton = new Guna.UI2.WinForms.Guna2ImageButton();
             this.cbtshuffer = new Guna.UI2.WinForms.Guna2CircleButton();
             this.cbtloop = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lbSongName = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@ namespace MediaPlayerApp
             this.togMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
             this.pnChildren = new Guna.UI2.WinForms.Guna2Panel();
-            this.moreButton = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnControlMedia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSongpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Media)).BeginInit();
@@ -110,6 +110,23 @@ namespace MediaPlayerApp
             this.pnControlMedia.Size = new System.Drawing.Size(1000, 101);
             this.pnControlMedia.TabIndex = 0;
             // 
+            // moreButton
+            // 
+            this.moreButton.BackColor = System.Drawing.Color.Transparent;
+            this.moreButton.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.moreButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.moreButton.HoverState.ImageSize = new System.Drawing.Size(25, 25);
+            this.moreButton.Image = global::MediaPlayerApp.Properties.Resources.more;
+            this.moreButton.ImageOffset = new System.Drawing.Point(0, 0);
+            this.moreButton.ImageRotate = 0F;
+            this.moreButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.moreButton.Location = new System.Drawing.Point(771, 53);
+            this.moreButton.Name = "moreButton";
+            this.moreButton.PressedState.ImageSize = new System.Drawing.Size(35, 35);
+            this.moreButton.Size = new System.Drawing.Size(35, 35);
+            this.moreButton.TabIndex = 22;
+            this.moreButton.Click += new System.EventHandler(this.moreButton_Click);
+            // 
             // cbtshuffer
             // 
             this.cbtshuffer.BackColor = System.Drawing.Color.Transparent;
@@ -142,9 +159,8 @@ namespace MediaPlayerApp
             this.lbSongName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSongName.Location = new System.Drawing.Point(101, 31);
             this.lbSongName.Name = "lbSongName";
-            this.lbSongName.Size = new System.Drawing.Size(64, 25);
+            this.lbSongName.Size = new System.Drawing.Size(0, 25);
             this.lbSongName.TabIndex = 19;
-            this.lbSongName.Text = "label3";
             // 
             // pbSongpic
             // 
@@ -617,23 +633,6 @@ namespace MediaPlayerApp
             this.pnChildren.Name = "pnChildren";
             this.pnChildren.Size = new System.Drawing.Size(788, 510);
             this.pnChildren.TabIndex = 3;
-            // 
-            // moreButton
-            // 
-            this.moreButton.BackColor = System.Drawing.Color.Transparent;
-            this.moreButton.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.moreButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.moreButton.HoverState.ImageSize = new System.Drawing.Size(25, 25);
-            this.moreButton.Image = global::MediaPlayerApp.Properties.Resources.more;
-            this.moreButton.ImageOffset = new System.Drawing.Point(0, 0);
-            this.moreButton.ImageRotate = 0F;
-            this.moreButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.moreButton.Location = new System.Drawing.Point(771, 53);
-            this.moreButton.Name = "moreButton";
-            this.moreButton.PressedState.ImageSize = new System.Drawing.Size(35, 35);
-            this.moreButton.Size = new System.Drawing.Size(35, 35);
-            this.moreButton.TabIndex = 22;
-            this.moreButton.Click += new System.EventHandler(this.moreButton_Click);
             // 
             // fHome
             // 

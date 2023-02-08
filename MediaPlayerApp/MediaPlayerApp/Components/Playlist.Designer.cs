@@ -84,6 +84,7 @@
             this.pbxImage3.Name = "pbxImage3";
             this.pbxImage3.Size = new System.Drawing.Size(80, 80);
             this.pbxImage3.TabIndex = 12;
+            this.pbxImage3.Click += new System.EventHandler(this.Playlist_Click);
             // 
             // btPlay
             // 
@@ -112,6 +113,7 @@
             this.pbxImage4.Name = "pbxImage4";
             this.pbxImage4.Size = new System.Drawing.Size(80, 80);
             this.pbxImage4.TabIndex = 11;
+            this.pbxImage4.Click += new System.EventHandler(this.Playlist_Click);
             // 
             // btMore
             // 
@@ -141,6 +143,7 @@
             this.pbxImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxImage2.TabIndex = 3;
             this.pbxImage2.TabStop = false;
+            this.pbxImage2.Click += new System.EventHandler(this.Playlist_Click);
             // 
             // pbxImage1
             // 
@@ -152,6 +155,7 @@
             this.pbxImage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxImage1.TabIndex = 1;
             this.pbxImage1.TabStop = false;
+            this.pbxImage1.Click += new System.EventHandler(this.Playlist_Click);
             // 
             // Playlist
             // 
@@ -179,7 +183,6 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2ImageButton btPlay;
         private Guna.UI2.WinForms.Guna2ImageButton btMore;
         private Guna.UI2.WinForms.Guna2Panel pnlBackground;
         public Guna.UI2.WinForms.Guna2PictureBox pbxImage1;
@@ -188,5 +191,6 @@
         public System.Windows.Forms.Label lblItem;
         public Guna.UI2.WinForms.Guna2Panel pbxImage4;
         public Guna.UI2.WinForms.Guna2Panel pbxImage3;
+        public Guna.UI2.WinForms.Guna2ImageButton btPlay;
     }
 }
