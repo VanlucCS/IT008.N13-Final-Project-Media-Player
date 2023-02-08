@@ -100,7 +100,7 @@ namespace MediaPlayerApp.Components
             toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             toolStrip.Items.Add("Delete Playlist");
             toolStrip.Items.Add("-");
-            toolStrip.Items.Add("Move to Playlist");
+            toolStrip.Items.Add("Add to Playlist");
             toolStrip.Items.Add("-");
             toolStrip.Items.Add("Rename PlayList");
             int Y = 400;
@@ -113,8 +113,15 @@ namespace MediaPlayerApp.Components
         private void menuClick(object sender, ToolStripItemClickedEventArgs e)
         {
             // click..
+            if (e.ClickedItem.Text == "")
+            {
+                return;
+            }
             if (e.ClickedItem.Text == "Delete Playlist")
             {
+                DialogResult ok = MessageBox.Show("Bạn có chắn chắn muốn playlist", "Xác nhận xóa", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (ok == DialogResult.OK)
+                {
                     try
                     {
                         // Check if file exists    
@@ -130,16 +137,23 @@ namespace MediaPlayerApp.Components
                     {
 
                     }
+                }
             }
-            if (e.ClickedItem.Text == "Move to Playlist")
+            if (e.ClickedItem.Text == "Add to Playlist")
             {
                 ContextMenuStrip toolStrip = new ContextMenuStrip();
-                toolStrip.ItemClicked += menuClick;
+                toolStrip.ItemClicked += menuAddToClick;
                 toolStrip.Items.Clear();
                 toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-                toolStrip.Items.Add("Playlist 1");
+                toolStrip.Items.Add("Add to Playlist :");
                 toolStrip.Items.Add("-");
-                toolStrip.Items.Add("Playlist 2");
+                DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists");
+                FileInfo[] Files = d.GetFiles();
+                foreach (FileInfo file in Files)
+                {
+                    if(PlayListName!= file.Name.Substring(0, file.Name.Length - 4))
+                        toolStrip.Items.Add(file.Name.Substring(0, file.Name.Length - 4));
+                }
                 int Y = 450;
                 toolStrip.Location = new Point(btMore.Location.X + 80, btMore.Location.Y + Y);
                 toolStrip.Show(MousePosition);
@@ -153,7 +167,42 @@ namespace MediaPlayerApp.Components
                 f.ShowDialog();
             }
         }
+        private void menuAddToClick(object sender, ToolStripItemClickedEventArgs e)
+        {
+            //MessageBox.Show(e.ClickedItem.Text);
+            if (e.ClickedItem.Text == "")
+            {
+                return;
+            }
+            if (e.ClickedItem.Text == "Add to Playlist :")
+            {
+                return;
+            }
+            // click..
+            string[] listPathSongPL = System.IO.File.ReadAllLines(this.PlayListPath);
+            string fileName = @"./Data/Playlists/" + e.ClickedItem.Text + ".txt";
 
+            foreach (string songPath in listPathSongPL)
+            {
+                // check song path dup in playlist 
+                string[] listPathSongPL2 = System.IO.File.ReadAllLines(fileName);
+                bool dup = false;
+                foreach (string songPath2 in listPathSongPL2)
+                {
+                    if (songPath == songPath2)
+                        dup = true;
+                }
+                if (!dup)
+                {
+                    using (StreamWriter w = File.AppendText(fileName))
+                    {
+                        w.WriteLine(songPath);
+                    }
+                }
+            }
+            MessageBox.Show("Thên thành công");
+            this.parent.btPlayList_Click(this.parent, null);
+        }
         private void btPlay_Click(object sender, EventArgs e)
         {
             this.parent.OpenChildForm(new fPlaylistInfo(this,this.parent));

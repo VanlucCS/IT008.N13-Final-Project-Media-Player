@@ -14,8 +14,10 @@ namespace MediaPlayerApp.UI
     public partial class fAddNewPlaylistcs : Form
     {
         private int dupcal = 0;
-        public fAddNewPlaylistcs()
+        public string[] listSongAdd;
+        public fAddNewPlaylistcs(string[] list = null )
         {
+            listSongAdd = list;
             InitializeComponent();
         }
 
@@ -70,8 +72,10 @@ namespace MediaPlayerApp.UI
                 using (FileStream fs = File.Create(fileName))
                 {
                 }
+                    if (listSongAdd != null)
+                        File.WriteAllLines(fileName, listSongAdd);
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
                 return;
             }

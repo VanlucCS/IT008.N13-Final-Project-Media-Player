@@ -31,7 +31,7 @@ namespace MediaPlayerApp.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fHomeScreen));
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnRecent = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnOption = new Guna.UI2.WinForms.Guna2Button();
             this.btnOpenFile = new Guna.UI2.WinForms.Guna2Button();
@@ -43,20 +43,20 @@ namespace MediaPlayerApp.UI
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 28);
+            this.label1.Size = new System.Drawing.Size(110, 21);
             this.label1.TabIndex = 20;
             this.label1.Text = "Recent media";
             // 
-            // flowLayoutPanel1
+            // pnRecent
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnRecent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 95);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(770, 410);
-            this.flowLayoutPanel1.TabIndex = 18;
+            this.pnRecent.AutoSize = true;
+            this.pnRecent.Location = new System.Drawing.Point(10, 95);
+            this.pnRecent.Name = "pnRecent";
+            this.pnRecent.Size = new System.Drawing.Size(770, 410);
+            this.pnRecent.TabIndex = 18;
             // 
             // lblTitle
             // 
@@ -64,7 +64,7 @@ namespace MediaPlayerApp.UI
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(12, 12);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(95, 37);
+            this.lblTitle.Size = new System.Drawing.Size(72, 30);
             this.lblTitle.TabIndex = 16;
             this.lblTitle.Text = "Home";
             // 
@@ -86,6 +86,7 @@ namespace MediaPlayerApp.UI
             this.btnOption.Size = new System.Drawing.Size(43, 35);
             this.btnOption.TabIndex = 51;
             this.btnOption.Text = "▼";
+            this.btnOption.Visible = false;
             // 
             // btnOpenFile
             // 
@@ -106,6 +107,7 @@ namespace MediaPlayerApp.UI
             this.btnOpenFile.Size = new System.Drawing.Size(127, 35);
             this.btnOpenFile.TabIndex = 50;
             this.btnOpenFile.Text = "Open file(s)";
+            this.btnOpenFile.Visible = false;
             // 
             // fHomeScreen
             // 
@@ -114,11 +116,12 @@ namespace MediaPlayerApp.UI
             this.Controls.Add(this.btnOption);
             this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.pnRecent);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fHomeScreen";
             this.Text = "fHomeScreen";
+            this.Load += new System.EventHandler(this.fHomeScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +129,7 @@ namespace MediaPlayerApp.UI
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel pnRecent;
         private System.Windows.Forms.Label lblTitle;
         private Guna.UI2.WinForms.Guna2Button btnOption;
         private Guna.UI2.WinForms.Guna2Button btnOpenFile;

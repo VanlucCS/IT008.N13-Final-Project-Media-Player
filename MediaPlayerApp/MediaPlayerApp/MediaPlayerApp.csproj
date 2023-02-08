@@ -98,6 +98,12 @@
     <Compile Include="Components\ThumbnailMenu.Designer.cs">
       <DependentUpon>ThumbnailMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\ThumbnailMusic2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ThumbnailMusic2.Designer.cs">
+      <DependentUpon>ThumbnailMusic2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\ThumbnailMenu.resx">
       <DependentUpon>ThumbnailMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ThumbnailMusic2.resx">
+      <DependentUpon>ThumbnailMusic2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fAddNewPlaylistcs.resx">
       <DependentUpon>fAddNewPlaylistcs.cs</DependentUpon>
