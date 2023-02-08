@@ -189,8 +189,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAlbum;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblGenre;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTime;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
         public Guna.UI2.WinForms.Guna2Button btnPlay;
+        public Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
 
         public Guna.UI2.WinForms.Guna2CheckBox Guna2CheckBox1
         {

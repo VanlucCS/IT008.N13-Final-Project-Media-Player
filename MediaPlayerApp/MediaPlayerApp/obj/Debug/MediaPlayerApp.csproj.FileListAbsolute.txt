@@ -212,3 +212,5 @@ C:\Workspace\LapTrinhTrucQuan5\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlay
 C:\Workspace\LapTrinhTrucQuan5\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.csproj.CopyComplete
 C:\Workspace\LapTrinhTrucQuan5\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.exe
 C:\Workspace\LapTrinhTrucQuan5\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.pdb
+C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fEditMusic.resources
+C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.Components.ThumbnailMusic2.resources

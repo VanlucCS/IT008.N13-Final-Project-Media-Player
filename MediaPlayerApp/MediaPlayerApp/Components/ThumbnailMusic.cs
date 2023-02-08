@@ -125,7 +125,7 @@ namespace MediaPlayerApp.Components
 
         }
 
-        private void btnPlay_Click(object sender, EventArgs e)
+        public void btnPlay_Click(object sender, EventArgs e)
         {
             //
             if (this.parent.currenSong == this && this.parent.Media.playState == WMPLib.WMPPlayState.wmppsPlaying)

@@ -31,15 +31,15 @@
             this.lbPlayListName = new System.Windows.Forms.Label();
             this.lblItem = new System.Windows.Forms.Label();
             this.pnlBackground = new Guna.UI2.WinForms.Guna2Panel();
-            this.pbxImage4 = new Guna.UI2.WinForms.Guna2Panel();
             this.pbxImage3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btPlay = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pbxImage4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btMore = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pbxImage2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbxImage1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btPlay = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btMore = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnlBackground.SuspendLayout();
-            this.pbxImage4.SuspendLayout();
             this.pbxImage3.SuspendLayout();
+            this.pbxImage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage1)).BeginInit();
             this.SuspendLayout();
@@ -75,8 +75,37 @@
             this.pnlBackground.Size = new System.Drawing.Size(160, 160);
             this.pnlBackground.TabIndex = 9;
             // 
+            // pbxImage3
+            // 
+            this.pbxImage3.BackColor = System.Drawing.SystemColors.Control;
+            this.pbxImage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxImage3.Controls.Add(this.btPlay);
+            this.pbxImage3.Location = new System.Drawing.Point(0, 80);
+            this.pbxImage3.Name = "pbxImage3";
+            this.pbxImage3.Size = new System.Drawing.Size(80, 80);
+            this.pbxImage3.TabIndex = 12;
+            // 
+            // btPlay
+            // 
+            this.btPlay.BackColor = System.Drawing.Color.Transparent;
+            this.btPlay.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.btPlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btPlay.HoverState.Image = global::MediaPlayerApp.Properties.Resources.playbutton;
+            this.btPlay.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btPlay.Image = global::MediaPlayerApp.Properties.Resources.transimage;
+            this.btPlay.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btPlay.ImageRotate = 0F;
+            this.btPlay.ImageSize = new System.Drawing.Size(35, 35);
+            this.btPlay.Location = new System.Drawing.Point(3, 34);
+            this.btPlay.Name = "btPlay";
+            this.btPlay.PressedState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btPlay.Size = new System.Drawing.Size(35, 35);
+            this.btPlay.TabIndex = 7;
+            this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
+            // 
             // pbxImage4
             // 
+            this.pbxImage4.BackColor = System.Drawing.SystemColors.Control;
             this.pbxImage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxImage4.Controls.Add(this.btMore);
             this.pbxImage4.Location = new System.Drawing.Point(80, 80);
@@ -84,14 +113,23 @@
             this.pbxImage4.Size = new System.Drawing.Size(80, 80);
             this.pbxImage4.TabIndex = 11;
             // 
-            // pbxImage3
+            // btMore
             // 
-            this.pbxImage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxImage3.Controls.Add(this.btPlay);
-            this.pbxImage3.Location = new System.Drawing.Point(0, 80);
-            this.pbxImage3.Name = "pbxImage3";
-            this.pbxImage3.Size = new System.Drawing.Size(80, 80);
-            this.pbxImage3.TabIndex = 12;
+            this.btMore.BackColor = System.Drawing.Color.Transparent;
+            this.btMore.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
+            this.btMore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btMore.HoverState.Image = global::MediaPlayerApp.Properties.Resources.more1;
+            this.btMore.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btMore.Image = global::MediaPlayerApp.Properties.Resources.transimage;
+            this.btMore.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btMore.ImageRotate = 0F;
+            this.btMore.ImageSize = new System.Drawing.Size(35, 35);
+            this.btMore.Location = new System.Drawing.Point(42, 34);
+            this.btMore.Name = "btMore";
+            this.btMore.PressedState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btMore.Size = new System.Drawing.Size(35, 35);
+            this.btMore.TabIndex = 8;
+            this.btMore.Click += new System.EventHandler(this.btMore_Click);
             // 
             // pbxImage2
             // 
@@ -115,42 +153,6 @@
             this.pbxImage1.TabIndex = 1;
             this.pbxImage1.TabStop = false;
             // 
-            // btPlay
-            // 
-            this.btPlay.BackColor = System.Drawing.Color.Transparent;
-            this.btPlay.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.btPlay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btPlay.HoverState.Image = global::MediaPlayerApp.Properties.Resources.playbutton;
-            this.btPlay.HoverState.ImageSize = new System.Drawing.Size(35, 35);
-            this.btPlay.Image = global::MediaPlayerApp.Properties.Resources.transimage;
-            this.btPlay.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btPlay.ImageRotate = 0F;
-            this.btPlay.ImageSize = new System.Drawing.Size(35, 35);
-            this.btPlay.Location = new System.Drawing.Point(3, 34);
-            this.btPlay.Name = "btPlay";
-            this.btPlay.PressedState.ImageSize = new System.Drawing.Size(35, 35);
-            this.btPlay.Size = new System.Drawing.Size(35, 35);
-            this.btPlay.TabIndex = 7;
-            this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
-            // 
-            // btMore
-            // 
-            this.btMore.BackColor = System.Drawing.Color.Transparent;
-            this.btMore.CheckedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.btMore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btMore.HoverState.Image = global::MediaPlayerApp.Properties.Resources.more1;
-            this.btMore.HoverState.ImageSize = new System.Drawing.Size(35, 35);
-            this.btMore.Image = global::MediaPlayerApp.Properties.Resources.transimage;
-            this.btMore.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btMore.ImageRotate = 0F;
-            this.btMore.ImageSize = new System.Drawing.Size(35, 35);
-            this.btMore.Location = new System.Drawing.Point(42, 34);
-            this.btMore.Name = "btMore";
-            this.btMore.PressedState.ImageSize = new System.Drawing.Size(35, 35);
-            this.btMore.Size = new System.Drawing.Size(35, 35);
-            this.btMore.TabIndex = 8;
-            this.btMore.Click += new System.EventHandler(this.btMore_Click);
-            // 
             // Playlist
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -167,8 +169,8 @@
             this.MouseEnter += new System.EventHandler(this.Playlist_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Playlist_MouseLeave);
             this.pnlBackground.ResumeLayout(false);
-            this.pbxImage4.ResumeLayout(false);
             this.pbxImage3.ResumeLayout(false);
+            this.pbxImage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImage1)).EndInit();
             this.ResumeLayout(false);

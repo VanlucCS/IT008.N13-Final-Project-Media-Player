@@ -89,6 +89,7 @@ namespace MediaPlayerApp.UI
             toolStrip.Items.Clear();
             toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             toolStrip.Items.Add("Delete Playlist");
+            toolStrip.Items.Add("Delete Choosing music");
             int Y = 400;
             toolStrip.Location = new Point(guna2Button2.Location.X + 70, guna2Button2.Location.Y + Y);
             toolStrip.Show(MousePosition);
@@ -99,25 +100,52 @@ namespace MediaPlayerApp.UI
         private void menuClick(object sender, ToolStripItemClickedEventArgs e)
         {
             // click..
+            if (e.ClickedItem.Text == "")
+            {
+                return;
+            }
             if (e.ClickedItem.Text == "Delete Playlist")
             {
-                try
+                DialogResult ok = MessageBox.Show("Bạn có chắn chắn muốn playlist", "Xác nhận xóa", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (ok == DialogResult.OK)
                 {
-                    // Check if file exists    
-                    if (File.Exists(playList.PlayListPath))
+                    try
                     {
-                        // If file found, delete it    
-                        File.Delete(playList.PlayListPath);
-                        MessageBox.Show("Xóa thành công");
-                        this.parent.btPlayList_Click(this.playList.parent, null);
+                        // Check if file exists    
+                        if (File.Exists(playList.PlayListPath))
+                        {
+                            // If file found, delete it    
+                            File.Delete(playList.PlayListPath);
+                            MessageBox.Show("Xóa thành công");
+                            this.parent.btPlayList_Click(this.playList.parent, null);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
                     }
                 }
-                catch(Exception)
+            }
+            if (e.ClickedItem.Text == "Delete Choosing music")
+            {
+                DialogResult ok = MessageBox.Show("Bạn có chắn chắn muốn xóa bài hát đã chọn ra khỏi playlist","Xác nhận xóa",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                if(ok == DialogResult.OK)
                 {
 
+                foreach (ThumbnailMusic item in pnSong.Controls)
+                {
+                    #region Rm if checked 
+                    if (item.Guna2CheckBox1.Checked == true)
+                        File.WriteAllLines(this.playList.PlayListPath,
+                        File.ReadLines(this.playList.PlayListPath).Where(l => l != item.Path).ToList());
+                    #endregion
+
                 }
+                MessageBox.Show("Xóa thành công");
+                this.parent.btPlayList_Click(this.parent, null);
+                }    
             }
-            
+
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -132,7 +160,8 @@ namespace MediaPlayerApp.UI
             FileInfo[] Files = d.GetFiles();
             foreach (FileInfo file in Files)
             {
-                toolStrip.Items.Add(file.Name.Substring(0, file.Name.Length - 4));
+                if (playList.PlayListName != file.Name.Substring(0, file.Name.Length - 4))
+                    toolStrip.Items.Add(file.Name.Substring(0, file.Name.Length - 4));
             }
             int Y = 400;
             toolStrip.Location = new Point(guna2Button2.Location.X + 70, guna2Button2.Location.Y + Y);
@@ -143,6 +172,10 @@ namespace MediaPlayerApp.UI
         }
         private void menuAddToClick(object sender, ToolStripItemClickedEventArgs e)
         {
+            if (e.ClickedItem.Text == "")
+            {
+                return;
+            }
             if (e.ClickedItem.Text == "Add to Playlist :")
             {
                 return;
@@ -170,6 +203,8 @@ namespace MediaPlayerApp.UI
                 }
             }
                         MessageBox.Show("Thên thành công");
+            this.parent.btPlayList_Click(this.playList.parent, null);
+
         }
         public void moreClick()
         {

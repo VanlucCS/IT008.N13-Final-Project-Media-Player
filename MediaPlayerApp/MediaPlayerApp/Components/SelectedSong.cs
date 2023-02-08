@@ -345,6 +345,8 @@ namespace MediaPlayerApp.Components
             toolStrip.Items.Add("Play queue");
             toolStrip.Items.Add("-");
             toolStrip.Items.Add("New playlist");
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("Playlist");
             toolStrip.Items[0].Image = Resources.lounge_music_playlist_96px;
             toolStrip.Items[2].Image = Resources.plus;
             int Y = 400;
@@ -354,9 +356,90 @@ namespace MediaPlayerApp.Components
             toolStrip.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip.Dock = DockStyle.None;
         }
-        private void addToClick(object sender, EventArgs e)
+        private void addToClick(object sender, ToolStripItemClickedEventArgs e)
         {
+            #region Playlist
+            if (e.ClickedItem.Text == "New playlist")
+            {
+                // add new playlist
+                List<string> listAdd = new List<string> { };
+                foreach (ThumbnailMusic item in _fMusicLibrary.flowLayoutPanel1.Controls)
+                {
+                    if (item.guna2CheckBox1.Checked == true)
+                    {
+                        listAdd.Add(item.Path);
+                    }
+                }
+                fAddNewPlaylistcs f = new fAddNewPlaylistcs(listAdd.ToArray());
+                f.StartPosition = FormStartPosition.CenterScreen;
+                f.ShowDialog();
+                return;
+            }
+            if (e.ClickedItem.Text == "Playlist")
+            {
+
+                ContextMenuStrip toolStrip = new ContextMenuStrip();
+                toolStrip.ItemClicked += addToPlaylist;
+                toolStrip.Items.Clear();
+                toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+                DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists");
+                FileInfo[] Files = d.GetFiles();
+                foreach (FileInfo file in Files)
+                {
+                    toolStrip.Items.Add(file.Name.Substring(0, file.Name.Length - 4));
+                }
+                int Y = 400;
+                toolStrip.Location = new Point(btnAddTo.Location.X + 70, btnAddTo.Location.Y + Y);
+                toolStrip.Show(MousePosition);
+                toolStrip.BringToFront();
+                toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+                toolStrip.Dock = DockStyle.None;
+                return;
+            } 
+            #endregion
+
 
         }
+        private void addToPlaylist(object sender, ToolStripItemClickedEventArgs e)
+        {
+            try
+            {
+                List<string> listAdd = new List<string> { };
+
+                string playListPath = @"./Data/Playlists/" + e.ClickedItem.Text + ".txt";
+
+                foreach (ThumbnailMusic item in _fMusicLibrary.flowLayoutPanel1.Controls)
+                {
+                    if (item.guna2CheckBox1.Checked == true)
+                    {
+                        listAdd.Add(item.Path);
+                    }
+                }
+                string fileName = @"./Data/Playlists/" + e.ClickedItem.Text + ".txt";
+                foreach (string songPath in listAdd.ToArray())
+                {
+                    // check song path dup in playlist 
+                    string[] listPathSongPL2 = System.IO.File.ReadAllLines(fileName);
+                    bool dup = false;
+                    foreach (string songPath2 in listPathSongPL2)
+                    {
+                        if (songPath == songPath2)
+                            dup = true;
+                    }
+                    if (!dup)
+                    {
+                        using (StreamWriter w = File.AppendText(fileName))
+                        {
+                            w.WriteLine(songPath);
+                        }
+                    }
+                }
+                MessageBox.Show("Thên thành công");
+            }
+            catch (Exception)
+            {
+            }
+        }
+    
     }
 }

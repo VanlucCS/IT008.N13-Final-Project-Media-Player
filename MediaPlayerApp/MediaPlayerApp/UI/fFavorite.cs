@@ -98,14 +98,14 @@ namespace MediaPlayerApp.UI
                 foreach (ThumbnailMusic item in pnSong.Controls)
                 {
                     #region Rm if checked 
-                    //if(item.Ischecked == true)
-                    File.WriteAllLines(@"./Data/FavoriteSong.txt",
-                        File.ReadLines(@"./Data/FavoriteSong.txt").Where(l => l != this.parent.currenSong.Path).ToList());
+                    if (item.Guna2CheckBox1.Checked == true)
+                        File.WriteAllLines(@"./Data/FavoriteSong.txt",
+                        File.ReadLines(@"./Data/FavoriteSong.txt").Where(l => l != item.Path).ToList());
                     #endregion
 
+                }
                     MessageBox.Show("Xóa thành công");
                     this.parent.btFravorSong_Click(this.parent, null);
-                }
             }
         }
 

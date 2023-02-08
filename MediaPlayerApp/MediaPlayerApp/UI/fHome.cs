@@ -42,6 +42,7 @@ namespace MediaPlayerApp
             t.Interval = 1000;
             t.Tick += new EventHandler(t_Tick);
             t.Start();
+            btHome_Click(this,null);
         }
         public void LoadSongInfo(string path)
         {
@@ -352,6 +353,69 @@ namespace MediaPlayerApp
         private void pbPrev_Click(object sender, EventArgs e)
         {
             Media.Ctlcontrols.previous();
+        }
+
+        private void moreButton_Click(object sender, EventArgs e)
+        {
+            ContextMenuStrip toolStrip = new ContextMenuStrip();
+            toolStrip.ItemClicked += addPlaylistClick;
+            toolStrip.Items.Clear();
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.Items.Add("Add to Playlist :");
+            toolStrip.Items.Add("-");
+            DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists");
+            FileInfo[] Files = d.GetFiles();
+            foreach (FileInfo file in Files)
+            {
+                    toolStrip.Items.Add(file.Name.Substring(0, file.Name.Length - 4));
+            }
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("New Playlist");
+            int Y = 450;
+            toolStrip.Location = new Point(moreButton.Location.X + 80, moreButton.Location.Y + Y);
+            toolStrip.Show(MousePosition);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
+        }
+        private void addPlaylistClick(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Text == "")
+            {
+                return;
+            }
+            if (e.ClickedItem.Text == "Add to Playlist :")
+            {
+                return;
+            }
+            if (e.ClickedItem.Text == "New Playlist")
+            {
+                // add new playlist
+                List<string> listAdd = new List<string> { this.currenSong.Path };
+                fAddNewPlaylistcs f = new fAddNewPlaylistcs(listAdd.ToArray());
+                f.StartPosition = FormStartPosition.CenterScreen;
+                f.ShowDialog();
+                return;
+            }
+            // add to playlist choosing
+            string fileName = @"./Data/Playlists/" + e.ClickedItem.Text + ".txt";
+            string songPath = this.currenSong.Path;
+            // check song path dup in playlist 
+            string[] listPathSongPL2 = System.IO.File.ReadAllLines(fileName);
+            bool dup = false;
+            foreach (string songPath2 in listPathSongPL2)
+            {
+                if (songPath == songPath2)
+                    dup = true;
+            }
+            if (!dup)
+            {
+                using (StreamWriter w = File.AppendText(fileName))
+                {
+                    w.WriteLine(songPath);
+                }
+            }
+            MessageBox.Show("Thên thành công");
         }
     }
 }
