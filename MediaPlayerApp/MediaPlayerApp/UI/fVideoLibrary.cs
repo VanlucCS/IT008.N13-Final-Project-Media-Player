@@ -55,7 +55,7 @@ namespace MediaPlayerApp.UI
         private void btnPlayAll_Click(object sender, EventArgs e)
         {
             Thumbnail[] thumbnails = flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray();
-            fVideo fvideo = new fVideo(null, thumbnails);
+            fVideo fvideo = new fVideo(this.parent, thumbnails);
             fvideo.ShowDialog();
         }
         private void loadVideo()
@@ -220,50 +220,27 @@ namespace MediaPlayerApp.UI
         }
         public void deselectAll()
         {
-            //if (Count == SelectedMusic.Count)
-            //{
-            //    List<string> keys = new List<string>();
-            //    Count = 0;
-            //    for (int i = 0; i < SelectedMusic.Count; i++)
-            //    {
-            //        KeyValuePair<string, bool> item = SelectedMusic.ElementAt(i);
-            //        string path = item.Key;
-            //        SelectedMusic[path] = false;
-            //        Count++;
+            if (Count == flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray().Length)
+            {
+                foreach (Thumbnail video in flowLayoutPanel1.Controls.OfType<Thumbnail>())
+                {
+                    video.cbxChon.Checked = false;
+                }    
+            }
 
-            //        Control[] controlsFound = flowLayoutPanel1.Controls.Find(path, true);
-            //        foreach (ThumbnailMusic song in controlsFound)
-            //        {
-            //            song.Guna2CheckBox1.Checked = false;
-            //        }
-            //    }
-            //    btnShuffleAndPlay.Visible = true;
-            //    lblSort.Visible = true;
-            //    guna2ComboBox1.Visible = true;
-            //    guna2ComboBox2.Visible = true;
-            //    lbGenre.Visible = true;
-            //    selectedSong.Visible = false;
-            //    Count = 0;
-            //}
         }
         public void selectAll()
         {
-            //List<string> keys = new List<string>();
-            //Count = 0;
-            //for (int i = 0; i < SelectedMusic.Count; i++)
-            //{
-            //    KeyValuePair<string, bool> item = SelectedMusic.ElementAt(i);
-            //    string path = item.Key;
-            //    SelectedMusic[path] = true;
-            //    Count++;
+            foreach (Thumbnail video in flowLayoutPanel1.Controls.OfType<Thumbnail>())
+            {
+                if (video.cbxChon.Checked == false)
+                {
+                    video.cbxChon.Checked = true;
+                }    
+                
+            }
 
-            //    Control[] controlsFound = flowLayoutPanel1.Controls.Find(path, true);
-            //    foreach (ThumbnailMusic song in controlsFound)
-            //    {
-            //        song.Guna2CheckBox1.Checked = true;
-            //    }
-            //}
-            //Count = SelectedMusic.Count;
+
         }
         public void selectedChanged()
         {
@@ -328,15 +305,42 @@ namespace MediaPlayerApp.UI
         
         public void playList_Play()
         {
+            List<Thumbnail> play = new List<Thumbnail>();
+            Thumbnail[] videos = flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray();
+            for (int i = 0; i < videos.Length; i++)
+            {
+                if (videos[i].cbxChon.Checked == true)
+                {
+                    play.Add(videos[i]);
+                }    
+            }
+            fVideo fvideo = new fVideo(this.parent, play.ToArray());
+            fvideo.ShowDialog();
 
         }
         public void playList_PlayNext()
         {
-
+            //timer1.Enabled = true;
+            //for (int index = 0; index < SelectedMusic.Count; index++)
+            //{
+            //    KeyValuePair<string, bool> item = SelectedMusic.ElementAt(index);
+            //    string filePath = item.Key;
+            //    bool isPlay = item.Value;
+            //    if (isPlay)
+            //    {
+            //        ListSong.Add(filePath);
+            //    }
+            //}
         }
         public void clear()
         {
-
+            foreach (Thumbnail video in flowLayoutPanel1.Controls.OfType<Thumbnail>())
+            {
+                if (video.cbxChon.Checked)
+                {
+                    video.cbxChon.Checked = false;
+                }
+            }
         }
         private void cbxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
