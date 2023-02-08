@@ -55,7 +55,7 @@ namespace MediaPlayerApp.UI
         private void btnPlayAll_Click(object sender, EventArgs e)
         {
             Thumbnail[] thumbnails = flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray();
-            fVideo fvideo = new fVideo(null, thumbnails);
+            fVideo fvideo = new fVideo(this.parent, thumbnails);
             fvideo.ShowDialog();
         }
         private void loadVideo()
@@ -320,11 +320,27 @@ namespace MediaPlayerApp.UI
         }
         public void playList_PlayNext()
         {
-
+            //timer1.Enabled = true;
+            //for (int index = 0; index < SelectedMusic.Count; index++)
+            //{
+            //    KeyValuePair<string, bool> item = SelectedMusic.ElementAt(index);
+            //    string filePath = item.Key;
+            //    bool isPlay = item.Value;
+            //    if (isPlay)
+            //    {
+            //        ListSong.Add(filePath);
+            //    }
+            //}
         }
         public void clear()
         {
-
+            foreach (Thumbnail video in flowLayoutPanel1.Controls.OfType<Thumbnail>())
+            {
+                if (video.cbxChon.Checked)
+                {
+                    video.cbxChon.Checked = false;
+                }
+            }
         }
         private void cbxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
