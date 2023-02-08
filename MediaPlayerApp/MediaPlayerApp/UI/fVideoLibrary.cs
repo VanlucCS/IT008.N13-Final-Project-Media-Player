@@ -305,6 +305,17 @@ namespace MediaPlayerApp.UI
         
         public void playList_Play()
         {
+            List<Thumbnail> play = new List<Thumbnail>();
+            Thumbnail[] videos = flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray();
+            for (int i = 0; i < videos.Length; i++)
+            {
+                if (videos[i].cbxChon.Checked == true)
+                {
+                    play.Add(videos[i]);
+                }    
+            }
+            fVideo fvideo = new fVideo(this.parent, play.ToArray());
+            fvideo.ShowDialog();
 
         }
         public void playList_PlayNext()
