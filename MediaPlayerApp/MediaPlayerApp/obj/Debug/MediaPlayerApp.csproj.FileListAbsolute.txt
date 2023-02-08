@@ -212,3 +212,4 @@ C:\Workspace\LapTrinhTrucQuan5\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlay
 C:\Workspace\LapTrinhTrucQuan5\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.csproj.CopyComplete
 C:\Workspace\LapTrinhTrucQuan5\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.exe
 C:\Workspace\LapTrinhTrucQuan5\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.pdb
+D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fEditMusic.resources

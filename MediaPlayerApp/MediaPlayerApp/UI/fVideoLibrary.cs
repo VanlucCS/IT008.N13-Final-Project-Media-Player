@@ -220,50 +220,27 @@ namespace MediaPlayerApp.UI
         }
         public void deselectAll()
         {
-            //if (Count == SelectedMusic.Count)
-            //{
-            //    List<string> keys = new List<string>();
-            //    Count = 0;
-            //    for (int i = 0; i < SelectedMusic.Count; i++)
-            //    {
-            //        KeyValuePair<string, bool> item = SelectedMusic.ElementAt(i);
-            //        string path = item.Key;
-            //        SelectedMusic[path] = false;
-            //        Count++;
+            if (Count == flowLayoutPanel1.Controls.OfType<Thumbnail>().ToArray().Length)
+            {
+                foreach (Thumbnail video in flowLayoutPanel1.Controls.OfType<Thumbnail>())
+                {
+                    video.cbxChon.Checked = false;
+                }    
+            }
 
-            //        Control[] controlsFound = flowLayoutPanel1.Controls.Find(path, true);
-            //        foreach (ThumbnailMusic song in controlsFound)
-            //        {
-            //            song.Guna2CheckBox1.Checked = false;
-            //        }
-            //    }
-            //    btnShuffleAndPlay.Visible = true;
-            //    lblSort.Visible = true;
-            //    guna2ComboBox1.Visible = true;
-            //    guna2ComboBox2.Visible = true;
-            //    lbGenre.Visible = true;
-            //    selectedSong.Visible = false;
-            //    Count = 0;
-            //}
         }
         public void selectAll()
         {
-            //List<string> keys = new List<string>();
-            //Count = 0;
-            //for (int i = 0; i < SelectedMusic.Count; i++)
-            //{
-            //    KeyValuePair<string, bool> item = SelectedMusic.ElementAt(i);
-            //    string path = item.Key;
-            //    SelectedMusic[path] = true;
-            //    Count++;
+            foreach (Thumbnail video in flowLayoutPanel1.Controls.OfType<Thumbnail>())
+            {
+                if (video.cbxChon.Checked == false)
+                {
+                    video.cbxChon.Checked = true;
+                }    
+                
+            }
 
-            //    Control[] controlsFound = flowLayoutPanel1.Controls.Find(path, true);
-            //    foreach (ThumbnailMusic song in controlsFound)
-            //    {
-            //        song.Guna2CheckBox1.Checked = true;
-            //    }
-            //}
-            //Count = SelectedMusic.Count;
+
         }
         public void selectedChanged()
         {
