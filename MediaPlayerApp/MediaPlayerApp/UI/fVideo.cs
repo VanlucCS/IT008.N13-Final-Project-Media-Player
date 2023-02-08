@@ -32,6 +32,10 @@ namespace MediaPlayerApp.UI
             this.parent = parent;
             videos = new Thumbnail[] { thumbnail };
             InitializeComponent();
+            //this.Controls.Add(parent.Media);
+            //parent.Media.Visible = true;
+            //parent.Media.Location = new Point(5, 45);
+            //parent.Media.BringToFront();
             this.player.URL = videos[0].VideoPath;
             shuffle = false;
             pbxShuffle.Enabled = false;

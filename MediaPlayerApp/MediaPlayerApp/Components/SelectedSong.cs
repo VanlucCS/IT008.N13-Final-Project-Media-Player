@@ -90,7 +90,6 @@ namespace MediaPlayerApp.Components
             } 
             else if (_fVideoLibrary!=null)
             {
-
             }
             else if (_fPlaylist!=null)
             {
