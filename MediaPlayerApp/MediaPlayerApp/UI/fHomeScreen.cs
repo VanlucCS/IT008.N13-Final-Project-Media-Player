@@ -59,22 +59,45 @@ namespace MediaPlayerApp.UI
 
         private void fHomeScreen_Load(object sender, EventArgs e)
         {
+            int recentCount = 0;
             string[] listPath = System.IO.File.ReadAllLines(@"./Data/RecentMedia.txt");
-            foreach (string songPath in listPath)
+            foreach (string path in listPath.Reverse())
             {
-                try
+                if (recentCount < 10)
                 {
-                    FileInfo info = new FileInfo(songPath);
-                    if (info.Extension == ".mp3")
-                    {
 
-                        ThumbnailMusic2 thumbnailMusic = new ThumbnailMusic2(songPath, this.parent);
-                        thumbnailMusic.Dock = DockStyle.Top;
-                        pnRecent.Controls.Add(thumbnailMusic);
+                    try
+                    {
+                        FileInfo info = new FileInfo(path);
+                        if (info.Extension == ".mp3")
+                        {
+
+                            ThumbnailMusic2 thumbnailMusic = new ThumbnailMusic2(path, this.parent);
+                            thumbnailMusic.Dock = DockStyle.Top;
+                            pnRecent.Controls.Add(thumbnailMusic);
+                            recentCount++;
+                        }
+                        if (info.Extension == ".mp4")
+                        {
+
+                            Thumbnail thumbnail = new Thumbnail(path, this);
+                            thumbnail.Dock = DockStyle.Top;
+                            pnRecent.Controls.Add(thumbnail);
+                            recentCount++;
+
+                        }
+                        if (info.Extension == ".txt")
+                        {
+
+                            Components.Playlist i = new Components.Playlist(path, this.parent);
+                            recentCount++;
+                            pnRecent.Controls.Add(i);
+                        }
+
                     }
-                }
-                catch (Exception)
-                {
+                    catch (Exception)
+                    {
+                    }
                 }
             }
         }

@@ -60,21 +60,6 @@ namespace MediaPlayerApp.UI
             }
         }
 
-        private void btnNewPlaylist_Click(object sender, EventArgs e)
-        {
-            if(pnSong.Controls.Count != 0)
-            {
-
-            IWMPPlaylist playlist = this.parent.Media.newPlaylist("Playlist", null);
-            foreach (ThumbnailMusic i in pnSong.Controls)
-            {
-                WMPLib.IWMPMedia m = this.parent.Media.newMedia(i.Path);
-                playlist.appendItem(m);
-            }
-            this.parent.Media.currentPlaylist = playlist;
-            this.parent.Media.Ctlcontrols.play();
-            }    
-        }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -229,6 +214,23 @@ namespace MediaPlayerApp.UI
         public void clear()
         {
 
+        }
+
+        public void btnPlayPlaylist_Click(object sender, EventArgs e)
+        {
+            if (pnSong.Controls.Count != 0)
+            {
+
+                IWMPPlaylist playlist = this.parent.Media.newPlaylist("Playlist", null);
+                foreach (ThumbnailMusic i in pnSong.Controls)
+                {
+                    WMPLib.IWMPMedia m = this.parent.Media.newMedia(i.Path);
+                    playlist.appendItem(m);
+                }
+                this.parent.Media.currentPlaylist = playlist;
+                this.parent.Media.Ctlcontrols.play();
+            }
+            this.parent.AddToRecent(this.playList.PlayListPath);
         }
     }
 }

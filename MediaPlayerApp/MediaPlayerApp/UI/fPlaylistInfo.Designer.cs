@@ -35,7 +35,7 @@ namespace MediaPlayerApp.UI
             this.pnSong = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNewPlaylist = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPlayPlaylist = new Guna.UI2.WinForms.Guna2Button();
             this.pbPreviewImage4 = new System.Windows.Forms.PictureBox();
             this.pbPreviewImage3 = new System.Windows.Forms.PictureBox();
             this.pbPreviewImage2 = new System.Windows.Forms.PictureBox();
@@ -146,27 +146,27 @@ namespace MediaPlayerApp.UI
             this.guna2Button3.TextOffset = new System.Drawing.Point(-2, 0);
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
-            // btnNewPlaylist
+            // btnPlayPlaylist
             // 
-            this.btnNewPlaylist.BackColor = System.Drawing.Color.Transparent;
-            this.btnNewPlaylist.BorderRadius = 5;
-            this.btnNewPlaylist.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNewPlaylist.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNewPlaylist.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNewPlaylist.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNewPlaylist.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(62)))), ((int)(((byte)(9)))));
-            this.btnNewPlaylist.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewPlaylist.ForeColor = System.Drawing.Color.White;
-            this.btnNewPlaylist.Image = global::MediaPlayerApp.Properties.Resources.play_96px;
-            this.btnNewPlaylist.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNewPlaylist.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnNewPlaylist.Location = new System.Drawing.Point(272, 117);
-            this.btnNewPlaylist.Name = "btnNewPlaylist";
-            this.btnNewPlaylist.Size = new System.Drawing.Size(100, 40);
-            this.btnNewPlaylist.TabIndex = 43;
-            this.btnNewPlaylist.Text = "Play All";
-            this.btnNewPlaylist.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnNewPlaylist.Click += new System.EventHandler(this.btnNewPlaylist_Click);
+            this.btnPlayPlaylist.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlayPlaylist.BorderRadius = 5;
+            this.btnPlayPlaylist.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPlayPlaylist.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPlayPlaylist.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPlayPlaylist.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPlayPlaylist.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(62)))), ((int)(((byte)(9)))));
+            this.btnPlayPlaylist.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayPlaylist.ForeColor = System.Drawing.Color.White;
+            this.btnPlayPlaylist.Image = global::MediaPlayerApp.Properties.Resources.play_96px;
+            this.btnPlayPlaylist.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPlayPlaylist.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnPlayPlaylist.Location = new System.Drawing.Point(272, 117);
+            this.btnPlayPlaylist.Name = "btnPlayPlaylist";
+            this.btnPlayPlaylist.Size = new System.Drawing.Size(100, 40);
+            this.btnPlayPlaylist.TabIndex = 43;
+            this.btnPlayPlaylist.Text = "Play All";
+            this.btnPlayPlaylist.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnPlayPlaylist.Click += new System.EventHandler(this.btnPlayPlaylist_Click);
             // 
             // pbPreviewImage4
             // 
@@ -212,7 +212,7 @@ namespace MediaPlayerApp.UI
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.btnNewPlaylist);
+            this.Controls.Add(this.btnPlayPlaylist);
             this.Controls.Add(this.lblItem);
             this.Controls.Add(this.lbPlayListName);
             this.Controls.Add(this.pbPreviewImage4);
@@ -240,7 +240,7 @@ namespace MediaPlayerApp.UI
         private System.Windows.Forms.PictureBox pbPreviewImage3;
         private System.Windows.Forms.Label lbPlayListName;
         private System.Windows.Forms.Label lblItem;
-        private Guna.UI2.WinForms.Guna2Button btnNewPlaylist;
+        private Guna.UI2.WinForms.Guna2Button btnPlayPlaylist;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;

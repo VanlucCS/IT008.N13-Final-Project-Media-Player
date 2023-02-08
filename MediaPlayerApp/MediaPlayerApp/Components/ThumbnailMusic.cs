@@ -127,6 +127,8 @@ namespace MediaPlayerApp.Components
 
         public void btnPlay_Click(object sender, EventArgs e)
         {
+            // add to recent 
+            this.parent.AddToRecent(this.Path);
             //
             if (this.parent.currenSong == this && this.parent.Media.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {

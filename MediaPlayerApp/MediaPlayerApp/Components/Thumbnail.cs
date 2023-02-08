@@ -134,8 +134,14 @@ namespace MediaPlayerApp.Components
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show()
+            if(this._fVideoLibrary != null)
+                this._fVideoLibrary.parent.AddToRecent(this.VideoPath);
+            if (this._fHomeScreen != null)
+                this._fHomeScreen.parent.AddToRecent(this.VideoPath);
             fVideo fvideo = new fVideo(this.parent, this);
             fvideo.ShowDialog();
+            // add to recent 
         }
 
         private void moreButton_Click(object sender, EventArgs e)

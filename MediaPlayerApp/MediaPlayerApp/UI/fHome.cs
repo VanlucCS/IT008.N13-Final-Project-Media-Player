@@ -37,7 +37,7 @@ namespace MediaPlayerApp
             this.Media.URL = "./BH01.mp3";
             this.Media.Ctlcontrols.stop();
 
-            LoadSongInfo(this.Media.URL);
+            //LoadSongInfo(this.Media.URL);
             t = new Timer();
             t.Interval = 1000;
             t.Tick += new EventHandler(t_Tick);
@@ -270,6 +270,9 @@ namespace MediaPlayerApp
         }
         void t_Tick(object sender, EventArgs e)
         {
+            try
+            {
+
             if(Media.currentMedia.duration!= 0)
             {
                 TimeSpan Time = TimeSpan.FromMinutes(Media.Ctlcontrols.currentPosition);
@@ -277,6 +280,10 @@ namespace MediaPlayerApp
                 lbTimeCurrentPlay.Text = Time.ToString().Substring(0, 5);
                 tbProcess.Value =  (int)(100.0 * (Media.Ctlcontrols.currentPosition / Media.currentMedia.duration));
             }    
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void btFavorite_Click(object sender, EventArgs e)
@@ -416,6 +423,26 @@ namespace MediaPlayerApp
                 }
             }
             MessageBox.Show("Thên thành công");
+        }
+        public void AddToRecent(string path)
+        {
+            // kt ton tai
+            string fileName = @"./Data/RecentMedia.txt";
+            // check song path dup in recent
+            string[] listPathSongPL2 = System.IO.File.ReadAllLines(fileName);
+            foreach (string songPath2 in listPathSongPL2)
+            {
+                if (path == songPath2)
+                {
+                    File.WriteAllLines(fileName,
+                    File.ReadLines(fileName).Where(l => l != path).ToList());
+                    break;
+                }    
+            }
+                using (StreamWriter w = File.AppendText(fileName))
+                {
+                    w.WriteLine(path);
+                }
         }
     }
 }

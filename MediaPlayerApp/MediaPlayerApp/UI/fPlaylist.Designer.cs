@@ -61,9 +61,9 @@ namespace MediaPlayerApp.UI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnAllPlaylists.AutoScroll = true;
-            this.pnAllPlaylists.Location = new System.Drawing.Point(10, 95);
+            this.pnAllPlaylists.Location = new System.Drawing.Point(10, 86);
             this.pnAllPlaylists.Name = "pnAllPlaylists";
-            this.pnAllPlaylists.Size = new System.Drawing.Size(801, 410);
+            this.pnAllPlaylists.Size = new System.Drawing.Size(801, 425);
             this.pnAllPlaylists.TabIndex = 36;
             // 
             // lblTitle
