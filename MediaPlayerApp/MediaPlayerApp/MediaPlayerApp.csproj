@@ -368,6 +368,8 @@
     <None Include="Resources\transimage.png" />
     <None Include="Resources\playbutton.png" />
     <None Include="Resources\more2.png" />
+    <None Include="Resources\playlist %284%29.png" />
+    <None Include="Resources\music-player.png" />
     <Content Include="Resources\white_heart.png" />
     <Content Include="Resources\white_open_folder.png" />
     <None Include="Resources\heart2.png" />
