@@ -52,6 +52,13 @@ namespace MediaPlayerApp.Components
             int songCounter = 0;
             // Load Preview
             string[] playListSongs = System.IO.File.ReadAllLines(PlayListPath);
+            foreach (string s in playListSongs)
+            {
+                if (!File.Exists(s))
+                {
+                    playListSongs = playListSongs.Except(new string[] { s }).ToArray();
+                }    
+            }    
             if(playListSongs.Length <=1 )
                 lblItem.Text = playListSongs.Length.ToString() + " Item";
             else
@@ -206,7 +213,14 @@ namespace MediaPlayerApp.Components
         }
         private void btPlay_Click(object sender, EventArgs e)
         {
-                string[] listPath = System.IO.File.ReadAllLines(PlayListPath);
+            string[] listPath = System.IO.File.ReadAllLines(PlayListPath);
+            foreach (string s in listPath)
+            {
+                if (!File.Exists(s))
+                {
+                    listPath = listPath.Except(new string[] { s }).ToArray();
+                }
+            }
             if (listPath.Length != 0)
             {
 
