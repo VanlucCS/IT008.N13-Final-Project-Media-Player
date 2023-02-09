@@ -172,7 +172,14 @@ namespace MediaPlayerApp.UI
                 pnSong.Controls.Clear();
                 pnSong.Controls.AddRange(controlArray);
             }
-
+            if (guna2ComboBox1.SelectedIndex == 0)
+            {
+                ThumbnailMusic[] controlArray = new ThumbnailMusic[pnSong.Controls.Count];
+                this.pnSong.Controls.CopyTo(controlArray, 0);
+                Array.Sort(controlArray, (c1, c2) => String.Compare(c1.musicSong.Album, c2.musicSong.Album));
+                pnSong.Controls.Clear();
+                pnSong.Controls.AddRange(controlArray);
+            }
             #endregion
         }
         public ThumbnailMusic[] Filter(ThumbnailMusic[] input)
