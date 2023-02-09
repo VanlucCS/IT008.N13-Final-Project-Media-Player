@@ -58,7 +58,6 @@ namespace MediaPlayerApp
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btPlayqueue = new Guna.UI2.WinForms.Guna2Button();
             this.btPlayList = new Guna.UI2.WinForms.Guna2Button();
-            this.btHisListen = new Guna.UI2.WinForms.Guna2Button();
             this.btFravorSong = new Guna.UI2.WinForms.Guna2Button();
             this.btMusicLibrary = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,6 +65,7 @@ namespace MediaPlayerApp
             this.togMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
             this.pnChildren = new Guna.UI2.WinForms.Guna2Panel();
+            this.fpnPreviewPlaylist = new System.Windows.Forms.FlowLayoutPanel();
             this.pnControlMedia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSongpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Media)).BeginInit();
@@ -369,11 +369,11 @@ namespace MediaPlayerApp
             // 
             this.pnLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnLeft.Controls.Add(this.fpnPreviewPlaylist);
             this.pnLeft.Controls.Add(this.btVideoLibrary);
             this.pnLeft.Controls.Add(this.guna2Separator1);
             this.pnLeft.Controls.Add(this.btPlayqueue);
             this.pnLeft.Controls.Add(this.btPlayList);
-            this.pnLeft.Controls.Add(this.btHisListen);
             this.pnLeft.Controls.Add(this.btFravorSong);
             this.pnLeft.Controls.Add(this.btMusicLibrary);
             this.pnLeft.Controls.Add(this.label1);
@@ -414,7 +414,7 @@ namespace MediaPlayerApp
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(6, 363);
+            this.guna2Separator1.Location = new System.Drawing.Point(6, 309);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(200, 10);
             this.guna2Separator1.TabIndex = 0;
@@ -438,7 +438,7 @@ namespace MediaPlayerApp
             this.btPlayqueue.Image = global::MediaPlayerApp.Properties.Resources.lounge_music_playlist_96px;
             this.btPlayqueue.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btPlayqueue.ImageSize = new System.Drawing.Size(25, 25);
-            this.btPlayqueue.Location = new System.Drawing.Point(6, 274);
+            this.btPlayqueue.Location = new System.Drawing.Point(6, 232);
             this.btPlayqueue.Name = "btPlayqueue";
             this.btPlayqueue.Size = new System.Drawing.Size(197, 40);
             this.btPlayqueue.TabIndex = 11;
@@ -465,40 +465,13 @@ namespace MediaPlayerApp
             this.btPlayList.Image = global::MediaPlayerApp.Properties.Resources.lounge_music_playlist_96px;
             this.btPlayList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btPlayList.ImageSize = new System.Drawing.Size(25, 25);
-            this.btPlayList.Location = new System.Drawing.Point(6, 318);
+            this.btPlayList.Location = new System.Drawing.Point(6, 276);
             this.btPlayList.Name = "btPlayList";
             this.btPlayList.Size = new System.Drawing.Size(197, 40);
             this.btPlayList.TabIndex = 10;
             this.btPlayList.Text = "Playlist";
             this.btPlayList.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btPlayList.Click += new System.EventHandler(this.btPlayList_Click);
-            // 
-            // btHisListen
-            // 
-            this.btHisListen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btHisListen.Animated = true;
-            this.btHisListen.BorderRadius = 5;
-            this.btHisListen.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btHisListen.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btHisListen.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btHisListen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btHisListen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btHisListen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btHisListen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btHisListen.FillColor = System.Drawing.SystemColors.Control;
-            this.btHisListen.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btHisListen.ForeColor = System.Drawing.Color.Black;
-            this.btHisListen.Image = global::MediaPlayerApp.Properties.Resources.time_machine_96px;
-            this.btHisListen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btHisListen.ImageSize = new System.Drawing.Size(25, 25);
-            this.btHisListen.Location = new System.Drawing.Point(6, 230);
-            this.btHisListen.Name = "btHisListen";
-            this.btHisListen.Size = new System.Drawing.Size(197, 40);
-            this.btHisListen.TabIndex = 9;
-            this.btHisListen.Text = "History Listen";
-            this.btHisListen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btHisListen.Click += new System.EventHandler(this.btHisListen_Click);
             // 
             // btFravorSong
             // 
@@ -634,6 +607,13 @@ namespace MediaPlayerApp
             this.pnChildren.Size = new System.Drawing.Size(788, 510);
             this.pnChildren.TabIndex = 3;
             // 
+            // fpnPreviewPlaylist
+            // 
+            this.fpnPreviewPlaylist.Location = new System.Drawing.Point(6, 322);
+            this.fpnPreviewPlaylist.Name = "fpnPreviewPlaylist";
+            this.fpnPreviewPlaylist.Size = new System.Drawing.Size(197, 197);
+            this.fpnPreviewPlaylist.TabIndex = 0;
+            // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -681,7 +661,6 @@ namespace MediaPlayerApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btMusicLibrary;
-        private Guna.UI2.WinForms.Guna2Button btHisListen;
         private Guna.UI2.WinForms.Guna2Button btFravorSong;
         private Guna.UI2.WinForms.Guna2Button btVideoLibrary;
         private Guna.UI2.WinForms.Guna2Button btPlayqueue;
@@ -702,6 +681,7 @@ namespace MediaPlayerApp
         private Guna.UI2.WinForms.Guna2CircleButton cbtshuffer;
         private Guna.UI2.WinForms.Guna2CircleButton cbtloop;
         private Guna.UI2.WinForms.Guna2ImageButton moreButton;
+        private System.Windows.Forms.FlowLayoutPanel fpnPreviewPlaylist;
     }
 }
 
