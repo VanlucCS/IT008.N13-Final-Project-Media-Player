@@ -62,6 +62,10 @@ namespace MediaPlayerApp
             pnChildren.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            if(activeForm.Name !="fPlaylist" && activeForm.Name != "fPlaylistInfo")
+            {
+                this.fpnPreviewPlaylist.Controls.Clear();
+            }
         }
         
         #region Dark mode option
@@ -216,7 +220,7 @@ namespace MediaPlayerApp
             string[] listFvorPath = System.IO.File.ReadAllLines(@"./Data/FavoriteSong.txt");
             foreach (string fvorSongPath in listFvorPath)
             {
-                if (this.currenSong.Path == fvorSongPath)
+                if (this.Media.currentMedia.sourceURL == fvorSongPath)
                 {
                     btFavorite.Image = MediaPlayerApp.Properties.Resources.lover;
                     btFavorite.Checked = true;
@@ -307,6 +311,21 @@ namespace MediaPlayerApp
         private void Media_MediaChange(object sender, AxWMPLib._WMPOCXEvents_MediaChangeEvent e)
         {
             LoadSongInfo(this.Media.currentMedia.sourceURL);
+            #region Check favor song
+            string[] listFvorPath = System.IO.File.ReadAllLines(@"./Data/FavoriteSong.txt");
+            foreach (string fvorSongPath in listFvorPath)
+            {
+                if (this.Media.currentMedia.sourceURL == fvorSongPath)
+                {
+                    btFavorite.Image = MediaPlayerApp.Properties.Resources.lover;
+                    btFavorite.Checked = true;
+                    return;
+                }
+
+            }
+            btFavorite.Image = MediaPlayerApp.Properties.Resources.heart_96px;
+            btFavorite.Checked = false;
+            #endregion
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

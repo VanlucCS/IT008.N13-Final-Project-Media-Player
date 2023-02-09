@@ -1,15 +1,13 @@
 C:\Users\VQ\Downloads\CoDauAiNgo-ThuCam-7857284.mp3
 C:\Users\VQ\Downloads\BatChap-WHEE-6728494.mp3
-C:\Users\VQ\Downloads\HoaSuNhaNang-AnhKhang-4054183.mp3
 C:\Users\VQ\Downloads\Cu Tho Di - Duc Phuc_ Juky San.mp3
 C:\Users\VQ\Downloads\Drive My Car - DEAMN.mp3
 C:\Users\VQ\Downloads\Video\trung thu đà lạt.mp4
 C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Data\Playlists\dd.txt
-C:\Users\VQ\Downloads\BaiNayKhongDeDiDien-AnhTuAtus-8076045.mp3
 C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Data\Playlists\abc.txt
 C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Data\Playlists\new1.txt
-C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Data\Playlists\yeu thich.txt
 C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Data\Playlists\7.txt
-C:\Workspace\LapTrinhTrucQuanMostNewest\MediaPlayerApp\MediaPlayerApp\bin\Debug\Data\Playlists\Nhac Nhat.txt
-./BH01.mp3
-
+C:\Users\VQ\Downloads\HoaSuNhaNang-AnhKhang-4054183.mp3
+C:\Users\VQ\Downloads\BaiNayKhongDeDiDien-AnhTuAtus-8076045.mp3
+C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Data\Playlists\yeu thich.txt
+C:\Users\VQ\Downloads\Made-You-Look-Meghan-Trainor.mp3
