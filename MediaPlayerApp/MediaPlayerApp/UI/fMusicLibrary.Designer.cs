@@ -157,6 +157,10 @@ namespace MediaPlayerApp.UI
             this.cbbSortBy.ForeColor = System.Drawing.Color.Red;
             this.cbbSortBy.ItemHeight = 20;
             this.cbbSortBy.Items.AddRange(new object[] {
+            "A - Z",
+            "Artist",
+            "Album",
+            "Release year",
             "Date added"});
             this.cbbSortBy.Location = new System.Drawing.Point(442, 63);
             this.cbbSortBy.Name = "cbbSortBy";

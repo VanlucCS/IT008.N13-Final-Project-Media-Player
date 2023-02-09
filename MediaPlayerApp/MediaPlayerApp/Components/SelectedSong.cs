@@ -433,7 +433,7 @@ namespace MediaPlayerApp.Components
                         }
                     }
                 }
-                MessageBox.Show("Thên thành công");
+                MessageBox.Show("Thêm thành công");
             }
             catch (Exception)
             {
