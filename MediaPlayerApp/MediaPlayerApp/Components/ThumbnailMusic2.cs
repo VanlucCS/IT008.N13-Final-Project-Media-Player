@@ -40,6 +40,5 @@ namespace MediaPlayerApp.Components
         {
             music.btnPlay_Click(this.parent ,null);
         }
-
     }
 }

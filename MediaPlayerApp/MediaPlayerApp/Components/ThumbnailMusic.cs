@@ -20,7 +20,18 @@ namespace MediaPlayerApp.Components
         private string _genre;
         private string _time;
         private string _path;
-
+        private string _date;
+        private string _releaseYear;
+        public string ReleaseYear
+        {
+            get { return _releaseYear; }
+            set { _releaseYear = value; }
+        }
+        public string MusicDate
+        {
+            get { return _date; }
+            set { _date = value; }
+        }
         public string Path
         {
             get { return _path; }
@@ -93,10 +104,13 @@ namespace MediaPlayerApp.Components
             this.Path = path;
             InitializeComponent();
             musicSong = new MusicSong(path);
-            this.SongName = musicSong.NameSong;
-            this.ArtistName = musicSong.Singer;
-            this.Time = musicSong.Length;
-            this.Genre = musicSong.NameGenre;
+            this.SongName = musicSong.NameSong == null ? "Unknown" : musicSong.NameSong;
+            this.ArtistName = musicSong.Singer == null ? "Unknown" : musicSong.Singer;
+            this.Time = musicSong.Length == null ? "Unknown" : musicSong.Length;
+            this.Genre = musicSong.NameGenre == null ? "Unknown" : musicSong.NameGenre;
+            this.MusicDate = musicSong.DateAdd == null ? "Unknown" : musicSong.DateAdd;
+            this.ReleaseYear = musicSong.Year == null ? "0" : musicSong.Year;
+            this.AlbumName = musicSong.Album == null || musicSong.Album == " " ? "Unknown" : musicSong.Album;
             load();
         }
         private void load()
