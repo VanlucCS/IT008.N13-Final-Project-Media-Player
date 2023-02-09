@@ -130,13 +130,6 @@ namespace MediaPlayerApp
             this.OpenChildForm(new fFavorite(this));
         }
 
-        private void btHisListen_Click(object sender, EventArgs e)
-        {
-            resetButtonStage();
-            btHisListen.Checked = !btHisListen.Checked;
-            this.OpenChildForm(new fHistory(this));
-        }
-
         private void btPlayqueue_Click(object sender, EventArgs e)
         {
             resetButtonStage();
@@ -166,7 +159,6 @@ namespace MediaPlayerApp
             btVideoLibrary.Checked = false;
             btMusicLibrary.Checked = false;
             btFravorSong.Checked = false;
-            btHisListen.Checked = false;
             btPlayqueue.Checked = false;
             btPlayList.Checked = false;
         }
