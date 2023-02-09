@@ -26,12 +26,6 @@ namespace MediaPlayerApp.UI
         {
             DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists");
             FileInfo[] Files = d.GetFiles();
-            foreach (FileInfo file in Files)
-            {
-                Components.Playlist i = new Components.Playlist(file.FullName,this.parent);
-                pnAllPlaylists.Controls.Add(i);
-            }
-
         }
         private void moreButton_Click(object sender, EventArgs e)
         {
@@ -51,8 +45,8 @@ namespace MediaPlayerApp.UI
             DirectoryInfo d = new DirectoryInfo(@"./Data/Playlists");
             FileInfo[] Files = d.GetFiles();
             foreach (FileInfo file in Files)
-            {
-                Components.Playlist i = new Components.Playlist(file.FullName, this.parent);
+            {   
+                    Components.Playlist i = new Components.Playlist(file.FullName, this.parent);
                 pnAllPlaylists.Controls.Add(i);
             }
             #region Sort genre

@@ -43,7 +43,6 @@ D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\D
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.csproj.ResolveComReference.cache
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fFavorite.resources
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fFavoriteSong.resources
-D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fHistory.resources
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fHomeScreen.resources
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fMusicLibrary.resources
 D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fPlaylist.resources
@@ -267,3 +266,7 @@ C:\Workspace\LapTrinhTrucQuanMostNewest\MediaPlayerApp\MediaPlayerApp\obj\Debug\
 C:\Workspace\LapTrinhTrucQuanMostNewest\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.csproj.CopyComplete
 C:\Workspace\LapTrinhTrucQuanMostNewest\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.exe
 C:\Workspace\LapTrinhTrucQuanMostNewest\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.pdb
+D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.Components.ThumbnailArtist.resources
+D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.Components.ThumbnailMusic2.resources
+D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fArtistMusic.resources
+D:\code\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\obj\Debug\MediaPlayerApp.UI.fEditMusic.resources
