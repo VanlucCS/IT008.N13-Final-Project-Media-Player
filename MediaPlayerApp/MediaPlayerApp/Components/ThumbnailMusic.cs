@@ -173,12 +173,18 @@ namespace MediaPlayerApp.Components
 
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox1.Checked)
+            try
             {
-                fLibrary.SelectedMusic[this.Path] = true;
+                if (guna2CheckBox1.Checked)
+                {
+                    fLibrary.SelectedMusic[this.Path] = true;
+                }
+                else fLibrary.SelectedMusic[this.Path] = false;
+                fLibrary.selectedChanged();
             }
-            else fLibrary.SelectedMusic[this.Path] = false;
-            fLibrary.selectedChanged();
+            catch (Exception)
+            {
+            }
         }
 
     }

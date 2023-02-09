@@ -34,6 +34,7 @@ namespace MediaPlayerApp.Components
             MusicSong musicSong = new MusicSong(Path);
             pictureSong.BackgroundImage = musicSong.PictureSong;
             nameSongLabel.Text = musicSong.NameSong;
+            lblDate.Text = musicSong.DateAdd;
         }
         private void playButton_Click(object sender, EventArgs e)
         {
