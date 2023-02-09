@@ -33,16 +33,19 @@ namespace MediaPlayerApp
         }
         private void fHome_Load(object sender, EventArgs e)
         {
-            // default song 
-            this.Media.URL = "./BH01.mp3";
-            this.Media.Ctlcontrols.stop();
+            if ((Constants.playQueue.Count == 0))
+            {
+                // default song 
+                this.Media.URL = "./BH01.mp3";
+                this.Media.Ctlcontrols.stop();
 
-            //LoadSongInfo(this.Media.URL);
-            t = new Timer();
-            t.Interval = 1000;
-            t.Tick += new EventHandler(t_Tick);
-            t.Start();
-            btHome_Click(this,null);
+                //LoadSongInfo(this.Media.URL);
+                t = new Timer();
+                t.Interval = 1000;
+                t.Tick += new EventHandler(t_Tick);
+                t.Start();
+                btHome_Click(this, null);
+            }
         }
         public void LoadSongInfo(string path)
         {
@@ -110,6 +113,7 @@ namespace MediaPlayerApp
         {
             resetButtonStage();
             btHome.Checked = !btHome.Checked;
+            Constants.currentScreen = " ";
             this.OpenChildForm(new fHomeScreen(this));
 
         }
@@ -124,6 +128,7 @@ namespace MediaPlayerApp
         {
             resetButtonStage();
             btMusicLibrary.Checked = !btMusicLibrary.Checked;
+            Constants.currentScreen = " ";
             this.OpenChildForm(new fMusicLibrary(this));
         }
 
@@ -131,6 +136,7 @@ namespace MediaPlayerApp
         {
             resetButtonStage();
             btFravorSong.Checked = !btFravorSong.Checked;
+            Constants.currentScreen = "show one";
             this.OpenChildForm(new fFavorite(this));
         }
 
@@ -138,6 +144,7 @@ namespace MediaPlayerApp
         {
             resetButtonStage();
             btPlayqueue.Checked = !btPlayqueue.Checked;
+            Constants.currentScreen = "play queue";
             this.OpenChildForm(new fPlayQueue(this));
         }
 
@@ -145,6 +152,7 @@ namespace MediaPlayerApp
         {
             resetButtonStage();
             btPlayList.Checked = !btPlayList.Checked;
+            Constants.currentScreen = "show one";
             this.OpenChildForm(new fPlaylist(this));
         } 
         #endregion
@@ -205,7 +213,6 @@ namespace MediaPlayerApp
             {
             }
         }
-
         private void Media_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             if(this.Media.playState == WMPLib.WMPPlayState.wmppsStopped || this.Media.playState == WMPLib.WMPPlayState.wmppsPaused)
@@ -216,28 +223,45 @@ namespace MediaPlayerApp
             {
                 btPlay.Checked = true;
             }
+            #region play follow queue
+            if (Constants.playQueue.Count != 0)
+            {
+                if (e.newState == (int)WMPLib.WMPPlayState.wmppsMediaEnded)
+                {
+                    if (Constants.currentIndex == Constants.playQueue.Count - 1)
+                    {
+                        Constants.currentIndex = 0;
+                    }
+                    else 
+                        Constants.currentIndex = Constants.currentIndex + 1;
+                    this.Media.URL = Constants.playQueue[Constants.currentIndex];
+                }
+            }
+            #endregion
             #region Check favor song
             string[] listFvorPath = System.IO.File.ReadAllLines(@"./Data/FavoriteSong.txt");
-            foreach (string fvorSongPath in listFvorPath)
+            if (!(this.Media.currentMedia == null))
             {
-                if (this.Media.currentMedia.sourceURL == fvorSongPath)
+                foreach (string fvorSongPath in listFvorPath)
                 {
-                    btFavorite.Image = MediaPlayerApp.Properties.Resources.lover;
-                    btFavorite.Checked = true;
-                    return;
+                    if (this.Media.currentMedia.sourceURL == fvorSongPath)
+                    {
+                        btFavorite.Image = MediaPlayerApp.Properties.Resources.lover;
+                        btFavorite.Checked = true;
+                        return;
+                    }
                 }
-
-            }
                 btFavorite.Image = MediaPlayerApp.Properties.Resources.heart_96px;
-                    btFavorite.Checked = false;
+                btFavorite.Checked = false;
+            }
             #endregion
             #region Check for playnext
 
-            if (this.Media.playState == WMPLib.WMPPlayState.wmppsStopped)
-            {
-                IsStop = true;
-            }
-            else IsStop = false;
+            //if (this.Media.playState == WMPLib.WMPPlayState.wmppsStopped)
+            //{
+            //    IsStop = true;
+            //}
+            //else IsStop = false;
 
             #endregion
             #region Auto load preview
@@ -250,10 +274,11 @@ namespace MediaPlayerApp
                 lbSongName.Text = musicSong.NameSong + "\n" + musicSong.Singer;
                 currenSong = new ThumbnailMusic(path, this, null);
             }
+            if (Media.currentMedia != null && Constants.playQueue.Count != 0)
+            {
+                Media.Ctlcontrols.play();
+            }
             #endregion
-            //LoadSongInfo(this.Media.currentMedia.sourceURL);
-
-
         }
 
         private void btPlay_CheckedChanged(object sender, EventArgs e)

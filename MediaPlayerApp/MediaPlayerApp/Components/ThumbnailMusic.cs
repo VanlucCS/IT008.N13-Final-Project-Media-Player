@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -143,6 +144,19 @@ namespace MediaPlayerApp.Components
         {
             // add to recent 
             this.parent.AddToRecent(this.Path);
+            // add to queue
+            if (Constants.currentScreen == " ")
+            {
+                Constants.playQueue.Clear();
+                Constants.currentIndex = 0;
+                foreach (ThumbnailMusic music in fLibrary.flowLayoutPanel1.Controls)
+                {
+                    Constants.playQueue.Add(music.Path);
+                }
+                Constants.currentIndex = Constants.playQueue.IndexOf(this.Path);
+                this.parent.Media.URL = Constants.playQueue[Constants.currentIndex];
+
+            }
             //
             if (this.parent.currenSong == this && this.parent.Media.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
@@ -168,8 +182,6 @@ namespace MediaPlayerApp.Components
             this.parent.lbSongName.Text = musicSong.NameSong + "\n" + musicSong.Singer;
             this.parent.currenSong = this;
             //btnPlay.Checked = !btnPlay.Checked;
-
-
         }
 
         private void btnPlay_CheckedChanged(object sender, EventArgs e)
@@ -189,11 +201,14 @@ namespace MediaPlayerApp.Components
         {
             try
             {
-                if (guna2CheckBox1.Checked)
+                if (Constants.currentScreen == " ")
                 {
-                    fLibrary.SelectedMusic[this.Path] = true;
+                    if (guna2CheckBox1.Checked)
+                    {
+                        fLibrary.SelectedMusic[this.Path] = true;
+                    }
+                    else fLibrary.SelectedMusic[this.Path] = false;
                 }
-                else fLibrary.SelectedMusic[this.Path] = false;
                 fLibrary.selectedChanged();
             }
             catch (Exception)

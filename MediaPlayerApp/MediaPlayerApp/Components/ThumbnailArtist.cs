@@ -55,6 +55,7 @@ namespace MediaPlayerApp.Components
         private void lblArtistName_Click(object sender, EventArgs e)
         {
             this.parent.OpenChildForm(new fArtistMusic(ArtistName, Avatar, ThumbnailMusics, this.parent));
+            Constants.currentScreen = "show one";
         }
     }
 }

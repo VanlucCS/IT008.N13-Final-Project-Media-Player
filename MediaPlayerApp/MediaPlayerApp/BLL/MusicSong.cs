@@ -112,8 +112,8 @@ namespace MediaPlayerApp.BLL
             if (info.Extension == ".mp3")
             {
                 var fileTag = TagLib.File.Create(info.FullName);
-                this.Artist = (fileTag.Tag.Performers is null || fileTag.Tag.Performers.Length == 0) ? " " : fileTag.Tag.Performers.ToString();
-                this.AlbumArtist = (fileTag.Tag.AlbumArtists is null || fileTag.Tag.AlbumArtists.Length == 0) ? " " : fileTag.Tag.AlbumArtists.ToString();
+                this.Artist = (fileTag.Tag.Performers is null || fileTag.Tag.Performers.Length == 0) ? " " : string.Join(", ", fileTag.Tag.Performers);
+                this.AlbumArtist = (fileTag.Tag.AlbumArtists is null || fileTag.Tag.AlbumArtists.Length == 0) ? " " : string.Join(", ", fileTag.Tag.AlbumArtists);
                 this.Track = fileTag.Tag.Track.ToString();
                 this.Album = fileTag.Tag.Album is null ? " " : fileTag.Tag.Album.ToString();
                 this.Year = fileTag.Tag.Year.ToString();

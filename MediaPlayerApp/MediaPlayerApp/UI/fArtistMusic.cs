@@ -93,7 +93,6 @@ namespace MediaPlayerApp.UI
             List<string> list = new List<string>();
             foreach (ThumbnailMusic music in MusicList)
             {
-
                 string filePath = music.Path;
 
                 list.Add(filePath);
