@@ -168,7 +168,7 @@ namespace MediaPlayerApp.UI
             {
                 ThumbnailMusic[] controlArray = new ThumbnailMusic[pnSong.Controls.Count];
                 this.pnSong.Controls.CopyTo(controlArray, 0);
-                //Array.Sort(controlArray, (c1, c2) => String.Compare(c1.musicSong.DateAdd, c2.musicSong.DateAdd)); // them thuoc tinh public cua musicsong trong thumbnailmusic
+                Array.Sort(controlArray, (c1, c2) => String.Compare(c1.musicSong.DateAdd, c2.musicSong.DateAdd)); 
                 pnSong.Controls.Clear();
                 pnSong.Controls.AddRange(controlArray);
             }

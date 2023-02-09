@@ -57,7 +57,7 @@ namespace MediaPlayerApp.Components
             set { _albumName = value; }
         }
 
-        MusicSong musicSong;
+        public MusicSong musicSong;
         public fHome parent;
         public fMusicLibrary fLibrary;
         public ThumbnailMusic(fHome parent = null)
