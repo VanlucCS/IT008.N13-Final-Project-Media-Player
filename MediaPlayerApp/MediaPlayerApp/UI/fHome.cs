@@ -38,6 +38,8 @@ namespace MediaPlayerApp
                 // default song 
                 this.Media.URL = "./BH01.mp3";
                 this.Media.Ctlcontrols.stop();
+                pbSongpic.Image = null;
+                lbSongName.Text = "";
 
                 //LoadSongInfo(this.Media.URL);
                 t = new Timer();
