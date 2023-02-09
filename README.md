@@ -10,9 +10,9 @@
 [UI](https://user-images.githubusercontent.com/61135648/111136432-b7428a00-85b8-11eb-8e45-863bc9f7d5e8.png)
 
 ## Packages requirement
-> Guna.UI2.WinForms 2.0.3.5
-> Accord.Video.FFMPEG 3.8.0
-> taglib-sharp-netstandard 2.0.2.1.0
+- Guna.UI2.WinForms 2.0.3.5
+- Accord.Video.FFMPEG 3.8.0
+- taglib-sharp-netstandard 2.0.2.1.0
 ## Công cụ
 - IDE: Visual Studio.
 - Ngôn ngữ lập trình: C# (Farmework .NET).
