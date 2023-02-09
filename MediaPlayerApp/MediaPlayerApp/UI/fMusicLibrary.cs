@@ -67,6 +67,7 @@ namespace MediaPlayerApp.UI
         {
             pbxUnderline.Left = lblSongs.Left + (lblSongs.Width - pbxUnderline.Width) / 2;
             _screenOption = 0;
+            Constants.currentScreen = " ";
             loadMusicNew(); 
         }
 
@@ -74,13 +75,15 @@ namespace MediaPlayerApp.UI
         {
             pbxUnderline.Left = lblAlbums.Left + (lblAlbums.Width - pbxUnderline.Width) / 2;
             _screenOption = 1;
+            Constants.currentScreen = "show one";
             loadMusicNew();
         }
 
         private void lblArtists_Click(object sender, EventArgs e)
         {
             pbxUnderline.Left = lblArtists.Left + (lblArtists.Width - pbxUnderline.Width) / 2;
-            _screenOption = 2;
+            _screenOption = 2; 
+            Constants.currentScreen = "show one";
             loadMusicNew();
         }
         private void loadGenres()
@@ -464,7 +467,6 @@ namespace MediaPlayerApp.UI
                 }
                 else
                     return;
-
             }
         }
 
@@ -474,39 +476,57 @@ namespace MediaPlayerApp.UI
         }
         public void playList_PlayNext()
         {
-            timer1.Enabled = true;
-            for (int index = 0; index < SelectedMusic.Count; index++)
+            //timer1.Enabled = true;
+            //for (int index = 0; index < SelectedMusic.Count; index++)
+            //{
+            //    KeyValuePair<string, bool> item = SelectedMusic.ElementAt(index);
+            //    string filePath = item.Key;
+            //    bool isPlay = item.Value;
+            //    if (isPlay)
+            //    {
+            //        ListSong.Add(filePath);
+            //    }
+            //}
+            int position = Constants.currentIndex + 1;
+            foreach (ThumbnailMusic thumbnail in flowLayoutPanel1.Controls)
             {
-                KeyValuePair<string, bool> item = SelectedMusic.ElementAt(index);
-                string filePath = item.Key;
-                bool isPlay = item.Value;
-                if (isPlay)
+                if (thumbnail.Guna2CheckBox1.Checked == true)
                 {
-                    ListSong.Add(filePath);
+                    Constants.playQueue.Insert(position, thumbnail.Path);
+                    position++;
                 }
             }
-
         }
         public void playList_Play()
         {
-            List<string> list = new List<string>();
-            for (int index = 0; index < SelectedMusic.Count; index++)
+            //List<string> list = new List<string>();
+            //for (int index = 0; index < SelectedMusic.Count; index++)
+            //{
+            //    KeyValuePair<string, bool> item = SelectedMusic.ElementAt(index);
+            //    string filePath = item.Key;
+            //    bool isPlay = item.Value;
+            //    if (isPlay)
+            //    {
+            //        list.Add(filePath);
+            //    }
+            //}
+            //var myPlayList = parent.Media.playlistCollection.newPlaylist("Selected song list");
+            //foreach (string filePath in list)
+            //{
+            //    var media = parent.Media.newMedia(filePath);
+            //    myPlayList.appendItem(media);
+            //}
+            //parent.Media.currentPlaylist = myPlayList;
+            Constants.playQueue.Clear();
+            foreach (ThumbnailMusic thumbnail in flowLayoutPanel1.Controls)
             {
-                KeyValuePair<string, bool> item = SelectedMusic.ElementAt(index);
-                string filePath = item.Key;
-                bool isPlay = item.Value;
-                if (isPlay)
+                if (thumbnail.Guna2CheckBox1.Checked == true)
                 {
-                    list.Add(filePath);
+                    Constants.playQueue.Add(thumbnail.Path);
                 }
             }
-            var myPlayList = parent.Media.playlistCollection.newPlaylist("Selected song list");
-            foreach (string filePath in list)
-            {
-                var media = parent.Media.newMedia(filePath);
-                myPlayList.appendItem(media);
-            }
-            parent.Media.currentPlaylist = myPlayList;
+            Constants.currentIndex= 0;
+            this.parent.Media.URL = Constants.playQueue[Constants.currentIndex];
         }
 
         private void timer1_Tick(object sender, EventArgs e)

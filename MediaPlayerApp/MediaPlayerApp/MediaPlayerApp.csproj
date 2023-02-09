@@ -110,6 +110,7 @@
     <Compile Include="Components\ThumbnailMusic2.Designer.cs">
       <DependentUpon>ThumbnailMusic2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
