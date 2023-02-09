@@ -54,7 +54,7 @@ namespace MediaPlayerApp.UI
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblTitle.Location = new System.Drawing.Point(12, 12);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(158, 37);
+            this.lblTitle.Size = new System.Drawing.Size(121, 30);
             this.lblTitle.TabIndex = 32;
             this.lblTitle.Text = "Play queue";
             // 
@@ -74,6 +74,7 @@ namespace MediaPlayerApp.UI
             this.btnAdd.Size = new System.Drawing.Size(102, 30);
             this.btnAdd.TabIndex = 47;
             this.btnAdd.Text = "+   Add to";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnOption
             // 
@@ -131,6 +132,7 @@ namespace MediaPlayerApp.UI
             this.btnClear.Size = new System.Drawing.Size(105, 30);
             this.btnClear.TabIndex = 42;
             this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // fPlayQueue
             // 
