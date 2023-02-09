@@ -66,9 +66,11 @@ namespace MediaPlayerApp.UI
         {
             InitializeComponent();
         }
-        public fEditMusic(string path)
+        public fMusicLibrary _fMusicLibrary;
+        public fEditMusic(string path, fMusicLibrary _fMusicLibrary)
         {
             InitializeComponent();
+            this._fMusicLibrary = _fMusicLibrary;
             FileLocation = path;
             musicSong = new MusicSong(FileLocation);
             this.Title = musicSong.NameSong;
@@ -109,6 +111,20 @@ namespace MediaPlayerApp.UI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            TagLib.File mp3File = TagLib.File.Create(FileLocation);
+
+            // Edit the metadata
+            mp3File.Tag.Title = tbTile.Text;
+            mp3File.Tag.Album = tbAlbum.Text;
+            mp3File.Tag.Performers = tbArtist.Text.Split(new[] { ", " }, StringSplitOptions.None);
+            mp3File.Tag.Genres = tbGenre.Text.Split(new[] { ", " }, StringSplitOptions.None);
+            mp3File.Tag.AlbumArtists = tbAlbumArtist.Text.Split(new[] { ", " }, StringSplitOptions.None);
+            mp3File.Tag.Track = Convert.ToUInt32(tbTrack.Text);
+            mp3File.Tag.Year = Convert.ToUInt32(tbYear.Text);
+            // Save the changes
+            mp3File.Save();
+            this._fMusicLibrary.loadMusicNew();
+            this._fMusicLibrary.selectedChanged();
             this.Close();
         }
     }

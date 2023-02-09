@@ -83,63 +83,6 @@ namespace MediaPlayerApp.UI
             _screenOption = 2;
             loadMusicNew();
         }
-        private void loadByFilter()
-        {
-            flowLayoutPanel1.Controls.Clear();
-            SelectedMusic.Clear();
-
-            
-            // get list music string[] path infolder added
-            string[] listPath;
-            try
-            {
-                string[] folderadded = System.IO.File.ReadAllLines(@"./Data/Music.txt");
-                List<ThumbnailMusic> thumbnailsList = new List<ThumbnailMusic>();
-                foreach (string folder in folderadded)
-                {
-                    if (Directory.Exists(folder))
-                    {
-                        foreach (string file in Directory.GetFiles(folder))
-                        {
-                            FileInfo info = new FileInfo(file);
-                            if (info.Extension == ".mp3")
-                            {
-                                ThumbnailMusic thumbnailMusic = new ThumbnailMusic(file, this.parent, this);
-                                thumbnailMusic.Dock = DockStyle.Top;
-                                thumbnailMusic.Name = file;
-                                SelectedMusic.Add(thumbnailMusic.Name, false);
-                                //flowLayoutPanel1.Controls.Add(thumbnailMusic);
-                                thumbnailsList.Add(thumbnailMusic);
-                            }
-                            //MessageBox.Show(file);
-                        }
-                    }    
-                }
-                if (_isSortByDate)
-                {
-                    thumbnailsList.Sort(delegate (ThumbnailMusic x, ThumbnailMusic y) {
-                        return x.MusicDate.CompareTo(y.MusicDate);
-                    });
-                    for (int i = thumbnailsList.Count - 1; i >= 0; i--)
-                    {
-                        flowLayoutPanel1.Controls.Add(thumbnailsList[i]);
-                    }
-                }
-                else
-                {
-                    thumbnailsList.Sort(delegate (ThumbnailMusic x, ThumbnailMusic y) {
-                        return x.SongName.CompareTo(y.SongName);
-                    });
-                    for (int i = 0; i < thumbnailsList.Count; i++)
-                    {
-                        flowLayoutPanel1.Controls.Add(thumbnailsList[i]);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
         private void loadGenres()
         {
             List<string> genres = new List<string>();
@@ -174,13 +117,14 @@ namespace MediaPlayerApp.UI
                 cbbGenre.Items.Add(genre);
             }
         }
-        private void loadMusicNew()
+        public void loadMusicNew()
         {
             flowLayoutPanel1.Controls.Clear();
             SelectedMusic.Clear();
             List<ThumbnailMusic> thumbnailmusicList = new List<ThumbnailMusic>(); // Get thumbnails for sorting
             Dictionary<string, List<ThumbnailMusic>> artistList = new Dictionary<string,  List<ThumbnailMusic>>();
-            
+            Dictionary<string, List<ThumbnailMusic>> albumList = new Dictionary<string, List<ThumbnailMusic>>();
+
             #region Get musics
             try
             {
@@ -206,6 +150,14 @@ namespace MediaPlayerApp.UI
                                 else
                                 {
                                     artistList.Add(thumbnailMusic.ArtistName, new List<ThumbnailMusic>() { thumbnailMusic });
+                                }
+                                if (albumList.ContainsKey(thumbnailMusic.AlbumName))
+                                {
+                                    albumList[thumbnailMusic.AlbumName].Add(thumbnailMusic);
+                                }
+                                else
+                                {
+                                    albumList.Add(thumbnailMusic.AlbumName, new List<ThumbnailMusic>() { thumbnailMusic });
                                 }
                                 
                                 SelectedMusic.Add(thumbnailMusic.Name, false);
@@ -327,6 +279,11 @@ namespace MediaPlayerApp.UI
                 cbbSortBy.Visible = true;
                 lbGenre.Visible = true;
                 cbbGenre.Visible = true;
+                foreach (KeyValuePair<string, List<ThumbnailMusic>> album in albumList)
+                {
+                    ThumbnailArtist thumbnailArtist = new ThumbnailArtist(album.Key, album.Value, this.parent);
+                    flowLayoutPanel1.Controls.Add(thumbnailArtist);
+                }
             }
             #endregion
             #region load 'Artists' option
