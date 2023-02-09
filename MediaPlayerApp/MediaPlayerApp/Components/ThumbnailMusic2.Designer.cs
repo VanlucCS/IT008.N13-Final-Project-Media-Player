@@ -33,6 +33,7 @@ namespace MediaPlayerApp.Components
             this.nameSongLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureSong = new Guna.UI2.WinForms.Guna2Panel();
             this.playButton = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.lblDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureSong.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,9 +79,22 @@ namespace MediaPlayerApp.Components
             this.playButton.TabIndex = 0;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = false;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(0, 207);
+            this.lblDate.MaximumSize = new System.Drawing.Size(192, 100000);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(167, 22);
+            this.lblDate.TabIndex = 7;
+            this.lblDate.Text = "2/7/2023";
+            // 
             // ThumbnailMusic2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.pictureSong);
             this.Controls.Add(this.nameSongLabel);
             this.Name = "ThumbnailMusic2";
@@ -96,5 +110,6 @@ namespace MediaPlayerApp.Components
         private Guna.UI2.WinForms.Guna2ImageButton playButton;
         private Guna.UI2.WinForms.Guna2Panel pictureSong;
         private Guna.UI2.WinForms.Guna2HtmlLabel nameSongLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDate;
     }
 }
