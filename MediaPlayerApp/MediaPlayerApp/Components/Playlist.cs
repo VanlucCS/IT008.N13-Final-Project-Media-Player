@@ -220,7 +220,7 @@ namespace MediaPlayerApp.Components
                 IWMPPlaylist playlist = this.parent.Media.newPlaylist("Playlist", null);
                 foreach (string path in listPath)
                 {
-                    if (!File.Exists(path))
+                    if (File.Exists(path))
                     {
                         WMPLib.IWMPMedia m = this.parent.Media.newMedia(path);
                         playlist.appendItem(m);

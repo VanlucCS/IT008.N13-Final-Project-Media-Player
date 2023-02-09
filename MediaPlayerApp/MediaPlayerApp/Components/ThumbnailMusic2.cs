@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,11 +31,14 @@ namespace MediaPlayerApp.Components
         }
         private void ThumbnailMusic2_Load(object sender, EventArgs e)
         {
-            music = new ThumbnailMusic(Path, this.parent);
-            MusicSong musicSong = new MusicSong(Path);
-            pictureSong.BackgroundImage = musicSong.PictureSong;
-            nameSongLabel.Text = musicSong.NameSong;
-            lblDate.Text = musicSong.DateAdd;
+            if (File.Exists(Path))
+            {
+                music = new ThumbnailMusic(Path, this.parent);
+                MusicSong musicSong = new MusicSong(Path);
+                pictureSong.BackgroundImage = musicSong.PictureSong;
+                nameSongLabel.Text = musicSong.NameSong;
+                lblDate.Text = musicSong.DateAdd;
+            }
         }
         private void playButton_Click(object sender, EventArgs e)
         {

@@ -20,13 +20,6 @@ namespace MediaPlayerApp.UI
         {
             this.parent = parent;
             InitializeComponent();
-            testThumbnail();
-        }
-
-        public void testThumbnail()
-        {
-            Thumbnail thumbnail = new Thumbnail("./BH01.mp3",this);
-            pnRecent.Controls.Add(thumbnail);
         }
         public void moreClick()
         {
@@ -71,11 +64,10 @@ namespace MediaPlayerApp.UI
                         FileInfo info = new FileInfo(path);
                         if (info.Extension == ".mp3")
                         {
-
-                            ThumbnailMusic2 thumbnailMusic = new ThumbnailMusic2(path, this.parent);
-                            thumbnailMusic.Dock = DockStyle.Top;
-                            pnRecent.Controls.Add(thumbnailMusic);
-                            recentCount++;
+                                ThumbnailMusic2 music = new ThumbnailMusic2(path, this.parent);
+                                music.Dock = DockStyle.Top;
+                                pnRecent.Controls.Add(music);
+                                recentCount++;
                         }
                         if (info.Extension == ".mp4")
                         {

@@ -145,17 +145,22 @@ namespace MediaPlayerApp.Components
             // add to recent 
             this.parent.AddToRecent(this.Path);
             // add to queue
-            if (Constants.currentScreen == " ")
+            try
             {
-                Constants.playQueue.Clear();
-                Constants.currentIndex = 0;
-                foreach (ThumbnailMusic music in fLibrary.flowLayoutPanel1.Controls)
+                if (Constants.currentScreen == " ")
                 {
-                    Constants.playQueue.Add(music.Path);
+                    Constants.playQueue.Clear();
+                    Constants.currentIndex = 0;
+                    foreach (ThumbnailMusic music in fLibrary.flowLayoutPanel1.Controls)
+                    {
+                        Constants.playQueue.Add(music.Path);
+                    }
+                    Constants.currentIndex = Constants.playQueue.IndexOf(this.Path);
+                    this.parent.Media.URL = Constants.playQueue[Constants.currentIndex];
                 }
-                Constants.currentIndex = Constants.playQueue.IndexOf(this.Path);
-                this.parent.Media.URL = Constants.playQueue[Constants.currentIndex];
-
+            }
+            catch (Exception)
+            {
             }
             //
             if (this.parent.currenSong == this && this.parent.Media.playState == WMPLib.WMPPlayState.wmppsPlaying)
