@@ -37,8 +37,8 @@ namespace MediaPlayerApp.UI
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSort = new System.Windows.Forms.Label();
             this.lbGenre = new System.Windows.Forms.Label();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbGenre = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbSortBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnAddFolder = new Guna.UI2.WinForms.Guna2Button();
             this.btnShuffleAndPlay = new Guna.UI2.WinForms.Guna2Button();
@@ -123,46 +123,48 @@ namespace MediaPlayerApp.UI
             this.lbGenre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbGenre.Click += new System.EventHandler(this.lbGenre_Click);
             // 
-            // guna2ComboBox2
+            // cbbGenre
             // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FillColor = System.Drawing.SystemColors.Control;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.Red;
-            this.guna2ComboBox2.ItemHeight = 20;
-            this.guna2ComboBox2.Items.AddRange(new object[] {
+            this.cbbGenre.BackColor = System.Drawing.Color.Transparent;
+            this.cbbGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbGenre.FillColor = System.Drawing.SystemColors.Control;
+            this.cbbGenre.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbGenre.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbGenre.ForeColor = System.Drawing.Color.Red;
+            this.cbbGenre.ItemHeight = 20;
+            this.cbbGenre.Items.AddRange(new object[] {
             "All genres"});
-            this.guna2ComboBox2.Location = new System.Drawing.Point(642, 63);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(107, 26);
-            this.guna2ComboBox2.StartIndex = 0;
-            this.guna2ComboBox2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2ComboBox2.TabIndex = 65;
-            this.guna2ComboBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbbGenre.Location = new System.Drawing.Point(642, 63);
+            this.cbbGenre.Name = "cbbGenre";
+            this.cbbGenre.Size = new System.Drawing.Size(107, 26);
+            this.cbbGenre.StartIndex = 0;
+            this.cbbGenre.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbbGenre.TabIndex = 65;
+            this.cbbGenre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cbbGenre.SelectedIndexChanged += new System.EventHandler(this.cbbGenre_SelectedIndexChanged);
             // 
-            // guna2ComboBox1
+            // cbbSortBy
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FillColor = System.Drawing.SystemColors.Control;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.Red;
-            this.guna2ComboBox1.ItemHeight = 20;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.cbbSortBy.BackColor = System.Drawing.Color.Transparent;
+            this.cbbSortBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSortBy.FillColor = System.Drawing.SystemColors.Control;
+            this.cbbSortBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbSortBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbSortBy.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbSortBy.ForeColor = System.Drawing.Color.Red;
+            this.cbbSortBy.ItemHeight = 20;
+            this.cbbSortBy.Items.AddRange(new object[] {
             "Date added"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(442, 63);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(120, 26);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2ComboBox1.TabIndex = 64;
+            this.cbbSortBy.Location = new System.Drawing.Point(442, 63);
+            this.cbbSortBy.Name = "cbbSortBy";
+            this.cbbSortBy.Size = new System.Drawing.Size(120, 26);
+            this.cbbSortBy.StartIndex = 0;
+            this.cbbSortBy.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbbSortBy.TabIndex = 64;
+            this.cbbSortBy.SelectedIndexChanged += new System.EventHandler(this.cbbSortBy_SelectedIndexChanged);
             // 
             // timer1
             // 
@@ -206,6 +208,7 @@ namespace MediaPlayerApp.UI
             this.btnShuffleAndPlay.Size = new System.Drawing.Size(127, 30);
             this.btnShuffleAndPlay.TabIndex = 30;
             this.btnShuffleAndPlay.Text = "Shuffle and play";
+            this.btnShuffleAndPlay.Click += new System.EventHandler(this.btnShuffleAndPlay_Click);
             // 
             // pbxUnderline
             // 
@@ -224,8 +227,8 @@ namespace MediaPlayerApp.UI
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(788, 510);
-            this.Controls.Add(this.guna2ComboBox2);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.cbbGenre);
+            this.Controls.Add(this.cbbSortBy);
             this.Controls.Add(this.lbGenre);
             this.Controls.Add(this.lblSort);
             this.Controls.Add(this.btnAddFolder);
@@ -257,8 +260,8 @@ namespace MediaPlayerApp.UI
         private Guna.UI2.WinForms.Guna2Button btnAddFolder;
         private System.Windows.Forms.Label lblSort;
         private System.Windows.Forms.Label lbGenre;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbGenre;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbSortBy;
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }

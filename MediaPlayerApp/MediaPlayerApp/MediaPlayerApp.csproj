@@ -74,6 +74,12 @@
     <Compile Include="Components\SelectedSong.Designer.cs">
       <DependentUpon>SelectedSong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\ThumbnailArtist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ThumbnailArtist.Designer.cs">
+      <DependentUpon>ThumbnailArtist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\ThumbnailMusic.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="UI\fAddNewPlaylistcs.Designer.cs">
       <DependentUpon>fAddNewPlaylistcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\fArtistMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\fArtistMusic.Designer.cs">
+      <DependentUpon>fArtistMusic.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\fEditMusic.cs">
       <SubType>Form</SubType>
@@ -192,6 +204,9 @@
     <EmbeddedResource Include="Components\SelectedSong.resx">
       <DependentUpon>SelectedSong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\ThumbnailArtist.resx">
+      <DependentUpon>ThumbnailArtist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\ThumbnailMusic.resx">
       <DependentUpon>ThumbnailMusic.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fAddNewPlaylistcs.resx">
       <DependentUpon>fAddNewPlaylistcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\fArtistMusic.resx">
+      <DependentUpon>fArtistMusic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\fEditMusic.resx">
       <DependentUpon>fEditMusic.cs</DependentUpon>
@@ -368,6 +386,7 @@
     <None Include="Resources\transimage.png" />
     <None Include="Resources\playbutton.png" />
     <None Include="Resources\more2.png" />
+    <None Include="Resources\UnknownArtist.png" />
     <Content Include="Resources\white_heart.png" />
     <Content Include="Resources\white_open_folder.png" />
     <None Include="Resources\heart2.png" />
