@@ -16,6 +16,7 @@ namespace MediaPlayerApp.UI
 {
     public partial class fMusicLibrary : Form
     {
+        private string filter = "*****";
         public fHome parent;
         private List<string> _listSong = new List<string>();
         public List<string> ListSong
@@ -39,6 +40,15 @@ namespace MediaPlayerApp.UI
         }
 
         public bool isSelectedAll = false;
+        private string _sortBy;
+        public string SortBy
+        {
+            get { return _sortBy; }
+            set { _sortBy = value; }
+        }
+        private int _sortOption = 0;
+        private bool _isSortByDate = false;
+        private int _screenOption = 0;
         SelectedSong selectedSong;
 
         public fMusicLibrary(fHome parent = null)
@@ -48,26 +58,297 @@ namespace MediaPlayerApp.UI
             InitializeComponent();
             selectedSong.Location = new Point(5, 45);
             selectedSong.Visible = false;
-            loadMusic();
+            _isSortByDate= false;
+            loadGenres();
+            loadMusicNew();
         }
 
         private void lblSongs_Click(object sender, EventArgs e)
         {
             pbxUnderline.Left = lblSongs.Left + (lblSongs.Width - pbxUnderline.Width) / 2;
+            _screenOption = 0;
+            loadMusicNew();
         }
 
         private void lblAlbums_Click(object sender, EventArgs e)
         {
             pbxUnderline.Left = lblAlbums.Left + (lblAlbums.Width - pbxUnderline.Width) / 2;
+            _screenOption = 1;
+            loadMusicNew();
         }
 
         private void lblArtists_Click(object sender, EventArgs e)
         {
             pbxUnderline.Left = lblArtists.Left + (lblArtists.Width - pbxUnderline.Width) / 2;
+            _screenOption = 2;
+            loadMusicNew();
+        }
+        private void loadByFilter()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            SelectedMusic.Clear();
+
+            
+            // get list music string[] path infolder added
+            string[] listPath;
+            try
+            {
+                string[] folderadded = System.IO.File.ReadAllLines(@"./Data/Music.txt");
+                List<ThumbnailMusic> thumbnailsList = new List<ThumbnailMusic>();
+                foreach (string folder in folderadded)
+                {
+                    if (Directory.Exists(folder))
+                    {
+                        foreach (string file in Directory.GetFiles(folder))
+                        {
+                            FileInfo info = new FileInfo(file);
+                            if (info.Extension == ".mp3")
+                            {
+                                ThumbnailMusic thumbnailMusic = new ThumbnailMusic(file, this.parent, this);
+                                thumbnailMusic.Dock = DockStyle.Top;
+                                thumbnailMusic.Name = file;
+                                SelectedMusic.Add(thumbnailMusic.Name, false);
+                                //flowLayoutPanel1.Controls.Add(thumbnailMusic);
+                                thumbnailsList.Add(thumbnailMusic);
+                            }
+                            //MessageBox.Show(file);
+                        }
+                    }    
+                }
+                if (_isSortByDate)
+                {
+                    thumbnailsList.Sort(delegate (ThumbnailMusic x, ThumbnailMusic y) {
+                        return x.MusicDate.CompareTo(y.MusicDate);
+                    });
+                    for (int i = thumbnailsList.Count - 1; i >= 0; i--)
+                    {
+                        flowLayoutPanel1.Controls.Add(thumbnailsList[i]);
+                    }
+                }
+                else
+                {
+                    thumbnailsList.Sort(delegate (ThumbnailMusic x, ThumbnailMusic y) {
+                        return x.SongName.CompareTo(y.SongName);
+                    });
+                    for (int i = 0; i < thumbnailsList.Count; i++)
+                    {
+                        flowLayoutPanel1.Controls.Add(thumbnailsList[i]);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+        private void loadGenres()
+        {
+            List<string> genres = new List<string>();
+            try
+            {
+                string[] folderadded = System.IO.File.ReadAllLines(@"./Data/Music.txt"); // Get folder 
+                foreach (string folder in folderadded) // Loop over files in each folder
+                {
+                    if (Directory.Exists(folder))
+                    {
+                        foreach (string file in Directory.GetFiles(folder)) // loop over files and get file with extension: ".mp3"
+                        {
+                            FileInfo info = new FileInfo(file);
+                            if (info.Extension == ".mp3")
+                            {
+                                ThumbnailMusic thumbnailMusic = new ThumbnailMusic(file, this.parent, this);
+
+                                thumbnailMusic.Dock = DockStyle.Top;
+                                thumbnailMusic.Name = file;
+                                if (!genres.Contains(thumbnailMusic.Genre))
+                                {
+                                    genres.Add(thumbnailMusic.Genre);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception) { }
+            foreach (string genre in genres)
+            {
+                cbbGenre.Items.Add(genre);
+            }
+        }
+        private void loadMusicNew()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            SelectedMusic.Clear();
+            List<ThumbnailMusic> thumbnailmusicList = new List<ThumbnailMusic>(); // Get thumbnails for sorting
+            Dictionary<string, List<ThumbnailMusic>> artistList = new Dictionary<string,  List<ThumbnailMusic>>();
+            
+            #region Get musics
+            try
+            {
+                string[] folderadded = System.IO.File.ReadAllLines(@"./Data/Music.txt"); // Get folder 
+                foreach (string folder in folderadded) // Loop over files in each folder
+                {
+                    if (Directory.Exists(folder))
+                    {
+                        foreach (string file in Directory.GetFiles(folder)) // loop over files and get file with extension: ".mp3"
+                        {
+                            FileInfo info = new FileInfo(file);
+                            if (info.Extension == ".mp3")
+                            {
+                                ThumbnailMusic thumbnailMusic = new ThumbnailMusic(file, this.parent, this);
+                                
+                                thumbnailMusic.Dock = DockStyle.Top;
+                                thumbnailmusicList.Add(thumbnailMusic);
+                                thumbnailMusic.Name = file;
+                                if (artistList.ContainsKey(thumbnailMusic.ArtistName))
+                                {
+                                    artistList[thumbnailMusic.ArtistName].Add(thumbnailMusic);
+                                }
+                                else
+                                {
+                                    artistList.Add(thumbnailMusic.ArtistName, new List<ThumbnailMusic>() { thumbnailMusic });
+                                }
+                                
+                                SelectedMusic.Add(thumbnailMusic.Name, false);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception) { }
+            #endregion
+            #region load 'Songs' option 
+            if (_screenOption == 0)
+            {
+                lblSort.Visible = true;
+                cbbSortBy.Visible = true;
+                lbGenre.Visible = true;
+                cbbGenre.Visible = true;
+                #region Sort by alphabet
+                if (_sortOption == 0) //Sort by alphabet
+                {
+                    thumbnailmusicList.Sort(delegate (ThumbnailMusic x, ThumbnailMusic y) {
+                        return x.SongName.CompareTo(y.SongName);
+                    });
+                    for (int i = 0; i < thumbnailmusicList.Count; i++)
+                    {
+                        if (filter == "*****")
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                        else if (filter == thumbnailmusicList[i].Genre)
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                    }
+                }
+                #endregion
+                #region Sort by artist 
+                else if (_sortOption == 1) // Sort by artist
+                {
+                    thumbnailmusicList.Sort(delegate (ThumbnailMusic x, ThumbnailMusic y) {
+                        return x.ArtistName.CompareTo(y.ArtistName);
+                    });
+                    for (int i = 0; i < thumbnailmusicList.Count; i++)
+                    {
+                        if (filter == "*****")
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                        else if (filter == thumbnailmusicList[i].Genre)
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                    }
+                }
+                #endregion
+                #region Sort by album
+                else if (_sortOption == 2) // Sort by album
+                {
+                    thumbnailmusicList.Sort(delegate (ThumbnailMusic x, ThumbnailMusic y) {
+                        return x.AlbumName.CompareTo(y.AlbumName);
+                    });
+                    for (int i = 0; i < thumbnailmusicList.Count; i++)
+                    {
+                        if (filter == "*****")
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                        else if (filter == thumbnailmusicList[i].Genre)
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                    }
+                }
+                #endregion
+                #region Sort by release year
+                else if (_sortOption == 3) // Sort by release year
+                {
+                    thumbnailmusicList.Sort(delegate (ThumbnailMusic x, ThumbnailMusic y) {
+                        return Convert.ToInt32(x.ReleaseYear).CompareTo(Convert.ToInt32(y.ReleaseYear));
+                    });
+                    for (int i = 0; i < thumbnailmusicList.Count; i++)
+                    {
+                        if (filter == "*****")
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                        else if (filter == thumbnailmusicList[i].Genre)
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                    }
+                }
+                #endregion
+                #region Date added
+                else if (_sortOption == 4) // Date added
+                {
+                    thumbnailmusicList.Sort(delegate (ThumbnailMusic x, ThumbnailMusic y) {
+                        return Convert.ToDateTime(x.MusicDate).CompareTo(Convert.ToDateTime(y.MusicDate));
+                    });
+                    for (int i = 0; i < thumbnailmusicList.Count; i++)
+                    {
+                        if (filter == "*****")
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                        else if (filter == thumbnailmusicList[i].Genre)
+                        {
+                            flowLayoutPanel1.Controls.Add(thumbnailmusicList[i]);
+                        }
+                    }
+                }
+                #endregion
+            }
+            #endregion
+            #region load 'Albums' option
+            else if (_screenOption == 1)
+            {
+                lblSort.Visible = true;
+                cbbSortBy.Visible = true;
+                lbGenre.Visible = true;
+                cbbGenre.Visible = true;
+            }
+            #endregion
+            #region load 'Artists' option
+            else if (_screenOption == 2)
+            {
+                lblSort.Visible = false;
+                cbbSortBy.Visible = false;
+                lbGenre.Visible = false;
+                cbbGenre.Visible = false;
+                foreach(KeyValuePair<string, List<ThumbnailMusic>> artist in artistList)
+                {
+                    ThumbnailArtist thumbnailArtist = new ThumbnailArtist(artist.Key, artist.Value, this.parent);
+                    flowLayoutPanel1.Controls.Add(thumbnailArtist);
+                }
+            }
+            #endregion
         }
         private void loadMusic()
         {
+
             flowLayoutPanel1.Controls.Clear();
+
             // get list music string[] path infolder added
             string[] listPath;
             try
@@ -93,16 +374,11 @@ namespace MediaPlayerApp.UI
 
                         }
                     }    
-
-
                 }
             }
             catch (Exception)
             {
             }
-
-
-
         }
         private void lbGenre_Click(object sender, EventArgs e)
         {
@@ -129,8 +405,8 @@ namespace MediaPlayerApp.UI
                 }
                 btnShuffleAndPlay.Visible = true;
                 lblSort.Visible = true;
-                guna2ComboBox1.Visible = true;
-                guna2ComboBox2.Visible = true;
+                cbbSortBy.Visible = true;
+                cbbGenre.Visible = true;
                 lbGenre.Visible = true;
                 selectedSong.Visible = false;
                 Count = 0;
@@ -200,8 +476,8 @@ namespace MediaPlayerApp.UI
 
                 btnShuffleAndPlay.Visible = false;
                 lblSort.Visible = false;
-                guna2ComboBox1.Visible = false;
-                guna2ComboBox2.Visible = false;
+                cbbSortBy.Visible = false;
+                cbbGenre.Visible = false;
                 lbGenre.Visible = false;
                 if (Count == SelectedMusic.Count)
                 {
@@ -214,8 +490,8 @@ namespace MediaPlayerApp.UI
             {
                 btnShuffleAndPlay.Visible = true;
                 lblSort.Visible = true;
-                guna2ComboBox1.Visible = true;
-                guna2ComboBox2.Visible = true;
+                cbbSortBy.Visible = true;
+                cbbGenre.Visible = true;
                 lbGenre.Visible = true;
                 selectedSong.Visible = false;
             }
@@ -327,5 +603,38 @@ namespace MediaPlayerApp.UI
             }
         }
 
+        private void cbbSortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _sortOption = cbbSortBy.SelectedIndex;
+            loadMusicNew();
+        }
+
+        private void cbbGenre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbGenre.SelectedIndex == 0)
+            {
+                filter = "*****";
+            }
+            else filter = cbbGenre.SelectedItem.ToString();
+            loadMusicNew();
+        }
+
+        private void btnShuffleAndPlay_Click(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();
+            foreach (ThumbnailMusic control in flowLayoutPanel1.Controls)
+            {
+                list.Add(control.Path);
+            }
+            var rnd = new Random();
+            var randomList = list.OrderBy(item => rnd.Next());
+            var myPlayList = parent.Media.playlistCollection.newPlaylist("Selected song list");
+            foreach (string filePath in randomList)
+            {
+                var media = parent.Media.newMedia(filePath);
+                myPlayList.appendItem(media);
+            }
+            parent.Media.currentPlaylist = myPlayList;
+        }
     }
 }

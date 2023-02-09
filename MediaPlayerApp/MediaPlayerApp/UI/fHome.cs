@@ -270,7 +270,7 @@ namespace MediaPlayerApp
         void t_Tick(object sender, EventArgs e)
         {
             if(Media.currentMedia.duration!= 0)
-            {
+            {   
                 TimeSpan Time = TimeSpan.FromMinutes(Media.Ctlcontrols.currentPosition);
                 // update time mediaplayer
                 lbTimeCurrentPlay.Text = Time.ToString().Substring(0, 5);

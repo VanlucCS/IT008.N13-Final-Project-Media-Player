@@ -354,9 +354,14 @@ namespace MediaPlayerApp.Components
             toolStrip.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip.Dock = DockStyle.None;
         }
-        private void addToClick(object sender, EventArgs e)
+        private void addToClick(object sender, ToolStripItemClickedEventArgs e)
         {
-
+            if (e.ClickedItem.Text == "New playlist")
+            {
+                fAddNewPlaylistcs f = new fAddNewPlaylistcs();
+                f.StartPosition = FormStartPosition.CenterScreen;
+                f.ShowDialog();
+            }
         }
     }
 }
