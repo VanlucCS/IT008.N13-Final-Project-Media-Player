@@ -11,7 +11,7 @@ using TagLib.IFD.Tags;
 
 namespace MediaPlayerApp.BLL
 {
-    class MusicSong
+    public class MusicSong
     {
         private static MusicSong instance;
 
