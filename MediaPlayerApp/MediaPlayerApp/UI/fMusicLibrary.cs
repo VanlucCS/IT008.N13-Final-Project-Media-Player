@@ -275,10 +275,10 @@ namespace MediaPlayerApp.UI
             #region load 'Albums' option
             else if (_screenOption == 1)
             {
-                lblSort.Visible = true;
-                cbbSortBy.Visible = true;
-                lbGenre.Visible = true;
-                cbbGenre.Visible = true;
+                lblSort.Visible = false;
+                cbbSortBy.Visible = false;
+                lbGenre.Visible = false;
+                cbbGenre.Visible = false;
                 foreach (KeyValuePair<string, List<ThumbnailMusic>> album in albumList)
                 {
                     ThumbnailArtist thumbnailArtist = new ThumbnailArtist(album.Key, album.Value, this.parent);
