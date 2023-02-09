@@ -214,21 +214,17 @@ namespace MediaPlayerApp.Components
         private void btPlay_Click(object sender, EventArgs e)
         {
             string[] listPath = System.IO.File.ReadAllLines(PlayListPath);
-            foreach (string s in listPath)
-            {
-                if (!File.Exists(s))
-                {
-                    listPath = listPath.Except(new string[] { s }).ToArray();
-                }
-            }
             if (listPath.Length != 0)
             {
 
                 IWMPPlaylist playlist = this.parent.Media.newPlaylist("Playlist", null);
                 foreach (string path in listPath)
                 {
-                    WMPLib.IWMPMedia m = this.parent.Media.newMedia(path);
-                    playlist.appendItem(m);
+                    if (File.Exists(path))
+                    {
+                        WMPLib.IWMPMedia m = this.parent.Media.newMedia(path);
+                        playlist.appendItem(m);
+                    }
                 }
                 this.parent.Media.currentPlaylist = playlist;
                 this.parent.Media.Ctlcontrols.play();
