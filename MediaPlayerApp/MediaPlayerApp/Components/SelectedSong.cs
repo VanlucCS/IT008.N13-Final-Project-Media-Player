@@ -128,7 +128,7 @@ namespace MediaPlayerApp.Components
                             path = item.Key;
                         }
                     }
-                    fEditMusic edit = new fEditMusic(path);
+                    fEditMusic edit = new fEditMusic(path, this._fMusicLibrary);
                     edit.ShowDialog();
                 }
             }

@@ -117,12 +117,13 @@ namespace MediaPlayerApp.UI
                 cbbGenre.Items.Add(genre);
             }
         }
-        private void loadMusicNew()
+        public void loadMusicNew()
         {
             flowLayoutPanel1.Controls.Clear();
             SelectedMusic.Clear();
             List<ThumbnailMusic> thumbnailmusicList = new List<ThumbnailMusic>(); // Get thumbnails for sorting
             Dictionary<string, List<ThumbnailMusic>> artistList = new Dictionary<string, List<ThumbnailMusic>>();
+            Dictionary<string, List<ThumbnailMusic>> albumList = new Dictionary<string, List<ThumbnailMusic>>();
 
             #region Get musics
             try
@@ -149,6 +150,14 @@ namespace MediaPlayerApp.UI
                                 else
                                 {
                                     artistList.Add(thumbnailMusic.ArtistName, new List<ThumbnailMusic>() { thumbnailMusic });
+                                }
+                                if (albumList.ContainsKey(thumbnailMusic.AlbumName))
+                                {
+                                    albumList[thumbnailMusic.AlbumName].Add(thumbnailMusic);
+                                }
+                                else
+                                {
+                                    albumList.Add(thumbnailMusic.AlbumName, new List<ThumbnailMusic>() { thumbnailMusic });
                                 }
 
                                 SelectedMusic.Add(thumbnailMusic.Name, false);
@@ -270,6 +279,11 @@ namespace MediaPlayerApp.UI
                 cbbSortBy.Visible = true;
                 lbGenre.Visible = true;
                 cbbGenre.Visible = true;
+                foreach (KeyValuePair<string, List<ThumbnailMusic>> album in albumList)
+                {
+                    ThumbnailArtist thumbnailArtist = new ThumbnailArtist(album.Key, album.Value, this.parent);
+                    flowLayoutPanel1.Controls.Add(thumbnailArtist);
+                }
             }
             #endregion
             #region load 'Artists' option
