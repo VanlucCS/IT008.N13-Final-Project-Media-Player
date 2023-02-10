@@ -61,30 +61,33 @@ namespace MediaPlayerApp.UI
 
                     try
                     {
-                        FileInfo info = new FileInfo(path);
-                        if (info.Extension == ".mp3")
-                        {
-                                ThumbnailMusic2 music = new ThumbnailMusic2(path, this.parent);
-                                music.Dock = DockStyle.Top;
-                                pnRecent.Controls.Add(music);
+                        if (File.Exists(path))
+                        { 
+                            FileInfo info = new FileInfo(path);
+                            if (info.Extension == ".mp3")
+                            {
+                                    ThumbnailMusic2 music = new ThumbnailMusic2(path, this.parent);
+                                    music.Dock = DockStyle.Top;
+                                    pnRecent.Controls.Add(music);
+                                    recentCount++;
+                            }
+                            if (info.Extension == ".mp4")
+                            {
+
+                                Thumbnail thumbnail = new Thumbnail(path, this);
+                                thumbnail.Dock = DockStyle.Top;
+                                pnRecent.Controls.Add(thumbnail);
                                 recentCount++;
-                        }
-                        if (info.Extension == ".mp4")
-                        {
 
-                            Thumbnail thumbnail = new Thumbnail(path, this);
-                            thumbnail.Dock = DockStyle.Top;
-                            pnRecent.Controls.Add(thumbnail);
-                            recentCount++;
+                            }
+                            if (info.Extension == ".txt")
+                            {
 
-                        }
-                        if (info.Extension == ".txt")
-                        {
-
-                            Components.Playlist i = new Components.Playlist(path, this.parent);
-                            recentCount++;
-                            pnRecent.Controls.Add(i);
-                        }
+                                Components.Playlist i = new Components.Playlist(path, this.parent);
+                                recentCount++;
+                                pnRecent.Controls.Add(i);
+                            }
+                        }    
 
                     }
                     catch (Exception)
