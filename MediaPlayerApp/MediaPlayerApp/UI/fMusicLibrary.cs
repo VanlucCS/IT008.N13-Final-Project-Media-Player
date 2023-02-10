@@ -462,8 +462,10 @@ namespace MediaPlayerApp.UI
                     using (StreamWriter w = File.AppendText(@"./Data/Music.txt"))
                     {
                         w.WriteLine(f.SelectedPath);
-                        loadMusicNew();
+
+                        
                     }
+                    loadMusicNew(); 
                 }
                 else
                     return;
