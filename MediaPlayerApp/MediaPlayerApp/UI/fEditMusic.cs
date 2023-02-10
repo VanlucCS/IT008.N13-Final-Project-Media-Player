@@ -21,6 +21,7 @@ namespace MediaPlayerApp.UI
         private string _track;
         private string _year;
         private string _fileLocation;
+        private bool _isHidden = false;
         public string Title
         {
             get { return _title; }
@@ -83,6 +84,22 @@ namespace MediaPlayerApp.UI
 
             load();
         }
+        public fEditMusic(string path, fMusicLibrary _fMusicLibrary, bool isHidden)
+        {
+            InitializeComponent();
+            this._fMusicLibrary = _fMusicLibrary;
+            FileLocation = path;
+            musicSong = new MusicSong(FileLocation);
+            this.Title = musicSong.NameSong;
+            this.Artist = musicSong.Artist;
+            this.AlbumArtist = musicSong.AlbumArtist;
+            this.Genre = musicSong.NameGenre;
+            this.Track = musicSong.Track;
+            this.Year = musicSong.Year;
+            this.Album = musicSong.Album;
+            this._isHidden= isHidden;
+            load();
+        }
         private void load()
         {
             tbTile.Text = this.Title;
@@ -93,6 +110,17 @@ namespace MediaPlayerApp.UI
             tbYear.Text = this.Year;
             tbGenre.Text = this.Genre;
             lblFilePath.Text = this.FileLocation;
+            if (_isHidden)
+            {
+                tbTile.ReadOnly = true;
+                tbArtist.ReadOnly = true;
+                tbAlbumArtist.ReadOnly = true;
+                tbAlbum.ReadOnly = true;
+                tbTrack.ReadOnly = true;
+                tbYear.ReadOnly = true;
+                tbGenre.ReadOnly = true;
+                guna2Button1.Visible = false;
+            }
         }
         private void guna2HtmlLabel11_MouseEnter(object sender, EventArgs e)
         {

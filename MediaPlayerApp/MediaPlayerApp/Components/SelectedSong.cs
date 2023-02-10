@@ -27,6 +27,7 @@ namespace MediaPlayerApp.Components
         {
             InitializeComponent();
         }
+
         public SelectedSong(fMusicLibrary fMusicLibrary)
         {
             InitializeComponent();
@@ -75,7 +76,6 @@ namespace MediaPlayerApp.Components
                 toolStrip.ItemClicked += moreClick;
                 toolStrip.Items.Clear();
                 toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
-                toolStrip.Items.Add("Show artist");
                 toolStrip.Items.Add("Edit info");
                 toolStrip.Items.Add("Properties");
                 toolStrip.Items[0].Image = Resources.user;
@@ -129,6 +129,19 @@ namespace MediaPlayerApp.Components
                         }
                     }
                     fEditMusic edit = new fEditMusic(path, this._fMusicLibrary);
+                    edit.ShowDialog();
+                }
+                else if (e.ClickedItem.Text == "Properties")
+                {
+                    string path = "";
+                    foreach (KeyValuePair<string, bool> item in _fMusicLibrary.SelectedMusic)
+                    {
+                        if (item.Value == true)
+                        {
+                            path = item.Key;
+                        }
+                    }
+                    fEditMusic edit = new fEditMusic(path, this._fMusicLibrary, true);
                     edit.ShowDialog();
                 }
             }
