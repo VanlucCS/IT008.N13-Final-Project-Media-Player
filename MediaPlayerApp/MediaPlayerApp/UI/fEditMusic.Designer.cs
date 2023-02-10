@@ -100,21 +100,21 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Variable Display", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 12);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(116, 28);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(117, 26);
             this.guna2HtmlLabel1.TabIndex = 2;
             this.guna2HtmlLabel1.Text = "Edit song info";
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(12, 46);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(28, 19);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(29, 18);
             this.guna2HtmlLabel2.TabIndex = 2;
             this.guna2HtmlLabel2.Text = "Title";
             // 
@@ -140,11 +140,11 @@
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 103);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(40, 19);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(41, 18);
             this.guna2HtmlLabel3.TabIndex = 2;
             this.guna2HtmlLabel3.Text = "Album";
             // 
@@ -170,11 +170,11 @@
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(12, 160);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(34, 19);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(38, 18);
             this.guna2HtmlLabel4.TabIndex = 2;
             this.guna2HtmlLabel4.Text = "Track";
             // 
@@ -200,11 +200,11 @@
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2HtmlLabel8.Location = new System.Drawing.Point(12, 217);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(28, 19);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(32, 18);
             this.guna2HtmlLabel8.TabIndex = 2;
             this.guna2HtmlLabel8.Text = "Year";
             // 
@@ -230,33 +230,33 @@
             // guna2HtmlLabel9
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2HtmlLabel9.Location = new System.Drawing.Point(13, 299);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(72, 19);
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(75, 18);
             this.guna2HtmlLabel9.TabIndex = 2;
             this.guna2HtmlLabel9.Text = "File location";
             // 
             // lblFilePath
             // 
             this.lblFilePath.BackColor = System.Drawing.Color.Transparent;
-            this.lblFilePath.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilePath.ForeColor = System.Drawing.Color.Black;
             this.lblFilePath.Location = new System.Drawing.Point(13, 325);
             this.lblFilePath.Name = "lblFilePath";
-            this.lblFilePath.Size = new System.Drawing.Size(215, 19);
+            this.lblFilePath.Size = new System.Drawing.Size(225, 18);
             this.lblFilePath.TabIndex = 2;
             this.lblFilePath.Text = "C:\\Users\\laich\\Downloads\\BH01.mp3";
             // 
             // guna2HtmlLabel11
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(81)))), ((int)(((byte)(34)))));
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(12, 373);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(113, 19);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(124, 18);
             this.guna2HtmlLabel11.TabIndex = 2;
             this.guna2HtmlLabel11.Text = "Open file location";
             this.guna2HtmlLabel11.MouseEnter += new System.EventHandler(this.guna2HtmlLabel11_MouseEnter);
@@ -265,11 +265,11 @@
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(314, 46);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(111, 19);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(104, 18);
             this.guna2HtmlLabel5.TabIndex = 2;
             this.guna2HtmlLabel5.Text = "Contributing artist";
             // 
@@ -295,11 +295,11 @@
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(314, 103);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(73, 19);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(72, 18);
             this.guna2HtmlLabel6.TabIndex = 2;
             this.guna2HtmlLabel6.Text = "Album artist";
             // 
@@ -325,11 +325,11 @@
             // guna2HtmlLabel7
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2HtmlLabel7.Location = new System.Drawing.Point(314, 160);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(38, 19);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(40, 18);
             this.guna2HtmlLabel7.TabIndex = 2;
             this.guna2HtmlLabel7.Text = "Genre";
             // 
@@ -354,8 +354,7 @@
             // 
             // fEditMusic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(608, 508);
             this.ControlBox = false;

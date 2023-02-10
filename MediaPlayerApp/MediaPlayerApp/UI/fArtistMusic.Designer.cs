@@ -139,8 +139,7 @@
             // 
             // fArtistMusic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(788, 510);
             this.Controls.Add(this.pnSong);
             this.Controls.Add(this.btnAddTo);
