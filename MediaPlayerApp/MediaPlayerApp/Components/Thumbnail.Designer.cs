@@ -53,6 +53,7 @@
             this.moreButton.PressedState.ImageSize = new System.Drawing.Size(35, 35);
             this.moreButton.Size = new System.Drawing.Size(35, 35);
             this.moreButton.TabIndex = 0;
+            this.moreButton.Visible = false;
             this.moreButton.Click += new System.EventHandler(this.moreButton_Click);
             // 
             // playButton

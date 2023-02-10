@@ -1,11 +1,2 @@
-C:\Workspace\LapTrinhTrucQuanTesting\Media\Music\y2meta.com - SƠN TÙNG M-TP _ HÃY TRAO CHO ANH ft. Snoop Dogg _ Official MV (64 kbps).mp3
-C:\Users\VQ\Downloads\CoDauAiNgo-ThuCam-7857284.mp3
-C:\Users\VQ\Downloads\dl.mp3
-C:\Users\VQ\Downloads\Cu Tho Di - Duc Phuc_ Juky San.mp3
-C:\Users\VQ\Downloads\BuocQuaNhau-Vu-7847964.mp3
-C:\Users\VQ\Documents\GitHub\IT008.N13-Final-Project-Media-Player\MediaPlayerApp\MediaPlayerApp\bin\Debug\Data\Playlists\United playlist.txt
-C:\Users\VQ\Downloads\WaitingForYou-MONOOnionn-7733882.mp3
-C:\Users\VQ\Downloads\song2.mp3
-C:\Users\VQ\Downloads\success-fanfare-trumpets-6185.mp3
-C:\Users\VQ\Downloads\nhacdownload.mp3
-C:\Users\VQ\Downloads\DieuChaChuaNoiBoGiaOst-AliHoangDuong-6223330.mp3
+
+C:\Workspace\LapTrinhTrucQuanMain\Media\Music\y2meta.com - SƠN TÙNG M-TP _ HÃY TRAO CHO ANH ft. Snoop Dogg _ Official MV (64 kbps).mp3
