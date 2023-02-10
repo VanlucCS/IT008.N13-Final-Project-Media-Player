@@ -32,11 +32,15 @@ namespace MediaPlayerApp.Components
         {
             InitializeComponent();
             this._fMusicLibrary = fMusicLibrary;
+            
         }
         public SelectedSong(fVideoLibrary fVideoLibrary)
         {
             InitializeComponent();
             this._fVideoLibrary = fVideoLibrary;
+            guna2Button2.Visible = false;
+            btnAddTo.Visible = false;
+            btnMore.Visible = false;
         }
         public SelectedSong(fPlaylist fPlaylist)
         {

@@ -31,35 +31,37 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fVideo));
             this.pnlBottom = new Guna.UI2.WinForms.Guna2Panel();
+            this.pbxNext = new System.Windows.Forms.PictureBox();
+            this.pbxBack = new System.Windows.Forms.PictureBox();
             this.lbTimeCurrentPlay = new System.Windows.Forms.Label();
             this.tbProcess = new Guna.UI2.WinForms.Guna2TrackBar();
+            this.btPlay = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pbxShuffle = new System.Windows.Forms.PictureBox();
+            this.pbxReplay = new System.Windows.Forms.PictureBox();
+            this.pbxBackward = new System.Windows.Forms.PictureBox();
+            this.pbxForward = new System.Windows.Forms.PictureBox();
             this.pnlHead = new Guna.UI2.WinForms.Guna2Panel();
             this.btMaxsize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btMinisize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.timer1s = new System.Windows.Forms.Timer(this.components);
             this.timer5s = new System.Windows.Forms.Timer(this.components);
-            this.pbxNext = new System.Windows.Forms.PictureBox();
-            this.pbxBack = new System.Windows.Forms.PictureBox();
-            this.btPlay = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.pbxShuffle = new System.Windows.Forms.PictureBox();
-            this.pbxReplay = new System.Windows.Forms.PictureBox();
-            this.pbxBackward = new System.Windows.Forms.PictureBox();
-            this.pbxForward = new System.Windows.Forms.PictureBox();
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlBottom.SuspendLayout();
-            this.pnlHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxShuffle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxReplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxForward)).BeginInit();
+            this.pnlHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBottom
             // 
+            this.pnlBottom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBottom.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pnlBottom.Controls.Add(this.pbxNext);
             this.pnlBottom.Controls.Add(this.pbxBack);
@@ -75,6 +77,30 @@
             this.pnlBottom.Size = new System.Drawing.Size(800, 100);
             this.pnlBottom.TabIndex = 5;
             this.pnlBottom.Visible = false;
+            // 
+            // pbxNext
+            // 
+            this.pbxNext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxNext.Image = global::MediaPlayerApp.Properties.Resources.video_next;
+            this.pbxNext.Location = new System.Drawing.Point(514, 43);
+            this.pbxNext.Name = "pbxNext";
+            this.pbxNext.Size = new System.Drawing.Size(32, 32);
+            this.pbxNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxNext.TabIndex = 23;
+            this.pbxNext.TabStop = false;
+            this.pbxNext.Click += new System.EventHandler(this.pbxNext_Click);
+            // 
+            // pbxBack
+            // 
+            this.pbxBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxBack.Image = global::MediaPlayerApp.Properties.Resources.grey_back;
+            this.pbxBack.Location = new System.Drawing.Point(250, 43);
+            this.pbxBack.Name = "pbxBack";
+            this.pbxBack.Size = new System.Drawing.Size(32, 32);
+            this.pbxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBack.TabIndex = 22;
+            this.pbxBack.TabStop = false;
+            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
             // lbTimeCurrentPlay
             // 
@@ -104,87 +130,6 @@
             this.tbProcess.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
             this.tbProcess.Value = 0;
             this.tbProcess.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbProcess_Scroll);
-            // 
-            // pnlHead
-            // 
-            this.pnlHead.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pnlHead.Controls.Add(this.btMaxsize);
-            this.pnlHead.Controls.Add(this.btMinisize);
-            this.pnlHead.Controls.Add(this.btExit);
-            this.pnlHead.Location = new System.Drawing.Point(0, 0);
-            this.pnlHead.Name = "pnlHead";
-            this.pnlHead.Size = new System.Drawing.Size(800, 35);
-            this.pnlHead.TabIndex = 4;
-            this.pnlHead.Visible = false;
-            // 
-            // btMaxsize
-            // 
-            this.btMaxsize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btMaxsize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.btMaxsize.FillColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btMaxsize.IconColor = System.Drawing.Color.Black;
-            this.btMaxsize.Location = new System.Drawing.Point(688, 3);
-            this.btMaxsize.Name = "btMaxsize";
-            this.btMaxsize.Size = new System.Drawing.Size(45, 29);
-            this.btMaxsize.TabIndex = 5;
-            // 
-            // btMinisize
-            // 
-            this.btMinisize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btMinisize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.btMinisize.FillColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btMinisize.IconColor = System.Drawing.Color.Black;
-            this.btMinisize.Location = new System.Drawing.Point(639, 3);
-            this.btMinisize.Name = "btMinisize";
-            this.btMinisize.Size = new System.Drawing.Size(45, 29);
-            this.btMinisize.TabIndex = 4;
-            // 
-            // btExit
-            // 
-            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btExit.CustomIconSize = 15F;
-            this.btExit.FillColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btExit.IconColor = System.Drawing.Color.Black;
-            this.btExit.Location = new System.Drawing.Point(739, 3);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(45, 29);
-            this.btExit.TabIndex = 3;
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
-            // 
-            // timer1s
-            // 
-            this.timer1s.Enabled = true;
-            this.timer1s.Interval = 1000;
-            this.timer1s.Tick += new System.EventHandler(this.timer1s_Tick);
-            // 
-            // timer5s
-            // 
-            this.timer5s.Interval = 5000;
-            this.timer5s.Tick += new System.EventHandler(this.timer5s_Tick);
-            // 
-            // pbxNext
-            // 
-            this.pbxNext.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxNext.Image = global::MediaPlayerApp.Properties.Resources.video_next;
-            this.pbxNext.Location = new System.Drawing.Point(514, 43);
-            this.pbxNext.Name = "pbxNext";
-            this.pbxNext.Size = new System.Drawing.Size(32, 32);
-            this.pbxNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxNext.TabIndex = 23;
-            this.pbxNext.TabStop = false;
-            this.pbxNext.Click += new System.EventHandler(this.pbxNext_Click);
-            // 
-            // pbxBack
-            // 
-            this.pbxBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxBack.Image = global::MediaPlayerApp.Properties.Resources.grey_back;
-            this.pbxBack.Location = new System.Drawing.Point(250, 43);
-            this.pbxBack.Name = "pbxBack";
-            this.pbxBack.Size = new System.Drawing.Size(32, 32);
-            this.pbxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxBack.TabIndex = 22;
-            this.pbxBack.TabStop = false;
-            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
             // btPlay
             // 
@@ -250,6 +195,65 @@
             this.pbxForward.TabStop = false;
             this.pbxForward.Click += new System.EventHandler(this.pbxForward_Click);
             // 
+            // pnlHead
+            // 
+            this.pnlHead.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlHead.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlHead.Controls.Add(this.btMaxsize);
+            this.pnlHead.Controls.Add(this.btMinisize);
+            this.pnlHead.Controls.Add(this.btExit);
+            this.pnlHead.Location = new System.Drawing.Point(0, 0);
+            this.pnlHead.Name = "pnlHead";
+            this.pnlHead.Size = new System.Drawing.Size(800, 35);
+            this.pnlHead.TabIndex = 4;
+            this.pnlHead.Visible = false;
+            // 
+            // btMaxsize
+            // 
+            this.btMaxsize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btMaxsize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.btMaxsize.FillColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btMaxsize.IconColor = System.Drawing.Color.Black;
+            this.btMaxsize.Location = new System.Drawing.Point(688, 3);
+            this.btMaxsize.Name = "btMaxsize";
+            this.btMaxsize.Size = new System.Drawing.Size(45, 29);
+            this.btMaxsize.TabIndex = 5;
+            // 
+            // btMinisize
+            // 
+            this.btMinisize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btMinisize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.btMinisize.FillColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btMinisize.IconColor = System.Drawing.Color.Black;
+            this.btMinisize.Location = new System.Drawing.Point(639, 3);
+            this.btMinisize.Name = "btMinisize";
+            this.btMinisize.Size = new System.Drawing.Size(45, 29);
+            this.btMinisize.TabIndex = 4;
+            // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.CustomIconSize = 15F;
+            this.btExit.FillColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btExit.IconColor = System.Drawing.Color.Black;
+            this.btExit.Location = new System.Drawing.Point(739, 3);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(45, 29);
+            this.btExit.TabIndex = 3;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
+            // timer1s
+            // 
+            this.timer1s.Enabled = true;
+            this.timer1s.Interval = 1000;
+            this.timer1s.Tick += new System.EventHandler(this.timer1s_Tick);
+            // 
+            // timer5s
+            // 
+            this.timer5s.Interval = 5000;
+            this.timer5s.Tick += new System.EventHandler(this.timer5s_Tick);
+            // 
             // player
             // 
             this.player.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -275,13 +279,13 @@
             this.Text = "fVideo";
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
-            this.pnlHead.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxShuffle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxReplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxForward)).EndInit();
+            this.pnlHead.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 

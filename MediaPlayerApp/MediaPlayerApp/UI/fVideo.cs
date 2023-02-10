@@ -82,7 +82,16 @@ namespace MediaPlayerApp.UI
             {
                 TimeSpan Time = TimeSpan.FromMinutes(player.Ctlcontrols.currentPosition);
                 // update time mediaplayer
-                lbTimeCurrentPlay.Text = Time.ToString().Substring(0, 5);
+                if (Time.Hours>0)
+                {
+                    lbTimeCurrentPlay.Text = Time.ToString(@"hh\:mm\:ss");
+                }
+                else
+                {
+                    lbTimeCurrentPlay.Text = Time.ToString(@"mm\:ss");
+                }    
+                
+
                 tbProcess.Value = (int)(100.0 * (player.Ctlcontrols.currentPosition / player.currentMedia.duration));
             }
         }
@@ -291,7 +300,16 @@ namespace MediaPlayerApp.UI
                     pbxNext.Image = Resources.video_next;
                 }
             }
-
+            if (this.player.playState == WMPLib.WMPPlayState.wmppsStopped || this.player.playState == WMPLib.WMPPlayState.wmppsPaused)
+            {
+                btPlay.Checked = false;
+                btPlay.Image = Resources.video_play;
+            }
+            else if (this.player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                btPlay.Checked = true;
+                btPlay.Image = Resources.video_pause;
+            }
         }
 
         private void player_MouseMoveEvent(object sender, AxWMPLib._WMPOCXEvents_MouseMoveEvent e)

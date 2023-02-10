@@ -263,7 +263,7 @@ namespace MediaPlayerApp.UI
             {
                 selectedSong.Visible = true;
                 selectedSong.BringToFront();
-                if (Count > 1)
+                if (Count > 0)
                 {
                     selectedSong.BtnMore.Visible = false;
                 }
