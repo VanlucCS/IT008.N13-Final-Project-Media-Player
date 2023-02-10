@@ -115,7 +115,7 @@ namespace MediaPlayerApp
         {
             resetButtonStage();
             btHome.Checked = !btHome.Checked;
-            Constants.currentScreen = " ";
+            Constants.currentScreen = "show one";
             this.OpenChildForm(new fHomeScreen(this));
 
         }
@@ -276,7 +276,7 @@ namespace MediaPlayerApp
                 lbSongName.Text = musicSong.NameSong + "\n" + musicSong.Singer;
                 currenSong = new ThumbnailMusic(path, this, null);
             }
-            if (Media.currentMedia != null && Constants.playQueue.Count != 0)
+            if (Media.currentMedia != null && Constants.playQueue.Count != 0 && !(Media.playState == WMPLib.WMPPlayState.wmppsPaused))
             {
                 Media.Ctlcontrols.play();
             }
