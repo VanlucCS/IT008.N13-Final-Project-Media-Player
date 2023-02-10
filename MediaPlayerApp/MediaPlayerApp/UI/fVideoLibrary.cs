@@ -19,7 +19,7 @@ namespace MediaPlayerApp.UI
         public fHome parent;
         private bool _isAllVideos;
         private bool _isSortByDate;
-        
+        public List<string> videoPath= new List<string>();
         SelectedSong selectedSong;
         public fVideoLibrary(fHome parent = null)
         {
@@ -244,13 +244,17 @@ namespace MediaPlayerApp.UI
         }
         public void selectedChanged()
         {
-
+            videoPath = new List<string>();
             // Chưa xong
             Count = 0;
             foreach (Thumbnail video in flowLayoutPanel1.Controls.OfType<Thumbnail>())
             {
                 if (video.cbxChon.Checked == true)
+                {
+                    videoPath.Add(video.VideoPath);
                     Count++;
+                }
+
             }    
             
             

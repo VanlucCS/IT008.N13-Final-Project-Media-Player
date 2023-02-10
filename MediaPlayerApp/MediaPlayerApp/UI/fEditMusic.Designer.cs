@@ -254,11 +254,13 @@
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(81)))), ((int)(((byte)(34)))));
+            this.guna2HtmlLabel11.IsSelectionEnabled = false;
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(12, 373);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             this.guna2HtmlLabel11.Size = new System.Drawing.Size(124, 18);
             this.guna2HtmlLabel11.TabIndex = 2;
             this.guna2HtmlLabel11.Text = "Open file location";
+            this.guna2HtmlLabel11.Click += new System.EventHandler(this.guna2HtmlLabel11_Click);
             this.guna2HtmlLabel11.MouseEnter += new System.EventHandler(this.guna2HtmlLabel11_MouseEnter);
             this.guna2HtmlLabel11.MouseLeave += new System.EventHandler(this.guna2HtmlLabel11_MouseLeave);
             // 

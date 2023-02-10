@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -154,6 +155,12 @@ namespace MediaPlayerApp.UI
             this._fMusicLibrary.loadMusicNew();
             this._fMusicLibrary.selectedChanged();
             this.Close();
+        }
+
+        private void guna2HtmlLabel11_Click(object sender, EventArgs e)
+        {
+            string filePath = this.FileLocation;
+            Process.Start("explorer.exe", "/select, \"" + filePath + "\"");
         }
     }
 }

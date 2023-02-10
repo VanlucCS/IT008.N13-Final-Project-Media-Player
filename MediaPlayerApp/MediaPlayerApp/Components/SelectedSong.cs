@@ -78,9 +78,8 @@ namespace MediaPlayerApp.Components
                 toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
                 toolStrip.Items.Add("Edit info");
                 toolStrip.Items.Add("Properties");
-                toolStrip.Items[0].Image = Resources.user;
-                toolStrip.Items[1].Image = Resources.pen;
-                toolStrip.Items[2].Image = Resources.info;
+                toolStrip.Items[0].Image = Resources.pen;
+                toolStrip.Items[1].Image = Resources.info;
                 int Y = 400;
                 toolStrip.Location = new Point(btnMore.Location.X + 70, btnMore.Location.Y + Y);
                 toolStrip.Show(MousePosition);
@@ -375,13 +374,20 @@ namespace MediaPlayerApp.Components
             {
                 // add new playlist
                 List<string> listAdd = new List<string> { };
-                foreach (ThumbnailMusic item in _fMusicLibrary.flowLayoutPanel1.Controls)
+                if (_fMusicLibrary!=null)
                 {
-                    if (item.guna2CheckBox1.Checked == true)
+                    foreach (ThumbnailMusic item in _fMusicLibrary.flowLayoutPanel1.Controls)
                     {
-                        listAdd.Add(item.Path);
+                        if (item.guna2CheckBox1.Checked == true)
+                        {
+                            listAdd.Add(item.Path);
+                        }
                     }
                 }
+                else if (_fVideoLibrary!=null)
+                {
+                    listAdd = _fVideoLibrary.videoPath;
+                }    
                 fAddNewPlaylistcs f = new fAddNewPlaylistcs(listAdd.ToArray());
                 f.StartPosition = FormStartPosition.CenterScreen;
                 f.ShowDialog();
