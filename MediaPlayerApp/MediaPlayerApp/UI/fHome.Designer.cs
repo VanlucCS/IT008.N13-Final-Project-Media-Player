@@ -179,6 +179,7 @@ namespace MediaPlayerApp
             this.Media.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Media.OcxState")));
             this.Media.Size = new System.Drawing.Size(56, 46);
             this.Media.TabIndex = 0;
+            this.Media.Visible = false;
             this.Media.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.Media_PlayStateChange);
             this.Media.MediaChange += new AxWMPLib._WMPOCXEvents_MediaChangeEventHandler(this.Media_MediaChange);
             // 
