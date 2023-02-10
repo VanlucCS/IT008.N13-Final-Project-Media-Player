@@ -80,7 +80,7 @@ namespace MediaPlayerApp.Components
                 toolStrip.Items.Add("Properties");
                 toolStrip.Items[0].Image = Resources.user;
                 toolStrip.Items[1].Image = Resources.pen;
-                toolStrip.Items[2].Image = Resources.info;
+                //toolStrip.Items[2].Image = Resources.info;
                 int Y = 400;
                 toolStrip.Location = new Point(btnMore.Location.X + 70, btnMore.Location.Y + Y);
                 toolStrip.Show(MousePosition);

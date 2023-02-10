@@ -42,13 +42,13 @@
             this.tbYear = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblFilePath = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbArtist = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbAlbumArtist = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbGenre = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -249,19 +249,6 @@
             this.lblFilePath.TabIndex = 2;
             this.lblFilePath.Text = "C:\\Users\\laich\\Downloads\\BH01.mp3";
             // 
-            // guna2HtmlLabel11
-            // 
-            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(81)))), ((int)(((byte)(34)))));
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(12, 373);
-            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(124, 18);
-            this.guna2HtmlLabel11.TabIndex = 2;
-            this.guna2HtmlLabel11.Text = "Open file location";
-            this.guna2HtmlLabel11.MouseEnter += new System.EventHandler(this.guna2HtmlLabel11_MouseEnter);
-            this.guna2HtmlLabel11.MouseLeave += new System.EventHandler(this.guna2HtmlLabel11_MouseLeave);
-            // 
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
@@ -352,6 +339,20 @@
             this.tbGenre.Size = new System.Drawing.Size(282, 30);
             this.tbGenre.TabIndex = 3;
             // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(81)))), ((int)(((byte)(34)))));
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(12, 373);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(124, 18);
+            this.guna2HtmlLabel11.TabIndex = 2;
+            this.guna2HtmlLabel11.Text = "Open file location";
+            this.guna2HtmlLabel11.Visible = false;
+            this.guna2HtmlLabel11.MouseEnter += new System.EventHandler(this.guna2HtmlLabel11_MouseEnter);
+            this.guna2HtmlLabel11.MouseLeave += new System.EventHandler(this.guna2HtmlLabel11_MouseLeave);
+            // 
             // fEditMusic
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -403,12 +404,12 @@
         private Guna.UI2.WinForms.Guna2TextBox tbYear;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblFilePath;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2TextBox tbArtist;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2TextBox tbAlbumArtist;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2TextBox tbGenre;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
     }
 }

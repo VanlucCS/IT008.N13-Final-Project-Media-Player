@@ -104,7 +104,6 @@
             this.btnMore.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMore.ForeColor = System.Drawing.Color.Black;
             this.btnMore.Image = global::MediaPlayerApp.Properties.Resources.more;
-            this.btnMore.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMore.Location = new System.Drawing.Point(496, 3);
             this.btnMore.Name = "btnMore";
             this.btnMore.Size = new System.Drawing.Size(31, 26);

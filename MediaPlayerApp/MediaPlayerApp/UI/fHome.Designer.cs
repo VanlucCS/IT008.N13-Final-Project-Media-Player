@@ -179,6 +179,7 @@ namespace MediaPlayerApp
             this.Media.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Media.OcxState")));
             this.Media.Size = new System.Drawing.Size(56, 46);
             this.Media.TabIndex = 0;
+            this.Media.Visible = false;
             this.Media.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.Media_PlayStateChange);
             this.Media.MediaChange += new AxWMPLib._WMPOCXEvents_MediaChangeEventHandler(this.Media_MediaChange);
             // 
@@ -555,7 +556,7 @@ namespace MediaPlayerApp
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(41, 529);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 16);
+            this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Dark Mode";
             // 
